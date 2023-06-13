@@ -5,27 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="csrf-token" content="zzaPBleChcMC42TW7qB8Le0kUD3LDSgdGWYq6eTm">
-<link rel="icon" type="image/png" href="https://sandbox.bookingcore.org/uploads/demo/general/favicon.png" />
+<link rel="icon" type="image/png" href="/uploads/demo/general/favicon.png" />
 <title>Search for hotel - Booking Core</title>
 <meta name="description" content />
-<meta property="og:url" content="https://sandbox.bookingcore.org/hotel" />
+<meta property="og:url" content="/hotel" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Search for hotel" />
 <meta property="og:description" content />
-<meta property="og:image" content="https://sandbox.bookingcore.org/uploads/demo/hotel/banner-search-hotel.jpg" />
+<meta property="og:image" content="/uploads/demo/hotel/banner-search-hotel.jpg" />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Search for hotel">
 <meta name="twitter:description" content>
-<meta name="twitter:image" content="https://sandbox.bookingcore.org/uploads/demo/hotel/banner-search-hotel.jpg">
-<link rel="canonical" href="https://sandbox.bookingcore.org/hotel" />
-<link href="https://sandbox.bookingcore.org/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/ionicons/css/ionicons.min.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/icofont/icofont.min.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/select2/css/select2.min.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/dist/frontend/css/notification.css" rel="newest stylesheet">
-<link href="https://sandbox.bookingcore.org/dist/frontend/css/app.css?_ver=3.2.1" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://sandbox.bookingcore.org/libs/daterange/daterangepicker.css">
+<meta name="twitter:image" content="/uploads/demo/hotel/banner-search-hotel.jpg">
+<link rel="canonical" href="/hotel" />
+<link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="/libs/ionicons/css/ionicons.min.css" rel="stylesheet">
+<link href="/libs/icofont/icofont.min.css" rel="stylesheet">
+<link href="/libs/select2/css/select2.min.css" rel="stylesheet">
+<link href="/dist/frontend/css/notification.css" rel="newest stylesheet">
+<link href="/dist/frontend/css/app.css?_ver=3.2.1" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/libs/daterange/daterangepicker.css">
 
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&display=swap" type="text/css" media="all" />
@@ -33,7 +33,7 @@
     var bookingCore = {
         url:'https://sandbox.bookingcore.org',
         url_root:'https://sandbox.bookingcore.org',
-        admin_url:'https://sandbox.bookingcore.org/admin',
+        admin_url:'/admin',
         booking_decimals:0,
         thousand_separator:'.',
         decimal_separator:',',
@@ -50,28 +50,28 @@
             map_fit_bounds:'on',
         },
         routes:{
-            login:'https://sandbox.bookingcore.org/login',
-            register:'https://sandbox.bookingcore.org/register',
-            checkout:'https://sandbox.bookingcore.org/booking/doCheckout'
+            login:'/login',
+            register:'/register',
+            checkout:'/booking/doCheckout'
         },
         currentUser: 0,
         isAdmin : 0,
         rtl: false,
-        markAsRead:'https://sandbox.bookingcore.org/notify/markAsRead',
-        markAllAsRead:'https://sandbox.bookingcore.org/notify/markAllAsRead',
-        loadNotify : 'https://sandbox.bookingcore.org/notify/notifications',
+        markAsRead:'/notify/markAsRead',
+        markAllAsRead:'/notify/markAllAsRead',
+        loadNotify : '/notify/notifications',
         pusher_api_key : '',
         pusher_cluster : '',
         language: 'en',
         module:{}
     };
-                            bookingCore.module.hotel = 'https://sandbox.bookingcore.org/hotel';
-                                bookingCore.module.space = 'https://sandbox.bookingcore.org/space';
-                                bookingCore.module.car = 'https://sandbox.bookingcore.org/car';
-                                bookingCore.module.event = 'https://sandbox.bookingcore.org/event';
-                                bookingCore.module.tour = 'https://sandbox.bookingcore.org/tour';
-                                bookingCore.module.flight = 'https://sandbox.bookingcore.org/flight';
-                                bookingCore.module.boat = 'https://sandbox.bookingcore.org/boat';
+                            bookingCore.module.hotel = '/hotel';
+                                bookingCore.module.space = '/space';
+                                bookingCore.module.car = '/car';
+                                bookingCore.module.event = '/event';
+                                bookingCore.module.tour = '/tour';
+                                bookingCore.module.flight = '/flight';
+                                bookingCore.module.boat = '/boat';
                 var i18n = {
         warning:"Warning",
         success:"Success",
@@ -113,15 +113,15 @@
     };
 </script>
 
-<link href="https://sandbox.bookingcore.org/dist/frontend/module/hotel/css/hotel.css?_ver=3.2.1" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://sandbox.bookingcore.org/libs/ion_rangeslider/css/ion.rangeSlider.min.css" />
+<link href="/dist/frontend/module/hotel/css/hotel.css?_ver=3.2.1" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/libs/ion_rangeslider/css/ion.rangeSlider.min.css" />
 <style type="text/css">
         .bravo_topbar, .bravo_footer {
             display: none
         }
     </style>
-<link href="https://sandbox.bookingcore.org/custom-css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/carousel-2/owl.carousel.css" rel="stylesheet">
+<link href="/custom-css" rel="stylesheet">
+<link href="/libs/carousel-2/owl.carousel.css" rel="stylesheet">
 </head>
 <body class="frontend-page header-normal has-search-map  ">
 <div class="bravo_wrap">
@@ -146,12 +146,12 @@ USD
 </a>
 <ul class="dropdown-menu text-left width-auto">
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_currency=eur" class="is_login">
+<a href="/hotel?_layout=map&amp;set_currency=eur" class="is_login">
 EUR
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_currency=jpy" class="is_login">
+<a href="/hotel?_layout=map&amp;set_currency=jpy" class="is_login">
 JPY
 </a>
 </li>
@@ -160,19 +160,19 @@ JPY
 <li class="dropdown">
 <ul class="dropdown-menu text-left">
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_lang=ar" class="is_login">
+<a href="/hotel?_layout=map&amp;set_lang=ar" class="is_login">
 <span class="flag-icon flag-icon-sa"></span>
 Araic
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_lang=en_US" class="is_login">
+<a href="/hotel?_layout=map&amp;set_lang=en_US" class="is_login">
 <span class="flag-icon flag-icon-en_US"></span>
 English
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_lang=fr" class="is_login">
+<a href="/hotel?_layout=map&amp;set_lang=fr" class="is_login">
 <span class="flag-icon flag-icon-fr"></span>
 Français
 </a>
@@ -195,7 +195,7 @@ Français
 <div class="content">
 <div class="header-left">
 <a href="https://sandbox.bookingcore.org" class="bravo-logo">
-<img src="https://sandbox.bookingcore.org/uploads/demo/general/logo.svg" alt="Booking Core">
+<img src="/uploads/demo/general/logo.svg" alt="Booking Core">
 </a>
 <div class="bravo-menu">
 <ul class="main-menu menu-generated"><li class=" depth-0"><a target href="/">Home <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/">Home Page</a></li><li class=" depth-1"><a target href="/page/home-page-v2">Home Page v2</a></li><li class=" depth-1"><a target href="/page/hotel">Home Hotel</a></li><li class=" depth-1"><a target href="/page/home-tour-agency">Home Tour Agency</a></li><li class=" depth-1"><a target href="/page/tour">Home Tour</a></li><li class=" depth-1"><a target href="/page/space">Home Space</a></li><li class=" depth-1"><a target href="/page/car">Home Car</a></li></ul></li><li class=" active active  depth-0"><a target href="/hotel">Hotel <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" active depth-1"><a target href="/hotel">Hotel List</a></li><li class=" depth-1"><a target href="/hotel?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="/hotel/parian-holiday-villas">Hotel Detail</a></li></ul></li><li class=" depth-0"><a target href="/tour">Tours <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/tour">Tour List</a></li><li class=" depth-1"><a target href="/tour?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="/tour/paris-vacation-travel">Tour Detail</a></li></ul></li><li class=" depth-0"><a target href="/space">Space <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/space">Space List</a></li><li class=" depth-1"><a target href="/space?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="/space/stay-greenwich-village">Space Detail</a></li></ul></li><li class=" depth-0"><a target href="/car">Car <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/car">Car List</a></li><li class=" depth-1"><a target href="/car?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="/car/vinfast-lux-a20-plus">Car Detail</a></li></ul></li><li class=" depth-0"><a target href="/event">Event <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/event">Event List</a></li><li class=" depth-1"><a target href="/event?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="/event/aspen-glade-weddings-events">Event Detail</a></li></ul></li><li class=" depth-0"><a target href="/flight">Flight</a></li><li class=" depth-0"><a target href="/boat">Boat <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/boat">Boat List</a></li><li class=" depth-1"><a target href="/boat?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="/boat/blue-moon-yc-300">Boat Detail</a></li></ul></li><li class=" depth-0"><a target href="#">Pages <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/plan">Plan</a></li><li class=" depth-1"><a target href="/news">News List</a></li><li class=" depth-1"><a target href="/news/morning-in-the-northern-sea">News Detail</a></li><li class=" depth-1"><a target href="/location/paris">Location Detail</a></li><li class=" depth-1"><a target href="/page/become-a-vendor">Become a vendor</a></li><li class=" depth-1"><a target href="/contact">Contact</a></li></ul></li></ul> </div>
@@ -209,12 +209,12 @@ USD
 </a>
 <ul class="dropdown-menu text-left width-auto">
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_currency=eur" class="is_login">
+<a href="/hotel?_layout=map&amp;set_currency=eur" class="is_login">
 EUR
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_currency=jpy" class="is_login">
+<a href="/hotel?_layout=map&amp;set_currency=jpy" class="is_login">
 JPY
 </a>
 </li>
@@ -223,19 +223,19 @@ JPY
 <li class="dropdown">
 <ul class="dropdown-menu text-left">
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_lang=ar" class="is_login">
+<a href="/hotel?_layout=map&amp;set_lang=ar" class="is_login">
 <span class="flag-icon flag-icon-sa"></span>
 Araic
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_lang=en_US" class="is_login">
+<a href="/hotel?_layout=map&amp;set_lang=en_US" class="is_login">
 <span class="flag-icon flag-icon-en_US"></span>
 English
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_lang=fr" class="is_login">
+<a href="/hotel?_layout=map&amp;set_lang=fr" class="is_login">
 <span class="flag-icon flag-icon-fr"></span>
 Français
 </a>
@@ -275,12 +275,12 @@ USD
 </a>
 <ul class="dropdown-menu text-left width-auto">
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_currency=eur" class="is_login">
+<a href="/hotel?_layout=map&amp;set_currency=eur" class="is_login">
 EUR
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_currency=jpy" class="is_login">
+<a href="/hotel?_layout=map&amp;set_currency=jpy" class="is_login">
 JPY
 </a>
 </li>
@@ -291,19 +291,19 @@ JPY
 <li class="dropdown">
 <ul class="dropdown-menu text-left">
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_lang=ar" class="is_login">
+<a href="/hotel?_layout=map&amp;set_lang=ar" class="is_login">
 <span class="flag-icon flag-icon-sa"></span>
 Araic
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_lang=en_US" class="is_login">
+<a href="/hotel?_layout=map&amp;set_lang=en_US" class="is_login">
 <span class="flag-icon flag-icon-en_US"></span>
 English
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;set_lang=fr" class="is_login">
+<a href="/hotel?_layout=map&amp;set_lang=fr" class="is_login">
 <span class="flag-icon flag-icon-fr"></span>
 Français
 </a>
@@ -321,7 +321,7 @@ Français
 Search for hotel
 </h1>
 <div class="bravo_form_search_map">
-<form action="https://sandbox.bookingcore.org/hotel" class="form bravo_form d-flex justify-content-start" method="get" onsubmit="return false;">
+<form action="/hotel" class="form bravo_form d-flex justify-content-start" method="get" onsubmit="return false;">
 <div class="filter-item">
 <div class="form-group">
 <i class="field-icon fa icofont-map"></i>
@@ -487,8 +487,8 @@ Search for hotel
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/dylan-hotel">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-2.jpg" alt="Dylan Hotel">
+<a href="/hotel/dylan-hotel">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-2.jpg" alt="Dylan Hotel">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -506,7 +506,7 @@ Featured
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/dylan-hotel">
+<a href="/hotel/dylan-hotel">
 Dylan Hotel
 </a>
 </div>
@@ -539,8 +539,8 @@ New York, United States
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/parian-holiday-villas">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-13.jpg" alt="Parian Holiday Villas">
+<a href="/hotel/parian-holiday-villas">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-13.jpg" alt="Parian Holiday Villas">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -558,7 +558,7 @@ Featured
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/parian-holiday-villas">
+<a href="/hotel/parian-holiday-villas">
 Parian Holiday Villas
 </a>
 </div>
@@ -588,8 +588,8 @@ Paris
 <div class="col-lg-4 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/stewart-hotel">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-12.jpg" alt="Stewart Hotel">
+<a href="/hotel/stewart-hotel">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-12.jpg" alt="Stewart Hotel">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -607,7 +607,7 @@ Paris
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/stewart-hotel">
+<a href="/hotel/stewart-hotel">
 Stewart Hotel
 </a>
 </div>
@@ -637,8 +637,8 @@ Los Angeles
 <div class="col-lg-4 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/envision-hotel-biston">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-10.jpg" alt="EnVision Hotel Boston">
+<a href="/hotel/envision-hotel-biston">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-10.jpg" alt="EnVision Hotel Boston">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -656,7 +656,7 @@ Los Angeles
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/envision-hotel-biston">
+<a href="/hotel/envision-hotel-biston">
 EnVision Hotel Boston
 </a>
 </div>
@@ -686,8 +686,8 @@ California
 <div class="col-lg-4 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/studio-allston-hotel">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-9.jpg" alt="Studio Allston Hotel">
+<a href="/hotel/studio-allston-hotel">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-9.jpg" alt="Studio Allston Hotel">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -705,7 +705,7 @@ California
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/studio-allston-hotel">
+<a href="/hotel/studio-allston-hotel">
 Studio Allston Hotel
 </a>
 </div>
@@ -735,8 +735,8 @@ Los Angeles
 <div class="col-lg-4 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/redac-gateway-hotel">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-8.jpg" alt="Redac Gateway Hotel">
+<a href="/hotel/redac-gateway-hotel">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-8.jpg" alt="Redac Gateway Hotel">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -754,7 +754,7 @@ Los Angeles
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/redac-gateway-hotel">
+<a href="/hotel/redac-gateway-hotel">
 Redac Gateway Hotel
 </a>
 </div>
@@ -784,8 +784,8 @@ Paris
 <div class="col-lg-4 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/castello-casole-hotel">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-7.jpg" alt="Castello Casole Hotel">
+<a href="/hotel/castello-casole-hotel">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-7.jpg" alt="Castello Casole Hotel">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -803,7 +803,7 @@ Paris
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/castello-casole-hotel">
+<a href="/hotel/castello-casole-hotel">
 Castello Casole Hotel
 </a>
 </div>
@@ -833,8 +833,8 @@ Paris
 <div class="col-lg-4 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/hotel-wbf-homachi">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-6.jpg" alt="Hotel WBF Hommachi">
+<a href="/hotel/hotel-wbf-homachi">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-6.jpg" alt="Hotel WBF Hommachi">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -852,7 +852,7 @@ Paris
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/hotel-wbf-homachi">
+<a href="/hotel/hotel-wbf-homachi">
 Hotel WBF Hommachi
 </a>
 </div>
@@ -882,7 +882,7 @@ Paris
 <div class="col-lg-4 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/ha-noi-hotel">
+<a href="/hotel/ha-noi-hotel">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -900,7 +900,7 @@ Paris
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/ha-noi-hotel">
+<a href="/hotel/ha-noi-hotel">
 Ha Noi Hotel
 </a>
 </div>
@@ -936,9 +936,9 @@ Ha Noi
 <span aria-hidden="true" class="page-link">&lsaquo;</span>
 </li>
 <li class="active page-item " aria-current="page"><span class="page-link">1</span></li>
-<li><a class="page-link" href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;_ajax=1&amp;page=2">2</a></li>
+<li><a class="page-link" href="/hotel?_layout=map&amp;_ajax=1&amp;page=2">2</a></li>
 <li class="page-item">
-<a class="page-link" href="https://sandbox.bookingcore.org/hotel?_layout=map&amp;_ajax=1&amp;page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
+<a class="page-link" href="/hotel?_layout=map&amp;_ajax=1&amp;page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
 </li>
 </ul>
 </nav>
@@ -966,7 +966,7 @@ Ha Noi
 </div>
 </div>
 <div class="col-xs-12 col-md-5 col-lg-6">
-<form action="https://sandbox.bookingcore.org/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
+<form action="/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
 <input type="hidden" name="_token" value="zzaPBleChcMC42TW7qB8Le0kUD3LDSgdGWYq6eTm"> <div class="form-group">
 <input type="text" name="email" class="form-control email-input" placeholder="Your Email">
 <button type="submit" class="btn-submit">Subscribe
@@ -1093,12 +1093,12 @@ Booking Core
 <h4 class="modal-title">Log In</h4>
 <span class="c-pointer" data-dismiss="modal" aria-label="Close">
 <i class="input-icon field-icon fa">
-<img src="https://sandbox.bookingcore.org/images/ico_close.svg" alt="close">
+<img src="/images/ico_close.svg" alt="close">
 </i>
 </span>
 </div>
 <div class="modal-body relative">
-<form class="bravo-form-login" method="POST" action="https://sandbox.bookingcore.org/login">
+<form class="bravo-form-login" method="POST" action="/login">
 <input type="hidden" name="redirect" value>
 <input type="hidden" name="_token" value="zzaPBleChcMC42TW7qB8Le0kUD3LDSgdGWYq6eTm"> <div class="form-group">
 <input type="text" class="form-control" name="email" autocomplete="off" placeholder="Email address">
@@ -1115,7 +1115,7 @@ Booking Core
 <label for="remember-me" class="mb0">
 <input type="checkbox" name="remember" id="remember-me" value="1"> Remember me <span class="checkmark fcheckbox"></span>
 </label>
-<a href="https://sandbox.bookingcore.org/forgot-password">Forgot Password?</a>
+<a href="/forgot-password">Forgot Password?</a>
 </div>
 </div>
 <div class="error message-error invalid-feedback"></div>
@@ -1129,19 +1129,19 @@ Login
 <p class="text-center f14 c-grey">or continue with</p>
 <div class="row">
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+<a href="/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
 <i class="input-icon fa fa-facebook"></i>
 Facebook
 </a>
 </div>
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+<a href="/social-login/google" class="btn btn_login_gg_link" data-channel="google">
 <i class="input-icon fa fa-google"></i>
 Google
 </a>
 </div>
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
+<a href="/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
 <i class="input-icon fa fa-twitter"></i>
 Twitter
 </a>
@@ -1161,12 +1161,12 @@ Twitter
 <h4 class="modal-title">Sign Up</h4>
 <span class="c-pointer" data-dismiss="modal" aria-label="Close">
 <i class="input-icon field-icon fa">
-<img src="https://sandbox.bookingcore.org/images/ico_close.svg" alt="close">
+<img src="/images/ico_close.svg" alt="close">
 </i>
 </span>
 </div>
 <div class="modal-body">
-<form class="form bravo-form-register" method="post" action="https://sandbox.bookingcore.org/register">
+<form class="form bravo-form-register" method="post" action="/register">
 <input type="hidden" name="_token" value="zzaPBleChcMC42TW7qB8Le0kUD3LDSgdGWYq6eTm"> <div class="row">
 <div class="col-lg-6 col-md-12">
 <div class="form-group">
@@ -1217,19 +1217,19 @@ Sign Up
 <p class="text-center f14 c-grey">or continue with</p>
 <div class="row">
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+<a href="/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
 <i class="input-icon fa fa-facebook"></i>
 Facebook
 </a>
 </div>
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+<a href="/social-login/google" class="btn btn_login_gg_link" data-channel="google">
 <i class="input-icon fa fa-google"></i>
 Google
 </a>
 </div>
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
+<a href="/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
 <i class="input-icon fa fa-twitter"></i>
 Twitter
 </a>
@@ -1244,9 +1244,9 @@ Already have an account?
 </div>
 </div>
 </div>
-</div><link rel="stylesheet" href="https://sandbox.bookingcore.org/libs/flags/css/flag-icon.min.css">
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://sandbox.bookingcore.org/libs/lazy-load/intersection-observer.js"></script>
-<script async src="https://sandbox.bookingcore.org/libs/lazy-load/lazyload.min.js"></script>
+</div><link rel="stylesheet" href="/libs/flags/css/flag-icon.min.css">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/libs/lazy-load/intersection-observer.js"></script>
+<script async src="/libs/lazy-load/lazyload.min.js"></script>
 <script>
     // Set the options to make LazyLoad self-initialize
     window.lazyLoadOptions = {
@@ -1261,19 +1261,19 @@ Already have an account?
 
 
 </script>
-<script src="https://sandbox.bookingcore.org/libs/lodash.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/jquery-3.6.3.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/vue/vue.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/bootbox/bootbox.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/carousel-2/owl.carousel.min.js"></script>
-<script type="text/javascript" src="https://sandbox.bookingcore.org/libs/daterange/moment.min.js"></script>
-<script type="text/javascript" src="https://sandbox.bookingcore.org/libs/daterange/daterangepicker.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/select2/js/select2.min.js"></script>
-<script src="https://sandbox.bookingcore.org/js/functions.js?_ver=3.2.1"></script>
-<script src="https://sandbox.bookingcore.org/libs/pusher.min.js"></script>
-<script src="https://sandbox.bookingcore.org/js/home.js?_ver=3.2.1"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script><script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script><script src="https://sandbox.bookingcore.org/libs/infobox.js"></script><script src="https://sandbox.bookingcore.org/module/core/js/map-engine.js?_ver=3.2.1"></script>
+<script src="/libs/lodash.min.js"></script>
+<script src="/libs/jquery-3.6.3.min.js"></script>
+<script src="/libs/vue/vue.min.js"></script>
+<script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/libs/bootbox/bootbox.min.js"></script>
+<script src="/libs/carousel-2/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/libs/daterange/moment.min.js"></script>
+<script type="text/javascript" src="/libs/daterange/daterangepicker.min.js"></script>
+<script src="/libs/select2/js/select2.min.js"></script>
+<script src="/js/functions.js?_ver=3.2.1"></script>
+<script src="/libs/pusher.min.js"></script>
+<script src="/js/home.js?_ver=3.2.1"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script><script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script><script src="/libs/infobox.js"></script><script src="/module/core/js/map-engine.js?_ver=3.2.1"></script>
 <script>
         var bravo_map_data = {
             markers:[{"id":10,"title":"Dylan Hotel","lat":19.229727,"lng":72.98447,"gallery":[{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-2.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-2.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg"}],"infobox":"<div class=\"item-loop infobox-item\">\n            <div class=\"featured\">\n            Featured\n        <\/div>\n        <div class=\"thumb-image \">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/dylan-hotel\">\n                                                <img src=\"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-2.jpg\" class=\"img-responsive\" alt=\"\">\n                                    <\/a>\n                    <div class=\"star-rate\">\n                <div class=\"list-star\">\n                    <ul class=\"booking-item-rating-stars\">\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                            <\/ul>\n                <\/div>\n            <\/div>\n                <div class=\"service-wishlist \" data-id=\"10\" data-type=\"hotel\">\n            <i class=\"fa fa-heart\"><\/i>\n        <\/div>\n    <\/div>\n    <div class=\"item-title\">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/dylan-hotel\">\n                            Dylan Hotel\n        <\/a>\n            <\/div>\n    <div class=\"location\">\n                                New York, United States\n            <\/div>\n            <div class=\"service-review\">\n        <span class=\"rate\">\n             4.5\/5  <span class=\"rate-text\">Excellent<\/span>\n        <\/span>\n        <span class=\"review\">\n                             2 Reviews\n                    <\/span>\n    <\/div>\n        <div class=\"info\">\n        <div class=\"g-price\">\n            <div class=\"prefix\">\n                <span class=\"fr_text\">from<\/span>\n            <\/div>\n            <div class=\"price\">\n                <span class=\"text-price\">$550 <span class=\"unit\">\/night<\/span><\/span>\n            <\/div>\n        <\/div>\n    <\/div>\n<\/div>\n","marker":"https:\/\/sandbox.bookingcore.org\/images\/icons\/png\/pin.png"},{"id":9,"title":"Parian Holiday Villas","lat":19.161637,"lng":72.99751,"gallery":[{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-13.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-13.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg"}],"infobox":"<div class=\"item-loop infobox-item\">\n            <div class=\"featured\">\n            Featured\n        <\/div>\n        <div class=\"thumb-image \">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/parian-holiday-villas\">\n                                                <img src=\"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-13.jpg\" class=\"img-responsive\" alt=\"\">\n                                    <\/a>\n                    <div class=\"star-rate\">\n                <div class=\"list-star\">\n                    <ul class=\"booking-item-rating-stars\">\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                            <\/ul>\n                <\/div>\n            <\/div>\n                <div class=\"service-wishlist \" data-id=\"9\" data-type=\"hotel\">\n            <i class=\"fa fa-heart\"><\/i>\n        <\/div>\n    <\/div>\n    <div class=\"item-title\">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/parian-holiday-villas\">\n                            Parian Holiday Villas\n        <\/a>\n            <\/div>\n    <div class=\"location\">\n                                Paris\n            <\/div>\n            <div class=\"service-review\">\n        <span class=\"rate\">\n             4.5\/5  <span class=\"rate-text\">Excellent<\/span>\n        <\/span>\n        <span class=\"review\">\n                             2 Reviews\n                    <\/span>\n    <\/div>\n        <div class=\"info\">\n        <div class=\"g-price\">\n            <div class=\"prefix\">\n                <span class=\"fr_text\">from<\/span>\n            <\/div>\n            <div class=\"price\">\n                <span class=\"text-price\">$550 <span class=\"unit\">\/night<\/span><\/span>\n            <\/div>\n        <\/div>\n    <\/div>\n<\/div>\n","marker":"https:\/\/sandbox.bookingcore.org\/images\/icons\/png\/pin.png"},{"id":8,"title":"Stewart Hotel","lat":19.080542,"lng":73.010551,"gallery":[{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-12.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-12.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg"}],"infobox":"<div class=\"item-loop infobox-item\">\n        <div class=\"thumb-image \">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/stewart-hotel\">\n                                                <img src=\"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-12.jpg\" class=\"img-responsive\" alt=\"\">\n                                    <\/a>\n                    <div class=\"star-rate\">\n                <div class=\"list-star\">\n                    <ul class=\"booking-item-rating-stars\">\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                            <\/ul>\n                <\/div>\n            <\/div>\n                <div class=\"service-wishlist \" data-id=\"8\" data-type=\"hotel\">\n            <i class=\"fa fa-heart\"><\/i>\n        <\/div>\n    <\/div>\n    <div class=\"item-title\">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/stewart-hotel\">\n                            Stewart Hotel\n        <\/a>\n            <\/div>\n    <div class=\"location\">\n                                Los Angeles\n            <\/div>\n            <div class=\"service-review\">\n        <span class=\"rate\">\n             4.8\/5  <span class=\"rate-text\">Excellent<\/span>\n        <\/span>\n        <span class=\"review\">\n                             4 Reviews\n                    <\/span>\n    <\/div>\n        <div class=\"info\">\n        <div class=\"g-price\">\n            <div class=\"prefix\">\n                <span class=\"fr_text\">from<\/span>\n            <\/div>\n            <div class=\"price\">\n                <span class=\"text-price\">$900 <span class=\"unit\">\/night<\/span><\/span>\n            <\/div>\n        <\/div>\n    <\/div>\n<\/div>\n","marker":"https:\/\/sandbox.bookingcore.org\/images\/icons\/png\/pin.png"},{"id":6,"title":"EnVision Hotel Boston","lat":18.873011,"lng":72.975724,"gallery":[{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-10.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-10.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg"}],"infobox":"<div class=\"item-loop infobox-item\">\n        <div class=\"thumb-image \">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/envision-hotel-biston\">\n                                                <img src=\"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-10.jpg\" class=\"img-responsive\" alt=\"\">\n                                    <\/a>\n                    <div class=\"star-rate\">\n                <div class=\"list-star\">\n                    <ul class=\"booking-item-rating-stars\">\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                            <\/ul>\n                <\/div>\n            <\/div>\n                <div class=\"service-wishlist \" data-id=\"6\" data-type=\"hotel\">\n            <i class=\"fa fa-heart\"><\/i>\n        <\/div>\n    <\/div>\n    <div class=\"item-title\">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/envision-hotel-biston\">\n                            EnVision Hotel Boston\n        <\/a>\n            <\/div>\n    <div class=\"location\">\n                                California\n            <\/div>\n            <div class=\"service-review\">\n        <span class=\"rate\">\n             4.0\/5  <span class=\"rate-text\">Very Good<\/span>\n        <\/span>\n        <span class=\"review\">\n                             1 Review\n                    <\/span>\n    <\/div>\n        <div class=\"info\">\n        <div class=\"g-price\">\n            <div class=\"prefix\">\n                <span class=\"fr_text\">from<\/span>\n            <\/div>\n            <div class=\"price\">\n                <span class=\"text-price\">$700 <span class=\"unit\">\/night<\/span><\/span>\n            <\/div>\n        <\/div>\n    <\/div>\n<\/div>\n","marker":"https:\/\/sandbox.bookingcore.org\/images\/icons\/png\/pin.png"},{"id":5,"title":"Studio Allston Hotel","lat":18.972786,"lng":72.819724,"gallery":[{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-9.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-9.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg"}],"infobox":"<div class=\"item-loop infobox-item\">\n        <div class=\"thumb-image \">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/studio-allston-hotel\">\n                                                <img src=\"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-9.jpg\" class=\"img-responsive\" alt=\"\">\n                                    <\/a>\n                    <div class=\"star-rate\">\n                <div class=\"list-star\">\n                    <ul class=\"booking-item-rating-stars\">\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                            <\/ul>\n                <\/div>\n            <\/div>\n                <div class=\"service-wishlist \" data-id=\"5\" data-type=\"hotel\">\n            <i class=\"fa fa-heart\"><\/i>\n        <\/div>\n    <\/div>\n    <div class=\"item-title\">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/studio-allston-hotel\">\n                            Studio Allston Hotel\n        <\/a>\n            <\/div>\n    <div class=\"location\">\n                                Los Angeles\n            <\/div>\n            <div class=\"service-review\">\n        <span class=\"rate\">\n             4.5\/5  <span class=\"rate-text\">Excellent<\/span>\n        <\/span>\n        <span class=\"review\">\n                             2 Reviews\n                    <\/span>\n    <\/div>\n        <div class=\"info\">\n        <div class=\"g-price\">\n            <div class=\"prefix\">\n                <span class=\"fr_text\">from<\/span>\n            <\/div>\n            <div class=\"price\">\n                <span class=\"text-price\">$500 <span class=\"unit\">\/night<\/span><\/span>\n            <\/div>\n        <\/div>\n    <\/div>\n<\/div>\n","marker":"https:\/\/sandbox.bookingcore.org\/images\/icons\/png\/pin.png"},{"id":4,"title":"Redac Gateway Hotel","lat":19.031217,"lng":72.851982,"gallery":[{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-8.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-8.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg"}],"infobox":"<div class=\"item-loop infobox-item\">\n        <div class=\"thumb-image \">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/redac-gateway-hotel\">\n                                                <img src=\"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-8.jpg\" class=\"img-responsive\" alt=\"\">\n                                    <\/a>\n                    <div class=\"star-rate\">\n                <div class=\"list-star\">\n                    <ul class=\"booking-item-rating-stars\">\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                            <\/ul>\n                <\/div>\n            <\/div>\n                <div class=\"service-wishlist \" data-id=\"4\" data-type=\"hotel\">\n            <i class=\"fa fa-heart\"><\/i>\n        <\/div>\n    <\/div>\n    <div class=\"item-title\">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/redac-gateway-hotel\">\n                            Redac Gateway Hotel\n        <\/a>\n            <\/div>\n    <div class=\"location\">\n                                Paris\n            <\/div>\n            <div class=\"service-review\">\n        <span class=\"rate\">\n             4.7\/5  <span class=\"rate-text\">Excellent<\/span>\n        <\/span>\n        <span class=\"review\">\n                             3 Reviews\n                    <\/span>\n    <\/div>\n        <div class=\"info\">\n        <div class=\"g-price\">\n            <div class=\"prefix\">\n                <span class=\"fr_text\">from<\/span>\n            <\/div>\n            <div class=\"price\">\n                <span class=\"text-price\">$500 <span class=\"unit\">\/night<\/span><\/span>\n            <\/div>\n        <\/div>\n    <\/div>\n<\/div>\n","marker":"https:\/\/sandbox.bookingcore.org\/images\/icons\/png\/pin.png"},{"id":3,"title":"Castello Casole Hotel","lat":19.077946,"lng":72.838255,"gallery":[{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-7.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-7.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg"}],"infobox":"<div class=\"item-loop infobox-item\">\n        <div class=\"thumb-image \">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/castello-casole-hotel\">\n                                                <img src=\"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-7.jpg\" class=\"img-responsive\" alt=\"\">\n                                    <\/a>\n                    <div class=\"star-rate\">\n                <div class=\"list-star\">\n                    <ul class=\"booking-item-rating-stars\">\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                            <\/ul>\n                <\/div>\n            <\/div>\n                <div class=\"service-wishlist \" data-id=\"3\" data-type=\"hotel\">\n            <i class=\"fa fa-heart\"><\/i>\n        <\/div>\n    <\/div>\n    <div class=\"item-title\">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/castello-casole-hotel\">\n                            Castello Casole Hotel\n        <\/a>\n            <\/div>\n    <div class=\"location\">\n                                Paris\n            <\/div>\n            <div class=\"service-review\">\n        <span class=\"rate\">\n             4.8\/5  <span class=\"rate-text\">Excellent<\/span>\n        <\/span>\n        <span class=\"review\">\n                             5 Reviews\n                    <\/span>\n    <\/div>\n        <div class=\"info\">\n        <div class=\"g-price\">\n            <div class=\"prefix\">\n                <span class=\"fr_text\">from<\/span>\n            <\/div>\n            <div class=\"price\">\n                <span class=\"text-price\">$350 <span class=\"unit\">\/night<\/span><\/span>\n            <\/div>\n        <\/div>\n    <\/div>\n<\/div>\n","marker":"https:\/\/sandbox.bookingcore.org\/images\/icons\/png\/pin.png"},{"id":2,"title":"Hotel WBF Hommachi","lat":19.11039,"lng":72.832764,"gallery":[{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-6.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-6.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-1.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-2.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-3.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-4.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-5.jpg"},{"large":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg","thumb":"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/hotel\/gallery\/hotel-gallery-6.jpg"}],"infobox":"<div class=\"item-loop infobox-item\">\n        <div class=\"thumb-image \">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/hotel-wbf-homachi\">\n                                                <img src=\"https:\/\/sandbox.bookingcore.org\/uploads\/demo\/space\/space-6.jpg\" class=\"img-responsive\" alt=\"\">\n                                    <\/a>\n                    <div class=\"star-rate\">\n                <div class=\"list-star\">\n                    <ul class=\"booking-item-rating-stars\">\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                            <\/ul>\n                <\/div>\n            <\/div>\n                <div class=\"service-wishlist \" data-id=\"2\" data-type=\"hotel\">\n            <i class=\"fa fa-heart\"><\/i>\n        <\/div>\n    <\/div>\n    <div class=\"item-title\">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/hotel-wbf-homachi\">\n                            Hotel WBF Hommachi\n        <\/a>\n            <\/div>\n    <div class=\"location\">\n                                Paris\n            <\/div>\n            <div class=\"service-review\">\n        <span class=\"rate\">\n             4.7\/5  <span class=\"rate-text\">Excellent<\/span>\n        <\/span>\n        <span class=\"review\">\n                             3 Reviews\n                    <\/span>\n    <\/div>\n        <div class=\"info\">\n        <div class=\"g-price\">\n            <div class=\"prefix\">\n                <span class=\"fr_text\">from<\/span>\n            <\/div>\n            <div class=\"price\">\n                <span class=\"text-price\">$350 <span class=\"unit\">\/night<\/span><\/span>\n            <\/div>\n        <\/div>\n    <\/div>\n<\/div>\n","marker":"https:\/\/sandbox.bookingcore.org\/images\/icons\/png\/pin.png"},{"id":14,"title":"Ha Noi Hotel","lat":21.04076757159148,"lng":105.87661743164062,"gallery":[],"infobox":"<div class=\"item-loop infobox-item\">\n        <div class=\"thumb-image \">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/ha-noi-hotel\">\n                    <\/a>\n                    <div class=\"star-rate\">\n                <div class=\"list-star\">\n                    <ul class=\"booking-item-rating-stars\">\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                                    <li><i class=\"fa fa-star\"><\/i><\/li>\n                                            <\/ul>\n                <\/div>\n            <\/div>\n                <div class=\"service-wishlist \" data-id=\"14\" data-type=\"hotel\">\n            <i class=\"fa fa-heart\"><\/i>\n        <\/div>\n    <\/div>\n    <div class=\"item-title\">\n        <a  href=\"https:\/\/sandbox.bookingcore.org\/hotel\/ha-noi-hotel\">\n                            Ha Noi Hotel\n        <\/a>\n            <\/div>\n    <div class=\"location\">\n                                Ha Noi\n            <\/div>\n            <div class=\"service-review\">\n        <span class=\"rate\">\n             <span class=\"rate-text\">Not rated<\/span>\n        <\/span>\n        <span class=\"review\">\n                             0 Review\n                    <\/span>\n    <\/div>\n        <div class=\"info\">\n        <div class=\"g-price\">\n            <div class=\"prefix\">\n                <span class=\"fr_text\">from<\/span>\n            <\/div>\n            <div class=\"price\">\n                <span class=\"text-price\">$0 <span class=\"unit\">\/night<\/span><\/span>\n            <\/div>\n        <\/div>\n    <\/div>\n<\/div>\n","marker":"https:\/\/sandbox.bookingcore.org\/images\/icons\/png\/pin.png"}],
@@ -1282,8 +1282,8 @@ Already have an account?
             map_zoom_default:0,
         };
     </script>
-<script type="text/javascript" src="https://sandbox.bookingcore.org/libs/ion_rangeslider/js/ion.rangeSlider.min.js"></script>
-<script type="text/javascript" src="https://sandbox.bookingcore.org/module/hotel/js/hotel-map.js?_ver=3.2.1"></script>
+<script type="text/javascript" src="/libs/ion_rangeslider/js/ion.rangeSlider.min.js"></script>
+<script type="text/javascript" src="/module/hotel/js/hotel-map.js?_ver=3.2.1"></script>
 </div>
 <<<<<<< HEAD
 
@@ -1348,7 +1348,7 @@ Already have an account?
         color: #fff;
     }
     .bravo-buy-button .tf-text{
-        background-image: url('https://sandbox.bookingcore.org/landing/img/logoen.png');
+        background-image: url('/landing/img/logoen.png');
         width: 66px;
         height: 12px;
         display: inline-block;

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="csrf-token" content="zzaPBleChcMC42TW7qB8Le0kUD3LDSgdGWYq6eTm">
-<link rel="icon" type="image/png" href="https://sandbox.bookingcore.org/uploads/demo/general/favicon.png" />
+<link rel="icon" type="image/png" href="/uploads/demo/general/favicon.png" />
 <title>Home Page</title>
 <meta name="description" content />
 <meta property="og:url" content="https://sandbox.bookingcore.org" />
@@ -18,14 +18,14 @@
 <meta name="twitter:description" content>
 <meta name="twitter:image" content>
 <link rel="canonical" href="https://sandbox.bookingcore.org" />
-<link href="https://sandbox.bookingcore.org/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/ionicons/css/ionicons.min.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/icofont/icofont.min.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/select2/css/select2.min.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/dist/frontend/css/notification.css" rel="newest stylesheet">
-<link href="https://sandbox.bookingcore.org/dist/frontend/css/app.css?_ver=3.2.1" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://sandbox.bookingcore.org/libs/daterange/daterangepicker.css">
+<link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="/libs/ionicons/css/ionicons.min.css" rel="stylesheet">
+<link href="/libs/icofont/icofont.min.css" rel="stylesheet">
+<link href="/libs/select2/css/select2.min.css" rel="stylesheet">
+<link href="/dist/frontend/css/notification.css" rel="newest stylesheet">
+<link href="/dist/frontend/css/app.css?_ver=3.2.1" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/libs/daterange/daterangepicker.css">
 
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&display=swap" type="text/css" media="all" />
@@ -33,7 +33,7 @@
     var bookingCore = {
         url:'https://sandbox.bookingcore.org',
         url_root:'https://sandbox.bookingcore.org',
-        admin_url:'https://sandbox.bookingcore.org/admin',
+        admin_url:'/admin',
         booking_decimals:0,
         thousand_separator:'.',
         decimal_separator:',',
@@ -50,28 +50,28 @@
             map_fit_bounds:'on',
         },
         routes:{
-            login:'https://sandbox.bookingcore.org/login',
-            register:'https://sandbox.bookingcore.org/register',
-            checkout:'https://sandbox.bookingcore.org/booking/doCheckout'
+            login:'/login',
+            register:'/register',
+            checkout:'/booking/doCheckout'
         },
         currentUser: 0,
         isAdmin : 0,
         rtl: false,
-        markAsRead:'https://sandbox.bookingcore.org/notify/markAsRead',
-        markAllAsRead:'https://sandbox.bookingcore.org/notify/markAllAsRead',
-        loadNotify : 'https://sandbox.bookingcore.org/notify/notifications',
+        markAsRead:'/notify/markAsRead',
+        markAllAsRead:'/notify/markAllAsRead',
+        loadNotify : '/notify/notifications',
         pusher_api_key : '',
         pusher_cluster : '',
         language: 'en',
         module:{}
     };
-                            bookingCore.module.hotel = 'https://sandbox.bookingcore.org/hotel';
-                                bookingCore.module.space = 'https://sandbox.bookingcore.org/space';
-                                bookingCore.module.car = 'https://sandbox.bookingcore.org/car';
-                                bookingCore.module.event = 'https://sandbox.bookingcore.org/event';
-                                bookingCore.module.tour = 'https://sandbox.bookingcore.org/tour';
-                                bookingCore.module.flight = 'https://sandbox.bookingcore.org/flight';
-                                bookingCore.module.boat = 'https://sandbox.bookingcore.org/boat';
+                            bookingCore.module.hotel = '/hotel';
+                                bookingCore.module.space = '/space';
+                                bookingCore.module.car = '/car';
+                                bookingCore.module.event = '/event';
+                                bookingCore.module.tour = '/tour';
+                                bookingCore.module.flight = '/flight';
+                                bookingCore.module.boat = '/boat';
                 var i18n = {
         warning:"Warning",
         success:"Success",
@@ -113,8 +113,8 @@
     };
 </script>
 
-<link href="https://sandbox.bookingcore.org/custom-css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/carousel-2/owl.carousel.css" rel="stylesheet">
+<link href="/custom-css" rel="stylesheet">
+<link href="/libs/carousel-2/owl.carousel.css" rel="stylesheet">
 </head>
 <body class="frontend-page header-normal   ">
 <div class="bravo_wrap">
@@ -188,7 +188,7 @@ Français
 <div class="content">
 <div class="header-left">
 <a href="https://sandbox.bookingcore.org" class="bravo-logo">
-<img src="https://sandbox.bookingcore.org/uploads/demo/general/logo.svg" alt="Booking Core">
+<img src="/uploads/demo/general/logo.svg" alt="Booking Core">
 </a>
 <div class="bravo-menu">
 <ul class="main-menu menu-generated"><li class=" depth-0"><a target href="/">Home <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/">Home Page</a></li><li class=" depth-1"><a target href="/page/home-page-v2">Home Page v2</a></li><li class=" depth-1"><a target href="/page/hotel">Home Hotel</a></li><li class=" depth-1"><a target href="/page/home-tour-agency">Home Tour Agency</a></li><li class=" depth-1"><a target href="/page/tour">Home Tour</a></li><li class=" depth-1"><a target href="/page/space">Home Space</a></li><li class=" depth-1"><a target href="/page/car">Home Car</a></li></ul></li><li class=" depth-0"><a target href="/hotel">Hotel <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/hotel">Hotel List</a></li><li class=" depth-1"><a target href="/hotel?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="/hotel/parian-holiday-villas">Hotel Detail</a></li></ul></li><li class=" depth-0"><a target href="/tour">Tours <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/tour">Tour List</a></li><li class=" depth-1"><a target href="/tour?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="/tour/paris-vacation-travel">Tour Detail</a></li></ul></li><li class=" depth-0"><a target href="/space">Space <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/space">Space List</a></li><li class=" depth-1"><a target href="/space?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="/space/stay-greenwich-village">Space Detail</a></li></ul></li><li class=" depth-0"><a target href="/car">Car <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/car">Car List</a></li><li class=" depth-1"><a target href="/car?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="/car/vinfast-lux-a20-plus">Car Detail</a></li></ul></li><li class=" depth-0"><a target href="/event">Event <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/event">Event List</a></li><li class=" depth-1"><a target href="/event?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="/event/aspen-glade-weddings-events">Event Detail</a></li></ul></li><li class=" depth-0"><a target href="/flight">Flight</a></li><li class=" depth-0"><a target href="/boat">Boat <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/boat">Boat List</a></li><li class=" depth-1"><a target href="/boat?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="/boat/blue-moon-yc-300">Boat Detail</a></li></ul></li><li class=" depth-0"><a target href="#">Pages <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/plan">Plan</a></li><li class=" depth-1"><a target href="/news">News List</a></li><li class=" depth-1"><a target href="/news/morning-in-the-northern-sea">News Detail</a></li><li class=" depth-1"><a target href="/location/paris">Location Detail</a></li><li class=" depth-1"><a target href="/page/become-a-vendor">Become a vendor</a></li><li class=" depth-1"><a target href="/contact">Contact</a></li></ul></li></ul> </div>
@@ -266,10 +266,10 @@ Français
 <div class="effect">
 <div class="owl-carousel">
 <div class="item">
-<div class="item-bg" style="background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('https://sandbox.bookingcore.org/uploads/demo/tour/banner-detail/banner-tour-4.jpg') !important"></div>
+<div class="item-bg" style="background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('/uploads/demo/tour/banner-detail/banner-tour-4.jpg') !important"></div>
 </div>
 <div class="item">
-<div class="item-bg" style="background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('https://sandbox.bookingcore.org/uploads/demo/general/home-mix.jpg') !important"></div>
+<div class="item-bg" style="background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('/uploads/demo/general/home-mix.jpg') !important"></div>
 </div>
 </div>
 </div>
@@ -325,7 +325,7 @@ Boat
 </ul>
 <div class="tab-content">
 <div role="tabpanel" class="tab-pane  active " id="bravo_hotel">
-<form action="https://sandbox.bookingcore.org/hotel" class="form bravo_form" method="get">
+<form action="/hotel" class="form bravo_form" method="get">
 <div class="g-field-search">
 <div class="row">
 <div class="col-md-4 border-right">
@@ -412,7 +412,7 @@ Boat
 </div>
 </form> </div>
 <div role="tabpanel" class="tab-pane " id="bravo_space">
-<form action="https://sandbox.bookingcore.org/space" class="form bravo_form" method="get">
+<form action="/space" class="form bravo_form" method="get">
 <div class="g-field-search">
 <div class="row">
 <div class="col-md-4 border-right">
@@ -491,7 +491,7 @@ Boat
 </div>
 </form> </div>
 <div role="tabpanel" class="tab-pane " id="bravo_tour">
-<form action="https://sandbox.bookingcore.org/tour" class="form bravo_form" method="get">
+<form action="/tour" class="form bravo_form" method="get">
 <div class="g-field-search">
 <div class="row">
 <div class="col-md-6 border-right">
@@ -532,7 +532,7 @@ Boat
 </div>
 </form> </div>
 <div role="tabpanel" class="tab-pane " id="bravo_car">
-<form action="https://sandbox.bookingcore.org/car" class="form bravo_form" method="get">
+<form action="/car" class="form bravo_form" method="get">
 <div class="g-field-search">
 <div class="row">
 <div class="col-md-6 border-right">
@@ -574,7 +574,7 @@ Boat
 </form>
 </div>
 <div role="tabpanel" class="tab-pane " id="bravo_event">
-<form action="https://sandbox.bookingcore.org/event" class="form bravo_form" method="get">
+<form action="/event" class="form bravo_form" method="get">
 <div class="g-field-search">
 <div class="row">
 <div class="col-md-6 border-right">
@@ -616,7 +616,7 @@ Boat
 </form>
 </div>
 <div role="tabpanel" class="tab-pane " id="bravo_flight">
-<form action="https://sandbox.bookingcore.org/flight" class="form bravo_form" method="get">
+<form action="/flight" class="form bravo_form" method="get">
 <div class="g-field-search">
 <div class="row ">
 <div class="col-md-3 border-right">
@@ -746,7 +746,7 @@ Boat
 </form>
 </div>
 <div role="tabpanel" class="tab-pane " id="bravo_boat">
-<form action="https://sandbox.bookingcore.org/boat" class="form bravo_form" method="get">
+<form action="/boat" class="form bravo_form" method="get">
 <div class="g-field-search">
 <div class="row">
 <div class="col-md-6 border-right">
@@ -800,7 +800,7 @@ Boat
 prices on 20,000+ properties<br>
 the best prices on</p>
 <a href="#" class="btn btn-default">See Deals</a>
-<div class="img-cover" style="background: url('https://sandbox.bookingcore.org/uploads/demo/general/image_home_mix_1.jpg')"></div>
+<div class="img-cover" style="background: url('/uploads/demo/general/image_home_mix_1.jpg')"></div>
 </div>
 </div>
 <div class="col-lg-3">
@@ -811,7 +811,7 @@ the best prices on</p>
 tailored newsletters full of <br>
 hot travel deals.</p>
 <a href="/register" class="btn btn-default">Sign Up</a>
-<div class="img-cover" style="background: url('https://sandbox.bookingcore.org/uploads/demo/general/image_home_mix_2.jpg')"></div>
+<div class="img-cover" style="background: url('/uploads/demo/general/image_home_mix_2.jpg')"></div>
 </div>
 </div>
 <div class="col-lg-3">
@@ -822,7 +822,7 @@ hot travel deals.</p>
 make your next trip even<br>
 better.</p>
 <a href="/register" class="btn btn-default">Sign Up</a>
-<div class="img-cover" style="background: url('https://sandbox.bookingcore.org/uploads/demo/general/image_home_mix_3.jpg')"></div>
+<div class="img-cover" style="background: url('/uploads/demo/general/image_home_mix_3.jpg')"></div>
 </div>
 </div>
 </div>
@@ -841,8 +841,8 @@ Hotel highly rated for thoughtful design
 <div class="col-lg-3 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/hotel-stanford">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-5.jpg" alt="Hotel Stanford">
+<a href="/hotel/hotel-stanford">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-5.jpg" alt="Hotel Stanford">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -860,7 +860,7 @@ Hotel highly rated for thoughtful design
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/hotel-stanford">
+<a href="/hotel/hotel-stanford">
 Hotel Stanford
 </a>
 </div>
@@ -890,8 +890,8 @@ Paris
 <div class="col-lg-3 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/hotel-wbf-homachi">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-6.jpg" alt="Hotel WBF Hommachi">
+<a href="/hotel/hotel-wbf-homachi">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-6.jpg" alt="Hotel WBF Hommachi">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -909,7 +909,7 @@ Paris
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/hotel-wbf-homachi">
+<a href="/hotel/hotel-wbf-homachi">
 Hotel WBF Hommachi
 </a>
 </div>
@@ -939,8 +939,8 @@ Paris
 <div class="col-lg-3 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/castello-casole-hotel">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-7.jpg" alt="Castello Casole Hotel">
+<a href="/hotel/castello-casole-hotel">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-7.jpg" alt="Castello Casole Hotel">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -958,7 +958,7 @@ Paris
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/castello-casole-hotel">
+<a href="/hotel/castello-casole-hotel">
 Castello Casole Hotel
 </a>
 </div>
@@ -988,8 +988,8 @@ Paris
 <div class="col-lg-3 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/hotel/redac-gateway-hotel">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-8.jpg" alt="Redac Gateway Hotel">
+<a href="/hotel/redac-gateway-hotel">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-8.jpg" alt="Redac Gateway Hotel">
 </a>
 <div class="star-rate">
 <div class="list-star">
@@ -1007,7 +1007,7 @@ Paris
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/hotel/redac-gateway-hotel">
+<a href="/hotel/redac-gateway-hotel">
 Redac Gateway Hotel
 </a>
 </div>
@@ -1049,18 +1049,18 @@ It is a long established fact that a reader
 <div class="row">
 <div class="col-lg-4 col-md-6">
 <div class="destination-item ">
-<div class="image" style="background: url(https://sandbox.bookingcore.org/uploads/demo/location/location-3.jpg)">
+<div class="image" style="background: url(/uploads/demo/location/location-3.jpg)">
 <div class="effect"></div>
 <div class="content">
 <h4 class="title">Paris</h4>
 <div class="desc">
-<a href="https://sandbox.bookingcore.org/space?location_id=1" target="_blank">
+<a href="/space?location_id=1" target="_blank">
 7 Spaces
 </a>
-<a href="https://sandbox.bookingcore.org/hotel?location_id=1" target="_blank">
+<a href="/hotel?location_id=1" target="_blank">
 7 Hotels
 </a>
-<a href="https://sandbox.bookingcore.org/tour?location_id=1" target="_blank">
+<a href="/tour?location_id=1" target="_blank">
 3 Tours
 </a>
 </div>
@@ -1070,18 +1070,18 @@ It is a long established fact that a reader
 </div>
 <div class="col-lg-4 col-md-6">
 <div class="destination-item ">
-<div class="image" style="background: url(https://sandbox.bookingcore.org/uploads/demo/location/location-2.jpg)">
+<div class="image" style="background: url(/uploads/demo/location/location-2.jpg)">
 <div class="effect"></div>
 <div class="content">
 <h4 class="title">New York, United States</h4>
 <div class="desc">
-<a href="https://sandbox.bookingcore.org/space?location_id=2" target="_blank">
+<a href="/space?location_id=2" target="_blank">
 1 Space
 </a>
-<a href="https://sandbox.bookingcore.org/hotel?location_id=2" target="_blank">
+<a href="/hotel?location_id=2" target="_blank">
 2 Hotels
 </a>
-<a href="https://sandbox.bookingcore.org/tour?location_id=2" target="_blank">
+<a href="/tour?location_id=2" target="_blank">
 3 Tours
 </a>
 </div>
@@ -1091,18 +1091,18 @@ It is a long established fact that a reader
 </div>
 <div class="col-lg-4 col-md-6">
 <div class="destination-item ">
-<div class="image" style="background: url(https://sandbox.bookingcore.org/uploads/demo/location/location-3.jpg)">
+<div class="image" style="background: url(/uploads/demo/location/location-3.jpg)">
 <div class="effect"></div>
 <div class="content">
 <h4 class="title">California</h4>
 <div class="desc">
-<a href="https://sandbox.bookingcore.org/space?location_id=3" target="_blank">
+<a href="/space?location_id=3" target="_blank">
 3 Spaces
 </a>
-<a href="https://sandbox.bookingcore.org/hotel?location_id=3" target="_blank">
+<a href="/hotel?location_id=3" target="_blank">
 3 Hotels
 </a>
-<a href="https://sandbox.bookingcore.org/tour?location_id=3" target="_blank">
+<a href="/tour?location_id=3" target="_blank">
 4 Tours
 </a>
 </div>
@@ -1112,15 +1112,15 @@ It is a long established fact that a reader
 </div>
 <div class="col-lg-4 col-md-6">
 <div class="destination-item ">
-<div class="image" style="background: url(https://sandbox.bookingcore.org/uploads/demo/location/location-4.jpg)">
+<div class="image" style="background: url(/uploads/demo/location/location-4.jpg)">
 <div class="effect"></div>
 <div class="content">
 <h4 class="title">United States</h4>
 <div class="desc">
-<a href="https://sandbox.bookingcore.org/space?location_id=4" target="_blank">
+<a href="/space?location_id=4" target="_blank">
 1 Space
 </a>
-<a href="https://sandbox.bookingcore.org/tour?location_id=4" target="_blank">
+<a href="/tour?location_id=4" target="_blank">
 1 Tour
 </a>
 </div>
@@ -1130,15 +1130,15 @@ It is a long established fact that a reader
 </div>
 <div class="col-lg-4 col-md-6">
 <div class="destination-item ">
-<div class="image" style="background: url(https://sandbox.bookingcore.org/uploads/demo/location/location-5.jpg)">
+<div class="image" style="background: url(/uploads/demo/location/location-5.jpg)">
 <div class="effect"></div>
 <div class="content">
 <h4 class="title">Los Angeles</h4>
 <div class="desc">
-<a href="https://sandbox.bookingcore.org/hotel?location_id=5" target="_blank">
+<a href="/hotel?location_id=5" target="_blank">
 2 Hotels
 </a>
-<a href="https://sandbox.bookingcore.org/tour?location_id=5" target="_blank">
+<a href="/tour?location_id=5" target="_blank">
 1 Tour
 </a>
 </div>
@@ -1148,12 +1148,12 @@ It is a long established fact that a reader
 </div>
 <div class="col-lg-4 col-md-6">
 <div class="destination-item ">
-<div class="image" style="background: url(https://sandbox.bookingcore.org/uploads/demo/location/location-1.jpg)">
+<div class="image" style="background: url(/uploads/demo/location/location-1.jpg)">
 <div class="effect"></div>
 <div class="content">
 <h4 class="title">New Jersey</h4>
 <div class="desc">
-<a href="https://sandbox.bookingcore.org/tour?location_id=6" target="_blank">
+<a href="/tour?location_id=6" target="_blank">
 1 Tour
 </a>
 </div>
@@ -1178,15 +1178,15 @@ Most popular destinations
 <div class="item">
 <div class="header-thumb">
 <div class="sale_info">66%</div>
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/tour/tour-1.jpg" alt="American Parks Trail end Rapid City">
-<a class="st-btn st-btn-primary tour-book-now" href="https://sandbox.bookingcore.org/tour/american-parks-trail">Book now</a>
+<img class="img-responsive lazy" data-src="/uploads/demo/tour/tour-1.jpg" alt="American Parks Trail end Rapid City">
+<a class="st-btn st-btn-primary tour-book-now" href="/tour/american-parks-trail">Book now</a>
 <div class="service-wishlist " data-id="1" data-type="tour">
 <i class="fa fa-heart"></i>
 </div>
 </div>
 <div class="caption clear">
 <div class="title-address">
-<h3 class="title"><a href="https://sandbox.bookingcore.org/tour/american-parks-trail"> American Parks Trail end Rapid City </a></h3>
+<h3 class="title"><a href="/tour/american-parks-trail"> American Parks Trail end Rapid City </a></h3>
 <p class="duration">
 <span>
 6H
@@ -1213,15 +1213,15 @@ Featured
 </div>
 <div class="header-thumb">
 <div class="sale_info">59%</div>
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/tour/tour-3.jpg" alt="Los Angeles to San Francisco Express ">
-<a class="st-btn st-btn-primary tour-book-now" href="https://sandbox.bookingcore.org/tour/los-angeles-to-san-francisco-express">Book now</a>
+<img class="img-responsive lazy" data-src="/uploads/demo/tour/tour-3.jpg" alt="Los Angeles to San Francisco Express ">
+<a class="st-btn st-btn-primary tour-book-now" href="/tour/los-angeles-to-san-francisco-express">Book now</a>
 <div class="service-wishlist " data-id="3" data-type="tour">
 <i class="fa fa-heart"></i>
 </div>
 </div>
 <div class="caption clear">
 <div class="title-address">
-<h3 class="title"><a href="https://sandbox.bookingcore.org/tour/los-angeles-to-san-francisco-express"> Los Angeles to San Francisco Express </a></h3>
+<h3 class="title"><a href="/tour/los-angeles-to-san-francisco-express"> Los Angeles to San Francisco Express </a></h3>
 <p class="duration">
 <span>
 5H
@@ -1245,15 +1245,15 @@ Paris
 <div class="item">
 <div class="header-thumb">
 <div class="sale_info">80%</div>
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/tour/tour-5.jpg" alt="Southwest States (Ex Los Angeles) ">
-<a class="st-btn st-btn-primary tour-book-now" href="https://sandbox.bookingcore.org/tour/southwest-states">Book now</a>
+<img class="img-responsive lazy" data-src="/uploads/demo/tour/tour-5.jpg" alt="Southwest States (Ex Los Angeles) ">
+<a class="st-btn st-btn-primary tour-book-now" href="/tour/southwest-states">Book now</a>
 <div class="service-wishlist " data-id="5" data-type="tour">
 <i class="fa fa-heart"></i>
 </div>
 </div>
 <div class="caption clear">
 <div class="title-address">
-<h3 class="title"><a href="https://sandbox.bookingcore.org/tour/southwest-states"> Southwest States (Ex Los Angeles) </a></h3>
+<h3 class="title"><a href="/tour/southwest-states"> Southwest States (Ex Los Angeles) </a></h3>
 <p class="duration">
 <span>
 6H
@@ -1280,15 +1280,15 @@ Featured
 </div>
 <div class="header-thumb">
 <div class="sale_info">20%</div>
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/tour/tour-6.jpg" alt="Eastern Discovery (Start New Orleans)">
-<a class="st-btn st-btn-primary tour-book-now" href="https://sandbox.bookingcore.org/tour/eastern-discovery-start-new-orleans">Book now</a>
+<img class="img-responsive lazy" data-src="/uploads/demo/tour/tour-6.jpg" alt="Eastern Discovery (Start New Orleans)">
+<a class="st-btn st-btn-primary tour-book-now" href="/tour/eastern-discovery-start-new-orleans">Book now</a>
 <div class="service-wishlist " data-id="6" data-type="tour">
 <i class="fa fa-heart"></i>
 </div>
 </div>
 <div class="caption clear">
 <div class="title-address">
-<h3 class="title"><a href="https://sandbox.bookingcore.org/tour/eastern-discovery-start-new-orleans"> Eastern Discovery (Start New Orleans) </a></h3>
+<h3 class="title"><a href="/tour/eastern-discovery-start-new-orleans"> Eastern Discovery (Start New Orleans) </a></h3>
 <p class="duration">
 <span>
 4H
@@ -1312,15 +1312,15 @@ New York, United States
 <div class="item">
 <div class="header-thumb">
 <div class="sale_info">69%</div>
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/tour/tour-7.jpg" alt="Eastern Discovery">
-<a class="st-btn st-btn-primary tour-book-now" href="https://sandbox.bookingcore.org/tour/eastern-discovery">Book now</a>
+<img class="img-responsive lazy" data-src="/uploads/demo/tour/tour-7.jpg" alt="Eastern Discovery">
+<a class="st-btn st-btn-primary tour-book-now" href="/tour/eastern-discovery">Book now</a>
 <div class="service-wishlist " data-id="7" data-type="tour">
 <i class="fa fa-heart"></i>
 </div>
 </div>
 <div class="caption clear">
 <div class="title-address">
-<h3 class="title"><a href="https://sandbox.bookingcore.org/tour/eastern-discovery"> Eastern Discovery </a></h3>
+<h3 class="title"><a href="/tour/eastern-discovery"> Eastern Discovery </a></h3>
 <p class="duration">
 <span>
 5H
@@ -1344,15 +1344,15 @@ New York, United States
 <div class="item">
 <div class="header-thumb">
 <div class="sale_info">16%</div>
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/tour/tour-8.jpg" alt="Pure Luxe in Punta Mita">
-<a class="st-btn st-btn-primary tour-book-now" href="https://sandbox.bookingcore.org/tour/pure-luxe-in-punta-mita">Book now</a>
+<img class="img-responsive lazy" data-src="/uploads/demo/tour/tour-8.jpg" alt="Pure Luxe in Punta Mita">
+<a class="st-btn st-btn-primary tour-book-now" href="/tour/pure-luxe-in-punta-mita">Book now</a>
 <div class="service-wishlist " data-id="8" data-type="tour">
 <i class="fa fa-heart"></i>
 </div>
 </div>
 <div class="caption clear">
 <div class="title-address">
-<h3 class="title"><a href="https://sandbox.bookingcore.org/tour/pure-luxe-in-punta-mita"> Pure Luxe in Punta Mita </a></h3>
+<h3 class="title"><a href="/tour/pure-luxe-in-punta-mita"> Pure Luxe in Punta Mita </a></h3>
 <p class="duration">
 <span>
 6H
@@ -1390,8 +1390,8 @@ Homes highly rated for thoughtful design
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/space/stay-greenwich-village">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-11.jpg" alt="STAY GREENWICH VILLAGE">
+<a href="/space/stay-greenwich-village">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-11.jpg" alt="STAY GREENWICH VILLAGE">
 </a>
 <div class="price-wrapper">
 <div class="price">
@@ -1407,7 +1407,7 @@ $150
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/space/stay-greenwich-village">
+<a href="/space/stay-greenwich-village">
 STAY GREENWICH VILLAGE
 </a>
 <div class="sale_info">50%</div>
@@ -1445,8 +1445,8 @@ Paris
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/space/luxury-single">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-9.jpg" alt="LUXURY SINGLE">
+<a href="/space/luxury-single">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-9.jpg" alt="LUXURY SINGLE">
 </a>
 <div class="price-wrapper">
 <div class="price">
@@ -1462,7 +1462,7 @@ $350
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/space/luxury-single">
+<a href="/space/luxury-single">
 LUXURY SINGLE
 </a>
 <div class="sale_info">12%</div>
@@ -1500,8 +1500,8 @@ Paris
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/space/the-meatpacking-suites">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-6.jpg" alt="THE MEATPACKING SUITES">
+<a href="/space/the-meatpacking-suites">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-6.jpg" alt="THE MEATPACKING SUITES">
 </a>
 <div class="price-wrapper">
 <div class="price">
@@ -1517,7 +1517,7 @@ $320
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/space/the-meatpacking-suites">
+<a href="/space/the-meatpacking-suites">
 THE MEATPACKING SUITES
 </a>
 </div>
@@ -1554,8 +1554,8 @@ Paris
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/space/best-of-west-village">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-4.jpg" alt="BEST OF WEST VILLAGE">
+<a href="/space/best-of-west-village">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-4.jpg" alt="BEST OF WEST VILLAGE">
 </a>
 <div class="price-wrapper">
 <div class="price">
@@ -1571,7 +1571,7 @@ $800
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/space/best-of-west-village">
+<a href="/space/best-of-west-village">
 <i class="fa fa-bolt d-none"></i>
 BEST OF WEST VILLAGE
 </a>
@@ -1619,14 +1619,14 @@ Book incredible things to do around the world.
 <div class="col-lg-3 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/car/hunda">
+<a href="/car/hunda">
 </a>
 <div class="service-wishlist " data-id="14" data-type="car">
 <i class="fa fa-heart-o"></i>
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/car/hunda">
+<a href="/car/hunda">
 HUNDA- WEDDING CAR
 </a>
 <div class="sale_info">13%</div>
@@ -1676,15 +1676,15 @@ MANUAL
 <div class="col-lg-3 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/car/vinfast-fadil-standard">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/car/car-12.jpg" alt="Vinfast Fadil Standard">
+<a href="/car/vinfast-fadil-standard">
+<img class="img-responsive lazy" data-src="/uploads/demo/car/car-12.jpg" alt="Vinfast Fadil Standard">
 </a>
 <div class="service-wishlist " data-id="13" data-type="car">
 <i class="fa fa-heart-o"></i>
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/car/vinfast-fadil-standard">
+<a href="/car/vinfast-fadil-standard">
 <i class="fa fa-bolt d-none"></i>
 Vinfast Fadil Standard
 </a>
@@ -1737,15 +1737,15 @@ Manually
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/car/vinfast-lux-a20-plus">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/car/car-11.jpg" alt="Vinfast Lux A2.0 Plus">
+<a href="/car/vinfast-lux-a20-plus">
+<img class="img-responsive lazy" data-src="/uploads/demo/car/car-11.jpg" alt="Vinfast Lux A2.0 Plus">
 </a>
 <div class="service-wishlist " data-id="12" data-type="car">
 <i class="fa fa-heart-o"></i>
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/car/vinfast-lux-a20-plus">
+<a href="/car/vinfast-lux-a20-plus">
 <i class="fa fa-bolt d-none"></i>
 Vinfast Lux A2.0 Plus
 </a>
@@ -1798,15 +1798,15 @@ Auto
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/car/vinfast-lux-v8-suv">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/car/car-10.jpg" alt="Vinfast Lux V8 (SUV)">
+<a href="/car/vinfast-lux-v8-suv">
+<img class="img-responsive lazy" data-src="/uploads/demo/car/car-10.jpg" alt="Vinfast Lux V8 (SUV)">
 </a>
 <div class="service-wishlist " data-id="11" data-type="car">
 <i class="fa fa-heart-o"></i>
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/car/vinfast-lux-v8-suv">
+<a href="/car/vinfast-lux-v8-suv">
 Vinfast Lux V8 (SUV)
 </a>
 </div>
@@ -1858,15 +1858,15 @@ Auto
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/car/toyota-prius-plus">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/car/car-9.jpg" alt="Toyota Prius Plus">
+<a href="/car/toyota-prius-plus">
+<img class="img-responsive lazy" data-src="/uploads/demo/car/car-9.jpg" alt="Toyota Prius Plus">
 </a>
 <div class="service-wishlist " data-id="10" data-type="car">
 <i class="fa fa-heart-o"></i>
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/car/toyota-prius-plus">
+<a href="/car/toyota-prius-plus">
 <i class="fa fa-bolt d-none"></i>
 Toyota Prius Plus
 </a>
@@ -1916,15 +1916,15 @@ Auto
 <div class="col-lg-3 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/car/honda-civic">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/car/car-8.jpg" alt="Honda Civic">
+<a href="/car/honda-civic">
+<img class="img-responsive lazy" data-src="/uploads/demo/car/car-8.jpg" alt="Honda Civic">
 </a>
 <div class="service-wishlist " data-id="9" data-type="car">
 <i class="fa fa-heart-o"></i>
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/car/honda-civic">
+<a href="/car/honda-civic">
 <i class="fa fa-bolt d-none"></i>
 Honda Civic
 </a>
@@ -1974,15 +1974,15 @@ Auto
 <div class="col-lg-3 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/car/vinfast-lux-sa20-plus">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/car/car-7.jpg" alt="Vinfast Lux SA2.0 Plus">
+<a href="/car/vinfast-lux-sa20-plus">
+<img class="img-responsive lazy" data-src="/uploads/demo/car/car-7.jpg" alt="Vinfast Lux SA2.0 Plus">
 </a>
 <div class="service-wishlist " data-id="8" data-type="car">
 <i class="fa fa-heart-o"></i>
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/car/vinfast-lux-sa20-plus">
+<a href="/car/vinfast-lux-sa20-plus">
 Vinfast Lux SA2.0 Plus
 </a>
 </div>
@@ -2034,15 +2034,15 @@ Auto
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/car/mercedes-benz">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/car/car-6.jpg" alt="Mercedes Benz">
+<a href="/car/mercedes-benz">
+<img class="img-responsive lazy" data-src="/uploads/demo/car/car-6.jpg" alt="Mercedes Benz">
 </a>
 <div class="service-wishlist " data-id="7" data-type="car">
 <i class="fa fa-heart-o"></i>
 </div>
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/car/mercedes-benz">
+<a href="/car/mercedes-benz">
 Mercedes Benz
 </a>
 </div>
@@ -2108,8 +2108,8 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/event/event-of-washington-dc-highlights">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/event/event-12.jpg" alt="Event of Washington, D.C. Highlights">
+<a href="/event/event-of-washington-dc-highlights">
+<img class="img-responsive lazy" data-src="/uploads/demo/event/event-12.jpg" alt="Event of Washington, D.C. Highlights">
 </a>
 <div class="service-wishlist " data-id="12" data-type="event">
 <i class="fa fa-heart-o"></i>
@@ -2120,7 +2120,7 @@ Featured
 San Francisco
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/event/event-of-washington-dc-highlights">
+<a href="/event/event-of-washington-dc-highlights">
 Event of Washington, D.C. Highlights
 </a>
 </div>
@@ -2157,8 +2157,8 @@ Start Time: 17:00
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/event/new-york-discover-america">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/event/event-11.jpg" alt="New York – Discover America">
+<a href="/event/new-york-discover-america">
+<img class="img-responsive lazy" data-src="/uploads/demo/event/event-11.jpg" alt="New York – Discover America">
 </a>
 <div class="service-wishlist " data-id="11" data-type="event">
 <i class="fa fa-heart-o"></i>
@@ -2168,7 +2168,7 @@ Featured
 New Jersey
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/event/new-york-discover-america">
+<a href="/event/new-york-discover-america">
 New York – Discover America
 </a>
 </div>
@@ -2205,8 +2205,8 @@ Start Time: 14:00
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/event/northern-lights-event-planners">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/event/event-9.jpg" alt="Northern Lights Event Planners">
+<a href="/event/northern-lights-event-planners">
+<img class="img-responsive lazy" data-src="/uploads/demo/event/event-9.jpg" alt="Northern Lights Event Planners">
 </a>
 <div class="service-wishlist " data-id="9" data-type="event">
 <i class="fa fa-heart-o"></i>
@@ -2217,7 +2217,7 @@ Featured
 United States
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/event/northern-lights-event-planners">
+<a href="/event/northern-lights-event-planners">
 Northern Lights Event Planners
 </a>
 </div>
@@ -2254,8 +2254,8 @@ Start Time: 20:00
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/event/spanish-moss-event-design">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/event/event-6.jpg" alt="Spanish Moss Event Design">
+<a href="/event/spanish-moss-event-design">
+<img class="img-responsive lazy" data-src="/uploads/demo/event/event-6.jpg" alt="Spanish Moss Event Design">
 </a>
 <div class="service-wishlist " data-id="6" data-type="event">
 <i class="fa fa-heart-o"></i>
@@ -2265,7 +2265,7 @@ Featured
 New York, United States
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/event/spanish-moss-event-design">
+<a href="/event/spanish-moss-event-design">
 Spanish Moss Event Design
 </a>
 </div>
@@ -2313,8 +2313,8 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry
 <div class="col-lg-3 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/boat/cruising-yacht">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/boat/boat-1.jpg" alt="Cruising Yacht">
+<a href="/boat/cruising-yacht">
+<img class="img-responsive lazy" data-src="/uploads/demo/boat/boat-1.jpg" alt="Cruising Yacht">
 </a>
 <div class="service-wishlist " data-id="1" data-type="boat">
 <i class="fa fa-heart-o"></i>
@@ -2324,7 +2324,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry
 Paris
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/boat/cruising-yacht">
+<a href="/boat/cruising-yacht">
 Cruising Yacht
 </a>
 </div>
@@ -2380,8 +2380,8 @@ Cruising Yacht
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/boat/summer-breeze">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/boat/boat-2.jpg" alt="Summer Breeze">
+<a href="/boat/summer-breeze">
+<img class="img-responsive lazy" data-src="/uploads/demo/boat/boat-2.jpg" alt="Summer Breeze">
 </a>
 <div class="service-wishlist " data-id="2" data-type="boat">
 <i class="fa fa-heart-o"></i>
@@ -2391,7 +2391,7 @@ Featured
 Paris
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/boat/summer-breeze">
+<a href="/boat/summer-breeze">
 Summer Breeze
 </a>
 </div>
@@ -2444,8 +2444,8 @@ Summer Breeze
 <div class="col-lg-3 col-md-6">
 <div class="item-loop ">
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/boat/blue-moon-cruising">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/boat/boat-2.jpg" alt="Blue Moon Cruising">
+<a href="/boat/blue-moon-cruising">
+<img class="img-responsive lazy" data-src="/uploads/demo/boat/boat-2.jpg" alt="Blue Moon Cruising">
 </a>
 <div class="service-wishlist " data-id="3" data-type="boat">
 <i class="fa fa-heart-o"></i>
@@ -2455,7 +2455,7 @@ Summer Breeze
 California
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/boat/blue-moon-cruising">
+<a href="/boat/blue-moon-cruising">
 Blue Moon Cruising
 </a>
 </div>
@@ -2511,8 +2511,8 @@ Blue Moon Cruising
 Featured
 </div>
 <div class="thumb-image ">
-<a href="https://sandbox.bookingcore.org/boat/boat-1992-alison">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/boat/boat-3.jpg" alt="BOAT 1992 ALISON">
+<a href="/boat/boat-1992-alison">
+<img class="img-responsive lazy" data-src="/uploads/demo/boat/boat-3.jpg" alt="BOAT 1992 ALISON">
 </a>
 <div class="service-wishlist " data-id="4" data-type="boat">
 <i class="fa fa-heart-o"></i>
@@ -2522,7 +2522,7 @@ Featured
 Paris
 </div>
 <div class="item-title">
-<a href="https://sandbox.bookingcore.org/boat/boat-1992-alison">
+<a href="/boat/boat-1992-alison">
 BOAT 1992 ALISON
 </a>
 </div>
@@ -2589,27 +2589,27 @@ Contrary to popular belief
 <div class="col-lg-4 col-md-6">
 <div class="item-news">
 <div class="thumb-image">
-<a href="https://sandbox.bookingcore.org/news/the-day-on-paris">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/news/news-1.jpg" alt="The day on Paris">
+<a href="/news/the-day-on-paris">
+<img class="img-responsive lazy" data-src="/uploads/demo/news/news-1.jpg" alt="The day on Paris">
 </a>
 </div>
 <div class="caption">
 <div class="item-date">
 <ul>
 <li>
-<a href="https://sandbox.bookingcore.org/news/category/ecotourism">
+<a href="/news/category/ecotourism">
 Ecotourism
 </a>
 </li>
 <li class="dot"> 06/13/2023 </li>
 </ul>
 </div>
-<h3 class="item-title"><a href="https://sandbox.bookingcore.org/news/the-day-on-paris"> The day on Paris </a></h3>
+<h3 class="item-title"><a href="/news/the-day-on-paris"> The day on Paris </a></h3>
 <div class="item-desc">
 From the iconic to the unexpected, the city of San Francisco never ceases to...
 </div>
 <div class="item-more">
-<a class="btn-readmore" href="https://sandbox.bookingcore.org/news/the-day-on-paris">Read More</a>
+<a class="btn-readmore" href="/news/the-day-on-paris">Read More</a>
 </div>
 </div>
 </div>
@@ -2617,27 +2617,27 @@ From the iconic to the unexpected, the city of San Francisco never ceases to...
 <div class="col-lg-4 col-md-6">
 <div class="item-news">
 <div class="thumb-image">
-<a href="https://sandbox.bookingcore.org/news/pure-luxe-in-punta-mita">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/news/news-2.jpg" alt="Pure Luxe in Punta Mita">
+<a href="/news/pure-luxe-in-punta-mita">
+<img class="img-responsive lazy" data-src="/uploads/demo/news/news-2.jpg" alt="Pure Luxe in Punta Mita">
 </a>
 </div>
 <div class="caption">
 <div class="item-date">
 <ul>
 <li>
-<a href="https://sandbox.bookingcore.org/news/category/sea-travel">
+<a href="/news/category/sea-travel">
 Sea Travel
 </a>
 </li>
 <li class="dot"> 06/13/2023 </li>
 </ul>
 </div>
-<h3 class="item-title"><a href="https://sandbox.bookingcore.org/news/pure-luxe-in-punta-mita"> Pure Luxe in Punta Mita </a></h3>
+<h3 class="item-title"><a href="/news/pure-luxe-in-punta-mita"> Pure Luxe in Punta Mita </a></h3>
 <div class="item-desc">
 From the iconic to the unexpected, the city of San Francisco never ceases to...
 </div>
 <div class="item-more">
-<a class="btn-readmore" href="https://sandbox.bookingcore.org/news/pure-luxe-in-punta-mita">Read More</a>
+<a class="btn-readmore" href="/news/pure-luxe-in-punta-mita">Read More</a>
 </div>
 </div>
 </div>
@@ -2645,27 +2645,27 @@ From the iconic to the unexpected, the city of San Francisco never ceases to...
 <div class="col-lg-4 col-md-6">
 <div class="item-news">
 <div class="thumb-image">
-<a href="https://sandbox.bookingcore.org/news/all-aboard-the-rocky-mountaineer">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/news/news-3.jpg" alt="All Aboard the Rocky Mountaineer">
+<a href="/news/all-aboard-the-rocky-mountaineer">
+<img class="img-responsive lazy" data-src="/uploads/demo/news/news-3.jpg" alt="All Aboard the Rocky Mountaineer">
 </a>
 </div>
 <div class="caption">
 <div class="item-date">
 <ul>
 <li>
-<a href="https://sandbox.bookingcore.org/news/category/hosted-tour">
+<a href="/news/category/hosted-tour">
 Hosted Tour
 </a>
 </li>
 <li class="dot"> 06/13/2023 </li>
 </ul>
 </div>
-<h3 class="item-title"><a href="https://sandbox.bookingcore.org/news/all-aboard-the-rocky-mountaineer"> All Aboard the Rocky Mountaineer </a></h3>
+<h3 class="item-title"><a href="/news/all-aboard-the-rocky-mountaineer"> All Aboard the Rocky Mountaineer </a></h3>
 <div class="item-desc">
 From the iconic to the unexpected, the city of San Francisco never ceases to...
 </div>
 <div class="item-more">
-<a class="btn-readmore" href="https://sandbox.bookingcore.org/news/all-aboard-the-rocky-mountaineer">Read More</a>
+<a class="btn-readmore" href="/news/all-aboard-the-rocky-mountaineer">Read More</a>
 </div>
 </div>
 </div>
@@ -2673,27 +2673,27 @@ From the iconic to the unexpected, the city of San Francisco never ceases to...
 <div class="col-lg-4 col-md-6">
 <div class="item-news">
 <div class="thumb-image">
-<a href="https://sandbox.bookingcore.org/news/city-spotlight-philadelphia">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/news/news-4.jpg" alt="City Spotlight: Philadelphia">
+<a href="/news/city-spotlight-philadelphia">
+<img class="img-responsive lazy" data-src="/uploads/demo/news/news-4.jpg" alt="City Spotlight: Philadelphia">
 </a>
 </div>
 <div class="caption">
 <div class="item-date">
 <ul>
 <li>
-<a href="https://sandbox.bookingcore.org/news/category/adventure-travel">
+<a href="/news/category/adventure-travel">
 Adventure Travel
 </a>
 </li>
 <li class="dot"> 06/13/2023 </li>
 </ul>
 </div>
-<h3 class="item-title"><a href="https://sandbox.bookingcore.org/news/city-spotlight-philadelphia"> City Spotlight: Philadelphia </a></h3>
+<h3 class="item-title"><a href="/news/city-spotlight-philadelphia"> City Spotlight: Philadelphia </a></h3>
 <div class="item-desc">
 From the iconic to the unexpected, the city of San Francisco never ceases to...
 </div>
 <div class="item-more">
-<a class="btn-readmore" href="https://sandbox.bookingcore.org/news/city-spotlight-philadelphia">Read More</a>
+<a class="btn-readmore" href="/news/city-spotlight-philadelphia">Read More</a>
 </div>
 </div>
 </div>
@@ -2701,27 +2701,27 @@ From the iconic to the unexpected, the city of San Francisco never ceases to...
 <div class="col-lg-4 col-md-6">
 <div class="item-news">
 <div class="thumb-image">
-<a href="https://sandbox.bookingcore.org/news/tiptoe-through-the-tulips-of-washington">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/news/news-5.jpg" alt="Tiptoe through the Tulips of Washington">
+<a href="/news/tiptoe-through-the-tulips-of-washington">
+<img class="img-responsive lazy" data-src="/uploads/demo/news/news-5.jpg" alt="Tiptoe through the Tulips of Washington">
 </a>
 </div>
 <div class="caption">
 <div class="item-date">
 <ul>
 <li>
-<a href="https://sandbox.bookingcore.org/news/category/sea-travel">
+<a href="/news/category/sea-travel">
 Sea Travel
 </a>
 </li>
 <li class="dot"> 06/13/2023 </li>
 </ul>
 </div>
-<h3 class="item-title"><a href="https://sandbox.bookingcore.org/news/tiptoe-through-the-tulips-of-washington"> Tiptoe through the Tulips of Washington </a></h3>
+<h3 class="item-title"><a href="/news/tiptoe-through-the-tulips-of-washington"> Tiptoe through the Tulips of Washington </a></h3>
 <div class="item-desc">
 From the iconic to the unexpected, the city of San Francisco never ceases to...
 </div>
 <div class="item-more">
-<a class="btn-readmore" href="https://sandbox.bookingcore.org/news/tiptoe-through-the-tulips-of-washington">Read More</a>
+<a class="btn-readmore" href="/news/tiptoe-through-the-tulips-of-washington">Read More</a>
 </div>
 </div>
 </div>
@@ -2729,27 +2729,27 @@ From the iconic to the unexpected, the city of San Francisco never ceases to...
 <div class="col-lg-4 col-md-6">
 <div class="item-news">
 <div class="thumb-image">
-<a href="https://sandbox.bookingcore.org/news/a-seaside-reset-in-laguna-beach">
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/news/news-6.jpg" alt="A Seaside Reset in Laguna Beach">
+<a href="/news/a-seaside-reset-in-laguna-beach">
+<img class="img-responsive lazy" data-src="/uploads/demo/news/news-6.jpg" alt="A Seaside Reset in Laguna Beach">
 </a>
 </div>
 <div class="caption">
 <div class="item-date">
 <ul>
 <li>
-<a href="https://sandbox.bookingcore.org/news/category/hosted-tour">
+<a href="/news/category/hosted-tour">
 Hosted Tour
 </a>
 </li>
 <li class="dot"> 06/13/2023 </li>
 </ul>
 </div>
-<h3 class="item-title"><a href="https://sandbox.bookingcore.org/news/a-seaside-reset-in-laguna-beach"> A Seaside Reset in Laguna Beach </a></h3>
+<h3 class="item-title"><a href="/news/a-seaside-reset-in-laguna-beach"> A Seaside Reset in Laguna Beach </a></h3>
 <div class="item-desc">
 From the iconic to the unexpected, the city of San Francisco never ceases to...
 </div>
 <div class="item-more">
-<a class="btn-readmore" href="https://sandbox.bookingcore.org/news/a-seaside-reset-in-laguna-beach">Read More</a>
+<a class="btn-readmore" href="/news/a-seaside-reset-in-laguna-beach">Read More</a>
 </div>
 </div>
 </div>
@@ -2784,7 +2784,7 @@ Become Local Expert
 <div class="col-md-6 col-lg-4">
 <div class="item has-matchHeight">
 <div class="author">
-<img src="https://sandbox.bookingcore.org/uploads/demo/general/avatar.jpg" alt="Eva Hicks">
+<img src="/uploads/demo/general/avatar.jpg" alt="Eva Hicks">
 <div class="author-meta">
 <h4>Eva Hicks</h4>
 <div class="star">
@@ -2804,7 +2804,7 @@ Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rut
 <div class="col-md-6 col-lg-4">
 <div class="item has-matchHeight">
 <div class="author">
-<img src="https://sandbox.bookingcore.org/uploads/demo/general/avatar-2.jpg" alt="Donald Wolf">
+<img src="/uploads/demo/general/avatar-2.jpg" alt="Donald Wolf">
 <div class="author-meta">
 <h4>Donald Wolf</h4>
 <div class="star">
@@ -2825,7 +2825,7 @@ Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rut
 <div class="col-md-6 col-lg-4">
 <div class="item has-matchHeight">
 <div class="author">
-<img src="https://sandbox.bookingcore.org/uploads/demo/general/avatar-3.jpg" alt="Charlie Harrington">
+<img src="/uploads/demo/general/avatar-3.jpg" alt="Charlie Harrington">
 <div class="author-meta">
 <h4>Charlie Harrington</h4>
 <div class="star">
@@ -2864,7 +2864,7 @@ Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rut
 </div>
 </div>
 <div class="col-xs-12 col-md-5 col-lg-6">
-<form action="https://sandbox.bookingcore.org/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
+<form action="/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
 <input type="hidden" name="_token" value="zzaPBleChcMC42TW7qB8Le0kUD3LDSgdGWYq6eTm"> <div class="form-group">
 <input type="text" name="email" class="form-control email-input" placeholder="Your Email">
 <button type="submit" class="btn-submit">Subscribe
@@ -2991,12 +2991,12 @@ Booking Core
 <h4 class="modal-title">Log In</h4>
 <span class="c-pointer" data-dismiss="modal" aria-label="Close">
 <i class="input-icon field-icon fa">
-<img src="https://sandbox.bookingcore.org/images/ico_close.svg" alt="close">
+<img src="/images/ico_close.svg" alt="close">
 </i>
 </span>
 </div>
 <div class="modal-body relative">
-<form class="bravo-form-login" method="POST" action="https://sandbox.bookingcore.org/login">
+<form class="bravo-form-login" method="POST" action="/login">
 <input type="hidden" name="redirect" value>
 <input type="hidden" name="_token" value="zzaPBleChcMC42TW7qB8Le0kUD3LDSgdGWYq6eTm"> <div class="form-group">
 <input type="text" class="form-control" name="email" autocomplete="off" placeholder="Email address">
@@ -3013,7 +3013,7 @@ Booking Core
 <label for="remember-me" class="mb0">
 <input type="checkbox" name="remember" id="remember-me" value="1"> Remember me <span class="checkmark fcheckbox"></span>
 </label>
-<a href="https://sandbox.bookingcore.org/forgot-password">Forgot Password?</a>
+<a href="/forgot-password">Forgot Password?</a>
 </div>
 </div>
 <div class="error message-error invalid-feedback"></div>
@@ -3027,19 +3027,19 @@ Login
 <p class="text-center f14 c-grey">or continue with</p>
 <div class="row">
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+<a href="/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
 <i class="input-icon fa fa-facebook"></i>
 Facebook
 </a>
 </div>
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+<a href="/social-login/google" class="btn btn_login_gg_link" data-channel="google">
 <i class="input-icon fa fa-google"></i>
 Google
 </a>
 </div>
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
+<a href="/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
 <i class="input-icon fa fa-twitter"></i>
 Twitter
 </a>
@@ -3059,12 +3059,12 @@ Twitter
 <h4 class="modal-title">Sign Up</h4>
 <span class="c-pointer" data-dismiss="modal" aria-label="Close">
 <i class="input-icon field-icon fa">
-<img src="https://sandbox.bookingcore.org/images/ico_close.svg" alt="close">
+<img src="/images/ico_close.svg" alt="close">
 </i>
 </span>
 </div>
 <div class="modal-body">
-<form class="form bravo-form-register" method="post" action="https://sandbox.bookingcore.org/register">
+<form class="form bravo-form-register" method="post" action="/register">
 <input type="hidden" name="_token" value="zzaPBleChcMC42TW7qB8Le0kUD3LDSgdGWYq6eTm"> <div class="row">
 <div class="col-lg-6 col-md-12">
 <div class="form-group">
@@ -3115,19 +3115,19 @@ Sign Up
 <p class="text-center f14 c-grey">or continue with</p>
 <div class="row">
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+<a href="/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
 <i class="input-icon fa fa-facebook"></i>
 Facebook
 </a>
 </div>
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+<a href="/social-login/google" class="btn btn_login_gg_link" data-channel="google">
 <i class="input-icon fa fa-google"></i>
 Google
 </a>
 </div>
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
+<a href="/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
 <i class="input-icon fa fa-twitter"></i>
 Twitter
 </a>
@@ -3142,9 +3142,9 @@ Already have an account?
 </div>
 </div>
 </div>
-</div><link rel="stylesheet" href="https://sandbox.bookingcore.org/libs/flags/css/flag-icon.min.css">
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://sandbox.bookingcore.org/libs/lazy-load/intersection-observer.js"></script>
-<script async src="https://sandbox.bookingcore.org/libs/lazy-load/lazyload.min.js"></script>
+</div><link rel="stylesheet" href="/libs/flags/css/flag-icon.min.css">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/libs/lazy-load/intersection-observer.js"></script>
+<script async src="/libs/lazy-load/lazyload.min.js"></script>
 <script>
     // Set the options to make LazyLoad self-initialize
     window.lazyLoadOptions = {
@@ -3159,26 +3159,26 @@ Already have an account?
 
 
 </script>
-<script src="https://sandbox.bookingcore.org/libs/lodash.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/jquery-3.6.3.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/vue/vue.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/bootbox/bootbox.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/carousel-2/owl.carousel.min.js"></script>
-<script type="text/javascript" src="https://sandbox.bookingcore.org/libs/daterange/moment.min.js"></script>
-<script type="text/javascript" src="https://sandbox.bookingcore.org/libs/daterange/daterangepicker.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/select2/js/select2.min.js"></script>
-<script src="https://sandbox.bookingcore.org/js/functions.js?_ver=3.2.1"></script>
-<script src="https://sandbox.bookingcore.org/libs/pusher.min.js"></script>
-<script src="https://sandbox.bookingcore.org/js/home.js?_ver=3.2.1"></script>
+<script src="/libs/lodash.min.js"></script>
+<script src="/libs/jquery-3.6.3.min.js"></script>
+<script src="/libs/vue/vue.min.js"></script>
+<script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/libs/bootbox/bootbox.min.js"></script>
+<script src="/libs/carousel-2/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/libs/daterange/moment.min.js"></script>
+<script type="text/javascript" src="/libs/daterange/daterangepicker.min.js"></script>
+<script src="/libs/select2/js/select2.min.js"></script>
+<script src="/js/functions.js?_ver=3.2.1"></script>
+<script src="/libs/pusher.min.js"></script>
+<script src="/js/home.js?_ver=3.2.1"></script>
 <div class="booking_cookie_agreement p-3 d-flex fixed-bottom">
 <div class="content-cookie"><p>This website requires cookies to provide all of its features. By using our website, you agree to our use of cookies. <a href="#">More info</a></p></div>
 <button class="btn save-cookie">Got it</button>
 </div>
 <script>
-        var save_cookie_url = 'https://sandbox.bookingcore.org/check-cookie';
+        var save_cookie_url = '/check-cookie';
 	</script>
-<script src="https://sandbox.bookingcore.org/js/cookie.js?_ver=3.2.1"></script>
+<script src="/js/cookie.js?_ver=3.2.1"></script>
 </div>
 <<<<<<< HEAD
 
@@ -3243,7 +3243,7 @@ Already have an account?
         color: #fff;
     }
     .bravo-buy-button .tf-text{
-        background-image: url('https://sandbox.bookingcore.org/landing/img/logoen.png');
+        background-image: url('/landing/img/logoen.png');
         width: 66px;
         height: 12px;
         display: inline-block;
