@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en" class>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="csrf-token" content="FavyQZWPPz8MtEhID0jPdlHDc7rzoC6vSwK3YZ1n">
+<link rel="icon" type="image/png" href="https://sandbox.bookingcore.org/uploads/demo/general/favicon.png" />
+<title>Checkout - Booking Core</title>
+<meta name="description" content />
+<link href="https://sandbox.bookingcore.org/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="https://sandbox.bookingcore.org/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="https://sandbox.bookingcore.org/libs/ionicons/css/ionicons.min.css" rel="stylesheet">
+<link href="https://sandbox.bookingcore.org/libs/icofont/icofont.min.css" rel="stylesheet">
+<link href="https://sandbox.bookingcore.org/libs/select2/css/select2.min.css" rel="stylesheet">
+<link href="https://sandbox.bookingcore.org/dist/frontend/css/notification.css" rel="newest stylesheet">
+<link href="https://sandbox.bookingcore.org/dist/frontend/css/app.css?_ver=3.2.1" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://sandbox.bookingcore.org/libs/daterange/daterangepicker.css">
+
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&display=swap" type="text/css" media="all" />
+<script>
+    var bookingCore = {
+        url:'https://sandbox.bookingcore.org',
+        url_root:'https://sandbox.bookingcore.org',
+        admin_url:'https://sandbox.bookingcore.org/admin',
+        booking_decimals:0,
+        thousand_separator:'.',
+        decimal_separator:',',
+        currency_position:'left',
+        currency_symbol:'$',
+        currency_rate:'1',
+        date_format:'MM/DD/YYYY',
+        map_provider:'gmap',
+        map_gmap_key:'',
+        map_options:{
+            map_lat_default:'',
+            map_lng_default:'',
+            map_clustering:'on',
+            map_fit_bounds:'on',
+        },
+        routes:{
+            login:'https://sandbox.bookingcore.org/login',
+            register:'https://sandbox.bookingcore.org/register',
+            checkout:'https://sandbox.bookingcore.org/booking/doCheckout'
+        },
+        currentUser: 59,
+        isAdmin : 0,
+        rtl: false,
+        markAsRead:'https://sandbox.bookingcore.org/notify/markAsRead',
+        markAllAsRead:'https://sandbox.bookingcore.org/notify/markAllAsRead',
+        loadNotify : 'https://sandbox.bookingcore.org/notify/notifications',
+        pusher_api_key : '',
+        pusher_cluster : '',
+        language: 'en',
+        module:{}
+    };
+            bookingCore.media = {
+        groups:{"default":{"ext":["jpg","jpeg","png","gif","bmp","docx"],"mime":["image\/png","image\/jpeg","image\/gif","image\/bmp","application\/vnd.openxmlformats-officedocument.wordprocessingml.document"],"max_size":20000000,"max_width":4000,"max_height":4000},"image":{"ext":["jpg","jpeg","png","gif","bmp"],"mime":["image\/png","image\/jpeg","image\/gif","image\/bmp"],"max_size":20000000,"max_width":4000,"max_height":4000}},
+    }
+                            bookingCore.module.hotel = 'https://sandbox.bookingcore.org/hotel';
+                                bookingCore.module.space = 'https://sandbox.bookingcore.org/space';
+                                bookingCore.module.car = 'https://sandbox.bookingcore.org/car';
+                                bookingCore.module.event = 'https://sandbox.bookingcore.org/event';
+                                bookingCore.module.tour = 'https://sandbox.bookingcore.org/tour';
+                                bookingCore.module.flight = 'https://sandbox.bookingcore.org/flight';
+                                bookingCore.module.boat = 'https://sandbox.bookingcore.org/boat';
+                var i18n = {
+        warning:"Warning",
+        success:"Success",
+        confirm_delete:"Do you want to delete?",
+        confirm:"Confirm",
+        cancel:"Cancel",
+    };
+    var daterangepickerLocale = {
+        "applyLabel": "Apply",
+        "cancelLabel": "Cancel",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "weekLabel": "W",
+        "first_day_of_week": 1,
+        "daysOfWeek": [
+            "Su",
+            "Mo",
+            "Tu",
+            "We",
+            "Th",
+            "Fr",
+            "Sa"
+        ],
+        "monthNames": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ],
+    };
+</script>
+
+<link href="https://sandbox.bookingcore.org/module/booking/css/checkout.css?_ver=3.2.1" rel="stylesheet">
+<link href="https://sandbox.bookingcore.org/custom-css" rel="stylesheet">
+<link href="https://sandbox.bookingcore.org/libs/carousel-2/owl.carousel.css" rel="stylesheet">
+</head>
+<body class="frontend-page header-normal   ">
+<div class="bravo_wrap">
+<div class="bravo_topbar">
+<div class="container">
+<div class="content">
+<div class="topbar-left">
+<div class="socials">
+<a href="#"><i class="fa fa-facebook"></i></a>
+<a href="#"><i class="fa fa-linkedin"></i></a>
+<a href="#"><i class="fa fa-google-plus"></i></a>
+</div>
+<span class="line"></span>
+<a href="/cdn-cgi/l/email-protection#41222e2f3520223501232e2e2a282f26222e33246f35243235"><span class="__cf_email__" data-cfemail="1f7c70716b7e7c6b5f7d7070747671787c706d7a316b7a6c6b">[email&#160;protected]</span></a>
+</div>
+<div class="topbar-right">
+<ul class="topbar-items">
+<li class="dropdown">
+<a href="#" data-toggle="dropdown" class="is_login">
+USD
+<i class="fa fa-angle-down"></i>
+</a>
+<ul class="dropdown-menu text-left width-auto">
+<li>
+<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_currency=eur" class="is_login">
+EUR
+</a>
+</li>
+<li>
+<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_currency=jpy" class="is_login">
+JPY
+</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<ul class="dropdown-menu text-left">
+<li>
+<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=ar" class="is_login">
+<span class="flag-icon flag-icon-sa"></span>
+Araic
+</a>
+</li>
+<li>
+<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=en_US" class="is_login">
+<span class="flag-icon flag-icon-en_US"></span>
+English
+</a>
+</li>
+<li>
+<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=fr" class="is_login">
+<span class="flag-icon flag-icon-fr"></span>
+Français
+</a>
+</li>
+</ul>
+</li>
+<li class="dropdown-notifications dropdown p-0">
+<a href="#" data-toggle="dropdown" class="is_login">
+<i class="fa fa-bell mr-2"></i>
+<span class="badge badge-danger notification-icon">0</span>
+<i class="fa fa-angle-down"></i>
+</a>
+<ul class="dropdown-menu overflow-auto notify-items dropdown-container dropdown-menu-right dropdown-large">
+<div class="dropdown-toolbar">
+<div class="dropdown-toolbar-actions">
+<a href="#" class="markAllAsRead">Mark all as read</a>
+</div>
+<h3 class="dropdown-toolbar-title">Notifications (<span class="notif-count">0</span>)</h3>
+</div>
+<ul class="dropdown-list-items p-0">
+</ul>
+<div class="dropdown-footer text-center">
+<a href="https://sandbox.bookingcore.org/notify/notifications">View More</a>
+</div>
+</ul>
+</li>
+<li class="login-item dropdown">
+<a href="#" data-toggle="dropdown" class="login">Hi, Siva Sham
+<i class="fa fa-angle-down"></i>
+</a>
+<ul class="dropdown-menu dropdown-menu-user text-left">
+<li class>
+<a href="https://sandbox.bookingcore.org/user/profile"><i class="icon ion-md-construct"></i> My profile</a>
+</li>
+<li class="menu-hr"><a href="https://sandbox.bookingcore.org/user/booking-history"><i class="fa fa-clock-o"></i> Booking History</a></li>
+<li class="menu-hr"><a href="https://sandbox.bookingcore.org/user/profile/change-password"><i class="fa fa-lock"></i> Change password</a></li>
+<li class="menu-hr"><a href="https://sandbox.bookingcore.org/user/my-plan"><i class="fa fa-list-alt"></i> My plan</a></li>
+<li class="menu-hr">
+<a href="#" onclick="event.preventDefault(); document.getElementById('logout-form-topbar').submit();"><i class="fa fa-sign-out"></i> Logout</a>
+</li>
+</ul>
+<form id="logout-form-topbar" action="https://sandbox.bookingcore.org/logout" method="POST" style="display: none;">
+<input type="hidden" name="_token" value="FavyQZWPPz8MtEhID0jPdlHDc7rzoC6vSwK3YZ1n">
+</form>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="bravo_header">
+<div class="container">
+<div class="content">
+<div class="header-left">
+<a href="https://sandbox.bookingcore.org" class="bravo-logo">
+<img src="https://sandbox.bookingcore.org/uploads/demo/general/logo.svg" alt="Booking Core">
+</a>
+<div class="bravo-menu">
+<ul class="main-menu menu-generated"><li class=" depth-0"><a target href="/">Home <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/">Home Page</a></li><li class=" depth-1"><a target href="/page/home-page-v2">Home Page v2</a></li><li class=" depth-1"><a target href="/page/hotel">Home Hotel</a></li><li class=" depth-1"><a target href="/page/home-tour-agency">Home Tour Agency</a></li><li class=" depth-1"><a target href="/page/tour">Home Tour</a></li><li class=" depth-1"><a target href="/page/space">Home Space</a></li><li class=" depth-1"><a target href="/page/car">Home Car</a></li></ul></li><li class=" depth-0"><a target href="/hotel">Hotel <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/hotel">Hotel List</a></li><li class=" depth-1"><a target href="/hotel?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="/hotel/parian-holiday-villas">Hotel Detail</a></li></ul></li><li class=" depth-0"><a target href="/tour">Tours <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/tour">Tour List</a></li><li class=" depth-1"><a target href="/tour?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="/tour/paris-vacation-travel">Tour Detail</a></li></ul></li><li class=" depth-0"><a target href="/space">Space <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/space">Space List</a></li><li class=" depth-1"><a target href="/space?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="/space/stay-greenwich-village">Space Detail</a></li></ul></li><li class=" depth-0"><a target href="/car">Car <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/car">Car List</a></li><li class=" depth-1"><a target href="/car?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="/car/vinfast-lux-a20-plus">Car Detail</a></li></ul></li><li class=" depth-0"><a target href="/event">Event <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/event">Event List</a></li><li class=" depth-1"><a target href="/event?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="/event/aspen-glade-weddings-events">Event Detail</a></li></ul></li><li class=" depth-0"><a target href="/flight">Flight</a></li><li class=" depth-0"><a target href="/boat">Boat <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/boat">Boat List</a></li><li class=" depth-1"><a target href="/boat?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="/boat/blue-moon-yc-300">Boat Detail</a></li></ul></li><li class=" depth-0"><a target href="#">Pages <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/plan">Plan</a></li><li class=" depth-1"><a target href="/news">News List</a></li><li class=" depth-1"><a target href="/news/morning-in-the-northern-sea">News Detail</a></li><li class=" depth-1"><a target href="/location/paris">Location Detail</a></li><li class=" depth-1"><a target href="/page/become-a-vendor">Become a vendor</a></li><li class=" depth-1"><a target href="/contact">Contact</a></li></ul></li></ul> </div>
+</div>
+<div class="header-right">
+<button class="bravo-more-menu">
+<i class="fa fa-bars"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="bravo-menu-mobile" style="display:none;">
+<div class="user-profile">
+<div class="b-close"><i class="icofont-scroll-left"></i></div>
+<div class="avatar"></div>
+<ul>
+<li>
+<a href="https://sandbox.bookingcore.org/user/profile">
+<i class="icofont-user-suited"></i> Hi, Siva Sham
+</a>
+</li>
+<li>
+<a href="https://sandbox.bookingcore.org/user/profile">
+<i class="icon ion-md-construct"></i> My profile
+</a>
+</li>
+<li>
+<a href="#" onclick="event.preventDefault(); document.getElementById('logout-form-mobile').submit();">
+<i class="fa fa-sign-out"></i> Logout
+</a>
+<form id="logout-form-mobile" action="https://sandbox.bookingcore.org/logout" method="POST" style="display: none;">
+<input type="hidden" name="_token" value="FavyQZWPPz8MtEhID0jPdlHDc7rzoC6vSwK3YZ1n">
+</form>
+</li>
+</ul>
+<ul class="multi-lang">
+<li class="dropdown">
+<a href="#" data-toggle="dropdown" class="is_login">
+USD
+<i class="fa fa-angle-down"></i>
+</a>
+<ul class="dropdown-menu text-left width-auto">
+<li>
+<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_currency=eur" class="is_login">
+EUR
+</a>
+</li>
+<li>
+<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_currency=jpy" class="is_login">
+JPY
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="multi-lang">
+<li class="dropdown">
+<ul class="dropdown-menu text-left">
+<li>
+<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=ar" class="is_login">
+<span class="flag-icon flag-icon-sa"></span>
+Araic
+</a>
+</li>
+<li>
+<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=en_US" class="is_login">
+<span class="flag-icon flag-icon-en_US"></span>
+English
+</a>
+</li>
+<li>
+<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=fr" class="is_login">
+<span class="flag-icon flag-icon-fr"></span>
+Français
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="g-menu">
+<ul class="main-menu menu-generated"><li class=" depth-0"><a target href="/">Home <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/">Home Page</a></li><li class=" depth-1"><a target href="/page/home-page-v2">Home Page v2</a></li><li class=" depth-1"><a target href="/page/hotel">Home Hotel</a></li><li class=" depth-1"><a target href="/page/home-tour-agency">Home Tour Agency</a></li><li class=" depth-1"><a target href="/page/tour">Home Tour</a></li><li class=" depth-1"><a target href="/page/space">Home Space</a></li><li class=" depth-1"><a target href="/page/car">Home Car</a></li></ul></li><li class=" depth-0"><a target href="/hotel">Hotel <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/hotel">Hotel List</a></li><li class=" depth-1"><a target href="/hotel?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="/hotel/parian-holiday-villas">Hotel Detail</a></li></ul></li><li class=" depth-0"><a target href="/tour">Tours <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/tour">Tour List</a></li><li class=" depth-1"><a target href="/tour?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="/tour/paris-vacation-travel">Tour Detail</a></li></ul></li><li class=" depth-0"><a target href="/space">Space <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/space">Space List</a></li><li class=" depth-1"><a target href="/space?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="/space/stay-greenwich-village">Space Detail</a></li></ul></li><li class=" depth-0"><a target href="/car">Car <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/car">Car List</a></li><li class=" depth-1"><a target href="/car?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="/car/vinfast-lux-a20-plus">Car Detail</a></li></ul></li><li class=" depth-0"><a target href="/event">Event <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/event">Event List</a></li><li class=" depth-1"><a target href="/event?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="/event/aspen-glade-weddings-events">Event Detail</a></li></ul></li><li class=" depth-0"><a target href="/flight">Flight</a></li><li class=" depth-0"><a target href="/boat">Boat <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/boat">Boat List</a></li><li class=" depth-1"><a target href="/boat?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="/boat/blue-moon-yc-300">Boat Detail</a></li></ul></li><li class=" depth-0"><a target href="#">Pages <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/plan">Plan</a></li><li class=" depth-1"><a target href="/news">News List</a></li><li class=" depth-1"><a target href="/news/morning-in-the-northern-sea">News Detail</a></li><li class=" depth-1"><a target href="/location/paris">Location Detail</a></li><li class=" depth-1"><a target href="/page/become-a-vendor">Become a vendor</a></li><li class=" depth-1"><a target href="/contact">Contact</a></li></ul></li></ul> </div>
+</div>
+</div>
+<div class="bravo-booking-page padding-content">
+<div class="container">
+<div id="bravo-checkout-page">
+<div class="row">
+<div class="col-md-8">
+<h3 class="form-title">Booking Submission</h3>
+<div class="booking-form">
+<div class="form-checkout" id="form-checkout">
+<input type="hidden" name="code" value="4f5d39525e743e86d7c6a0eef7ef4bdb">
+<div class="form-section">
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+<label>First Name <span class="required">*</span></label>
+<input type="text" placeholder="First Name" class="form-control" value="Siva" name="first_name">
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<label>Last Name <span class="required">*</span></label>
+<input type="text" placeholder="Last Name" class="form-control" value="Sham" name="last_name">
+</div>
+</div>
+<div class="col-md-6 field-email">
+<div class="form-group">
+<label>Email <span class="required">*</span></label>
+<input type="email" placeholder="email@domain.com" class="form-control" value="admin@gotrip.test" name="email">
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<label>Phone <span class="required">*</span></label>
+<input type="text" placeholder="Your Phone" class="form-control" value="0000000000" name="phone">
+</div>
+</div>
+<div class="col-md-6 field-address-line-1">
+<div class="form-group">
+<label>Address line 1 </label>
+<input type="text" placeholder="Address line 1" class="form-control" value name="address_line_1">
+</div>
+</div>
+<div class="col-md-6 field-address-line-2">
+<div class="form-group">
+<label>Address line 2 </label>
+<input type="text" placeholder="Address line 2" class="form-control" value name="address_line_2">
+</div>
+</div>
+<div class="col-md-6 field-city">
+<div class="form-group">
+<label>City </label>
+<input type="text" class="form-control" value name="city" placeholder="Your City">
+</div>
+</div>
+<div class="col-md-6 field-state">
+<div class="form-group">
+<label>State/Province/Region </label>
+<input type="text" class="form-control" value name="state" placeholder="State/Province/Region">
+</div>
+</div>
+<div class="col-md-6 field-zip-code">
+<div class="form-group">
+<label>ZIP code/Postal code </label>
+<input type="text" class="form-control" value name="zip_code" placeholder="ZIP code/Postal code">
+</div>
+</div>
+<div class="col-md-6 field-country">
+<div class="form-group">
+<label>Country <span class="required">*</span> </label>
+<select name="country" class="form-control">
+<option value>-- Select --</option>
+<option value="AF">Afghanistan</option>
+<option value="AX">Aland Islands</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua And Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BA">Bosnia And Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="BN">Brunei Darussalam</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="CV">Cape Verde</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo, Democratic Republic</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">Cote D&#039;Ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czech Republic</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (Malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard Island &amp; Mcdonald Islands</option>
+<option value="VA">Holy See (Vatican City State)</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran, Islamic Republic Of</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle Of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KR">Korea</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Lao People&#039;s Democratic Republic</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libyan Arab Jamahiriya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao</option>
+<option value="MK">Macedonia</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia, Federated States Of</option>
+<option value="MD">Moldova</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="AN">Netherlands Antilles</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestinian Territory, Occupied</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">Reunion</option>
+<option value="RO">Romania</option>
+<option value="RU">Russian Federation</option>
+<option value="RW">Rwanda</option>
+<option value="BL">Saint Barthelemy</option>
+<option value="SH">Saint Helena</option>
+<option value="KN">Saint Kitts And Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="MF">Saint Martin</option>
+<option value="PM">Saint Pierre And Miquelon</option>
+<option value="VC">Saint Vincent And Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome And Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia And Sandwich Isl.</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard And Jan Mayen</option>
+<option value="SZ">Swaziland</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syrian Arab Republic</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad And Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks And Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="US">United States</option>
+<option value="UM">United States Outlying Islands</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Viet Nam</option>
+<option value="VG">Virgin Islands, British</option>
+<option value="VI">Virgin Islands, U.S.</option>
+<option value="WF">Wallis And Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+</select>
+</div>
+</div>
+<div class="col-md-12">
+<label>Special Requirements </label>
+<textarea name="customer_notes" cols="30" rows="6" class="form-control" placeholder="Special Requirements"></textarea>
+</div>
+</div>
+</div>
+<div class="form-section">
+<h4 class="form-section-title">Select Payment Method</h4>
+<div class="gateways-table accordion" id="accordionExample">
+<div class="card">
+<div class="card-header">
+<h4 class="mb-0">
+<label class data-toggle="collapse" data-target="#gateway_offline_payment">
+<input type="radio" name="payment_gateway" value="offline_payment">
+Offline Payment
+</label>
+</h4>
+</div>
+<div id="gateway_offline_payment" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+<div class="card-body">
+<div class="gateway_name">
+Offline Payment
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<h4 class="mb-0">
+<label class data-toggle="collapse" data-target="#gateway_paypal">
+<input type="radio" name="payment_gateway" value="paypal">
+Paypal
+</label>
+</h4>
+</div>
+<div id="gateway_paypal" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+<div class="card-body">
+<div class="gateway_name">
+Paypal
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<h4 class="mb-0">
+<label class data-toggle="collapse" data-target="#gateway_stripe">
+<input type="radio" name="payment_gateway" value="stripe">
+Stripe
+</label>
+</h4>
+</div>
+<div id="gateway_stripe" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+<div class="card-body">
+<div class="gateway_name">
+Stripe
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<h4 class="mb-0">
+<label class data-toggle="collapse" data-target="#gateway_two_checkout_gateway">
+<input type="radio" name="payment_gateway" value="two_checkout_gateway">
+Two Checkout
+</label>
+</h4>
+</div>
+<div id="gateway_two_checkout_gateway" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+<div class="card-body">
+<div class="gateway_name">
+Two Checkout
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="term-conditions-checkbox">
+<input type="checkbox" name="term_conditions"> I have read and accept the <a target="_blank" href>terms and conditions</a>
+</label>
+</div>
+<div class="html_before_actions"></div>
+<p class="alert-text mt10" v-show=" message.content" v-html="message.content" :class="{'danger':!message.type,'success':message.type}"></p>
+<div class="form-actions">
+<button class="btn btn-danger" @click="doCheckout">Submit
+<i class="fa fa-spin fa-spinner" v-show="onSubmit"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="booking-detail booking-form">
+<div class="booking-review">
+<h4 class="booking-review-title">Your Booking</h4>
+<div class="booking-review-content">
+<div class="review-section">
+<div class="service-info">
+<div>
+<h3 class="service-name"><a href="https://sandbox.bookingcore.org/hotel/parian-holiday-villas">Parian Holiday Villas</a></h3>
+<p class="address"><i class="fa fa-map-marker"></i>
+Regal Cinemas Battery Park
+</p>
+</div>
+<div>
+<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-13.jpg" alt="Parian Holiday Villas">
+</div>
+</div>
+</div>
+<div class="review-section">
+<ul class="review-list">
+<li>
+<div class="label">Check in:</div>
+<div class="val">
+06/15/2023
+</div>
+</li>
+<li>
+<div class="label">Check out:</div>
+<div class="val">
+06/16/2023
+</div>
+</li>
+<li>
+<div class="label">Nights:</div>
+<div class="val">
+1
+</div>
+</li>
+<li>
+<div class="label">Adults:</div>
+<div class="val">
+1
+</div>
+</li>
+</ul>
+</div>
+<div class="review-section total-review">
+<ul class="review-list">
+<li class="flex-wrap">
+<div class="label">Room Kerama Islands * 4</div>
+<div class="val">
+$1.400
+</div>
+</li>
+<li class="flex-wrap">
+<div class="flex-grow-0 flex-shrink-0 w-100">
+<p class="text-center">
+<a data-toggle="modal" data-target="#detailBookingDate4f5d39525e743e86d7c6a0eef7ef4bdb" aria-expanded="false" aria-controls="detailBookingDate4f5d39525e743e86d7c6a0eef7ef4bdb">
+Detail <i class="icofont-list"></i>
+</a>
+</p>
+</div>
+</li>
+<li>
+<div class="label">
+Service fee
+<i class="icofont-info-circle" data-toggle="tooltip" data-placement="top" title="This helps us run our platform and offer services like 24/7 support on your trip."></i>
+</div>
+<div class="val">
+$100
+</div>
+</li>
+<li class="d-flex flex-column border-0 mb-0">
+<div class="section-coupon-form">
+<div class="input-group group-form mb-3">
+<input type="text" class="form-control" name="coupon_code" placeholder="Coupon code">
+<div class="input-group-append">
+<button class="btn btn-primary bravo_apply_coupon" type="button">
+Apply
+<i class="fa fa-spin fa-spinner d-none"></i>
+</button>
+</div>
+</div>
+<ul class="p-0 mb-3 list-coupons">
+</ul>
+<div class="message alert-text mt-2"></div>
+</div>
+</li> <li class="final-total d-block">
+<div class="d-flex justify-content-between">
+<div class="label">Total:</div>
+<div class="val">$1.500</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="modal fade" id="detailBookingDate4f5d39525e743e86d7c6a0eef7ef4bdb" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" style="background-color: #00000060">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title text-center">Detail</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<ul class="review-list list-unstyled">
+<li class="mb-3 pb-1 border-bottom">
+<h6 class="label text-center font-weight-bold mb-1">Room Kerama Islands * 4</h6>
+<div>
+<div class="table-responsive">
+<table class="table table-striped table-inverse mb-1">
+<tbody>
+<tr>
+<td>15/06/2023 <i class="fa fa-long-arrow-right"></i> 15/06/2023</td>
+<td class="text-right">$1.400*1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="d-flex justify-content-between font-weight-bold px-2">
+<span>Total:</span>
+<span>$1.400</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bravo_footer">
+<div class="mailchimp">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-lg-10 col-lg-offset-1">
+<div class="row">
+<div class="col-xs-12  col-md-7 col-lg-6">
+<div class="media ">
+<div class="media-left hidden-xs">
+<i class="icofont-island-alt"></i>
+</div>
+<div class="media-body">
+<h4 class="media-heading">Get Updates &amp; More</h4>
+<p>Thoughtful thoughts to your inbox</p>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-md-5 col-lg-6">
+<form action="https://sandbox.bookingcore.org/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
+<input type="hidden" name="_token" value="FavyQZWPPz8MtEhID0jPdlHDc7rzoC6vSwK3YZ1n"> <div class="form-group">
+<input type="text" name="email" class="form-control email-input" placeholder="Your Email">
+<button type="submit" class="btn-submit">Subscribe
+<i class="fa fa-spinner fa-pulse fa-fw"></i>
+</button>
+</div>
+<div class="form-mess"></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="main-footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-3 col-md-6">
+<div class="nav-footer">
+<div class="title">
+NEED HELP?
+</div>
+<div class="context">
+<div class="contact">
+<div class="c-title">
+Call Us
+</div>
+<div class="sub">
++ 00 222 44 5678
+</div>
+</div>
+<div class="contact">
+<div class="c-title">
+Email for Us
+</div>
+<div class="sub">
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dab2bfb6b6b59aa3b5afa8a9b3aebff4b9b5b7">[email&#160;protected]</a>
+</div>
+</div>
+<div class="contact">
+<div class="c-title">
+Follow Us
+</div>
+<div class="sub">
+<a href="#">
+<i class="icofont-facebook"></i>
+</a>
+<a href="#">
+<i class="icofont-twitter"></i>
+</a>
+<a href="#">
+<i class="icofont-youtube-play"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="nav-footer">
+<div class="title">
+COMPANY
+</div>
+<div class="context">
+<ul>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Community Blog</a></li>
+<li><a href="#">Rewards</a></li>
+<li><a href="#">Work with Us</a></li>
+<li><a href="#">Meet the Team</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="nav-footer">
+<div class="title">
+SUPPORT
+</div>
+<div class="context">
+<ul>
+<li><a href="#">Account</a></li>
+<li><a href="#">Legal</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="#">Affiliate Program</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="nav-footer">
+<div class="title">
+SETTINGS
+</div>
+<div class="context">
+<ul>
+<li><a href="#">Setting 1</a></li>
+<li><a href="#">Setting 2</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="copy-right">
+<div class="container context">
+<div class="row">
+<div class="col-md-12">
+Copyright © 2019 by Booking Core
+<div class="f-visa">
+Booking Core
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade login" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content relative">
+<div class="modal-header">
+<h4 class="modal-title">Log In</h4>
+<span class="c-pointer" data-dismiss="modal" aria-label="Close">
+<i class="input-icon field-icon fa">
+<img src="https://sandbox.bookingcore.org/images/ico_close.svg" alt="close">
+</i>
+</span>
+</div>
+<div class="modal-body relative">
+<form class="bravo-form-login" method="POST" action="https://sandbox.bookingcore.org/login">
+<input type="hidden" name="redirect" value>
+<input type="hidden" name="_token" value="FavyQZWPPz8MtEhID0jPdlHDc7rzoC6vSwK3YZ1n"> <div class="form-group">
+<input type="text" class="form-control" name="email" autocomplete="off" placeholder="Email address">
+<i class="input-icon icofont-mail"></i>
+<span class="invalid-feedback error error-email"></span>
+</div>
+<div class="form-group">
+<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password">
+<i class="input-icon icofont-ui-password"></i>
+<span class="invalid-feedback error error-password"></span>
+</div>
+<div class="form-group">
+<div class="d-flex justify-content-between">
+<label for="remember-me" class="mb0">
+<input type="checkbox" name="remember" id="remember-me" value="1"> Remember me <span class="checkmark fcheckbox"></span>
+</label>
+<a href="https://sandbox.bookingcore.org/forgot-password">Forgot Password?</a>
+</div>
+</div>
+<div class="error message-error invalid-feedback"></div>
+<div class="form-group">
+<button class="btn btn-primary form-submit" type="submit">
+Login
+<span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
+</button>
+</div>
+<div class="advanced">
+<p class="text-center f14 c-grey">or continue with</p>
+<div class="row">
+<div class="col-xs-12 col-sm-4">
+<a href="https://sandbox.bookingcore.org/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+<i class="input-icon fa fa-facebook"></i>
+Facebook
+</a>
+</div>
+<div class="col-xs-12 col-sm-4">
+<a href="https://sandbox.bookingcore.org/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+<i class="input-icon fa fa-google"></i>
+Google
+</a>
+</div>
+<div class="col-xs-12 col-sm-4">
+<a href="https://sandbox.bookingcore.org/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
+<i class="input-icon fa fa-twitter"></i>
+Twitter
+</a>
+</div>
+</div>
+</div>
+<div class="c-grey font-medium f14 text-center"> Do not have an account? <a href data-target="#register" data-toggle="modal">Sign Up</a></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade login" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content relative">
+<div class="modal-header">
+<h4 class="modal-title">Sign Up</h4>
+<span class="c-pointer" data-dismiss="modal" aria-label="Close">
+<i class="input-icon field-icon fa">
+<img src="https://sandbox.bookingcore.org/images/ico_close.svg" alt="close">
+</i>
+</span>
+</div>
+<div class="modal-body">
+<form class="form bravo-form-register" method="post" action="https://sandbox.bookingcore.org/register">
+<input type="hidden" name="_token" value="FavyQZWPPz8MtEhID0jPdlHDc7rzoC6vSwK3YZ1n"> <div class="row">
+<div class="col-lg-6 col-md-12">
+<div class="form-group">
+<input type="text" class="form-control" name="first_name" autocomplete="off" placeholder="First Name">
+<i class="input-icon field-icon icofont-waiter-alt"></i>
+<span class="invalid-feedback error error-first_name"></span>
+</div>
+</div>
+<div class="col-lg-6 col-md-12">
+<div class="form-group">
+<input type="text" class="form-control" name="last_name" autocomplete="off" placeholder="Last Name">
+<i class="input-icon field-icon icofont-waiter-alt"></i>
+<span class="invalid-feedback error error-last_name"></span>
+</div>
+</div>
+</div>
+<div class="form-group">
+<input type="text" class="form-control" name="phone" autocomplete="off" placeholder="Phone">
+<i class="input-icon field-icon icofont-ui-touch-phone"></i>
+<span class="invalid-feedback error error-phone"></span>
+</div>
+<div class="form-group">
+<input type="email" class="form-control" name="email" autocomplete="off" placeholder="Email address">
+<i class="input-icon field-icon icofont-mail"></i>
+<span class="invalid-feedback error error-email"></span>
+</div>
+<div class="form-group">
+<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password">
+<i class="input-icon field-icon icofont-ui-password"></i>
+<span class="invalid-feedback error error-password"></span>
+</div>
+<div class="form-group">
+<label for="term">
+<input id="term" type="checkbox" name="term" class="mr5">
+I have read and accept the <a href target="_blank">Terms and Privacy Policy</a>
+<span class="checkmark fcheckbox"></span>
+</label>
+<div><span class="invalid-feedback error error-term"></span></div>
+</div>
+<div class="error message-error invalid-feedback"></div>
+<div class="form-group">
+<button type="submit" class="btn btn-primary form-submit">
+Sign Up
+<span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
+</button>
+</div>
+<div class="advanced">
+<p class="text-center f14 c-grey">or continue with</p>
+<div class="row">
+<div class="col-xs-12 col-sm-4">
+<a href="https://sandbox.bookingcore.org/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+<i class="input-icon fa fa-facebook"></i>
+Facebook
+</a>
+</div>
+<div class="col-xs-12 col-sm-4">
+<a href="https://sandbox.bookingcore.org/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+<i class="input-icon fa fa-google"></i>
+Google
+</a>
+</div>
+<div class="col-xs-12 col-sm-4">
+<a href="https://sandbox.bookingcore.org/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
+<i class="input-icon fa fa-twitter"></i>
+Twitter
+</a>
+</div>
+</div>
+</div>
+<div class="c-grey f14 text-center">
+Already have an account?
+<a href="#" data-target="#login" data-toggle="modal">Log In</a>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div> <div id="cdn-browser-modal" class="modal fade">
+<div class="modal-dialog modal-xl">
+<div class="modal-content">
+<div id="cdn-browser" class="cdn-browser d-flex flex-column" v-cloak :class="{is_loading:isLoading}">
+<div class="files-nav flex-shrink-0">
+<div class="d-flex justify-content-between">
+<div class="col-left d-flex align-items-center">
+<div class="filter-item">
+<input type="text" placeholder="Search file name...." class="form-control" v-model="filter.s" @keyup.enter="filter.page = 1;reloadLists()">
+</div>
+<div class="filter-item">
+<button class="btn btn-default" @click="reloadAll()">
+<i class="fa fa-search"></i> Search</button>
+</div>
+<div class="filter-item">
+<small><i>Total: {{total}} files</i></small>
+</div>
+</div>
+<div class="div">
+<div class="btn-group" role="group" aria-label="Basic example">
+<button type="button" @click="setViewType('grid')" class="btn" :class="viewType == 'grid' ? 'btn-secondary' : 'btn-outline-secondary'"><i class="fa fa-th"></i></button>
+<button type="button" @click="setViewType('list')" class="btn" :class="viewType != 'grid' ? 'btn-secondary' : 'btn-outline-secondary'"><i class="fa fa-bars"></i></button>
+</div>
+</div>
+<div class="col-right">
+<i class="fa-spin fa fa-spinner icon-loading active" v-show="isLoading"></i>
+<button class="btn btn-primary mr-2" @click="addFolder">
+<span><i class="fa fa-folder"></i> Add Folder</span>
+</button>
+<button class="btn btn-success btn-pick-files">
+<span><i class="fa fa-upload"></i> Upload</span>
+<input multiple :accept="accept_type" type="file" name="files[]" ref="files">
+</button>
+</div>
+</div>
+</div>
+<div class="upload-new" v-show="showUploader" display="none">
+<input type="file" name="filepond[]" class="my-pond">
+</div>
+<div class="files-list">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a @click="toFolderRoot" href="#">Home</a></li>
+<li v-for="(item,index) in breadcrumbs" class="breadcrumb-item active" aria-current="page"><a @click.prevent="showFolder(item,index)" href="#">{{ item.name }}</a></li>
+</ol>
+</nav>
+<div class="border-top border-left mb-3 px-3" v-if="viewType == 'list'">
+<div class="row font-weight-bold " style="font-size: 16px">
+<div class="col-sm-6 py-2 border-bottom border-right">Name</div>
+<div class="col-sm-2 py-2 border-bottom border-right">Type</div>
+<div class="col-sm-2 py-2 border-bottom border-right">Created At</div>
+<div class="col-sm-2 py-2 border-bottom border-right">Size</div>
+</div>
+<folder-item @deleted="deletedFolder" @toggle-edit="toggleEditFolder" @dblclick="showFolder(folder)" @update="updateFolder" :view-type="viewType" v-for="(folder,index) in folders" :index="index" :key="'folder-'+index" :folder="folder"></folder-item>
+<file-item v-for="(file,index) in files" :key="index" :view-type="viewType" :selected="selected" :file="file" v-on:select-file="selectFile"></file-item>
+</div>
+<div class="files-wraps " v-if="viewType == 'grid'" :class="'view-'+viewType">
+<folder-item @deleted="deletedFolder" @toggle-edit="toggleEditFolder" @dblclick="showFolder(folder)" @update="updateFolder" v-for="(folder,index) in folders" :index="index" :key="'folder-'+index" :folder="folder"></folder-item>
+<file-item v-for="(file,index) in files" :key="index" :view-type="viewType" :selected="selected" :file="file" v-on:select-file="selectFile"></file-item>
+</div>
+<p class="no-files-text text-center" v-show="!total && apiFinished" style="display: none">No file found</p>
+<div class="text-center" v-if="totalPage > 1">
+<nav aria-label="Page navigation example">
+<ul class="pagination">
+<li class="page-item" :class="{disabled:filter.page <= 1}">
+<a class="page-link" v-if="filter.page <=1">Previous</a>
+<a class="page-link" href="#" v-if="filter.page > 1" v-on:click="changePage(filter.page-1,$event)">Previous</a>
+</li>
+<li class="page-item" v-if="p >= (filter.page-3) && p <= (filter.page+3)" :class="{active: p == filter.page}" v-for="p in totalPage" @click="changePage(p,$event)">
+<a class="page-link" href="#">{{p}}</a></li>
+<li class="page-item" :class="{disabled:filter.page >= totalPage}">
+<a v-if="filter.page >= totalPage" class="page-link">Next</a>
+<a href="#" class="page-link" v-if="filter.page < totalPage" v-on:click="changePage(filter.page+1,$event)">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="browser-actions d-flex justify-content-between flex-shrink-0" v-if="selected.length">
+<div class="col-left" v-show="selected.length">
+<div class="control-remove" v-if="selected && selected.length">
+<button class="btn btn-danger" @click="removeFiles">Delete file</button>
+</div>
+<div class="control-info" v-if="selected && selected.length">
+<div class="count-selected">{{selected.length}} file selected</div>
+<div class="clear-selected" @click="selected=[]"><i>unselect</i></div>
+</div>
+</div>
+<div class="col-right" v-show="selected.length">
+<button class="btn btn-primary" :class="{disabled:!selected.length}" @click="sendFiles">Use file</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-template" id="file-item-template">
+    <div :class="viewType == 'grid'  ? 'file-item' : 'file-list-item'" >
+        <div class="row hover:bg-f5f5f5 cursor-pointer" v-if="viewType == 'list'" @click="selectFile(file)" :class="{'active':selected.indexOf(file.id) !== -1}">
+            <div class="col-sm-6 py-1 border-right border-bottom">
+                <span v-html="getFileThumb(file)" class="mr-2 item-preview"></span> {{ file.file_name }}</div>
+            <div class="col-sm-2 py-1  border-right border-bottom">{{file.file_extension}}</div>
+            <div class="col-sm-2 py-1  border-right border-bottom">{{file.created_at}}</div>
+            <div class="col-sm-1 py-1 border-bottom">{{humanFileSize(file.file_size)}}</div>
+            <div class="col-sm-1 py-1  border-right border-bottom d-flex justify-content-end">
+                <a :href="file.full_size" target="_blank" title="View file"><i class=" fa fa-eye"></i></a>
+            </div>
+        </div>
+        <div v-if="viewType == 'grid'" class="inner" :class="{active:selected.indexOf(file.id) !== -1 }" @click="selectFile(file)" :title="file.file_name">
+            <div class="file-thumb" v-if="viewType=='grid'" v-html="getFileThumb(file)">
+                </div>
+                <div class="file-name">{{file.file_name}}</div>
+                <span class="file-checked-status" v-show="selected.indexOf(file.id) !== -1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg>
+            </span>
+        </div>
+    </div>
+</script>
+<script type="text/x-template" id="folder-item-template">
+    <div :class="viewType == 'grid'  ? 'file-item folder-item' : 'folder-item'" @dblclick="$emit('dblclick',folder,index)">
+        <div class="row hover:bg-f5f5f5 cursor-pointer" v-if="viewType == 'list'">
+            <div class="col-sm-6 py-1 border-right border-bottom">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-grow-1 align-items-center">
+                        <div>
+                            <img src="/icon/folder.png" width="20px" height="auto" class="mr-2 flex-shrink-0" alt="">
+                        </div>
+                        <div class="text-center font-weight-medium" v-if="!folder.onEdit">{{folder.name}}</div>
+                        <div class="" v-if="folder.onEdit">
+                            <input ref="input" type="text" @blur="saveName" class="form-control" v-model="folder_name" >
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#" class="btn-edit btn-sm position-absolute" @click.prevent="openEdit"><i class="fa fa-edit"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 py-1 border-right border-bottom">Folder</div>
+            <div class="col-sm-2 py-1 border-right border-bottom">{{ folder.created_at }}</div>
+            <div class="col-sm-2 py-1 border-right border-bottom d-flex justify-content-end">
+                <a href="#" class="btn-sm text-danger" title="Delete this folder" @click.prevent="deleteFolder"><i class="fa fa-trash"></i></a>
+            </div>
+        </div>
+        <div v-if="viewType == 'grid'" class="inner d-flex flex-column  position-relative">
+            <div class="file-thumb flex-grow-1 d-flex align-items-center justify-content-center" style="background: #7b7d7e">
+                <i class="fa fa-folder-o" style="font-size: 90px;color:white"></i>
+            </div>
+            <div class="text-center font-weight-medium p-2" v-if="!folder.onEdit">{{folder.name}}</div>
+            <div class="" v-if="folder.onEdit">
+                <input ref="input" type="text" @blur="saveName" class="form-control" v-model="folder_name" >
+            </div>
+            <a href="#" class="btn-edit btn btn-sm btn-warning position-absolute top-0 right-0 m-2" @click.prevent="openEdit"><i class="fa fa-edit"></i></a>
+        </div>
+    </div>
+</script>
+<link rel="stylesheet" href="https://sandbox.bookingcore.org/libs/flags/css/flag-icon.min.css">
+<script src="https://sandbox.bookingcore.org/libs/lazy-load/intersection-observer.js"></script>
+<script async src="https://sandbox.bookingcore.org/libs/lazy-load/lazyload.min.js"></script>
+<script>
+    // Set the options to make LazyLoad self-initialize
+    window.lazyLoadOptions = {
+        elements_selector: ".lazy",
+        // ... more custom settings?
+    };
+
+    // Listen to the initialization event and get the instance of LazyLoad
+    window.addEventListener('LazyLoad::Initialized', function (event) {
+        window.lazyLoadInstance = event.detail.instance;
+    }, false);
+
+
+</script>
+<script src="https://sandbox.bookingcore.org/libs/lodash.min.js"></script>
+<script src="https://sandbox.bookingcore.org/libs/jquery-3.6.3.min.js"></script>
+<script src="https://sandbox.bookingcore.org/libs/vue/vue.min.js"></script>
+<script src="https://sandbox.bookingcore.org/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://sandbox.bookingcore.org/libs/bootbox/bootbox.min.js"></script>
+<script src="https://sandbox.bookingcore.org/module/media/js/browser.js?_ver=3.2.1"></script>
+<script src="https://sandbox.bookingcore.org/libs/carousel-2/owl.carousel.min.js"></script>
+<script type="text/javascript" src="https://sandbox.bookingcore.org/libs/daterange/moment.min.js"></script>
+<script type="text/javascript" src="https://sandbox.bookingcore.org/libs/daterange/daterangepicker.min.js"></script>
+<script src="https://sandbox.bookingcore.org/libs/select2/js/select2.min.js"></script>
+<script src="https://sandbox.bookingcore.org/js/functions.js?_ver=3.2.1"></script>
+<script src="https://sandbox.bookingcore.org/libs/pusher.min.js"></script>
+<script src="https://sandbox.bookingcore.org/js/home.js?_ver=3.2.1"></script>
+<script src="https://sandbox.bookingcore.org/module/booking/js/checkout.js"></script>
+<script type="text/javascript">
+        jQuery(function () {
+            $.ajax({
+                'url': bookingCore.url + '/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/check-status',
+                'cache': false,
+                'type': 'GET',
+                success: function (data) {
+                    if (data.redirect !== undefined && data.redirect) {
+                        window.location.href = data.redirect
+                    }
+                }
+            });
+        })
+
+        $('.deposit_amount').on('change', function(){
+            checkPaynow();
+        });
+
+        $('input[type=radio][name=how_to_pay]').on('change', function(){
+            checkPaynow();
+        });
+
+        function checkPaynow(){
+            var credit_input = $('.deposit_amount').val();
+            var how_to_pay = $("input[name=how_to_pay]:checked").val();
+            var convert_to_money = credit_input * 1;
+
+            if(how_to_pay == 'full'){
+                var pay_now_need_pay = parseFloat(1500) - convert_to_money;
+            }else{
+                var pay_now_need_pay = parseFloat(1500) - convert_to_money;
+            }
+
+            if(pay_now_need_pay < 0){
+                pay_now_need_pay = 0;
+            }
+            $('.convert_pay_now').html(bravo_format_money(pay_now_need_pay));
+            $('.convert_deposit_amount').html(bravo_format_money(convert_to_money));
+        }
+
+
+        jQuery(function () {
+            $(".bravo_apply_coupon").click(function () {
+                var parent = $(this).closest('.section-coupon-form');
+                parent.find(".group-form .fa-spin").removeClass("d-none");
+                parent.find(".message").html('');
+                $.ajax({
+                    'url': bookingCore.url + '/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/apply-coupon',
+                    'data': parent.find('input,textarea,select').serialize(),
+                    'cache': false,
+                    'method':"post",
+                    success: function (res) {
+                        parent.find(".group-form .fa-spin").addClass("d-none");
+                        if (res.reload !== undefined) {
+                            window.location.reload();
+                        }
+                        if(res.message && res.status === 1)
+                        {
+                            parent.find('.message').html('<div class="alert alert-success">' + res.message+ '</div>');
+                        }
+                        if(res.message && res.status === 0)
+                        {
+                            parent.find('.message').html('<div class="alert alert-danger">' + res.message+ '</div>');
+                        }
+                    }
+                });
+            });
+            $(".bravo_remove_coupon").click(function (e) {
+                e.preventDefault();
+                var parent = $(this).closest('.section-coupon-form');
+                var parentItem = $(this).closest('.item');
+                parentItem.find(".fa-spin").removeClass("d-none");
+                $.ajax({
+                    'url': bookingCore.url + '/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/remove-coupon',
+                    'data': {
+                        coupon_code:$(this).attr('data-code')
+                    },
+                    'cache': false,
+                    'method':"post",
+                    success: function (res) {
+                        parentItem.find(".fa-spin").addClass("d-none");
+                        if (res.reload !== undefined) {
+                            window.location.reload();
+                        }
+                        if(res.message && res.status === 0)
+                        {
+                            parent.find('.message').html('<div class="alert alert-danger">' + res.message+ '</div>');
+                        }
+                    }
+                });
+            });
+        })
+    </script>
+</div>
+<<<<<<< HEAD
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W7B5HJJ');</script>
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7B5HJJ"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml            : true,
+            version          : 'v3.3'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div class="fb-customerchat" attribution="setup_tool" page_id="2280007165584589">
+</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115740936-4"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-115740936-4');
+</script>
+<style>
+    .bravo-buy-button{
+        text-align: center;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #0072bc;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 12px;
+        padding: 10px 20px 8px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        font-weight: 600;
+        z-index: 99;
+    }
+    .bravo-buy-button:hover{
+        text-decoration: none;
+        color: #fff;
+    }
+    .bravo-buy-button .tf-text{
+        background-image: url('https://sandbox.bookingcore.org/landing/img/logoen.png');
+        width: 66px;
+        height: 12px;
+        display: inline-block;
+        background-repeat: no-repeat;
+
+    }
+</style>
+<a class="sticky-button bravo-buy-button" target="_blank" href="https://codecanyon.net/item/booking-core-ultimate-booking-system/24043972">
+<span>Buy on <span class="tf-text"></span></span>
+</a>
+=======
+>>>>>>> dev
+</body>
+</html>
