@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="csrf-token" content="FavyQZWPPz8MtEhID0jPdlHDc7rzoC6vSwK3YZ1n">
-<link rel="icon" type="image/png" href="https://sandbox.bookingcore.org/uploads/demo/general/favicon.png" />
+<link rel="icon" type="image/png" href="/uploads/demo/general/favicon.png" />
 <title>Checkout - Booking Core</title>
 <meta name="description" content />
-<link href="https://sandbox.bookingcore.org/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/ionicons/css/ionicons.min.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/icofont/icofont.min.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/select2/css/select2.min.css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/dist/frontend/css/notification.css" rel="newest stylesheet">
-<link href="https://sandbox.bookingcore.org/dist/frontend/css/app.css?_ver=3.2.1" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://sandbox.bookingcore.org/libs/daterange/daterangepicker.css">
+<link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="/libs/ionicons/css/ionicons.min.css" rel="stylesheet">
+<link href="/libs/icofont/icofont.min.css" rel="stylesheet">
+<link href="/libs/select2/css/select2.min.css" rel="stylesheet">
+<link href="/dist/frontend/css/notification.css" rel="newest stylesheet">
+<link href="/dist/frontend/css/app.css?_ver=3.2.1" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/libs/daterange/daterangepicker.css">
 
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&display=swap" type="text/css" media="all" />
@@ -23,7 +23,7 @@
     var bookingCore = {
         url:'https://sandbox.bookingcore.org',
         url_root:'https://sandbox.bookingcore.org',
-        admin_url:'https://sandbox.bookingcore.org/admin',
+        admin_url:'/admin',
         booking_decimals:0,
         thousand_separator:'.',
         decimal_separator:',',
@@ -40,16 +40,16 @@
             map_fit_bounds:'on',
         },
         routes:{
-            login:'https://sandbox.bookingcore.org/login',
-            register:'https://sandbox.bookingcore.org/register',
-            checkout:'https://sandbox.bookingcore.org/booking/doCheckout'
+            login:'/login',
+            register:'/register',
+            checkout:'/booking/doCheckout'
         },
         currentUser: 59,
         isAdmin : 0,
         rtl: false,
-        markAsRead:'https://sandbox.bookingcore.org/notify/markAsRead',
-        markAllAsRead:'https://sandbox.bookingcore.org/notify/markAllAsRead',
-        loadNotify : 'https://sandbox.bookingcore.org/notify/notifications',
+        markAsRead:'/notify/markAsRead',
+        markAllAsRead:'/notify/markAllAsRead',
+        loadNotify : '/notify/notifications',
         pusher_api_key : '',
         pusher_cluster : '',
         language: 'en',
@@ -58,13 +58,13 @@
             bookingCore.media = {
         groups:{"default":{"ext":["jpg","jpeg","png","gif","bmp","docx"],"mime":["image\/png","image\/jpeg","image\/gif","image\/bmp","application\/vnd.openxmlformats-officedocument.wordprocessingml.document"],"max_size":20000000,"max_width":4000,"max_height":4000},"image":{"ext":["jpg","jpeg","png","gif","bmp"],"mime":["image\/png","image\/jpeg","image\/gif","image\/bmp"],"max_size":20000000,"max_width":4000,"max_height":4000}},
     }
-                            bookingCore.module.hotel = 'https://sandbox.bookingcore.org/hotel';
-                                bookingCore.module.space = 'https://sandbox.bookingcore.org/space';
-                                bookingCore.module.car = 'https://sandbox.bookingcore.org/car';
-                                bookingCore.module.event = 'https://sandbox.bookingcore.org/event';
-                                bookingCore.module.tour = 'https://sandbox.bookingcore.org/tour';
-                                bookingCore.module.flight = 'https://sandbox.bookingcore.org/flight';
-                                bookingCore.module.boat = 'https://sandbox.bookingcore.org/boat';
+                            bookingCore.module.hotel = '/hotel';
+                                bookingCore.module.space = '/space';
+                                bookingCore.module.car = '/car';
+                                bookingCore.module.event = '/event';
+                                bookingCore.module.tour = '/tour';
+                                bookingCore.module.flight = '/flight';
+                                bookingCore.module.boat = '/boat';
                 var i18n = {
         warning:"Warning",
         success:"Success",
@@ -106,9 +106,9 @@
     };
 </script>
 
-<link href="https://sandbox.bookingcore.org/module/booking/css/checkout.css?_ver=3.2.1" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/custom-css" rel="stylesheet">
-<link href="https://sandbox.bookingcore.org/libs/carousel-2/owl.carousel.css" rel="stylesheet">
+<link href="/module/booking/css/checkout.css?_ver=3.2.1" rel="stylesheet">
+<link href="/custom-css" rel="stylesheet">
+<link href="/libs/carousel-2/owl.carousel.css" rel="stylesheet">
 </head>
 <body class="frontend-page header-normal   ">
 <div class="bravo_wrap">
@@ -133,12 +133,12 @@ USD
 </a>
 <ul class="dropdown-menu text-left width-auto">
 <li>
-<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_currency=eur" class="is_login">
+<a href="/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_currency=eur" class="is_login">
 EUR
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_currency=jpy" class="is_login">
+<a href="/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_currency=jpy" class="is_login">
 JPY
 </a>
 </li>
@@ -147,19 +147,19 @@ JPY
 <li class="dropdown">
 <ul class="dropdown-menu text-left">
 <li>
-<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=ar" class="is_login">
+<a href="/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=ar" class="is_login">
 <span class="flag-icon flag-icon-sa"></span>
 Araic
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=en_US" class="is_login">
+<a href="/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=en_US" class="is_login">
 <span class="flag-icon flag-icon-en_US"></span>
 English
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=fr" class="is_login">
+<a href="/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=fr" class="is_login">
 <span class="flag-icon flag-icon-fr"></span>
 Français
 </a>
@@ -182,7 +182,7 @@ Français
 <ul class="dropdown-list-items p-0">
 </ul>
 <div class="dropdown-footer text-center">
-<a href="https://sandbox.bookingcore.org/notify/notifications">View More</a>
+<a href="/notify/notifications">View More</a>
 </div>
 </ul>
 </li>
@@ -192,16 +192,16 @@ Français
 </a>
 <ul class="dropdown-menu dropdown-menu-user text-left">
 <li class>
-<a href="https://sandbox.bookingcore.org/user/profile"><i class="icon ion-md-construct"></i> My profile</a>
+<a href="/user/profile"><i class="icon ion-md-construct"></i> My profile</a>
 </li>
-<li class="menu-hr"><a href="https://sandbox.bookingcore.org/user/booking-history"><i class="fa fa-clock-o"></i> Booking History</a></li>
-<li class="menu-hr"><a href="https://sandbox.bookingcore.org/user/profile/change-password"><i class="fa fa-lock"></i> Change password</a></li>
-<li class="menu-hr"><a href="https://sandbox.bookingcore.org/user/my-plan"><i class="fa fa-list-alt"></i> My plan</a></li>
+<li class="menu-hr"><a href="/user/booking-history"><i class="fa fa-clock-o"></i> Booking History</a></li>
+<li class="menu-hr"><a href="/user/profile/change-password"><i class="fa fa-lock"></i> Change password</a></li>
+<li class="menu-hr"><a href="/user/my-plan"><i class="fa fa-list-alt"></i> My plan</a></li>
 <li class="menu-hr">
 <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form-topbar').submit();"><i class="fa fa-sign-out"></i> Logout</a>
 </li>
 </ul>
-<form id="logout-form-topbar" action="https://sandbox.bookingcore.org/logout" method="POST" style="display: none;">
+<form id="logout-form-topbar" action="/logout" method="POST" style="display: none;">
 <input type="hidden" name="_token" value="FavyQZWPPz8MtEhID0jPdlHDc7rzoC6vSwK3YZ1n">
 </form>
 </li>
@@ -215,7 +215,7 @@ Français
 <div class="content">
 <div class="header-left">
 <a href="https://sandbox.bookingcore.org" class="bravo-logo">
-<img src="https://sandbox.bookingcore.org/uploads/demo/general/logo.svg" alt="Booking Core">
+<img src="/uploads/demo/general/logo.svg" alt="Booking Core">
 </a>
 <div class="bravo-menu">
 <ul class="main-menu menu-generated"><li class=" depth-0"><a target href="/">Home <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/">Home Page</a></li><li class=" depth-1"><a target href="/page/home-page-v2">Home Page v2</a></li><li class=" depth-1"><a target href="/page/hotel">Home Hotel</a></li><li class=" depth-1"><a target href="/page/home-tour-agency">Home Tour Agency</a></li><li class=" depth-1"><a target href="/page/tour">Home Tour</a></li><li class=" depth-1"><a target href="/page/space">Home Space</a></li><li class=" depth-1"><a target href="/page/car">Home Car</a></li></ul></li><li class=" depth-0"><a target href="/hotel">Hotel <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/hotel">Hotel List</a></li><li class=" depth-1"><a target href="/hotel?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="/hotel/parian-holiday-villas">Hotel Detail</a></li></ul></li><li class=" depth-0"><a target href="/tour">Tours <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/tour">Tour List</a></li><li class=" depth-1"><a target href="/tour?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="/tour/paris-vacation-travel">Tour Detail</a></li></ul></li><li class=" depth-0"><a target href="/space">Space <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/space">Space List</a></li><li class=" depth-1"><a target href="/space?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="/space/stay-greenwich-village">Space Detail</a></li></ul></li><li class=" depth-0"><a target href="/car">Car <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/car">Car List</a></li><li class=" depth-1"><a target href="/car?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="/car/vinfast-lux-a20-plus">Car Detail</a></li></ul></li><li class=" depth-0"><a target href="/event">Event <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/event">Event List</a></li><li class=" depth-1"><a target href="/event?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="/event/aspen-glade-weddings-events">Event Detail</a></li></ul></li><li class=" depth-0"><a target href="/flight">Flight</a></li><li class=" depth-0"><a target href="/boat">Boat <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/boat">Boat List</a></li><li class=" depth-1"><a target href="/boat?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="/boat/blue-moon-yc-300">Boat Detail</a></li></ul></li><li class=" depth-0"><a target href="#">Pages <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/plan">Plan</a></li><li class=" depth-1"><a target href="/news">News List</a></li><li class=" depth-1"><a target href="/news/morning-in-the-northern-sea">News Detail</a></li><li class=" depth-1"><a target href="/location/paris">Location Detail</a></li><li class=" depth-1"><a target href="/page/become-a-vendor">Become a vendor</a></li><li class=" depth-1"><a target href="/contact">Contact</a></li></ul></li></ul> </div>
@@ -233,12 +233,12 @@ Français
 <div class="avatar"></div>
 <ul>
 <li>
-<a href="https://sandbox.bookingcore.org/user/profile">
+<a href="/user/profile">
 <i class="icofont-user-suited"></i> Hi, Siva Sham
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/user/profile">
+<a href="/user/profile">
 <i class="icon ion-md-construct"></i> My profile
 </a>
 </li>
@@ -246,7 +246,7 @@ Français
 <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form-mobile').submit();">
 <i class="fa fa-sign-out"></i> Logout
 </a>
-<form id="logout-form-mobile" action="https://sandbox.bookingcore.org/logout" method="POST" style="display: none;">
+<form id="logout-form-mobile" action="/logout" method="POST" style="display: none;">
 <input type="hidden" name="_token" value="FavyQZWPPz8MtEhID0jPdlHDc7rzoC6vSwK3YZ1n">
 </form>
 </li>
@@ -259,12 +259,12 @@ USD
 </a>
 <ul class="dropdown-menu text-left width-auto">
 <li>
-<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_currency=eur" class="is_login">
+<a href="/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_currency=eur" class="is_login">
 EUR
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_currency=jpy" class="is_login">
+<a href="/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_currency=jpy" class="is_login">
 JPY
 </a>
 </li>
@@ -275,19 +275,19 @@ JPY
 <li class="dropdown">
 <ul class="dropdown-menu text-left">
 <li>
-<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=ar" class="is_login">
+<a href="/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=ar" class="is_login">
 <span class="flag-icon flag-icon-sa"></span>
 Araic
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=en_US" class="is_login">
+<a href="/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=en_US" class="is_login">
 <span class="flag-icon flag-icon-en_US"></span>
 English
 </a>
 </li>
 <li>
-<a href="https://sandbox.bookingcore.org/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=fr" class="is_login">
+<a href="/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/checkout?set_lang=fr" class="is_login">
 <span class="flag-icon flag-icon-fr"></span>
 Français
 </a>
@@ -720,13 +720,13 @@ Two Checkout
 <div class="review-section">
 <div class="service-info">
 <div>
-<h3 class="service-name"><a href="https://sandbox.bookingcore.org/hotel/parian-holiday-villas">Parian Holiday Villas</a></h3>
+<h3 class="service-name"><a href="/hotel/parian-holiday-villas">Parian Holiday Villas</a></h3>
 <p class="address"><i class="fa fa-map-marker"></i>
 Regal Cinemas Battery Park
 </p>
 </div>
 <div>
-<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-13.jpg" alt="Parian Holiday Villas">
+<img class="img-responsive lazy" data-src="/uploads/demo/space/space-13.jpg" alt="Parian Holiday Villas">
 </div>
 </div>
 </div>
@@ -868,7 +868,7 @@ Apply
 </div>
 </div>
 <div class="col-xs-12 col-md-5 col-lg-6">
-<form action="https://sandbox.bookingcore.org/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
+<form action="/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
 <input type="hidden" name="_token" value="FavyQZWPPz8MtEhID0jPdlHDc7rzoC6vSwK3YZ1n"> <div class="form-group">
 <input type="text" name="email" class="form-control email-input" placeholder="Your Email">
 <button type="submit" class="btn-submit">Subscribe
@@ -995,12 +995,12 @@ Booking Core
 <h4 class="modal-title">Log In</h4>
 <span class="c-pointer" data-dismiss="modal" aria-label="Close">
 <i class="input-icon field-icon fa">
-<img src="https://sandbox.bookingcore.org/images/ico_close.svg" alt="close">
+<img src="/images/ico_close.svg" alt="close">
 </i>
 </span>
 </div>
 <div class="modal-body relative">
-<form class="bravo-form-login" method="POST" action="https://sandbox.bookingcore.org/login">
+<form class="bravo-form-login" method="POST" action="/login">
 <input type="hidden" name="redirect" value>
 <input type="hidden" name="_token" value="FavyQZWPPz8MtEhID0jPdlHDc7rzoC6vSwK3YZ1n"> <div class="form-group">
 <input type="text" class="form-control" name="email" autocomplete="off" placeholder="Email address">
@@ -1017,7 +1017,7 @@ Booking Core
 <label for="remember-me" class="mb0">
 <input type="checkbox" name="remember" id="remember-me" value="1"> Remember me <span class="checkmark fcheckbox"></span>
 </label>
-<a href="https://sandbox.bookingcore.org/forgot-password">Forgot Password?</a>
+<a href="/forgot-password">Forgot Password?</a>
 </div>
 </div>
 <div class="error message-error invalid-feedback"></div>
@@ -1031,19 +1031,19 @@ Login
 <p class="text-center f14 c-grey">or continue with</p>
 <div class="row">
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+<a href="/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
 <i class="input-icon fa fa-facebook"></i>
 Facebook
 </a>
 </div>
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+<a href="/social-login/google" class="btn btn_login_gg_link" data-channel="google">
 <i class="input-icon fa fa-google"></i>
 Google
 </a>
 </div>
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
+<a href="/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
 <i class="input-icon fa fa-twitter"></i>
 Twitter
 </a>
@@ -1063,12 +1063,12 @@ Twitter
 <h4 class="modal-title">Sign Up</h4>
 <span class="c-pointer" data-dismiss="modal" aria-label="Close">
 <i class="input-icon field-icon fa">
-<img src="https://sandbox.bookingcore.org/images/ico_close.svg" alt="close">
+<img src="/images/ico_close.svg" alt="close">
 </i>
 </span>
 </div>
 <div class="modal-body">
-<form class="form bravo-form-register" method="post" action="https://sandbox.bookingcore.org/register">
+<form class="form bravo-form-register" method="post" action="/register">
 <input type="hidden" name="_token" value="FavyQZWPPz8MtEhID0jPdlHDc7rzoC6vSwK3YZ1n"> <div class="row">
 <div class="col-lg-6 col-md-12">
 <div class="form-group">
@@ -1119,19 +1119,19 @@ Sign Up
 <p class="text-center f14 c-grey">or continue with</p>
 <div class="row">
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+<a href="/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
 <i class="input-icon fa fa-facebook"></i>
 Facebook
 </a>
 </div>
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+<a href="/social-login/google" class="btn btn_login_gg_link" data-channel="google">
 <i class="input-icon fa fa-google"></i>
 Google
 </a>
 </div>
 <div class="col-xs-12 col-sm-4">
-<a href="https://sandbox.bookingcore.org/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
+<a href="/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
 <i class="input-icon fa fa-twitter"></i>
 Twitter
 </a>
@@ -1301,9 +1301,9 @@ Already have an account?
         </div>
     </div>
 </script>
-<link rel="stylesheet" href="https://sandbox.bookingcore.org/libs/flags/css/flag-icon.min.css">
-<script src="https://sandbox.bookingcore.org/libs/lazy-load/intersection-observer.js"></script>
-<script async src="https://sandbox.bookingcore.org/libs/lazy-load/lazyload.min.js"></script>
+<link rel="stylesheet" href="/libs/flags/css/flag-icon.min.css">
+<script src="/libs/lazy-load/intersection-observer.js"></script>
+<script async src="/libs/lazy-load/lazyload.min.js"></script>
 <script>
     // Set the options to make LazyLoad self-initialize
     window.lazyLoadOptions = {
@@ -1318,20 +1318,20 @@ Already have an account?
 
 
 </script>
-<script src="https://sandbox.bookingcore.org/libs/lodash.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/jquery-3.6.3.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/vue/vue.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/bootbox/bootbox.min.js"></script>
-<script src="https://sandbox.bookingcore.org/module/media/js/browser.js?_ver=3.2.1"></script>
-<script src="https://sandbox.bookingcore.org/libs/carousel-2/owl.carousel.min.js"></script>
-<script type="text/javascript" src="https://sandbox.bookingcore.org/libs/daterange/moment.min.js"></script>
-<script type="text/javascript" src="https://sandbox.bookingcore.org/libs/daterange/daterangepicker.min.js"></script>
-<script src="https://sandbox.bookingcore.org/libs/select2/js/select2.min.js"></script>
-<script src="https://sandbox.bookingcore.org/js/functions.js?_ver=3.2.1"></script>
-<script src="https://sandbox.bookingcore.org/libs/pusher.min.js"></script>
-<script src="https://sandbox.bookingcore.org/js/home.js?_ver=3.2.1"></script>
-<script src="https://sandbox.bookingcore.org/module/booking/js/checkout.js"></script>
+<script src="/libs/lodash.min.js"></script>
+<script src="/libs/jquery-3.6.3.min.js"></script>
+<script src="/libs/vue/vue.min.js"></script>
+<script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/libs/bootbox/bootbox.min.js"></script>
+<script src="/module/media/js/browser.js?_ver=3.2.1"></script>
+<script src="/libs/carousel-2/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/libs/daterange/moment.min.js"></script>
+<script type="text/javascript" src="/libs/daterange/daterangepicker.min.js"></script>
+<script src="/libs/select2/js/select2.min.js"></script>
+<script src="/js/functions.js?_ver=3.2.1"></script>
+<script src="/libs/pusher.min.js"></script>
+<script src="/js/home.js?_ver=3.2.1"></script>
+<script src="/module/booking/js/checkout.js"></script>
 <script type="text/javascript">
         jQuery(function () {
             $.ajax({
@@ -1489,7 +1489,7 @@ Already have an account?
         color: #fff;
     }
     .bravo-buy-button .tf-text{
-        background-image: url('https://sandbox.bookingcore.org/landing/img/logoen.png');
+        background-image: url('/landing/img/logoen.png');
         width: 66px;
         height: 12px;
         display: inline-block;
