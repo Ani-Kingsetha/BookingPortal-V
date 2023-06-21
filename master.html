@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" class>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="csrf-token" content="fYS1Lasq6wuuXtFwYK46uqlP8NEodobjCbSWeCsL">
+		<link rel="icon" type="image/png" href="uploads/demo/general/favicon.jpg" />
+		<title>Home Page</title>
+		<meta name="description" content />
+		<meta property="og:url" content="index.html" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Home Page" />
+		<meta property="og:description" content />
+		<meta property="og:image" content />
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Home Page">
+		<meta name="twitter:description" content>
+		<meta name="twitter:image" content>
+		<link rel="canonical" href="index.html" />
+		<link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="libs/ionicons/css/ionicons.min.css" rel="stylesheet">
+		<link href="libs/icofont/icofont.min.css" rel="stylesheet">
+		<link href="libs/select2/css/select2.min.css" rel="stylesheet">
+		<link href="dist/frontend/css/notification.css" rel="newest stylesheet">
+		<link href="dist/frontend/css/app.css?_ver=3.2.1" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="libs/daterange/daterangepicker.css">
+		<link rel="dns-prefetch" href="http://fonts.gstatic.com/">
+		<link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&amp;display=swap" type="text/css" media="all" />
+		<script>
+			var bookingCore = {
+			    url:'/',
+			    url_root:'/',
+			    admin_url:'//admin',
+			    booking_decimals:0,
+			    thousand_separator:'.',
+			    decimal_separator:',',
+			    currency_position:'left',
+			    currency_symbol:'$',
+			    currency_rate:'1',
+			    date_format:'MM/DD/YYYY',
+			    map_provider:'gmap',
+			    map_gmap_key:'',
+			    map_options:{
+			        map_lat_default:'',
+			        map_lng_default:'',
+			        map_clustering:'on',
+			        map_fit_bounds:'on',
+			    },
+			    routes:{
+			        login:'//login',
+			        register:'//register',
+			        checkout:'//booking/doCheckout'
+			    },
+			    currentUser: 0,
+			    isAdmin : 0,
+			    rtl: false,
+			    markAsRead:'//notify/markAsRead',
+			    markAllAsRead:'//notify/markAllAsRead',
+			    loadNotify : '//notify/notifications',
+			    pusher_api_key : '',
+			    pusher_cluster : '',
+			    language: 'en',
+			    module:{}
+			};
+			                        bookingCore.module.hotel = 'hotel.html';
+			                            bookingCore.module.space = 'space.html';
+			                            bookingCore.module.car = 'car.html';
+			                            bookingCore.module.event = 'event.html';
+			                            bookingCore.module.tour = 'tour.html';
+			                            bookingCore.module.flight = 'flight.html';
+			                            bookingCore.module.boat = 'boat.html';
+			            var i18n = {
+			    warning:"Warning",
+			    success:"Success",
+			    confirm_delete:"Do you want to delete?",
+			    confirm:"Confirm",
+			    cancel:"Cancel",
+			};
+			var daterangepickerLocale = {
+			    "applyLabel": "Apply",
+			    "cancelLabel": "Cancel",
+			    "fromLabel": "From",
+			    "toLabel": "To",
+			    "customRangeLabel": "Custom",
+			    "weekLabel": "W",
+			    "first_day_of_week": 1,
+			    "daysOfWeek": [
+			        "Su",
+			        "Mo",
+			        "Tu",
+			        "We",
+			        "Th",
+			        "Fr",
+			        "Sa"
+			    ],
+			    "monthNames": [
+			        "January",
+			        "February",
+			        "March",
+			        "April",
+			        "May",
+			        "June",
+			        "July",
+			        "August",
+			        "September",
+			        "October",
+			        "November",
+			        "December"
+			    ],
+			};
+		</script>
+		<link href="custom-css.css" rel="stylesheet">
+		<link href="libs/carousel-2/owl.carousel.css" rel="stylesheet">
+	</head>
+	<body class="frontend-page header-normal   ">
+		<div class="bravo_wrap">
+		<div class="bravo_topbar">
+			<div class="container">
+				<div class="content">
+					<div class="topbar-left">
+						<div class="socials">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-linkedin"></i></a>
+							<a href="#"><i class="fa fa-google-plus"></i></a>
+						</div>
+						<span class="line"></span>
+						<a href="/cdn-cgi/l/email-protection#0f6c60617b6e6c7b4f6d6060646661686c607d6a217b6a7c7b"><span class="__cf_email__" data-cfemail="c9aaa6a7bda8aabd89aba6a6a2a0a7aeaaa6bbace7bdacbabd">[email&#160;protected]</span></a>
+					</div>
+					<!--
+						<div class="topbar-right">
+						<ul class="topbar-items">
+						<li class="dropdown">
+						<a href="#" data-toggle="dropdown" class="is_login">
+						USD
+						<i class="fa fa-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu text-left width-auto">
+						<li>
+						<a href="/?set_currency=eur" class="is_login">
+						EUR
+						</a>
+						</li>
+						<li>
+						<a href="/?set_currency=jpy" class="is_login">
+						JPY
+						</a>
+						</li>
+						</ul>
+						</li>
+						<li class="dropdown">
+						<ul class="dropdown-menu text-left">
+						<li>
+						<a href="/?set_lang=ar" class="is_login">
+						<span class="flag-icon flag-icon-sa"></span>
+						Araic
+						</a>
+						</li>
+						<li>
+						<a href="/?set_lang=en_US" class="is_login">
+						<span class="flag-icon flag-icon-en_US"></span>
+						English
+						</a>
+						</li>
+						<li>
+						<a href="/?set_lang=fr" class="is_login">
+						<span class="flag-icon flag-icon-fr"></span>
+						Français
+						</a>
+						</li>
+						</ul>
+						</li>
+						</div>-->
+					<div class="topbar-right">
+						<ul class="topbar-items">
+							<li class="dropdown">
+								<ul class="dropdown-menu text-left sf-hidden"></ul>
+							</li>
+							<li class="login-item">
+								<a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+							</li>
+							<li class="signup-item">
+								<a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bravo_header">
+			<div class="container">
+				<div class="content">
+					<div class="header-left">
+						<a href="index.html" class="bravo-logo">
+						<img src="uploads/demo/general/logo.png" alt="UrTripo Aviation" width="45%">
+						</a>
+						<div class="bravo-menu">
+							<ul class="main-menu menu-generated">
+								<li class=" depth-0">
+									<a target href="index.html">
+										Home <!--<i class="caret fa fa-angle-down"></i>-->
+									</a>
+									<!-- <ul class="children-menu menu-dropdown">
+										<li class=" depth-1">
+										    <a target href="index.html">Home Page</a>
+										</li>
+										<li class=" depth-1">
+										    <a target href="page/home-page-v2.html">Home Page v2</a>
+										</li>
+										<li class=" depth-1">
+										    <a target href="page/hotel.html">Home Hotel</a>
+										</li>
+										<li class=" depth-1">
+										    <a target href="page/home-tour-agency.html">Home Tour Agency</a>
+										</li>
+										<li class=" depth-1">
+										    <a target href="page/tour.html">Home Tour</a>
+										</li>
+										<li class=" depth-1">
+										    <a target href="page/space.html">Home Space</a>
+										</li>
+										<li class=" depth-1">
+										    <a target href="page/car.html">Home Car</a>
+										</li>
+										</ul> -->
+								</li>
+								<li class=" depth-0">
+									<a target href="flight.html">
+										Flights <!-- <i class="caret fa fa-angle-down"></i> -->
+									</a>
+									<!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="hotel.html">Hotel List</a></li><li class=" depth-1"><a target href="hotel76a0.html?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="index.html">Hotel Detail</a></li></ul> -->
+								</li>
+								<li class=" depth-0">
+									<a target href="hotel.html">
+										Hotels <!-- <i class="caret fa fa-angle-down"></i> -->
+									</a>
+									<!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="tour.html">Tour List</a></li><li class=" depth-1"><a target href="tour76a0.html?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="tour/paris-vacation-travel.html">Tour Detail</a></li></ul> -->
+								</li>
+								<li class=" depth-0">
+									<a target href="bus.html">
+										Bus <!-- <i class="caret fa fa-angle-down"></i> -->
+									</a>
+									<!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="space.html">Space List</a></li><li class=" depth-1"><a target href="space76a0.html?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="space/stay-greenwich-village.html">Space Detail</a></li></ul> -->
+								</li>
+								<li class=" depth-0">
+									<a target href="package.html">
+										Packages <!-- <i class="caret fa fa-angle-down"></i> -->
+									</a>
+									<!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="car.html">Car List</a></li><li class=" depth-1"><a target href="car76a0.html?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="car/vinfast-lux-a20-plus.html">Car Detail</a></li></ul> -->
+								</li>
+								<!-- <li class=" depth-0">
+									<a target href="event.html">Event <i class="caret fa fa-angle-down"></i></a>
+									<ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="event.html">Event List</a></li><li class=" depth-1"><a target href="event76a0.html?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="event/aspen-glade-weddings-events.html">Event Detail</a></li></0ul>
+									</li>
+									<li class=" depth-0">
+									<a target href=".html">Flight</a>
+									</li>
+									<li class=" depth-0">
+									<a target href="boat.html">Boat <i class="caret fa fa-angle-down"></i></a>
+									<ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="boat.html">Boat List</a></li><li class=" depth-1"><a target href="boat76a0.html?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="boat/blue-moon-yc-300.html">Boat Detail</a></li></ul>
+									</li>
+									<li class=" depth-0">
+									<a target href="#">Pages <i class="caret fa fa-angle-down"></i></a>
+									<ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="login.html">Plan</a></li><li class=" depth-1"><a target href="news.html">News List</a></li><li class=" depth-1"><a target href="news/morning-in-the-northern-sea.html">News Detail</a></li><li class=" depth-1"><a target href="location/paris.html">Location Detail</a></li><li class=" depth-1"><a target href="page/become-a-vendor.html">Become a vendor</a></li><li class=" depth-1"><a target href="contact.html">Contact</a></li></ul>
+									</li> -->
+							</ul>
+						</div>
+					</div>
+					<div class="header-right">
+						<button class="bravo-more-menu">
+						<i class="fa fa-bars"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="bravo-menu-mobile" style="display:none;">
+				<div class="user-profile">
+					<div class="b-close"><i class="icofont-scroll-left"></i></div>
+					<div class="avatar"></div>
+					<ul>
+						<li>
+							<a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+						</li>
+						<li>
+							<a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+						</li>
+					</ul>
+				</div>
+				<div class="g-menu">
+					<ul class="main-menu menu-generated">
+					<li class=" depth-0">
+						<a target href="index.html">Home</a>
+					</li>
+					<li class=" depth-0">
+						<a target href="hotel.html">Hotel </a>
+					</li>
+					<li class=" depth-0">
+						<a target href="tour.html">Flights</a>
+					</li>
+					<li class=" depth-0">
+						<a target href="space.html">Bus</a>
+					</li>
+					<li class=" depth-0">
+						<a target href="car.html">Packages</a>
+					</li>
+				</div>
+			</div>
+
+			<div class="bravo_footer">
+				<div class="mailchimp">
+				</div>
+				<div class="main-footer">
+					<div class="container">
+						<div class="mt-4 p-5 text-primary text-white rounded">
+							<div class="row">
+								<div class="col-lg-3 col-md-6">
+									<div class="nav-footer">
+										<div class="title">
+											NEED HELP?
+										</div>
+										<div class="context">
+											<div class="contact">
+												<div class="c-title">
+													Call Us
+												</div>
+												<div class="sub">
+													+ 11 111 11 1111
+												</div>
+											</div>
+											<div class="contact">
+												<div class="c-title">
+													Email for Us
+												</div>
+												<div class="sub">
+													customercare<br>@urtripo.com
+													<!--<a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="0169646d6d6e41786e7473726875642f626e6c">[email&#160;protected]</a>-->
+												</div>
+											</div>
+											<div class="contact">
+												<div class="c-title">
+													Follow Us
+												</div>
+												<div class="sub">
+													<a href="#">
+													<i class="icofont-facebook"></i>
+													</a>
+													<a href="#">
+													<i class="icofont-twitter"></i>
+													</a>
+													<a href="#">
+													<i class="icofont-youtube-play"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6">
+									<div class="nav-footer">
+										<div class="title">
+											URTRIPO AVIATION
+										</div>
+										<div class="context">
+											<ul>
+												<li><a href="#">About Us</a></li>
+												<li><a href="#">Blog</a></li>
+												<li><a href="#">Customer Support</a></li>
+												<li><a href="#">Jobs</a></li>
+												<li><a href="#">Privacy Policy</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6">
+									<div class="nav-footer">
+										<div class="title">
+											EXPLORE
+										</div>
+										<div class="context">
+											<ul>
+												<li><a href="#">Airports</a></li>
+												<li><a href="#">Hotels</a></li>
+												<li><a href="#">Flights</a></li>
+												<li><a href="#">Bus</a></li>
+												<li><a href="#">Packages</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6">
+									<div class="nav-footer">
+										<div class="title">
+											BOOK
+										</div>
+										<div class="context">
+											<ul>
+												<li><a href="#">Resort</a></li>
+												<li><a href="#">Apartment</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="copy-right">
+						<div class="container context">
+							<div class="row">
+								<div class="col-md-12">
+									Copyright © 2018 by UrTripo Aviation
+									<div class="f-visa">
+										UrTripo Aviation
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade login" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header">
+							<h4 class="modal-title">Log In</h4>
+							<span class="c-pointer" data-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body relative">
+							<form class="bravo-form-login" method="POST" action="//login">
+								<input type="hidden" name="redirect" value>
+								<input type="hidden" name="_token" value="fYS1Lasq6wuuXtFwYK46uqlP8NEodobjCbSWeCsL"> 
+								<div class="form-group">
+									<input type="text" class="form-control" name="email" autocomplete="off" placeholder="Email address">
+									<i class="input-icon icofont-mail"></i>
+									<span class="invalid-feedback error error-email"></span>
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password">
+									<i class="input-icon icofont-ui-password"></i>
+									<span class="invalid-feedback error error-password"></span>
+								</div>
+								<div class="form-group">
+									<div class="d-flex justify-content-between">
+										<label for="remember-me" class="mb0">
+										<input type="checkbox" name="remember" id="remember-me" value="1"> Remember me <span class="checkmark fcheckbox"></span>
+										</label>
+										<a href="forgot-password.html">Forgot Password?</a>
+									</div>
+								</div>
+								<div class="error message-error invalid-feedback"></div>
+								<div class="form-group">
+									<button class="btn btn-primary form-submit" type="submit">
+									Login
+									<span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
+									</button>
+								</div>
+								<div class="advanced">
+									<p class="text-center f14 c-grey">or continue with</p>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4">
+											<a href="https://www.facebook.com/v3.3/dialog/oauth?client_id=738807186188291&amp;redirect_uri=https%3A%2F%2Fsandbox.bookingcore.org%2Fsocial-callback%2Ffacebook&amp;scope=email&amp;response_type=code&amp;state=3dUuVSSRj0otFneiCJ6b2o7mWCMTSlm8cHiueQ1O" class="btn btn_login_fb_link" data-channel="facebook">
+											<i class="input-icon fa fa-facebook"></i>
+											Facebook
+											</a>
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<a href="https://accounts.google.com/o/oauth2/auth?client_id=240140366958-8dddnfljlqqj4jbriv22md213lhpe7e8.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fsandbox.bookingcore.org%2Fsocial-callback%2Fgoogle&amp;scope=openid+profile+email&amp;response_type=code&amp;state=SmxqanJkjKP0Cb8ydnsalyXaYdJPQxJhCCOinO8T" class="btn btn_login_gg_link" data-channel="google">
+											<i class="input-icon fa fa-google"></i>
+											Google
+											</a>
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<a href="social-login/twitter.html" class="btn btn_login_tw_link" data-channel="twitter">
+											<i class="input-icon fa fa-twitter"></i>
+											Twitter
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="c-grey font-medium f14 text-center"> Do not have an account? <a href data-target="#register" data-toggle="modal">Sign Up</a></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade login" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header">
+							<h4 class="modal-title">Sign Up</h4>
+							<span class="c-pointer" data-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body">
+							<form class="form bravo-form-register" method="post" action="//register">
+								<input type="hidden" name="_token" value="fYS1Lasq6wuuXtFwYK46uqlP8NEodobjCbSWeCsL"> 
+								<div class="row">
+									<div class="col-lg-6 col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" name="first_name" autocomplete="off" placeholder="First Name">
+											<i class="input-icon field-icon icofont-waiter-alt"></i>
+											<span class="invalid-feedback error error-first_name"></span>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" name="last_name" autocomplete="off" placeholder="Last Name">
+											<i class="input-icon field-icon icofont-waiter-alt"></i>
+											<span class="invalid-feedback error error-last_name"></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="phone" autocomplete="off" placeholder="Phone">
+									<i class="input-icon field-icon icofont-ui-touch-phone"></i>
+									<span class="invalid-feedback error error-phone"></span>
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-control" name="email" autocomplete="off" placeholder="Email address">
+									<i class="input-icon field-icon icofont-mail"></i>
+									<span class="invalid-feedback error error-email"></span>
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password">
+									<i class="input-icon field-icon icofont-ui-password"></i>
+									<span class="invalid-feedback error error-password"></span>
+								</div>
+								<div class="form-group">
+									<label for="term">
+									<input id="term" type="checkbox" name="term" class="mr5">
+									I have read and accept the <a href target="_blank">Terms and Privacy Policy</a>
+									<span class="checkmark fcheckbox"></span>
+									</label>
+									<div><span class="invalid-feedback error error-term"></span></div>
+								</div>
+								<div class="error message-error invalid-feedback"></div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-primary form-submit">
+									Sign Up
+									<span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
+									</button>
+								</div>
+								<div class="advanced">
+									<p class="text-center f14 c-grey">or continue with</p>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4">
+											<a href="https://www.facebook.com/v3.3/dialog/oauth?client_id=738807186188291&amp;redirect_uri=https%3A%2F%2Fsandbox.bookingcore.org%2Fsocial-callback%2Ffacebook&amp;scope=email&amp;response_type=code&amp;state=ZxpaPLbCJL5J4YIWTpo1o6w0vO0WDQpenxLq9sx2" class="btn btn_login_fb_link" data-channel="facebook">
+											<i class="input-icon fa fa-facebook"></i>
+											Facebook
+											</a>
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<a href="https://accounts.google.com/o/oauth2/auth?client_id=240140366958-8dddnfljlqqj4jbriv22md213lhpe7e8.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fsandbox.bookingcore.org%2Fsocial-callback%2Fgoogle&amp;scope=openid+profile+email&amp;response_type=code&amp;state=gO9Ih3TsfIjTtv45ofpwYya9xz98S0o3Q8WBhmtD" class="btn btn_login_gg_link" data-channel="google">
+											<i class="input-icon fa fa-google"></i>
+											Google
+											</a>
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<a href="social-login/twitter.html" class="btn btn_login_tw_link" data-channel="twitter">
+											<i class="input-icon fa fa-twitter"></i>
+											Twitter
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="c-grey f14 text-center">
+									Already have an account?
+									<a href="#" data-target="#login" data-toggle="modal">Log In</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<link rel="stylesheet" href="libs/flags/css/flag-icon.min.css">
+			<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="libs/lazy-load/intersection-observer.js"></script>
+			<script async src="libs/lazy-load/lazyload.min.js"></script>
+			<script>
+				// Set the options to make LazyLoad self-initialize
+				window.lazyLoadOptions = {
+				    elements_selector: ".lazy",
+				    // ... more custom settings?
+				};
+				
+				// Listen to the initialization event and get the instance of LazyLoad
+				window.addEventListener('LazyLoad::Initialized', function (event) {
+				    window.lazyLoadInstance = event.detail.instance;
+				}, false);
+				
+				
+			</script>
+			<script src="libs/lodash.min.js"></script>
+			<script src="libs/jquery-3.6.3.min.js"></script>
+			<script src="libs/vue/vue.min.js"></script>
+			<script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+			<script src="libs/bootbox/bootbox.min.js"></script>
+			<script src="libs/carousel-2/owl.carousel.min.js"></script>
+			<script type="text/javascript" src="libs/daterange/moment.min.js"></script>
+			<script type="text/javascript" src="libs/daterange/daterangepicker.min.js"></script>
+			<script src="libs/select2/js/select2.min.js"></script>
+			<script src="js/functions.js?_ver=3.2.1"></script>
+			<script src="libs/pusher.min.js"></script>
+			<script src="js/home.js?_ver=3.2.1"></script>
+			<script src="js/cookie.js?_ver=3.2.1"></script>
+		</div>
+	</body>
+</html>
