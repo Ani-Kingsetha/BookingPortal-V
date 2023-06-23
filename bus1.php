@@ -5,7 +5,6 @@
     <title>Bus</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="fYS1Lasq6wuuXtFwYK46uqlP8NEodobjCbSWeCsL">
 		<link rel="icon" type="image/png" href="uploads/demo/general/favicon.jpg" />
 		<meta name="description" content />
 		<meta property="og:url" content="index.html" />
