@@ -6,11 +6,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <meta name="csrf-token" content="uXXPxxuoKSLKPFxWgc6voTPRqwnx7Boss7BQFExL">
 <link rel="icon" type="image/png" href="../uploads/demo/general/favicon.png" />
-<title>Hotel WBF Hommachi - UrTripo Aviation</title>
+<title>Hotel WBF Hommachi - Booking Core</title>
 <meta name="description" content />
 <meta property="og:url" content="hotel-wbf-homachi.html" />
 <meta property="og:type" content="article" />
@@ -35,9 +34,9 @@
 <link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&amp;display=swap" type="text/css" media="all" />
 <script>
     var bookingCore = {
-        url:'/',
-        url_root:'/',
-        admin_url:'//admin',
+        url:'https://sandbox.bookingcore.org',
+        url_root:'https://sandbox.bookingcore.org',
+        admin_url:'https://sandbox.bookingcore.org/admin',
         booking_decimals:0,
         thousand_separator:'.',
         decimal_separator:',',
@@ -54,16 +53,16 @@
             map_fit_bounds:'on',
         },
         routes:{
-            login:'//login',
-            register:'//register',
-            checkout:'//booking/doCheckout'
+            login:'https://sandbox.bookingcore.org/login',
+            register:'https://sandbox.bookingcore.org/register',
+            checkout:'https://sandbox.bookingcore.org/booking/doCheckout'
         },
         currentUser: 0,
         isAdmin : 0,
         rtl: false,
-        markAsRead:'//notify/markAsRead',
-        markAllAsRead:'//notify/markAllAsRead',
-        loadNotify : '//notify/notifications',
+        markAsRead:'https://sandbox.bookingcore.org/notify/markAsRead',
+        markAllAsRead:'https://sandbox.bookingcore.org/notify/markAllAsRead',
+        loadNotify : 'https://sandbox.bookingcore.org/notify/notifications',
         pusher_api_key : '',
         pusher_cluster : '',
         language: 'en',
@@ -122,108 +121,85 @@
 <link rel="stylesheet" type="text/css" href="../libs/fotorama/fotorama.css" />
 <link href="../custom-css.css" rel="stylesheet">
 <link href="../libs/carousel-2/owl.carousel.css" rel="stylesheet">
-
-
 </head>
-<body class="frontend-page header-normal   ">
-    <div class="bravo_wrap">
-     <div class="bravo_topbar">
-    <div class="container">
-    <div class="content">
-    <div class="topbar-left">
-    </div>
-    <div class="topbar-right">
-    <ul class="topbar-items">
-    <li class="dropdown">
-    <ul class="dropdown-menu text-left sf-hidden"></ul>
-    </li>
-    <li class="login-item">
-    <a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
-    </li>
-    <li class="signup-item">
-    <a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
-    </li>
-    </ul>
-    </div>
-    </div>
-    </div>
-    </div> 
-    <div class="bravo_header">
-        <div class="container">
-        <div class="content">
-        <div class="header-left"> 
-        
-        <img src="\uploads\demo\general\logo.png" alt="UrTripo Aviation" width="15%">
-        </a>
-        <div class="bravo-menu">
-        <ul class="main-menu menu-generated">
-            <li class=" depth-0">
-                <a target href="index.html">Home <!--<i class="caret fa fa-angle-down"></i>--></a>
-                <!-- <ul class="children-menu menu-dropdown">
-                    <li class=" depth-1">
-                        <a target href="index.html">Home Page</a>
-                    </li>
-                    <li class=" depth-1">
-                        <a target href="page/home-page-v2.html">Home Page v2</a>
-                    </li>
-                    <li class=" depth-1">
-                        <a target href="page/hotel.html">Home Hotel</a>
-                    </li>
-                    <li class=" depth-1">
-                        <a target href="page/home-tour-agency.html">Home Tour Agency</a>
-                    </li>
-                    <li class=" depth-1">
-                        <a target href="page/tour.html">Home Tour</a>
-                    </li>
-                    <li class=" depth-1">
-                        <a target href="page/space.html">Home Space</a>
-                    </li>
-                    <li class=" depth-1">
-                        <a target href="page/car.html">Home Car</a>
-                    </li>
-                </ul> -->
-            </li>
-            <li class=" depth-0">
-                <a target href="flight.html">Flights <!-- <i class="caret fa fa-angle-down"></i> --></a>
-                <!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="hotel.html">Hotel List</a></li><li class=" depth-1"><a target href="hotel76a0.html?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="index.html">Hotel Detail</a></li></ul> -->
-            </li>
-            <li class=" depth-0">
-                <a target href="hotel.html">Hotels <!-- <i class="caret fa fa-angle-down"></i> --></a>
-                <!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="tour.html">Tour List</a></li><li class=" depth-1"><a target href="tour76a0.html?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="tour/paris-vacation-travel.html">Tour Detail</a></li></ul> -->
-            </li>
-            <li class=" depth-0">
-                <a target href="bus.html">Bus <!-- <i class="caret fa fa-angle-down"></i> --></a>
-                <!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="space.html">Space List</a></li><li class=" depth-1"><a target href="space76a0.html?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="space/stay-greenwich-village.html">Space Detail</a></li></ul> -->
-            </li>
-            <li class=" depth-0">
-                <a target href="package.html">Packages <!-- <i class="caret fa fa-angle-down"></i> --></a>
-                <!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="car.html">Car List</a></li><li class=" depth-1"><a target href="car76a0.html?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="car/vinfast-lux-a20-plus.html">Car Detail</a></li></ul> -->
-            </li>
-            <!-- <li class=" depth-0">
-                <a target href="event.html">Event <i class="caret fa fa-angle-down"></i></a>
-                <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="event.html">Event List</a></li><li class=" depth-1"><a target href="event76a0.html?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="event/aspen-glade-weddings-events.html">Event Detail</a></li></0ul>
-            </li>
-            <li class=" depth-0">
-                <a target href=".html">Flight</a>
-            </li>
-            <li class=" depth-0">
-                <a target href="boat.html">Boat <i class="caret fa fa-angle-down"></i></a>
-                <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="boat.html">Boat List</a></li><li class=" depth-1"><a target href="boat76a0.html?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="boat/blue-moon-yc-300.html">Boat Detail</a></li></ul>
-            </li>
-            <li class=" depth-0">
-                <a target href="#">Pages <i class="caret fa fa-angle-down"></i></a>
-                <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="login.html">Plan</a></li><li class=" depth-1"><a target href="news.html">News List</a></li><li class=" depth-1"><a target href="news/morning-in-the-northern-sea.html">News Detail</a></li><li class=" depth-1"><a target href="location/paris.html">Location Detail</a></li><li class=" depth-1"><a target href="page/become-a-vendor.html">Become a vendor</a></li><li class=" depth-1"><a target href="contact.html">Contact</a></li></ul>
-            </li> -->
-        </ul> 
-        </div>
-        </div>
-        <div class="header-right">
-        <button class="bravo-more-menu">
-        <i class="fa fa-bars"></i>
-        </button>
-        </div>
-        </div>
-        </div>
+<body class="frontend-page header-normal is_single  ">
+<div class="bravo_wrap">
+<div class="bravo_topbar">
+<div class="container">
+<div class="content">
+<div class="topbar-left">
+<div class="socials">
+<a href="#"><i class="fa fa-facebook"></i></a>
+<a href="#"><i class="fa fa-linkedin"></i></a>
+<a href="#"><i class="fa fa-google-plus"></i></a>
+</div>
+<span class="line"></span>
+<a href="../cdn-cgi/l/email-protection.html#d8bbb7b6acb9bbac98bab7b7b3b1b6bfbbb7aabdf6acbdabac"><span class="__cf_email__" data-cfemail="82e1edecf6e3e1f6c2e0edede9ebece5e1edf0e7acf6e7f1f6">[email&#160;protected]</span></a>
+</div>
+<div class="topbar-right">
+<ul class="topbar-items">
+<li class="dropdown">
+<a href="#" data-toggle="dropdown" class="is_login">
+JPY
+<i class="fa fa-angle-down"></i>
+</a>
+<ul class="dropdown-menu text-left width-auto">
+<li>
+<a href="hotel-wbf-homachi.html?set_currency=eur" class="is_login">
+EUR
+</a>
+</li>
+<li>
+<a href="hotel-wbf-homachi.html?set_currency=usd" class="is_login">
+USD
+</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<ul class="dropdown-menu text-left">
+<li>
+<a href="../ar/hotel/hotel-wbf-homachi.html?set_lang=ar" class="is_login">
+<span class="flag-icon flag-icon-ar"></span>
+arabic
+</a>
+</li>
+<li>
+<a href="../en_US/hotel/hotel-wbf-homachi.html?set_lang=en_US" class="is_login">
+<span class="flag-icon flag-icon-us"></span>
+American
+</a>
+</li>
+</ul>
+</li>
+<li class="login-item">
+<a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+</li>
+<li class="signup-item">
+<a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="bravo_header">
+<div class="container">
+<div class="content">
+<div class="header-left">
+<a href="../index.html" class="bravo-logo">
+<img src="../uploads/demo/general/logo.svg" alt="Booking Core">
+</a>
+<div class="bravo-menu">
+<ul class="main-menu menu-generated"><li class=" depth-0"><a target href="../index.html">Home <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../index.html">Home Page</a></li><li class=" depth-1"><a target href="../page/home-page-v2.html">Home Page v2</a></li><li class=" depth-1"><a target href="../page/hotel.html">Home Hotel</a></li><li class=" depth-1"><a target href="../page/home-tour-agency.html">Home Tour Agency</a></li><li class=" depth-1"><a target href="../page/tour.html">Home Tour</a></li><li class=" depth-1"><a target href="../page/space.html">Home Space</a></li><li class=" depth-1"><a target href="../page/car.html">Home Car</a></li></ul></li><li class=" depth-0"><a target href="../hotel.html">Hotel <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../hotel.html">Hotel List</a></li><li class=" depth-1"><a target href="../hotel76a0.html?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="../index.html">Hotel Detail</a></li></ul></li><li class=" depth-0"><a target href="../tour.html">Tours <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../tour.html">Tour List</a></li><li class=" depth-1"><a target href="../tour76a0.html?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="../tour/paris-vacation-travel.html">Tour Detail</a></li></ul></li><li class=" depth-0"><a target href="../space.html">Space <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../space.html">Space List</a></li><li class=" depth-1"><a target href="../space76a0.html?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="../space/stay-greenwich-village.html">Space Detail</a></li></ul></li><li class=" depth-0"><a target href="../car.html">Car <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../car.html">Car List</a></li><li class=" depth-1"><a target href="../car76a0.html?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="../car/vinfast-lux-a20-plus.html">Car Detail</a></li></ul></li><li class=" depth-0"><a target href="../event.html">Event <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../event.html">Event List</a></li><li class=" depth-1"><a target href="../event76a0.html?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="../event/aspen-glade-weddings-events.html">Event Detail</a></li></ul></li><li class=" depth-0"><a target href="../flight.html">Flight</a></li><li class=" depth-0"><a target href="../boat.html">Boat <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../boat.html">Boat List</a></li><li class=" depth-1"><a target href="../boat76a0.html?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="../boat/blue-moon-yc-300.html">Boat Detail</a></li></ul></li><li class=" depth-0"><a target href="#">Pages <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../login.html">Plan</a></li><li class=" depth-1"><a target href="../news.html">News List</a></li><li class=" depth-1"><a target href="../news/morning-in-the-northern-sea.html">News Detail</a></li><li class=" depth-1"><a target href="../location/paris.html">Location Detail</a></li><li class=" depth-1"><a target href="../page/become-a-vendor.html">Become a vendor</a></li><li class=" depth-1"><a target href="../contact.html">Contact</a></li></ul></li></ul> </div>
+</div>
+<div class="header-right">
+<button class="bravo-more-menu">
+<i class="fa fa-bars"></i>
+</button>
+</div>
+</div>
+</div>
 <div class="bravo-menu-mobile" style="display:none;">
 <div class="user-profile">
 <div class="b-close"><i class="icofont-scroll-left"></i></div>
@@ -239,18 +215,18 @@
 <ul class="multi-lang">
 <li class="dropdown">
 <a href="#" data-toggle="dropdown" class="is_login">
-USD
+JPY
 <i class="fa fa-angle-down"></i>
 </a>
 <ul class="dropdown-menu text-left width-auto">
 <li>
-<a href="/hotel?set_currency=eur" class="is_login">
+<a href="hotel-wbf-homachi.html?set_currency=eur" class="is_login">
 EUR
 </a>
 </li>
 <li>
-<a href="/hotel?set_currency=jpy" class="is_login">
-JPY
+<a href="hotel-wbf-homachi.html?set_currency=usd" class="is_login">
+USD
 </a>
 </li>
 </ul>
@@ -260,21 +236,15 @@ JPY
 <li class="dropdown">
 <ul class="dropdown-menu text-left">
 <li>
-<a href="/hotel?set_lang=ar" class="is_login">
-<span class="flag-icon flag-icon-sa"></span>
-Araic
+<a href="../ar/hotel/hotel-wbf-homachi.html?set_lang=ar" class="is_login">
+<span class="flag-icon flag-icon-ar"></span>
+arabic
 </a>
 </li>
 <li>
-<a href="/hotel?set_lang=en_US" class="is_login">
-<span class="flag-icon flag-icon-en_US"></span>
-English
-</a>
-</li>
-<li>
-<a href="/hotel?set_lang=fr" class="is_login">
-<span class="flag-icon flag-icon-fr"></span>
-Français
+<a href="../en_US/hotel/hotel-wbf-homachi.html?set_lang=en_US" class="is_login">
+<span class="flag-icon flag-icon-us"></span>
+American
 </a>
 </li>
 </ul>
@@ -282,7 +252,7 @@ Français
 </ul>
 </div>
 <div class="g-menu">
-<ul class="main-menu menu-generated"><li class=" depth-0"><a target href="/">Home <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/">Home Page</a></li><li class=" depth-1"><a target href="/page/home-page-v2">Home Page v2</a></li><li class=" depth-1"><a target href="/page/hotel">Home Hotel</a></li><li class=" depth-1"><a target href="/page/home-tour-agency">Home Tour Agency</a></li><li class=" depth-1"><a target href="/page/tour">Home Tour</a></li><li class=" depth-1"><a target href="/page/space">Home Space</a></li><li class=" depth-1"><a target href="/page/car">Home Car</a></li></ul></li><li class=" active active  depth-0"><a target href="/hotel">Hotel <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" active depth-1"><a target href="/hotel">Hotel List</a></li><li class=" depth-1"><a target href="/hotel?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="/hotel/parian-holiday-villas">Hotel Detail</a></li></ul></li><li class=" depth-0"><a target href="/tour">Tours <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/tour">Tour List</a></li><li class=" depth-1"><a target href="/tour?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="/tour/paris-vacation-travel">Tour Detail</a></li></ul></li><li class=" depth-0"><a target href="/space">Space <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/space">Space List</a></li><li class=" depth-1"><a target href="/space?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="/space/stay-greenwich-village">Space Detail</a></li></ul></li><li class=" depth-0"><a target href="/car">Car <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/car">Car List</a></li><li class=" depth-1"><a target href="/car?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="/car/vinfast-lux-a20-plus">Car Detail</a></li></ul></li><li class=" depth-0"><a target href="/event">Event <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/event">Event List</a></li><li class=" depth-1"><a target href="/event?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="/event/aspen-glade-weddings-events">Event Detail</a></li></ul></li><li class=" depth-0"><a target href="/flight">Flight</a></li><li class=" depth-0"><a target href="/boat">Boat <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/boat">Boat List</a></li><li class=" depth-1"><a target href="/boat?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="/boat/blue-moon-yc-300">Boat Detail</a></li></ul></li><li class=" depth-0"><a target href="#">Pages <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="/plan">Plan</a></li><li class=" depth-1"><a target href="/news">News List</a></li><li class=" depth-1"><a target href="/news/morning-in-the-northern-sea">News Detail</a></li><li class=" depth-1"><a target href="/location/paris">Location Detail</a></li><li class=" depth-1"><a target href="/page/become-a-vendor">Become a vendor</a></li><li class=" depth-1"><a target href="/contact">Contact</a></li></ul></li></ul> </div>
+<ul class="main-menu menu-generated"><li class=" depth-0"><a target href="../index.html">Home <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../index.html">Home Page</a></li><li class=" depth-1"><a target href="../page/home-page-v2.html">Home Page v2</a></li><li class=" depth-1"><a target href="../page/hotel.html">Home Hotel</a></li><li class=" depth-1"><a target href="../page/home-tour-agency.html">Home Tour Agency</a></li><li class=" depth-1"><a target href="../page/tour.html">Home Tour</a></li><li class=" depth-1"><a target href="../page/space.html">Home Space</a></li><li class=" depth-1"><a target href="../page/car.html">Home Car</a></li></ul></li><li class=" depth-0"><a target href="../hotel.html">Hotel <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../hotel.html">Hotel List</a></li><li class=" depth-1"><a target href="../hotel76a0.html?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="../index.html">Hotel Detail</a></li></ul></li><li class=" depth-0"><a target href="../tour.html">Tours <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../tour.html">Tour List</a></li><li class=" depth-1"><a target href="../tour76a0.html?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="../tour/paris-vacation-travel.html">Tour Detail</a></li></ul></li><li class=" depth-0"><a target href="../space.html">Space <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../space.html">Space List</a></li><li class=" depth-1"><a target href="../space76a0.html?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="../space/stay-greenwich-village.html">Space Detail</a></li></ul></li><li class=" depth-0"><a target href="../car.html">Car <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../car.html">Car List</a></li><li class=" depth-1"><a target href="../car76a0.html?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="../car/vinfast-lux-a20-plus.html">Car Detail</a></li></ul></li><li class=" depth-0"><a target href="../event.html">Event <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../event.html">Event List</a></li><li class=" depth-1"><a target href="../event76a0.html?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="../event/aspen-glade-weddings-events.html">Event Detail</a></li></ul></li><li class=" depth-0"><a target href="../flight.html">Flight</a></li><li class=" depth-0"><a target href="../boat.html">Boat <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../boat.html">Boat List</a></li><li class=" depth-1"><a target href="../boat76a0.html?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="../boat/blue-moon-yc-300.html">Boat Detail</a></li></ul></li><li class=" depth-0"><a target href="#">Pages <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="../login.html">Plan</a></li><li class=" depth-1"><a target href="../news.html">News List</a></li><li class=" depth-1"><a target href="../news/morning-in-the-northern-sea.html">News Detail</a></li><li class=" depth-1"><a target href="../location/paris.html">Location Detail</a></li><li class=" depth-1"><a target href="../page/become-a-vendor.html">Become a vendor</a></li><li class=" depth-1"><a target href="../contact.html">Contact</a></li></ul></li></ul> </div>
 </div>
 </div>
 <div class="bravo_detail_hotel">
@@ -354,12 +324,12 @@ Français
 
 <div class="g-gallery">
 <div class="fotorama" data-width="100%" data-thumbwidth="135" data-thumbheight="135" data-thumbmargin="15" data-nav="thumbs" data-allowfullscreen="true">
-<a href="../uploads/demo/hotel/gallery/hotel-gallery-1.jpg" data-thumb="//uploads/demo/hotel/gallery/hotel-gallery-1.jpg" data-alt="Gallery"></a>
-<a href="../uploads/demo/hotel/gallery/hotel-gallery-2.jpg" data-thumb="//uploads/demo/hotel/gallery/hotel-gallery-2.jpg" data-alt="Gallery"></a>
-<a href="../uploads/demo/hotel/gallery/hotel-gallery-3.jpg" data-thumb="//uploads/demo/hotel/gallery/hotel-gallery-3.jpg" data-alt="Gallery"></a>
-<a href="../uploads/demo/hotel/gallery/hotel-gallery-4.jpg" data-thumb="//uploads/demo/hotel/gallery/hotel-gallery-4.jpg" data-alt="Gallery"></a>
-<a href="../uploads/demo/hotel/gallery/hotel-gallery-5.jpg" data-thumb="//uploads/demo/hotel/gallery/hotel-gallery-5.jpg" data-alt="Gallery"></a>
-<a href="../uploads/demo/hotel/gallery/hotel-gallery-6.jpg" data-thumb="//uploads/demo/hotel/gallery/hotel-gallery-6.jpg" data-alt="Gallery"></a>
+<a href="../uploads/demo/hotel/gallery/hotel-gallery-1.jpg" data-thumb="https://sandbox.bookingcore.org/uploads/demo/hotel/gallery/hotel-gallery-1.jpg" data-alt="Gallery"></a>
+<a href="../uploads/demo/hotel/gallery/hotel-gallery-2.jpg" data-thumb="https://sandbox.bookingcore.org/uploads/demo/hotel/gallery/hotel-gallery-2.jpg" data-alt="Gallery"></a>
+<a href="../uploads/demo/hotel/gallery/hotel-gallery-3.jpg" data-thumb="https://sandbox.bookingcore.org/uploads/demo/hotel/gallery/hotel-gallery-3.jpg" data-alt="Gallery"></a>
+<a href="../uploads/demo/hotel/gallery/hotel-gallery-4.jpg" data-thumb="https://sandbox.bookingcore.org/uploads/demo/hotel/gallery/hotel-gallery-4.jpg" data-alt="Gallery"></a>
+<a href="../uploads/demo/hotel/gallery/hotel-gallery-5.jpg" data-thumb="https://sandbox.bookingcore.org/uploads/demo/hotel/gallery/hotel-gallery-5.jpg" data-alt="Gallery"></a>
+<a href="../uploads/demo/hotel/gallery/hotel-gallery-6.jpg" data-thumb="https://sandbox.bookingcore.org/uploads/demo/hotel/gallery/hotel-gallery-6.jpg" data-alt="Gallery"></a>
 </div>
 <!--<div class="social">
 <div class="social-share">
@@ -368,12 +338,12 @@ Français
 </span>
 <ul class="share-wrapper">
 <li>
-<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=//hotel/hotel-wbf-homachi&amp;title=Hotel%20WBF%20Hommachi" target="_blank" rel="noopener" original-title="Facebook">
+<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://sandbox.bookingcore.org/hotel/hotel-wbf-homachi&amp;title=Hotel%20WBF%20Hommachi" target="_blank" rel="noopener" original-title="Facebook">
 <i class="fa fa-facebook fa-lg"></i>
 </a>
 </li>
 <li>
-<a class="twitter" href="https://twitter.com/share?url=//hotel/hotel-wbf-homachi&amp;title=Hotel%20WBF%20Hommachi" target="_blank" rel="noopener" original-title="Twitter">
+<a class="twitter" href="https://twitter.com/share?url=https://sandbox.bookingcore.org/hotel/hotel-wbf-homachi&amp;title=Hotel%20WBF%20Hommachi" target="_blank" rel="noopener" original-title="Twitter">
 <i class="fa fa-twitter fa-lg"></i>
 </a>
 </li>
@@ -388,7 +358,7 @@ Français
     <div class="left">
     
     <h1>Hotel WBF Hommachi</h1>
-    <h2 class="address">
+    <h2 class="address"><i class="fa fa-map-marker"></i>
     Porte de Vanves
     </h2>
     </div>
@@ -409,41 +379,6 @@ Français
     </div>
     </div>
     </div>
-    <div class="container">
-        <div class="row bg- d-flex justify-content-center align-items-center" style="border:1px rgb(93, 184, 233) ;border-radius: 10px;height: 70px;background-color:rgb(132, 191, 243);">
-          <div class="col-sm-6">
-            Rs.1599.00<br>Deluxe double room
-          </div>
-          <div class="col-sm-6 text-end">
-            <a href="C:\My Web Sites\Ticketing hotel\sandbox.bookingcore.org\HotelBook.html" class="btn btn" style="background-color:#007BFF" role="button">Book Now</a>
-          </div>
-        </div><br>
-        <p>Rooms</p>
-          <div class="container"style="border:1px solid rgb(132, 191, 243)  border-radius: 15px;" >
-            <div class="d-grid gap-2"><br>
-             
-            <div class="row bg- d-flex justify-content-center align-items-center" style="border:1px solid rgb(132, 191, 243) ;border-radius: 10px;height: 70px;background-color:rgb(132, 191, 243);">
-                <div class="col-sm-6">
-                  Rs.1599.00<br>Deluxe double room<br>2 Adults
-                </div>
-                <div class="col-sm-6 text-end">
-                    <a href="C:\My Web Sites\Ticketing hotel\sandbox.bookingcore.org\HotelBook.html" class="btn btn" style="background-color:#007BFF" role="button">Book Now</a>
-                </div>
-            </div><br>
-        
-            <div class="row bg- d-flex justify-content-center align-items-center" style="border:1px rgb(132, 191, 243) ;border-radius: 10px;height: 70px;background-color:rgb(132, 191, 243);">
-              <div class="col-sm-6">
-                Rs.2399.00<br>Classic suite<br>2 Adults
-              </div>
-              <div class="col-sm-6 text-end">
-                <a href="C:\My Web Sites\Ticketing hotel\sandbox.bookingcore.org\HotelBook.html" class="btn btn" style="background-color:#007BFF" role="button">Book Now</a>
-              </div>
-          </div><br>
-          </div>
-        </div>
-        </div>
-        
-        
 <div class="g-overview">
 <h3>Description</h3>
 <div class="description">
@@ -1015,7 +950,7 @@ Showing 1 - 1 of 1 total
 </div>
 </div>
 <div class="review-message">
-You must <a href="#" data-toggle="modal" data-target="#login">log in</a> to write review
+You must <a href="#login" data-toggle="modal" data-target="#login">log in</a> to write review
 </div>
 </div>
 </div>
@@ -1041,7 +976,7 @@ You must <a href="#" data-toggle="modal" data-target="#login">log in</a> to writ
 <div class="media">
 <div class="media-left">
 <a href="hotel-stanford.html">
-<img class="img-responsive lazy" data-src="//uploads/demo/space/space-5.jpg" alt="Hotel Stanford">
+<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-5.jpg" alt="Hotel Stanford">
 </a>
 </div>
 <div class="media-body">
@@ -1069,7 +1004,7 @@ from
 <div class="media">
 <div class="media-left">
 <a href="redac-gateway-hotel.html">
-<img class="img-responsive lazy" data-src="//uploads/demo/space/space-8.jpg" alt="Hotel in Saudia Arabia">
+<img class="img-responsive lazy" data-src="https://sandbox.bookingcore.org/uploads/demo/space/space-8.jpg" alt="Hotel in Saudia Arabia">
 </a>
 </div>
 <div class="media-body">
@@ -1244,7 +1179,7 @@ Tickets
 </div>
 </div>
 <div class="col-xs-12 col-md-5 col-lg-6">
-<form action="//newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
+<form action="https://sandbox.bookingcore.org/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
 <input type="hidden" name="_token" v\alue="uXXPxxuoKSLKPFxWgc6voTPRqwnx7Boss7BQFExL"> <div class="form-group">
 <input type="text" name="email" class="form-control email-input" placeholder="Your Email">
 <button type="submit" class="btn-submit">Subscribe
@@ -1260,114 +1195,110 @@ Tickets
 </div>
 </div>-->
 <div class="main-footer">
-    <div class="container">
-    <div class="mt-4 p-5 text-primary text-white rounded">
-    <div class="row">
-    <div class="col-lg-3 col-md-6">
-    <div class="nav-footer">
-    <div class="title">
-    NEED HELP?
-    </div>
-    <div class="context">
-    <div class="contact">
-    <div class="c-title">
-    Call Us
-    </div>
-    <div class="sub">
-    + 11 111 11 1111
-    </div>
-    </div>
-    <div class="contact">
-    <div class="c-title">
-    Email for Us
-    </div>
-    
-    <div class="sub">
-        customercare<br>@urtripo.com
-    <!--<a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="0169646d6d6e41786e7473726875642f626e6c">[email&#160;protected]</a>-->
-    </div>
-    </div>
-    <div class="contact">
-    <div class="c-title">
-    Follow Us
-    </div>
-    <div class="sub">
-    <a href="#">
-    <i class="icofont-facebook"></i>
-    </a>
-    <a href="#">
-    <i class="icofont-twitter"></i>
-    </a>
-    <a href="#">
-    <i class="icofont-youtube-play"></i>
-    </a>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-    <div class="nav-footer">
-    <div class="title">
-    URTRIPO AVIATION
-    </div>
-    <div class="context">
-    <ul>
-    <li><a href="#">About Us</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Customer Support</a></li>
-    <li><a href="#">Jobs</a></li>
-    <li><a href="#">Privacy Policy</a></li>
-    </ul>
-    </div>
-    </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-    <div class="nav-footer">
-    <div class="title">
-    EXPLORE
-    </div>
-    <div class="context">
-    <ul>
-    <li><a href="#">Airports</a></li>
-    <li><a href="#">Hotels</a></li>
-    <li><a href="#">Flights</a></li>
-    <li><a href="#">Bus</a></li>
-    <li><a href="#">Packages</a></li>
-    </ul>
-    </div>
-    </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-    <div class="nav-footer">
-    <div class="title">
-    BOOK
-    </div>
-    <div class="context">
-    <ul>
-    <li><a href="#">Resort</a></li>
-    <li><a href="#">Apartment</a></li>
-    </ul>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="copy-right">
-    <div class="container context">
-    <div class="row">
-    <div class="col-md-12">
-    Copyright © 2018 by UrTripo Aviation
-    <div class="f-visa">
-    UrTripo Aviation
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+<div class="container">
+<div class="row">
+<div class="col-lg-3 col-md-6">
+<div class="nav-footer">
+<div class="title">
+NEED HELP?
+</div>
+<div class="context">
+<div class="contact">
+<div class="c-title">
+Call Us
+</div>
+<div class="sub">
++ 00 222 44 5678
+</div>
+</div>
+<div class="contact">
+<div class="c-title">
+Email for Us
+</div>
+<div class="sub">
+<a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="462e232a2a29063f293334352f32236825292b">[email&#160;protected]</a>
+</div>
+</div>
+<div class="contact">
+<div class="c-title">
+Follow Us
+</div>
+<div class="sub">
+<a href="#">
+<i class="icofont-facebook"></i>
+</a>
+<a href="#">
+<i class="icofont-twitter"></i>
+</a>
+<a href="#">
+<i class="icofont-youtube-play"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="nav-footer">
+<div class="title">
+COMPANY
+</div>
+<div class="context">
+<ul>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Community Blog</a></li>
+<li><a href="#">Rewards</a></li>
+<li><a href="#">Work with Us</a></li>
+<li><a href="#">Meet the Team</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="nav-footer">
+<div class="title">
+SUPPORT
+</div>
+<div class="context">
+<ul>
+<li><a href="#">Account</a></li>
+<li><a href="#">Legal</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="#">Affiliate Program</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="nav-footer">
+<div class="title">
+SETTINGS
+</div>
+<div class="context">
+<ul>
+<li><a href="#">Setting 1</a></li>
+<li><a href="#">Setting 2</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="copy-right">
+<div class="container context">
+<div class="row">
+<div class="col-md-12">
+Copyright © 2019 by Urtripo Aviation
+<div class="f-visa">
+Urtripo Aviation
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="modal fade login" id="login" tabindex="-1" role="dialog" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered" role="document">
 <div class="modal-content relative">
@@ -1380,7 +1311,7 @@ Tickets
 </span>
 </div>
 <div class="modal-body relative">
-<form class="bravo-form-login" method="POST" action="//login">
+<form class="bravo-form-login" method="POST" action="https://sandbox.bookingcore.org/login">
 <input type="hidden" name="redirect" value>
 <input type="hidden" name="_token" value="uXXPxxuoKSLKPFxWgc6voTPRqwnx7Boss7BQFExL"> <div class="form-group">
 <input type="text" class="form-control" name="email" autocomplete="off" placeholder="Email address">
@@ -1448,7 +1379,7 @@ Twitter
 </span>
 </div>
 <div class="modal-body">
-<form class="form bravo-form-register" method="post" action="//register">
+<form class="form bravo-form-register" method="post" action="https://sandbox.bookingcore.org/register">
 <input type="hidden" name="_token" value="uXXPxxuoKSLKPFxWgc6voTPRqwnx7Boss7BQFExL"> <div class="row">
 <div class="col-lg-6 col-md-12">
 <div class="form-group">
@@ -1571,7 +1502,7 @@ Already have an account?
                 ready: function (engineMap) {
                     engineMap.addMarker([19.110390, 72.832764], {
                         icon_options: {
-                            iconUrl:"//images/icons/png/pin.png"
+                            iconUrl:"https://sandbox.bookingcore.org/images/icons/png/pin.png"
                         }
                     });
                 }
@@ -1583,7 +1514,7 @@ Already have an account?
         var bravo_booking_i18n = {
 			no_date_select:'Please select Start and End date',
             no_guest_select:'Please select at least one guest',
-            load_dates_url:'//user/space/availability/loadDates',
+            load_dates_url:'https://sandbox.bookingcore.org/user/space/availability/loadDates',
             name_required:'Name is Required',
             email_required:'Email is Required',
         };
