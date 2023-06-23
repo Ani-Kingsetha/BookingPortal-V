@@ -8,6 +8,115 @@
     <script src="js/bootstrap_js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap_css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bus_style.css">
+		<meta name="csrf-token" content="fYS1Lasq6wuuXtFwYK46uqlP8NEodobjCbSWeCsL">
+		<link rel="icon" type="image/png" href="uploads/demo/general/favicon.jpg" />
+
+		<meta name="description" content />
+		<meta property="og:url" content="index.html" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Home Page" />
+		<meta property="og:description" content />
+		<meta property="og:image" content />
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Home Page">
+		<meta name="twitter:description" content>
+		<meta name="twitter:image" content>
+		<link rel="canonical" href="index.html" />
+		<link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="libs/ionicons/css/ionicons.min.css" rel="stylesheet">
+		<link href="libs/icofont/icofont.min.css" rel="stylesheet">
+		<link href="libs/select2/css/select2.min.css" rel="stylesheet">
+		<link href="dist/frontend/css/notification.css" rel="newest stylesheet">
+		<link href="dist/frontend/css/app.css?_ver=3.2.1" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="libs/daterange/daterangepicker.css">
+		<link rel="dns-prefetch" href="http://fonts.gstatic.com/">
+		<link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&amp;display=swap" type="text/css" media="all" />
+		<script>
+			var bookingCore = {
+			    url:'/',
+			    url_root:'/',
+			    admin_url:'//admin',
+			    booking_decimals:0,
+			    thousand_separator:'.',
+			    decimal_separator:',',
+			    currency_position:'left',
+			    currency_symbol:'$',
+			    currency_rate:'1',
+			    date_format:'MM/DD/YYYY',
+			    map_provider:'gmap',
+			    map_gmap_key:'',
+			    map_options:{
+			        map_lat_default:'',
+			        map_lng_default:'',
+			        map_clustering:'on',
+			        map_fit_bounds:'on',
+			    },
+			    routes:{
+			        login:'//login',
+			        register:'//register',
+			        checkout:'//booking/doCheckout'
+			    },
+			    currentUser: 0,
+			    isAdmin : 0,
+			    rtl: false,
+			    markAsRead:'//notify/markAsRead',
+			    markAllAsRead:'//notify/markAllAsRead',
+			    loadNotify : '//notify/notifications',
+			    pusher_api_key : '',
+			    pusher_cluster : '',
+			    language: 'en',
+			    module:{}
+			};
+			                        bookingCore.module.hotel = 'hotel.html';
+			                            bookingCore.module.space = 'space.html';
+			                            bookingCore.module.car = 'car.html';
+			                            bookingCore.module.event = 'event.html';
+			                            bookingCore.module.tour = 'tour.html';
+			                            bookingCore.module.flight = 'flight.html';
+			                            bookingCore.module.boat = 'boat.html';
+			            var i18n = {
+			    warning:"Warning",
+			    success:"Success",
+			    confirm_delete:"Do you want to delete?",
+			    confirm:"Confirm",
+			    cancel:"Cancel",
+			};
+			var daterangepickerLocale = {
+			    "applyLabel": "Apply",
+			    "cancelLabel": "Cancel",
+			    "fromLabel": "From",
+			    "toLabel": "To",
+			    "customRangeLabel": "Custom",
+			    "weekLabel": "W",
+			    "first_day_of_week": 1,
+			    "daysOfWeek": [
+			        "Su",
+			        "Mo",
+			        "Tu",
+			        "We",
+			        "Th",
+			        "Fr",
+			        "Sa"
+			    ],
+			    "monthNames": [
+			        "January",
+			        "February",
+			        "March",
+			        "April",
+			        "May",
+			        "June",
+			        "July",
+			        "August",
+			        "September",
+			        "October",
+			        "November",
+			        "December"
+			    ],
+			};
+		</script>
+		<link href="custom-css.css" rel="stylesheet">
+		<link href="libs/carousel-2/owl.carousel.css" rel="stylesheet">
 </head>
 <style>
     .bus-banner {
@@ -48,6 +157,106 @@
 </style>
 
 <body>
+<body class="frontend-page header-normal   ">
+		<div class="bravo_wrap">
+		<div class="bravo_topbar">
+			<div class="container">
+				<div class="content">
+					<div class="topbar-left">
+					
+					</div>
+					<div class="topbar-right">
+						<ul class="topbar-items">
+							<li class="dropdown">
+								<ul class="dropdown-menu text-left sf-hidden"></ul>
+							</li>
+							<li class="login-item">
+								<a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+							</li>
+							<li class="signup-item">
+								<a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bravo_header">
+			<div class="container">
+				<div class="content">
+					<div class="header-left">
+						<a href="index.html" class="bravo-logo">
+						<img src="uploads/demo/general/logo.png" alt="UrTripo Aviation" width="45%">
+						</a>
+						<div class="bravo-menu">
+							<ul class="main-menu menu-generated">
+								<li class=" depth-0">
+									<a target href="index.html">
+										Home
+									</a>
+								</li>
+								<li class=" depth-0">
+									<a target href="flight.html">
+										Flights
+									</a>
+								</li>
+								<li class=" depth-0">
+									<a target href="hotel.html">
+										Hotels
+									</a>
+								</li>
+								<li class=" depth-0">
+									<a target href="bus.html">
+										Bus
+									</a>
+								</li>
+								<li class=" depth-0">
+									<a target href="package.html">
+										Packages
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="header-right">
+						<button class="bravo-more-menu">
+						<i class="fa fa-bars"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="bravo-menu-mobile" style="display:none;">
+				<div class="user-profile">
+					<div class="b-close"><i class="icofont-scroll-left"></i></div>
+					<div class="avatar"></div>
+					<ul>
+						<li>
+							<a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+						</li>
+						<li>
+							<a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+						</li>
+					</ul>
+				</div>
+				<div class="g-menu">
+					<ul class="main-menu menu-generated">
+					<li class=" depth-0">
+						<a target href="index.html">Home</a>
+					</li>
+					<li class=" depth-0">
+						<a target href="hotel.html">Hotel </a>
+					</li>
+					<li class=" depth-0">
+						<a target href="tour.html">Flights</a>
+					</li>
+					<li class=" depth-0">
+						<a target href="space.html">Bus</a>
+					</li>
+					<li class=" depth-0">
+						<a target href="car.html">Packages</a>
+					</li>
+				</div>
+			</div>
     <div class="banner-outer">
         <div class="bus-banner">
             <div style="background: rgba(61, 61, 61, 0.2); height:auto;" class="shadow-lg">
