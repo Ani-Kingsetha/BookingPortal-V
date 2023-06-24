@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en" class>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="/uploads/demo/general/favicon.png" />
+		<title>Search for Bus - Booking Portal</title>
+		<meta name="description" content />
+		<meta property="og:url" content="/bus" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Search for Bus" />
+		<meta property="og:description" content />
+		<!-- <meta property="og:image" content="/uploads/demo/hotel/banner-search-hotel.jpg" /> -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Search for Bus">
+		<meta name="twitter:description" content>
+		<!-- <meta name="twitter:image" content="/uploads/demo/hotel/banner-search-hotel.jpg"> -->
+		<link rel="canonical" href="/bus" />
+		<link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="/libs/ionicons/css/ionicons.min.css" rel="stylesheet">
+		<link href="/libs/icofont/icofont.min.css" rel="stylesheet">
+		<link href="/libs/select2/css/select2.min.css" rel="stylesheet">
+		<link href="/dist/frontend/css/notification.css" rel="newest stylesheet">
+		<link href="/dist/frontend/css/app.css?_ver=3.2.1" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/libs/daterange/daterangepicker.css">
+		<link rel="dns-prefetch" href="//fonts.gstatic.com">
+		<link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&display=swap" type="text/css" media="all" />
+		<script>
+			var bookingCore = {
+			    url:'/',
+			    url_root:'/',
+			    admin_url:'/admin',
+			    booking_decimals:0,
+			    thousand_separator:'.',
+			    decimal_separator:',',
+			    currency_position:'left',
+			    currency_symbol:'$',
+			    currency_rate:'1',
+			    date_format:'MM/DD/YYYY',
+			    map_provider:'gmap',
+			    map_gmap_key:'',
+			    map_options:{
+			        map_lat_default:'',
+			        map_lng_default:'',
+			        map_clustering:'on',
+			        map_fit_bounds:'on',
+			    },
+			    routes:{
+			        login:'/login',
+			        register:'/register',
+			        checkout:'/booking/doCheckout'
+			    },
+			    currentUser: 0,
+			    isAdmin : 0,
+			    rtl: false,
+			    markAsRead:'/notify/markAsRead',
+			    markAllAsRead:'/notify/markAllAsRead',
+			    loadNotify : '/notify/notifications',
+			    pusher_api_key : '',
+			    pusher_cluster : '',
+			    language: 'en',
+			    module:{}
+			};
+			                        bookingCore.module.hotel = '/hotel';
+			                            bookingCore.module.space = '/space';
+			                            bookingCore.module.car = '/car';
+			                            bookingCore.module.event = '/event';
+			                            bookingCore.module.tour = '/tour';
+			                            bookingCore.module.flight = '/flight';
+			                            bookingCore.module.boat = '/boat';
+			            var i18n = {
+			    warning:"Warning",
+			    success:"Success",
+			    confirm_delete:"Do you want to delete?",
+			    confirm:"Confirm",
+			    cancel:"Cancel",
+			};
+			var daterangepickerLocale = {
+			    "applyLabel": "Apply",
+			    "cancelLabel": "Cancel",
+			    "fromLabel": "From",
+			    "toLabel": "To",
+			    "customRangeLabel": "Custom",
+			    "weekLabel": "W",
+			    "first_day_of_week": 1,
+			    "daysOfWeek": [
+			        "Su",
+			        "Mo",
+			        "Tu",
+			        "We",
+			        "Th",
+			        "Fr",
+			        "Sa"
+			    ],
+			    "monthNames": [
+			        "January",
+			        "February",
+			        "March",
+			        "April",
+			        "May",
+			        "June",
+			        "July",
+			        "August",
+			        "September",
+			        "October",
+			        "November",
+			        "December"
+			    ],
+			};
+		</script>
+		<link href="/dist/frontend/module/hotel/css/hotel.css?_ver=3.2.1" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/libs/ion_rangeslider/css/ion.rangeSlider.min.css" />
+		<link href="/custom-css" rel="stylesheet">
+		<link href="/libs/carousel-2/owl.carousel.css" rel="stylesheet">
+		<style>
+.booking-review-content {
+    margin-bottom: 30px;
+    border: 1px solid #d7dce3;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    border-radius: 3px;
+}
+.form-control {
+    border: 1px solid #dae1e7;
+    border-radius: 3px;
+    box-shadow: none;
+    font-size: 14px;
+}
+.review-section {
+    padding: 30px;
+    border-bottom: 1px solid #eaeef3;
+}
+.review-list {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.review-list li {
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+.review-list li.final-total {
+    border-top: 1px solid #eaeef3;
+    padding-top: 10px;
+    font-size: 19px;
+}
+li.final-total .label {
+    font-weight: 500;
+}
+li.final-total .val {
+    font-weight: 500;
+    color: #3490dc;
+}
+		</style>
+	</head>
+	<body class="frontend-page header-normal   ">
+		<div class="bravo_wrap">
+			<div class="bravo_topbar">
+				<div class="container">
+					<div class="content">
+						<div class="topbar-left">
+						</div>
+						<div class="topbar-right">
+							<ul class="topbar-items">
+								<li class="dropdown">
+									<ul class="dropdown-menu text-left sf-hidden"></ul>
+								</li>
+								<li class="login-item">
+									<a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+								</li>
+								<li class="signup-item">
+									<a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bravo_header">
+				<div class="container">
+					<div class="content">
+						<div class="header-left">
+							<a href="index.html" class="bravo-logo">
+							<img src="uploads/demo/general/logo.png" alt="UrTripo Aviation" width="45%">
+							</a>
+							<div class="bravo-menu">
+								<ul class="main-menu menu-generated">
+									<li class=" depth-0">
+										<a target href="index.html">
+											Home
+										</a>
+									</li>
+									<li class=" depth-0">
+										<a target href="flight.html">
+											Flights
+										</a>
+									</li>
+									<li class=" depth-0">
+										<a target href="hotel.html">
+											Hotels
+										</a>
+									</li>
+									<li class=" depth-0">
+										<a target href="bus.html">
+											<div style=" background: #5191fa; color: white; padding: 7px 20px; border-radius: 4px; ">Bus</div>
+										</a>
+									</li>
+									<li class=" depth-0">
+										<a target href="package.html">
+											Packages
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="header-right">
+							<button class="bravo-more-menu">
+							<i class="fa fa-bars"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="bravo-menu-mobile" style="display:none;">
+					<div class="user-profile">
+						<div class="b-close"><i class="icofont-scroll-left"></i></div>
+						<div class="avatar"></div>
+						<ul>
+							<li>
+								<a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+							</li>
+							<li>
+								<a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+							</li>
+						</ul>
+					</div>
+					<div class="g-menu">
+						<ul class="main-menu menu-generated">
+						<li class=" depth-0">
+							<a target href="index.html">Home</a>
+						</li>
+						<li class=" depth-0">
+							<a target href="hotel.html">Hotel </a>
+						</li>
+						<li class=" depth-0">
+							<a target href="tour.html">Flights</a>
+						</li>
+						<li class=" depth-0">
+							<a target href="bus.html">
+								<div style=" background: #5191fa; color: white; padding: 7px 20px; border-radius: 4px; ">Bus</div>
+							</a>
+						</li>
+						<li class=" depth-0">
+							<a target href="car.html">Packages</a>
+						</li>
+					</div>
+				</div>
+			</div>
+			<div class="bravo_search_hotel">
+				<div class="bravo_banner" style="background-image: url(/uploads/demo/hotel/banner-search-hotel.jpg)">
+					<div class="container">
+						<h1>
+							Search for Bus
+						</h1>
+					</div>
+				</div>
+				<div class="bravo_form_search">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12 col-md-12">
+								<form action="/bus" class="form bravo_form" method="get">
+									<div class="g-field-search">
+										<div class="row">
+											<div class="col-md-4 border-right">
+												<div class="form-group">
+													<i class="field-icon fa icofont-map"></i>
+													<div class="form-content">
+														<label> From </label>
+														<div class="smart-search">
+															<input type="text" class="smart-search-location parent_text form-control" readonly placeholder="Where are you now?" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; Paris&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; California&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;- New York, United States&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; United States&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; Los Angeles&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; New Jersey&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; San Francisco&quot;},{&quot;id&quot;:8,&quot;title&quot;:&quot; Virginia&quot;},{&quot;id&quot;:9,&quot;title&quot;:&quot; London&quot;},{&quot;id&quot;:10,&quot;title&quot;:&quot; Germany&quot;},{&quot;id&quot;:11,&quot;title&quot;:&quot; Istanbul&quot;},{&quot;id&quot;:12,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:13,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:14,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:15,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:16,&quot;title&quot;:&quot; Naran&quot;},{&quot;id&quot;:17,&quot;title&quot;:&quot; Ha Noi&quot;}]">
+															<input type="hidden" class="child_id" name="location_id" value>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4 border-right">
+												<div class="form-group">
+													<i class="field-icon fa icofont-map"></i>
+													<div class="form-content">
+														<label> To </label>
+														<div class="smart-search">
+															<input type="text" class="smart-search-location parent_text form-control" readonly placeholder="Where are you going?" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; Paris&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; California&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;- New York, United States&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; United States&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; Los Angeles&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; New Jersey&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; San Francisco&quot;},{&quot;id&quot;:8,&quot;title&quot;:&quot; Virginia&quot;},{&quot;id&quot;:9,&quot;title&quot;:&quot; London&quot;},{&quot;id&quot;:10,&quot;title&quot;:&quot; Germany&quot;},{&quot;id&quot;:11,&quot;title&quot;:&quot; Istanbul&quot;},{&quot;id&quot;:12,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:13,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:14,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:15,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:16,&quot;title&quot;:&quot; Naran&quot;},{&quot;id&quot;:17,&quot;title&quot;:&quot; Ha Noi&quot;}]">
+															<input type="hidden" class="child_id" name="location_id" value>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4 border-right">
+												<div class="form-group">
+													<i class="field-icon icofont-wall-clock"></i>
+													<div class="form-content">
+														<div class="form-date-search-hotel">
+															<div class="date-wrapper">
+																<div class="check-in-wrapper">
+																	<label>Date of Journey</label>
+																	<div class="render check-in-render">06/13/2023</div>
+																</div>
+															</div>
+															<input type="hidden" class="check-in-input" value="06/13/2023" name="start">
+															<input type="text" class="check-in-out" name="date" value="2023-06-13">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="g-button-submit">
+										<button class="btn btn-primary btn-search" type="submit">Search</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-6">
+							<div class="h2">Egloo Travels</div>
+							<div class="mt-2 text-muted">21:30 ,5 April to 5:45 PM ,6 April</div>
+						</div>
+						<div class="col-6 text-right">
+							<div class="h4">1 Seat selected</div>
+							<span class="mt-2 text-muted">Seat Number:38</span>
+						</div>
+					</div>
+					<div class="row text-dark mt-5">
+						<div class="col-md-3">
+							<div class="h4"><strong>20:30 PM</strong></div>
+							<div><strong>Chennai, </strong><span class="text-muted">21:30,5 April,Thu</span></div>
+							<div class="h6 text-muted">Koyambedu</div>
+						</div>
+						<div class="align-items-md-center col-md-6 d-flex mb-4 mt-4 text-center">
+							<img src="images/Arrow.png" alt="arrow" width="100" style="margin-right:auto;margin-left:auto;">
+						</div>
+						<div class="col-md-3 text-right">
+							<div class="h4"><strong>03:30 AM</strong></div>
+							<div class=""> <strong>Madurai </strong><span class="text-muted">,03:00,6 April,Fri</span></div>
+							<div class="h6 text-muted">MGR Bus Stand</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row mt-5">
+						<div class="col-md-8">
+							<h3 class="form-title">Enter Traveller Details</h3>
+							<div class="booking-form">
+								<div id="form-checkout" class="form-checkout">
+									<div class="form-section">
+										<div class="row">
+											<div class="col-md-5">
+												<div class="form-group"><label>Name <span class="required">*</span></label> <input type="text" placeholder="Name" name="name" class="form-control"></div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group"><label>Phone <span class="required">*</span></label> <input type="number" placeholder="Your Age" name="age" class="form-control"></div>
+											</div>
+											<div class="col-md-4">
+												<div class="form-group">
+													<label>Gender <span class="required">*</span></label> 
+													<select name="gender" class="form-control">
+														<option value="">-- Select --</option>
+														<option value="M">Male</option>
+														<option value="F">Female</option>
+														<option value="O">Other</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-12 mt-3">
+												<h4 class="form-title">Enter Contact Details</h4>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group"><label>First Name <span class="required">*</span></label> <input type="text" placeholder="First Name" name="first_name" class="form-control"></div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group"><label>Last Name <span class="required">*</span></label> <input type="text" placeholder="Last Name" name="last_name" class="form-control"></div>
+											</div>
+											<div class="col-md-6 field-email">
+												<div class="form-group"><label>Email <span class="required">*</span></label> <input type="email" placeholder="email@domain.com" name="email" class="form-control"></div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group"><label>Phone <span class="required">*</span></label> <input type="text" placeholder="Your Phone" name="phone" class="form-control"></div>
+											</div>
+											<div class="col-md-6 field-address-line-1">
+												<div class="form-group"><label>Address</label> <input type="text" placeholder="Address" value="" name="address" class="form-control"></div>
+											</div>
+											<div class="col-md-6 field-city">
+												<div class="form-group"><label>City </label> <input type="text" value="" name="city" placeholder="Your City" class="form-control"></div>
+											</div>
+											<div class="col-md-6 field-state">
+												<div class="form-group"><label>State/Province/Region </label> <input type="text" value="" name="state" placeholder="State/Province/Region" class="form-control"></div>
+											</div>
+											<div class="col-md-6 field-zip-code">
+												<div class="form-group"><label>ZIP code/Postal code </label> <input type="text" value="" name="zip_code" placeholder="ZIP code/Postal code" class="form-control"></div>
+											</div>
+										</div>
+									</div>
+									<div class="form-section mt-4">
+										<h4 class="form-section-title">Enter GST Details (Optional)</h4>
+										<div class="row">
+											<div class="col-md-6 field-state">
+												<div class="form-group"><label>Enter GST Number </label> <input type="text" name="gst" placeholder="Enter GST Number" class="form-control"></div>
+											</div>
+											<div class="col-md-6 field-zip-code">
+												<div class="form-group"><label>Enter GST Company Number </label> <input type="text" value="" name="zip_code" placeholder="Enter GST Company Number" class="form-control"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="booking-detail booking-form">
+								<div class="booking-review">
+									<div class="booking-review-content" style="border-color:#007BFF;border-radius:9px;">
+										<div class="review-section" style="background:#5191FA1F;">
+											<div class="service-info">
+												<div class="text-center">
+													<div class="btn" style="background:rgb(0,123,255);background:linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(125,121,209,1) 100%);color:#fff;">Continue to Book Now</div>
+												</div>
+											</div>
+										</div>
+										<div class="review-section">
+											<ul class="review-list">
+												<li>
+													<div class="label">Base Fare:</div>
+													<div class="val">
+														Rs.800
+													</div>
+												</li>
+												<li>
+													<div class="label">Tax:</div>
+													<div class="val">
+														Rs.0.00
+													</div>
+												</li>
+											</ul>
+										</div>
+										<div class="review-section total-review">
+											<ul class="review-list">
+												<li class="d-flex flex-column border-0 mb-0">
+													<div class="section-coupon-form">
+														<div class="input-group group-form mb-3">
+															<input type="text" name="coupon_code" placeholder="Coupon code" class="form-control"> 
+															<div class="input-group-append"><button type="button" class="btn btn-primary bravo_apply_coupon">
+																Apply
+																<i class="fa fa-spin fa-spinner d-none"></i></button>
+															</div>
+														</div>
+														<ul class="p-0 mb-3 list-coupons"></ul>
+														<div class="message alert-text mt-2"></div>
+													</div>
+												</li>
+												<li class="final-total d-block">
+													<div class="d-flex justify-content-between">
+														<div class="label">Total:</div>
+														<div class="val">Rs.800</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div id="detailBookingDatea6ce0118ed9f5edcd0f50e5774c74d40" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" class="modal fade">
+									<div role="document" class="modal-dialog modal-dialog-centered">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title text-center">Detail</h5>
+												<button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+											</div>
+											<div class="modal-body">
+												<ul class="review-list list-unstyled">
+													<li class="mb-3 pb-1 border-bottom">
+														<h6 class="label text-center font-weight-bold mb-1"></h6>
+														<div>
+															<div class="table-responsive">
+																<table class="table table-striped table-inverse mb-1">
+																	<tbody>
+																		<tr>
+																			<td>04/07/2023 <i class="fa fa-long-arrow-right"></i> 05/07/2023</td>
+																			<td class="text-right">$700*2</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+														<div class="d-flex justify-content-between font-weight-bold px-2"><span>Total:</span> <span>$1.400</span></div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bravo_footer">
+				<div class="main-footer">
+					<div class="container">
+						<div class="mt-4 p-5 text-primary text-white rounded">
+							<div class="row">
+								<div class="col-lg-3 col-md-6">
+									<div class="nav-footer">
+										<div class="title">NEED HELP?</div>
+										<div class="context">
+											<div class="contact">
+												<div class="c-title">Call Us</div>
+												<div class="sub">+ 11 111 11 1111</div>
+											</div>
+											<div class="contact">
+												<div class="c-title">Email for Us</div>					
+												<div class="sub">
+													customercare<br>@urtripo.com
+												</div>
+											</div>
+											<div class="contact">
+												<div class="c-title">Follow Us</div>
+												<div class="sub">
+													<a href="#"><i class="icofont-facebook"></i></a>
+													<a href="#"><i class="icofont-twitter"></i></a>
+													<a href="#"><i class="icofont-youtube-play"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6">
+									<div class="nav-footer">
+										<div class="title">URTRIPO AVIATION</div>
+										<div class="context">
+											<ul>
+												<li><a href="#">About Us</a></li>
+												<li><a href="#">Blog</a></li>
+												<li><a href="#">Customer Support</a></li>
+												<li><a href="#">Jobs</a></li>
+												<li><a href="#">Privacy Policy</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6">
+									<div class="nav-footer">
+										<div class="title">EXPLORE</div>
+										<div class="context">
+											<ul>
+												<li><a href="#">Airports</a></li>
+												<li><a href="#">Hotels</a></li>
+												<li><a href="#">Flights</a></li>
+												<li><a href="#">Bus</a></li>
+												<li><a href="#">Packages</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6">
+									<div class="nav-footer">
+										<div class="title">BOOK</div>
+										<div class="context">
+											<ul>
+												<li><a href="#">Resort</a></li>
+												<li><a href="#">Apartment</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="copy-right">
+					<div class="container context">
+						<div class="row">
+							<div class="col-md-12">
+								Copyright © 2018 by UrTripo Aviation
+								<div class="f-visa">UrTripo Aviation</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade login" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header">
+							<h4 class="modal-title">Log In</h4>
+							<span class="c-pointer" data-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="/images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body relative">
+							<form class="bravo-form-login" method="POST" action="/login">
+								<input type="hidden" name="redirect" value>
+								<input type="hidden" name="_token" value="zzaPBleChcMC42TW7qB8Le0kUD3LDSgdGWYq6eTm"> 
+								<div class="form-group">
+									<input type="text" class="form-control" name="email" autocomplete="off" placeholder="Email address">
+									<i class="input-icon icofont-mail"></i>
+									<span class="invalid-feedback error error-email"></span>
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password">
+									<i class="input-icon icofont-ui-password"></i>
+									<span class="invalid-feedback error error-password"></span>
+								</div>
+								<div class="form-group">
+									<div class="d-flex justify-content-between">
+										<label for="remember-me" class="mb0">
+										<input type="checkbox" name="remember" id="remember-me" value="1"> Remember me <span class="checkmark fcheckbox"></span>
+										</label>
+										<a href="/forgot-password">Forgot Password?</a>
+									</div>
+								</div>
+								<div class="error message-error invalid-feedback"></div>
+								<div class="form-group">
+									<button class="btn btn-primary form-submit" type="submit">
+									Login
+									<span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
+									</button>
+								</div>
+								<div class="advanced">
+									<p class="text-center f14 c-grey">or continue with</p>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4">
+											<a href="/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+											<i class="input-icon fa fa-facebook"></i>
+											Facebook
+											</a>
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<a href="/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+											<i class="input-icon fa fa-google"></i>
+											Google
+											</a>
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<a href="/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
+											<i class="input-icon fa fa-twitter"></i>
+											Twitter
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="c-grey font-medium f14 text-center"> Do not have an account? <a href data-target="#register" data-toggle="modal">Sign Up</a></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade login" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header">
+							<h4 class="modal-title">Sign Up</h4>
+							<span class="c-pointer" data-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="/images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body">
+							<form class="form bravo-form-register" method="post" action="/register">
+								<input type="hidden" name="_token" value="zzaPBleChcMC42TW7qB8Le0kUD3LDSgdGWYq6eTm"> 
+								<div class="row">
+									<div class="col-lg-6 col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" name="first_name" autocomplete="off" placeholder="First Name">
+											<i class="input-icon field-icon icofont-waiter-alt"></i>
+											<span class="invalid-feedback error error-first_name"></span>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" name="last_name" autocomplete="off" placeholder="Last Name">
+											<i class="input-icon field-icon icofont-waiter-alt"></i>
+											<span class="invalid-feedback error error-last_name"></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="phone" autocomplete="off" placeholder="Phone">
+									<i class="input-icon field-icon icofont-ui-touch-phone"></i>
+									<span class="invalid-feedback error error-phone"></span>
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-control" name="email" autocomplete="off" placeholder="Email address">
+									<i class="input-icon field-icon icofont-mail"></i>
+									<span class="invalid-feedback error error-email"></span>
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password">
+									<i class="input-icon field-icon icofont-ui-password"></i>
+									<span class="invalid-feedback error error-password"></span>
+								</div>
+								<div class="form-group">
+									<label for="term">
+									<input id="term" type="checkbox" name="term" class="mr5">
+									I have read and accept the <a href target="_blank">Terms and Privacy Policy</a>
+									<span class="checkmark fcheckbox"></span>
+									</label>
+									<div><span class="invalid-feedback error error-term"></span></div>
+								</div>
+								<div class="error message-error invalid-feedback"></div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-primary form-submit">
+									Sign Up
+									<span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
+									</button>
+								</div>
+								<div class="advanced">
+									<p class="text-center f14 c-grey">or continue with</p>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4">
+											<a href="/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+											<i class="input-icon fa fa-facebook"></i>
+											Facebook
+											</a>
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<a href="/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+											<i class="input-icon fa fa-google"></i>
+											Google
+											</a>
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<a href="/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
+											<i class="input-icon fa fa-twitter"></i>
+											Twitter
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="c-grey f14 text-center">
+									Already have an account?
+									<a href="#" data-target="#login" data-toggle="modal">Log In</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<link rel="stylesheet" href="/libs/flags/css/flag-icon.min.css">
+			<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/libs/lazy-load/intersection-observer.js"></script>
+			<script async src="/libs/lazy-load/lazyload.min.js"></script>
+			<script>
+				// Set the options to make LazyLoad self-initialize
+				window.lazyLoadOptions = {
+				    elements_selector: ".lazy",
+				    // ... more custom settings?
+				};				
+				// Listen to the initialization event and get the instance of LazyLoad
+				window.addEventListener('LazyLoad::Initialized', function (event) {
+				    window.lazyLoadInstance = event.detail.instance;
+				}, false);
+			</script>
+			<script src="/libs/lodash.min.js"></script>
+			<script src="/libs/jquery-3.6.3.min.js"></script>
+			<script src="/libs/vue/vue.min.js"></script>
+			<script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+			<script src="/libs/bootbox/bootbox.min.js"></script>
+			<script src="/libs/carousel-2/owl.carousel.min.js"></script>
+			<script type="text/javascript" src="/libs/daterange/moment.min.js"></script>
+			<script type="text/javascript" src="/libs/daterange/daterangepicker.min.js"></script>
+			<script src="/libs/select2/js/select2.min.js"></script>
+			<script src="/js/functions.js?_ver=3.2.1"></script>
+			<script src="/libs/pusher.min.js"></script>
+			<script src="/js/home.js?_ver=3.2.1"></script>
+			<script type="text/javascript" src="/libs/ion_rangeslider/js/ion.rangeSlider.min.js"></script>
+			<script type="text/javascript" src="/module/hotel/js/hotel.js?_ver=3.2.1"></script>
+			<script>
+				function addClassToSeat(seatElement) {
+					seatElement.classList.toggle('selected');
+				}
+			</script>
+		</div>
+
+	</body>
+</html>
