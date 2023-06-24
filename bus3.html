@@ -403,76 +403,16 @@ li.final-total .val {
 											</div>
 										</div>
 									</div>
-									<div class="form-section">
-										<h4 class="form-section-title">Select Payment Method</h4>
-										<div id="accordionExample" class="gateways-table accordion">
-											<div class="card">
-												<div class="card-header">
-													<h4 class="mb-0"><label data-toggle="collapse" data-target="#gateway_offline_payment"><input type="radio" name="payment_gateway" value="offline_payment">
-														Offline Payment
-														</label>
-													</h4>
-												</div>
-												<div id="gateway_offline_payment" aria-labelledby="headingOne" data-parent="#accordionExample" class="collapse">
-													<div class="card-body">
-														<div class="gateway_name">
-															Offline Payment
-														</div>
-													</div>
-												</div>
+									<div class="form-section mt-4">
+										<h4 class="form-section-title">Enter GST Details (Optional)</h4>
+										<div class="row">
+											<div class="col-md-6 field-state">
+												<div class="form-group"><label>Enter GST Number </label> <input type="text" name="gst" placeholder="Enter GST Number" class="form-control"></div>
 											</div>
-											<div class="card">
-												<div class="card-header">
-													<h4 class="mb-0"><label data-toggle="collapse" data-target="#gateway_paypal"><input type="radio" name="payment_gateway" value="paypal">
-														Paypal
-														</label>
-													</h4>
-												</div>
-												<div id="gateway_paypal" aria-labelledby="headingOne" data-parent="#accordionExample" class="collapse">
-													<div class="card-body">
-														<div class="gateway_name">
-															Paypal
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="card">
-												<div class="card-header">
-													<h4 class="mb-0"><label data-toggle="collapse" data-target="#gateway_stripe"><input type="radio" name="payment_gateway" value="stripe">
-														Stripe
-														</label>
-													</h4>
-												</div>
-												<div id="gateway_stripe" aria-labelledby="headingOne" data-parent="#accordionExample" class="collapse">
-													<div class="card-body">
-														<div class="gateway_name">
-															Stripe
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="card">
-												<div class="card-header">
-													<h4 class="mb-0"><label data-toggle="collapse" data-target="#gateway_two_checkout_gateway"><input type="radio" name="payment_gateway" value="two_checkout_gateway">
-														Two Checkout
-														</label>
-													</h4>
-												</div>
-												<div id="gateway_two_checkout_gateway" aria-labelledby="headingOne" data-parent="#accordionExample" class="collapse">
-													<div class="card-body">
-														<div class="gateway_name">
-															Two Checkout
-														</div>
-													</div>
-												</div>
+											<div class="col-md-6 field-zip-code">
+												<div class="form-group"><label>Enter GST Company Number </label> <input type="text" value="" name="zip_code" placeholder="Enter GST Company Number" class="form-control"></div>
 											</div>
 										</div>
-									</div>
-									<div class="form-group"><label class="term-conditions-checkbox"><input type="checkbox" name="term_conditions"> I have read and accept the  <a target="_blank" href="">terms and conditions</a></label></div>
-									<div class="html_before_actions"></div>
-									<p class="alert-text mt10 danger" style="display: none;"></p>
-									<div class="form-actions"><button class="btn btn-danger">Submit
-										<i class="fa fa-spin fa-spinner" style="display: none;"></i></button>
 									</div>
 								</div>
 							</div>
