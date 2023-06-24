@@ -1,168 +1,502 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class>
 
+<!-- Mirrored from sandbox.bookingcore.org/flight by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Apr 2023 03:43:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>flight checkout page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/style.css" type="text/css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="csrf-token" content="uXXPxxuoKSLKPFxWgc6voTPRqwnx7Boss7BQFExL">
+<link rel="icon" type="image/png" href="#">
+<title>Search for flight - UrTripO</title>
+<meta name="description" content />
+<meta property="og:url" content="flight.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Search for flight" />
+<meta property="og:description" content />
+<meta property="og:image" content="uploads/demo/flight/banner-flight.jpg" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Search for flight">
+<meta name="twitter:description" content>
+<meta name="twitter:image" content="uploads/demo/flight/banner-flight.jpg">
+<link rel="canonical" href="flight.html" />
+<link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="libs/ionicons/css/ionicons.min.css" rel="stylesheet">
+<link href="libs/icofont/icofont.min.css" rel="stylesheet">
+<link href="libs/select2/css/select2.min.css" rel="stylesheet">
+<link href="dist/frontend/css/notification.css" rel="newest stylesheet">
+<link href="dist/frontend/css/app7471.css?_ver=3.2.1" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="libs/daterange/daterangepicker.css">
+
+<link rel="dns-prefetch" href="http://fonts.gstatic.com/">
+<link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&amp;display=swap" type="text/css" media="all" />
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    var bookingCore = {
+        url:'https://sandbox.bookingcore.org',
+        url_root:'https://sandbox.bookingcore.org',
+        admin_url:'https://sandbox.bookingcore.org/admin',
+        booking_decimals:0,
+        thousand_separator:'.',
+        decimal_separator:',',
+        currency_position:'left',
+        currency_symbol:'$',
+        currency_rate:'1',
+        date_format:'MM/DD/YYYY',
+        map_provider:'gmap',
+        map_gmap_key:'',
+        map_options:{
+            map_lat_default:'',
+            map_lng_default:'',
+            map_clustering:'on',
+            map_fit_bounds:'on',
+        },
+        routes:{
+            login:'https://sandbox.bookingcore.org/login',
+            register:'https://sandbox.bookingcore.org/register',
+            checkout:'https://sandbox.bookingcore.org/booking/doCheckout'
+        },
+        currentUser: 0,
+        isAdmin : 0,
+        rtl: false,
+        markAsRead:'https://sandbox.bookingcore.org/notify/markAsRead',
+        markAllAsRead:'https://sandbox.bookingcore.org/notify/markAllAsRead',
+        loadNotify : 'https://sandbox.bookingcore.org/notify/notifications',
+        pusher_api_key : '',
+        pusher_cluster : '',
+        language: 'en',
+        module:{}
+    };
+                            bookingCore.module.hotel = 'hotel.html';
+                                bookingCore.module.space = 'space.html';
+                                bookingCore.module.car = 'car.html';
+                                bookingCore.module.event = 'event.html';
+                                bookingCore.module.tour = 'tour.html';
+                                bookingCore.module.flight = 'flight.html';
+                                bookingCore.module.boat = 'boat.html';
+                var i18n = {
+        warning:"Warning",
+        success:"Success",
+        confirm_delete:"Do you want to delete?",
+        confirm:"Confirm",
+        cancel:"Cancel",
+    };
+    var daterangepickerLocale = {
+        "applyLabel": "Apply",
+        "cancelLabel": "Cancel",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "weekLabel": "W",
+        "first_day_of_week": 1,
+        "daysOfWeek": [
+            "Su",
+            "Mo",
+            "Tu",
+            "We",
+            "Th",
+            "Fr",
+            "Sa"
+        ],
+        "monthNames": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ],
+    };
+</script>
+
+<link href="dist/frontend/module/flight/css/flight7471.css?_ver=3.2.1" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="libs/ion_rangeslider/css/ion.rangeSlider.min.css" />
+<link href="custom-css.css" rel="stylesheet">
+<link href="libs/carousel-2/owl.carousel.css" rel="stylesheet">
 </head>
-
-<body>
-    <div class="container col-18 my-5 br-5 rounded">
-        <div class="row g-1">
-            <div style="border: 1px ;font-size:20px "> 
-                
-    <table style="border: #ffffff;">
-        <tr>
-            <td  >
-                            <div class="col-11">
-                                <h4 class="d-flex justify-content-between align-item-center">
-                                    <span class="text">Chennai to Madurai</span>
-                                    <br>               
-                                </h4>
-                                <hr style="width: 750px;">
-                               
-                                <div class="table-responsive">          
-                                    <table class="table" style="border-collapse:separate;border:solid rgb(41, 99, 225) 2px;;border-radius: 8px;" >
-                                      <thead>
-                                    <tr>
-                                        <td><img src="images.jpg" class="rounded" alt="flight"></td>
-                                        <td style="color: rgb(41, 99, 225);font-size: medium;">14:00 AM</td>
-                                        <td style="color: rgb(41, 99, 225);font-size: medium;">1h 10Min</td>
-                                        <td style="color: rgb(41, 99, 225);font-size: medium;">06:00 AM</td>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                      <tr>
-                                        <td style="font-size: x-small;">Indigo  7E</td>
-                                        <td style="font-size: x-small;">Chennai(MAA)</td>
-                                        <td style="font-size: x-small;"></td>
-                                        <td style="font-size: x-small;">Madurai(IXM)</td>
-                                      </tr>
-                                      </tbody>
-                                      
-                                </table>  
+<body class="frontend-page header-normal   ">
+    <div class="bravo_wrap">
+        <div class="bravo_topbar">
+       <div class="container">
+       <div class="content">
+       <div class="topbar-left">
+           <!--<div class="socials">
+               <a href="#"><i class="fa fa-facebook"></i></a>
+               <a href="#"><i class="fa fa-linkedin"></i></a>
+               <a href="#"><i class="fa fa-google-plus"></i></a>
+               </div>
+               <span class="line"></span>
+               <a href="/cdn-cgi/l/email-protection#0f6c60617b6e6c7b4f6d6060646661686c607d6a217b6a7c7b"><span class="__cf_email__" data-cfemail="c9aaa6a7bda8aabd89aba6a6a2a0a7aeaaa6bbace7bdacbabd">[email&#160;protected]</span></a>-->
+               </div><!--
+               <div class="topbar-right">
+               <ul class="topbar-items">
+               <li class="dropdown">
+               <a href="#" data-toggle="dropdown" class="is_login">
+               USD
+               <i class="fa fa-angle-down"></i>
+               </a>
+               <ul class="dropdown-menu text-left width-auto">
+               <li>
+               <a href="https://sandbox.bookingcore.org?set_currency=eur" class="is_login">
+               EUR
+               </a>
+               </li>
+               <li>
+               <a href="https://sandbox.bookingcore.org?set_currency=jpy" class="is_login">
+               JPY
+               </a>
+               </li>
+               </ul>
+               </li>
+               <li class="dropdown">
+               <ul class="dropdown-menu text-left">
+               <li>
+               <a href="https://sandbox.bookingcore.org?set_lang=ar" class="is_login">
+               <span class="flag-icon flag-icon-sa"></span>
+               Araic
+               </a>
+               </li>
+               <li>
+               <a href="https://sandbox.bookingcore.org?set_lang=en_US" class="is_login">
+               <span class="flag-icon flag-icon-en_US"></span>
+               English
+               </a>
+               </li>
+               <li>
+               <a href="https://sandbox.bookingcore.org?set_lang=fr" class="is_login">
+               <span class="flag-icon flag-icon-fr"></span>
+               Français
+               </a>
+               </li>
+               </ul>
+               </li>
+       </div>-->
+       <div class="topbar-right">
+       <ul class="topbar-items">
+       <li class="dropdown">
+       <ul class="dropdown-menu text-left sf-hidden"></ul>
+       </li>
+       <li class="login-item">
+       <a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+       </li>
+       <li class="signup-item">
+       <a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+       </li>
+       </ul>
+       </div>
+       </div>
+       </div>
+       </div> 
+       <div class="bravo_header">
+       <div class="container-fluid">
+       <div class="content">
+       <div class="header-left">
+       <div class="bravo-menu">
+       <ul class="main-menu menu-generated">
+           <li class=" depth-0">
+               <a target href="index.html"><img src="uploads/demo/general/logo.png" alt="UrTripo Aviation" width="45%"></a>
+           </li>
+           <li class=" depth-0">
+               <a target href="index.html">Home <!--<i class="caret fa fa-angle-down"></i>--></a>
+               <!-- <ul class="children-menu menu-dropdown">
+                   <li class=" depth-1">
+                       <a target href="index.html">Home Page</a>
+                   </li>
+                   <li class=" depth-1">
+                       <a target href="page/home-page-v2.html">Home Page v2</a>
+                   </li>
+                   <li class=" depth-1">
+                       <a target href="page/hotel.html">Home Hotel</a>
+                   </li>
+                   <li class=" depth-1">
+                       <a target href="page/home-tour-agency.html">Home Tour Agency</a>
+                   </li>
+                   <li class=" depth-1">
+                       <a target href="page/tour.html">Home Tour</a>
+                   </li>
+                   <li class=" depth-1">
+                       <a target href="page/space.html">Home Space</a>
+                   </li>
+                   <li class=" depth-1">
+                       <a target href="page/car.html">Home Car</a>
+                   </li>
+               </ul> -->
+           </li>
+           <li class=" depth-0">
+               <a target href="flight.html">Flights <!-- <i class="caret fa fa-angle-down"></i> --></a>
+               <!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="hotel.html">Hotel List</a></li><li class=" depth-1"><a target href="hotel76a0.html?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="index.html">Hotel Detail</a></li></ul> -->
+           </li>
+           <li class=" depth-0">
+               <a target href="hotel.html">Hotels <!-- <i class="caret fa fa-angle-down"></i> --></a>
+               <!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="tour.html">Tour List</a></li><li class=" depth-1"><a target href="tour76a0.html?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="tour/paris-vacation-travel.html">Tour Detail</a></li></ul> -->
+           </li>
+           <li class=" depth-0">
+               <a target href="bus.html">Bus <!-- <i class="caret fa fa-angle-down"></i> --></a>
+               <!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="space.html">Space List</a></li><li class=" depth-1"><a target href="space76a0.html?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="space/stay-greenwich-village.html">Space Detail</a></li></ul> -->
+           </li>
+           <li class=" depth-0">
+               <a target href="package.html">Packages <!-- <i class="caret fa fa-angle-down"></i> --></a>
+               <!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="car.html">Car List</a></li><li class=" depth-1"><a target href="car76a0.html?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="car/vinfast-lux-a20-plus.html">Car Detail</a></li></ul> -->
+           </li>
+           <!-- <li class=" depth-0">
+               <a target href="event.html">Event <i class="caret fa fa-angle-down"></i></a>
+               <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="event.html">Event List</a></li><li class=" depth-1"><a target href="event76a0.html?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="event/aspen-glade-weddings-events.html">Event Detail</a></li></0ul>
+           </li>
+           <li class=" depth-0">
+               <a target href=".html">Flight</a>
+           </li>
+           <li class=" depth-0">
+               <a target href="boat.html">Boat <i class="caret fa fa-angle-down"></i></a>
+               <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="boat.html">Boat List</a></li><li class=" depth-1"><a target href="boat76a0.html?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="boat/blue-moon-yc-300.html">Boat Detail</a></li></ul>
+           </li>
+           <li class=" depth-0">
+               <a target href="#">Pages <i class="caret fa fa-angle-down"></i></a>
+               <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="login.html">Plan</a></li><li class=" depth-1"><a target href="news.html">News List</a></li><li class=" depth-1"><a target href="news/morning-in-the-northern-sea.html">News Detail</a></li><li class=" depth-1"><a target href="location/paris.html">Location Detail</a></li><li class=" depth-1"><a target href="page/become-a-vendor.html">Become a vendor</a></li><li class=" depth-1"><a target href="contact.html">Contact</a></li></ul>
+           </li> -->
+           <li class="depth-0"><a class="icofont-ui-user" style="padding-left: 300px;"></a>My Account</li>
+       </ul> 
+       </div>
+       </div>
+       <div class="header-right">
+       <button class="bravo-more-menu">
+       <i class="fa fa-bars"></i>
+       </button>
+       </div>
+       </div>
+       </div>
+       <div class="bravo-menu-mobile" style="display:none;">
+       <div class="user-profile">
+       <div class="b-close"><i class="icofont-scroll-left"></i></div>
+       <div class="avatar"></div>
+       <ul>
+       <li>
+       <a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+       </li>
+       <li>
+       <a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+       </li>
+       </ul>
+       </div>
+       <div class="g-menu">
+       <ul class="main-menu menu-generated">
+           <li class=" depth-0">
+               <a target href="index.html"><img src="uploads/demo/general/logo.png" alt="UrTripo Aviation" width="45%"></a>
+           </li>
+           <li class=" depth-0">
+               <a target href="index.html">Home</a>
+       
+           </li>
+           <li class=" depth-0">
+               <a target href="hotel.html">Hotel </a>
+           
+           </li>
+           <li class=" depth-0">
+               <a target href="tour.html">Flights</a>
+           
+           </li>
+           <li class=" depth-0">
+               <a target href="space.html">Bus</a>
+           </li>
+           <li class=" depth-0">
+               <a target href="car.html">Packages</a>
+           
+           </li>
+           <li class="depth-0"><a class="icofont-ui-user" style="padding-left: 10px;"></a>My Account</li>
+          </div>
+       </div>
+<div class="bravo_search_flight">
+    <div class="container-fluid">
+        <div class="row" style="display: flex;padding: 5%; width: 100%;">
+            <div class="col" style="flex: 2;">
+                <div class="row"><h3>Chennai To Madurai</h3></div>
+                <div class="row" style="padding-right: 5%;"><hr></div>
+                <div class="row">
+                    <div class="row" style="margin-top: 10px;margin-bottom: 5%;">
+                        <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><center>Indigo  7E</center></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col" style="color: #007BFF;">
+                                            <h5><b><center>14: 00 AM</center></b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><center>Indigo  7E</center></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col"  style="color: #007BFF;">
+                                            <h5><b><center>1h: 10Min</center></b></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col"  style="color: #007BFF;">
+                                            <h5><b><center>06: 00 AM</center></b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><center>Madurai(IXM)</center></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col"  style="color: #007BFF;">
+                                            <h5><b><center>Rs,1500</center></b></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><center><a href="/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;">Book Now</button></a></center></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-            </td>
-            
-            <td rowspan="2" >
-                <h4 class="d-flex justify-content-between align-item-center">
-                    <span class="text">Fare Summary</span>
-                    <br>               
-                </h4>  
-             <div class="col-15">
-                  <table>
+                    </div>
+                    </div>
                 
-                        <tr>
-                            <td style="color: rgb(41, 99, 225);font-size: x-large;text-align:left;"><b>Base Fair</b></td>
-
-
-                        </tr>
-                        <tr>
-                            <td style="font-size: large;">1 ADT(1*1500) </td>
-                            <td style="text-align:right;">Rs.1,500 </td>
-                        </tr>
-                        
-                        <tr>
-                            <td style="color: rgb(41, 99, 225);font-size: x-large;text-align: left;"><b>Taxes</b></td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: large;">Taxes & Fees</td>
-                            <td style="text-align:right;">Rs.847.05</td>
-                        </tr>
-                        
-                        <tr>
-                            <td style="font-size: large;">Convenience Fees</td>
-                            <td style="text-align:right;">Rs.0.00</td>
-                        </tr>
-                        <tr >
-                            
-                            <td style="font-size:larger;">Total:</td>
-                            <td style="color: rgb(41, 99, 225);font-size: x-large;text-align: center;"><b>Rs.2,347</b></td>
-                            <br>
-                        </tr>
-                       
-                    
-                        
-                      </table>
-                </div>
-            </td>
-        </tr>
-
-    
-        <tr>
-            <td >
-                <form>
-                    <div class="col-14">
+                <div class="row">
+                    <div class="col">
+                        <form action="" method="post" class="">
+                            <div class="row">
+                                <label for="email">Email id :</label>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" id="email" style="border-radius: 5px;width: 70%;">
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="row">
+                                <label for="email">Mobile no :</label>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" id="email" style="border-radius: 5px;width: 70%;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col">
+                    <div class="row"><hr style="color: #fff;"><br><br><br><br></div>  
                     <div class="row">
-                        
-                        <div class="col-5" >
-                            <label class="form-label" for="Email-id:" style="font-size: medium;">Email id:
-                            </label>
-                            <input type="text" id="email" class="form-control">
+                        <h5>OR</h5>
+                    </div>
+                    <div class="row"><br></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-content">
+                            <div class="form-group">
+                                <div class="row">
+                                    <button type="button" class="form-control">Google</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-6">
-                            <br>
-                            <button type="submit" class="btn btn-secondary btn-block mb-4" style="background-color:#000080">Login with Google</button>
-                        </div>
-                        <div class="col-3" >
-                            <label class="form-label" for="mobile">
-                            </label>
-                           
-                        </div>
-                        <div class="row">
-                            <div class="col-sm "></div>
-                            <div class="col-sm "></div>
-                            <div class="col-sm" style="font-size:medium;">OR</div>
-                            <div class="col-sm"></div>
-                            <div class="col-sm"></div>
-                          </div>
-                            
-                        
-                        <div class="col-5" >
-                            
-                            <label class="form-label" for="mobile" style="font-size: medium;">Mobile No:
-                                
-                            </label>
-                            <input type="text" id="email" class="form-control">
-                        </div>
-                        
-                        <div class="col-6">
-                            <br>
-                            <button type="submit" class="btn btn-primary btn-block mb-4">Login with Facebook</button>
-                        </div>
-                        <div class="col-1" >
-                            <label class="form-label" for="mobile">
-                            </label>
-                           
-                        </div>
-                
-                    <div class="col-5">
-                        <label class="form-label" for="">
-                                
-                        </label>
-                    <button type="submit" class="btn btn-primary btn-block mb-4" style>Book as Guest</button>
-                </div>
-                </div>
-                </form>
-            </td>
-            
-        </tr>
-     
+                    </div>
+                </div></center>
+            </div>
+            <div class="col" style="flex: 1;">
+                <div class="row"><h1>Fare Summary</h1></div>
+                <div class="row" style="border: 1px solid gray;border-radius: 5px;padding: 20px;"><h2>Base Fare</h2></div>
             </div>
         </div>
     </div>
+</div>
 
-    </table>
+<div class="container">
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W7B5HJJ');</script>
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7B5HJJ"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml            : true,
+            version          : 'v3.3'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = '../connect.facebook.net/en_US/sdk/xfbml.customerchat.html';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div class="fb-customerchat" attribution="setup_tool" page_id="2280007165584589">
+</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115740936-4"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-115740936-4');
+</script>
+<style>
+    .bravo-buy-button{
+        text-align: center;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #0072bc;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 12px;
+        padding: 10px 20px 8px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        font-weight: 600;
+        z-index: 99;
+    }
+    .bravo-buy-button:hover{
+        text-decoration: none;
+        color: #fff;
+    }
+    .bravo-buy-button .tf-text{
+        background-image: url('landing/img/logoen.png');
+        width: 66px;
+        height: 12px;
+        display: inline-block;
+        background-repeat: no-repeat;
+
+    }
+</style>
+
+
 </body>
 
 </html>
