@@ -417,7 +417,7 @@ Français
         </div>
         </div>
         </div>
-<div class="modal fade" id="detailBookingDate4f5d39525e743e86d7c6a0eef7ef4bdb" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" style="background-color: #00000060">
+<div class="modal fade" id="detailBookingDatehotel" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" style="background-color: #00000060">
 <div class="modal-dialog modal-dialog-centered" role="document">
 <div class="modal-content">
 <div class="modal-header">
@@ -948,7 +948,7 @@ Already have an account?
 <script type="text/javascript">
         jQuery(function () {
             $.ajax({
-                'url': bookingCore.url + '/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/check-status',
+                'url': bookingCore.url + '/booking/hotel/check-status',
                 'cache': false,
                 'type': 'GET',
                 success: function (data) {
@@ -992,7 +992,7 @@ Already have an account?
                 parent.find(".group-form .fa-spin").removeClass("d-none");
                 parent.find(".message").html('');
                 $.ajax({
-                    'url': bookingCore.url + '/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/apply-coupon',
+                    'url': bookingCore.url + '/booking/hotel/apply-coupon',
                     'data': parent.find('input,textarea,select').serialize(),
                     'cache': false,
                     'method':"post",
@@ -1018,7 +1018,7 @@ Already have an account?
                 var parentItem = $(this).closest('.item');
                 parentItem.find(".fa-spin").removeClass("d-none");
                 $.ajax({
-                    'url': bookingCore.url + '/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/remove-coupon',
+                    'url': bookingCore.url + '/booking/hotel/remove-coupon',
                     'data': {
                         coupon_code:$(this).attr('data-code')
                     },
