@@ -3,8 +3,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name=”viewport” content="width=device-width, initial-scale=1.0">
 <meta name="csrf-token" content="fYS1Lasq6wuuXtFwYK46uqlP8NEodobjCbSWeCsL">
 <link rel="icon" type="image/png" href="uploads/demo/general/favicon.jpg" /> 
 <title>Home Page</title>
@@ -191,13 +190,13 @@
 </div>
 </div> 
 <div class="bravo_header">
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: white;">
 <div class="content">
 <div class="header-left">
 <div class="bravo-menu">
 <ul class="main-menu menu-generated">
     <li class=" depth-0">
-        <a target href="index.html"><img src="uploads/demo/general/logo.png" alt="UrTripo Aviation" height="34"></a>
+        <a target href="index.html"><img src="uploads/demo/general/logo.png" alt="UrTripo Aviation" width="45%"></a>
     </li>
     <li class=" depth-0">
         <a target href="index.html">Home <!--<i class="caret fa fa-angle-down"></i>--></a>
@@ -283,7 +282,7 @@
 <div class="g-menu">
 <ul class="main-menu menu-generated">
     <li class=" depth-0">
-        <a target href="index.html"><img src="uploads/demo/general/logo.png" alt="UrTripo Aviation" height="34"></a>
+        <a target href="index.html"><img src="uploads/demo/general/logo.png" alt="UrTripo Aviation" width="45%"></a>
     </li>
     <li class=" depth-0">
         <a target href="index.html">Home</a>
@@ -315,13 +314,14 @@
 <div class="item-bg" style="background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('uploads/demo/tour/banner-detail/banner-tour-4.jpg') !important"></div>
 </div> -->
 <div class="item">
-<div class="item-bg" style="background-image:url('uploads/demo/general/background-image.png') !important"></div>
+    <div class="item-bg" style="background-image: url('uploads/demo/general/background-image.png'); "></div>
+
 </div>
 </div>
 </div>
-<div class="container">
+<div class="container-fluid">
 <div class="row">
-<div class="col-lg-12">
+<div class="col-lg-8">
 <h1 class="text-heading">START YOUR JOURNEY</h1>
 <!-- <div class="sub-heading">Where would you like to go?</div> -->
 
@@ -521,11 +521,11 @@
 </form> </div>
 <div role="tabpanel" class="tab-pane " id="bravo_flight">
     <!-- <hr style="background-color: yellow; size: 2px;"> -->
-<form action="https://sandbox.bookingcore.org/flight" class="form bravo_form" method="get">
+<form action="/flight.html" class="form bravo_form" method="get">
 <div class="g-field-search">
     <div class="row border-bottom">
-        <div class="col-sm-1 "><button class="btn active">OneWay</button></div>
-        <div class="col-sm-1 "><button class="btn active">RoundTrip</button></div>
+        <div class="col-sm-1 "><button class="btn">OneWay</button></div>
+        <div class="col-sm-1 "><button class="btn">RoundTrip</button></div>
     </div>
 <div class="row ">
 <div class="col-md-3 border-right">
@@ -664,42 +664,79 @@ bottom: 8px;
 left: 50px;
     }
 </style>
-<div class="container-fluid p-5 my-5 bg-primary text-white" style="position: relative;text-align: center;color: white;">
-    <center>
-         <p><b class="h1">CITY TO TRAVEL</b><br>  Most Searched cities</p><br></center>
-   
-   <!-- <div class="button-container">
-         <button class="btn btn-md btn-primary facebook">
-           <img src="https://sandbox.bookingcore.org/uploads/demo/space/space-5.jpg" width="100%"/>
-   </button>  <button class="btn btn-md btn-primary facebook">
-           <img src="https://sandbox.bookingcore.org/uploads/demo/space/space-5.jpg" width="100%"/>
-   </button>      
-      <button class="btn btn-md btn-primary facebook">
-           <img src="https://sandbox.bookingcore.org/uploads/demo/space/space-5.jpg" width="100%"/>
-   </button>  <button class="btn btn-md btn-primary facebook">
-           <img src="https://sandbox.bookingcore.org/uploads/demo/space/space-5.jpg" width="100%"/>
-   </button>      
-      <button class="btn btn-md btn-primary facebook">
-           <img src="https://sandbox.bookingcore.org/uploads/demo/space/space-5.jpg" width="100%"/>
-   </button>  <button class="btn btn-md btn-primary facebook">
-           <img src="https://sandbox.bookingcore.org/uploads/demo/space/space-5.jpg"  width="100%"/>
-   </button>       -->
-   
-   
-        
-   <div class="row" >
-            
-    <div class="col"><img class="img-fluid" src="\uploads\demo\general\new york.png" width="200" height="200"><div class="bottom-left">New York</div></div>
-    <div class="col"><img class="img-fluid" src="\uploads\demo\general\sydney.png" width="200" height="200"><div class="bottom-left">Sydney</div></div>
-    <div class="col"><img class="img-fluid" src="\uploads\demo\general\dubai.png" width="200" height="200"><div class="bottom-left">Dubai</div></div>
-    <div class="col"><img class="img-fluid" src="\uploads\demo\general\new zealland.png" width="200" height="200"><div class="bottom-left">New Zealand</div></div>
-    <div class="col"><img class="img-fluid" src="\uploads\demo\general\switerland.png" width="200" height="200"><div class="bottom-left">Switzerland</div></div>
-  
-  </div> 
+<style>
+    .image-container {
+      position: relative;
+      display: inline-block;
+      width: 20%;
+      max-width: 30%; /* Adjust this value based on your needs */
+    }
+    
+    .image-container img {
+      width: 75%;
+      height: auto;
+    }
+    
+    .image-text {
+      position: absolute;
+      top: 85%;
+      left: 30%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+    }
+    
+    .image-text h2 {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+    </style>
+    <div class="container-fluid" style="background-color: #6989ee">
+        <center>
+                  <p style="color: white;"><b class="h1">CITY TO TRAVEL</b><br>  Most Searched cities</p><br></center>
+            <div class="container">    
+            <div class="row">
+                <div class="image-container">
+                    <img src="\uploads\demo\general\new york.png" alt="Image">
+                    <div class="image-text">
+                      <h2>New York</h2>
+                     
+                    </div>
+                  </div>
+                  <div class="image-container">
+                    <img src="\uploads\demo\general\sydney.png" alt="Image">
+                    <div class="image-text">
+                      <h2>Sydney</h2>
+                     
+                    </div>
+                  </div>
+                  <div class="image-container">
+                    <img src="\uploads\demo\general\dubai.png" alt="Image">
+                    <div class="image-text">
+                      <h2>Dubai</h2>
+                      
+                    </div>
+                  </div>
+                  <div class="image-container">
+                    <img src="\uploads\demo\general\new Zealland.png" alt="Image">
+                    <div class="image-text">
+                      <h2>New Zealand</h2>
+                     
+                    </div>
+                  </div>
+                  <div class="image-container">
+                    <img src="\uploads\demo\general\switerland.png" alt="Image">
+                    <div class="image-text">
+                      <h2>Switzerland</h2>
+                     
+                    </div>
+                  </div>
+            </div>
+            <div class="row"><br></div>
+        </div>
     </div>
 
    
-
 <div class="container">
 <div class="bravo-list-locations  style_4 ">
 <div class="title" >
@@ -714,18 +751,21 @@ left: 50px;
     </center>
 
 </div>
-<div class="container">
+<!--<div class="container">-->
+   
     <table>
-<tr><td colspan="4" style="position: relative;text-align: center;color: white;"><img src="\uploads\demo\general\india.png" class="rounded" width="470" height="240"><div class="bottom-left" style="font-size: x-large;">INDIA</div></td>
-<td colspan="8" style="position: relative;text-align: center;color: white;"><img src="\uploads\demo\general\china.png" class="rounded" width="720" height="240"><div class="bottom-left" style="font-size: x-large;">CHINA</div></td></tr>
+        <center><tr><td colspan="4" style="position: relative;text-align: center;color: white;"><img src="\uploads\demo\general\india.png" class="rounded" width="470" height="240"><div class="bottom-left" style="font-size: x-large;">INDIA</div></td>
+<td colspan="8" style="position: relative;text-align: center;color: white;"><img src="\uploads\demo\general\china.png" class="rounded" width="720" height="240"><div class="bottom-left" style="font-size: x-large;">CHINA</div></td></tr></center>
 </table>
+
 <br>
+<center>
 <table>
 <tr><td colspan="3"  style="position: relative;text-align: center;color: white;"><img src="\uploads\demo\general\japan.png" class="rounded" width="370" height="240"><div class="bottom-left" style="font-size: x-large;">JAPAN</div></td>
 <td colspan="9"  style="position: relative;text-align: center;color: white;"><img src="\uploads\demo\general\canada.png" class="rounded" width="820" height="240"><div class="bottom-left" style="font-size: x-large;">CANADA</div></td></tr>
     </table>
 </center>
-</div>
+<!--</div>-->
 </div>
 </div>
 <!--  
@@ -2501,7 +2541,7 @@ BOOK
 <div class="container context">
 <div class="row">
 <div class="col-md-12">
-Copyright © 2023 by UrTripo Aviation
+Copyright © 2019 by UrTripo Aviation
 <div class="f-visa">
 UrTripo Aviation
 </div>
@@ -2707,5 +2747,83 @@ Already have an account?
 	</script>
 <script src="js/cookie.js?_ver=3.2.1"></script>
 </div>
+<<<<<<< HEAD
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W7B5HJJ');</script>
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7B5HJJ"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml            : true,
+            version          : 'v3.3'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = '../connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div class="fb-customerchat" attribution="setup_tool" page_id="2280007165584589">
+</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115740936-4"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-115740936-4');
+</script>
+<style>
+    .bravo-buy-button{
+        text-align: center;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #0072bc;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 12px;
+        padding: 10px 20px 8px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        font-weight: 600;
+        z-index: 99;
+    }
+    .bravo-buy-button:hover{
+        text-decoration: none;
+        color: #fff;
+    }
+    .bravo-buy-button .tf-text{
+        background-image: url('landing/img/logoen.png');
+        width: 66px;
+        height: 12px;
+        display: inline-block;
+        background-repeat: no-repeat;
+
+    }
+</style>
+<a class="sticky-button bravo-buy-button" target="_blank" href="https://codecanyon.net/item/booking-core-ultimate-booking-system/24043972">
+<span>Buy on <span class="tf-text"></span></span>
+</a>
+=======
+>>>>>>> dev
 </body>
+
+<!-- Mirrored from sandbox.bookingcore.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Apr 2023 14:38:39 GMT -->
 </html>
