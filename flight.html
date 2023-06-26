@@ -230,145 +230,47 @@ Search for flight
 </div>
 <div class="bravo_form_search">
 <div class="container">
-<div class="row">
-<div class="col-lg-12 col-md-12">
-    <form action="/flight.html" class="form bravo_form" method="get">
-        <div class="g-field-search">
-        <div class="row " style="height: 100px;">
-            <div class="row" style="height: 30px;" >
-                <div class="col-md-1">
-                    <div class="form-group">
-                        <div class="form-content">
-                            <button type="button" class="bravo-buttonfit">Oneway</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <div class="form-content">
-                            <button type="button" class="bravo-buttonfit">Roundtrip/Return</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col-md-1">
-                    <div class="form-group">
-                        <div class="form-content">
-                            <button type="button" class="bravo-buttonfit">Multicity</button>
-                        </div>
-                    </div>
-                </div> -->
+<div class="row" style="background-color: #fff;border-radius: 5px;box-shadow: 1px 1px 0px 0px rgb(173, 170, 170);">
 
+<div class="col-sm-10" >
+    <div class="row mt-3 mb-2 ml-1 mr-1 " style="border-bottom: 1px solid rgb(173, 170, 170);">
+        <div class="col-sm-2 mb-2">Oneway</div>
+        <div class="col-sm-2 mb-2">Roundtrip</div>
+    </div>
+    
+
+    <div class="row ml-1 mr-1 mb-3"  >
+        <div class="col-sm-3" style="border: 1px solid rgb(173, 170, 170);">
+            From
+            <div class="drop-down">
+                <button type="button" class="btn dropdown-toggle ml-0 pl-0" style="color: #007BFF;box-shadow: 0px 0px 0px 0px white;" data-bs-toggle="dropdown">Location</button>
             </div>
-    
-    <span class="border-bottom"></span>
-    
-<div class="col-md-3 border-right">
-    <div class="form-group">
+        </div>
+        <div class="col-sm-3" style="border: 1px solid rgb(173, 170, 170);">
+            To
+            <div class="drop-down">
+                <button type="button" class="btn dropdown-toggle ml-0 pl-0" style="color: #007BFF;box-shadow: 0px 0px 0px 0px white;" data-bs-toggle="dropdown">Location</button>
+            </div>
+        </div>
+        <div class="col-sm-3" style="border: 1px solid rgb(173, 170, 170);">
+            Departure<br >
+            <input type="hidden" name="redirect" value>
+            <input type="hidden" name="_token" value="uXXPxxuoKSLKPFxWgc6voTPRqwnx7Boss7BQFExL" class="mb-2">
+            27/06/2023
 
-        <div class="form-content">
-            <label>From</label>
-            <div class="smart-search">
-                <input type="text" class="smart-search-location parent_text form-control font-size-20" readonly placeholder="Location" >
-                    <input type="hidden" class="child_id" name="from_where" value>
+        </div>
+        <div class="col-sm-3" style="border: 1px solid rgb(173, 170, 170);">
+            0 Travellers
+            <div class="drop-down">
+                <button type="button" class="btn dropdown-toggle" data-bs-toggle="drop-down"></button>
             </div>
         </div>
     </div>
-</div>
-<div class="col-md-3 border-right">
-<div class="form-group">
 
-<div class="form-content">
-<label>To</label>
-<div class="smart-search">
-<input type="text" class="smart-search-location parent_text form-control font-size-20" readonly placeholder="Location" >
-<input type="hidden" class="child_id" name="to_where" value>
-</div>
-</div>
-</div>
 
 </div>
-<div class="col-md-2 border-right">
-<div class="form-group">
-
-<div class="form-content">
-<div class="form-date-search">
-<div class="date-wrapper">
-<div class="check-in-wrapper">
-<label>Departure</label>
-<div class="render check-in-render font-size-14">04/18/2023</div>
-</div>
-</div>
-<input type="hidden" class="check-in-input" value="04/18/2023" name="start">
-
-<input type="text" class="check-in-out" name="date" value="2023-04-18 - 2023-04-25">
-</div>
-</div>
-</div> </div>
-<div class="col-md-2 border-right">
-    <div class="form-group">
-    
-    <div class="form-content">
-    <div class="form-date-search disabled-div" >
-    <div class="date-wrapper">
-    <div class="check-in-wrapper">
-    <label>Return</label>
-    <div class="render check-in-render font-size-14">04/25/2023</div>
-   
-    </div>
-    </div>
-
-    </div>
-    </div>
-    </div> </div>
-<div class="col-md-2 border-right">
-<div class="form-select-seat-type">
-<div class="form-group">
-
-<div class="form-content dropdown-toggle" data-toggle="dropdown">
-<div class="wrapper-more">
-<div class="render font-size-14">
-<span class id="seat_type_eco_render">
-<center><span class="one ">0 Travellers</span></center>
-<span class=" d-none  multi" data-html=":count Economy">0Travellers</span>
-</span>
-</div>
-</div>
-</div>
-<div class="dropdown-menu select-seat-type-dropdown">
-    <div class="dropdown-item-row">
-        <label for="cabin" style="color: #363198; font-size: 15px;">Cabin Class</label>
-    </div>
-        <div class="dropdown-item-row">
-        <select id="cabin" name="cabin">
-            <option value="economy">Economy</option>
-            <option value="business">Business</option>
-            <option value="first">First Class</option>
-          </select>
-          </div>
-
-    <div class="dropdown-item-row">
-        <label for="cabin" style="color: #363198; font-size: 15px;">Travellers</label>
-    </div>
-    <div class="dropdown-item-row">
-<div class="label">Adults</div>
-<div class="val">
-<span class="btn-minus" data-input="seat_type_eco" data-input-attr="id"><i class="icon ion-md-remove"></i></span>
-<span class="count-display"><input id="seat_type_eco" type="number" name="seat_type[eco]" value="0" min="0"></span>
-<span class="btn-add" data-input="seat_type_eco" data-input-attr="id"><i class="icon ion-ios-add"></i></span>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="g-button-submit">
-<button class="btn btn-primary btn-search" type="submit">Modify Search</button>
-</div>
-</form>
+<div class="col-sm-2 pr-0 pl-0">
+    <button type="button" class="btn" style="background-color: #007BFF;width: 100%;height: 100%;border-top-left-radius: 0px;border-bottom-left-radius: 0px;color: #fff;">Modify Search</button>
 </div>
 </div>
 </div>
