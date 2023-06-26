@@ -29,7 +29,9 @@
 <link href="dist/frontend/css/notification.css" rel="newest stylesheet">
 <link href="dist/frontend/css/app7471.css?_ver=3.2.1" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="libs/daterange/daterangepicker.css">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="dns-prefetch" href="http://fonts.gstatic.com/">
 <link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&amp;display=swap" type="text/css" media="all" />
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -154,7 +156,7 @@
 <img src="uploads/demo/general/logo.png" width="50%" height="80%" alt="Booking Core">
 </a>
 <div class="bravo-menu">
-<ul class="main-menu menu-generated"><li class=" depth-0"><a target href="index.html">HOME<li class=" depth-0"><a target href="flight.html">Flight<li class=" depth-0"><a target href="hotel.html">HOTELS<li class=" depth-0"><a target href="bus1.php">BUS<li class=" depth-0"><a target href="packages.html">PACKAGES <li class=" depth-0"></li></div>
+<ul class="main-menu menu-generated"><li class=" depth-0"><a target href="../BookingPortal-V/index.html">HOME<li class=" depth-0"><a target href="flight.html">Flight<li class=" depth-0"><a target href="hotel.html">HOTELS<li class=" depth-0"><a target href="bus1.php">BUS<li class=" depth-0"><a target href="packages.html">PACKAGES <li class=" depth-0"></li></div>
 </div>
 <div class="header-right">
 <button class="bravo-more-menu">
@@ -576,25 +578,104 @@ Recommended
 </div>
 </div>
 </div>
-<div class="row" style="margin-top: 10px;margin-bottom: 5%;border: 1px solid #363198;background-color: #363198;padding: 50px;border-radius: 10px;">
-    <div class="col" style="color: white;margin-top: -45px;">
-    <center>Airline</center>
+<div class="row ml-2 mr-2" style="margin-top: 10px;margin-bottom: 5%;border: 1px solid #363198;background-color: #363198;padding: 50px;border-radius: 10px;">
+    <div class="col-sm-2 d-sm-block d-md-none" style="color: white;margin-top: -45px;">
+    <!-- <center>Airline</center> -->
     </div>
-    <div class="col" style="color: white;margin-top: -45px;">
+    <div class="col-sm-2 d-sm-none d-md-block d-lg-block" style="color: white;margin-top: -45px;">
+        <center>Airline</center>
+    </div>
+    <div class="col-sm-3" style="color: white;margin-top: -45px;">
     <center> Depart</center>
     </div>
-    <div class="col" style="color: white;margin-top: -45px;">
+    <div class="col-sm-2" style="color: white;margin-top: -45px;">
     <center>  Duration</center>
     </div>
-    <div class="col" style="color: white;margin-top: -45px;">
+    <div class="col-sm-3" style="color: white;margin-top: -45px;">
     <center>  Arrive</center>
     </div>
-    <div class="col" style="color: white;margin-top: -45px;">
+    <div class="col-sm-2" style="color: white;margin-top: -45px;">
     <center> Price</center>
     </div>
 </div>
 
-<div class="row" style="margin-top: -110px;margin-bottom: 5%;">
+<div class="row ml-2 mr-2" style="margin-top: -110px;margin-bottom: 5%;font-family: 'Roboto Mono', monospace;">
+    <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col d-sm-block d-md-none d-lg-none d-none">
+                        <center><i class="fa fa-plane" style="font-size: 25px;color: #007BFF;"></i></center>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block ">
+                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col d-sm-block d-md-none d-lg-none mt-2" style="font-size: small;"><center>Indigo  7E</center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center>Indigo  7E</center></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col-md- d-sm-block d-md-none d-lg-none" style="color: #007BFF;">
+                        <h6><b><center>14:00 AM</center></b></h6>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block" style="color: #007BFF;">
+                        <h5><b><center>14: 00 AM</center></b></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md- d-sm-block d-md-none mt-2" style="font-size: small;"><center>Indigo  7E</center></div>
+                </div>
+                <div class="row">
+                    <div class="col d-sm-none d-md-block "><center>Indigo  7E</center></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col-md- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <h6><b><center>1h:10Min</center></b></h6>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
+                        <h5><b><center>1h: 10Min</center></b></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <h6><b><center>06:00 AM</center></b></h6>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
+                        <h5><b><center>06: 00 AM</center></b></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none mt-2" style="font-size: small;"><center>Madurai(IXM)</center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center>Madurai(IXM)</center></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <hr>
+                        <h5><b><center>Rs,1500</center></b></h5>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
+                        <h5><b><center>Rs,1500</center></b></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/booking/flightcheckout.html">Book Now</button></a></center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row ml-2 mr-2" style="margin-top: 10px;margin-bottom: 5%;font-family: 'Roboto Mono', monospace;">
     <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
         <div class="row">
             <div class="col">
@@ -621,10 +702,10 @@ Recommended
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md- d-sm-block d-md-none d-lg-none"><center>Indigo  7E</center></div>
+                    <div class="col-md- d-sm-block d-md-none "><center>Indigo  7E</center></div>
                 </div>
                 <div class="row">
-                    <div class="col d-sm-none d-md-block d-lg-block"><center>Indigo  7E</center></div>
+                    <div class="col d-sm-none d-md-block "><center>Indigo  7E</center></div>
                 </div>
             </div>
             <div class="col">
@@ -654,6 +735,7 @@ Recommended
             <div class="col">
                 <div class="row">
                     <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <hr>
                         <h5><b><center>Rs,1500</center></b></h4>
                     </div>
                     <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
@@ -661,270 +743,308 @@ Recommended
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/flightcheckout.html">Book Now</button></a></center></div>
-                    <div class="col d-sm-none d-md-block d-lg-block"><center><a href="/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/booking/flightcheckout.html">Book Now</button></a></center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="row" style="margin-top: 10px;margin-bottom: 5%;">
+<div class="row ml-2 mr-2" style="margin-top: 10px;margin-bottom: 5%;font-family: 'Roboto Mono', monospace;">
     <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-md- d-sm-block d-md-none d-lg-none">
+                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block">
                         <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><center>Indigo  7E</center></div>
+                    <div class="col-md- d-sm-block d-md-none d-lg-none"><center>Indigo  7E</center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center>Indigo  7E</center></div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col" style="color: #007BFF;">
+                    <div class="col-md- d-sm-block d-md-none d-lg-none" style="color: #007BFF;">
+                        <h5><b><center>14: 00 AM</center></b></h4>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block" style="color: #007BFF;">
                         <h5><b><center>14: 00 AM</center></b></h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><center>Indigo  7E</center></div>
+                    <div class="col-md- d-sm-block d-md-none "><center>Indigo  7E</center></div>
+                </div>
+                <div class="row">
+                    <div class="col d-sm-none d-md-block "><center>Indigo  7E</center></div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col"  style="color: #007BFF;">
+                    <div class="col-md- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <h5><b><center>1h: 10Min</center></b></h4>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
                         <h5><b><center>1h: 10Min</center></b></h4>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col"  style="color: #007BFF;">
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <h5><b><center>06: 00 AM</center></b></h4>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
                         <h5><b><center>06: 00 AM</center></b></h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><center>Madurai(IXM)</center></div>
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"><center>Madurai(IXM)</center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center>Madurai(IXM)</center></div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col"  style="color: #007BFF;">
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <hr>
+                        <h5><b><center>Rs,1500</center></b></h4>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
                         <h5><b><center>Rs,1500</center></b></h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><center><a href="/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" >Book Now</button></a></center></div>
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/booking/flightcheckout.html">Book Now</button></a></center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
                 </div>
             </div>
         </div>
     </div>
-</div><div class="row" style="margin-top: 10px;margin-bottom: 5%;">
+</div>
+<div class="row ml-2 mr-2" style="margin-top: 10px;margin-bottom: 5%;font-family: 'Roboto Mono', monospace;">
     <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-md- d-sm-block d-md-none d-lg-none">
+                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block">
                         <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><center>Indigo  7E</center></div>
+                    <div class="col-md- d-sm-block d-md-none d-lg-none"><center>Indigo  7E</center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center>Indigo  7E</center></div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col" style="color: #007BFF;">
+                    <div class="col-md- d-sm-block d-md-none d-lg-none" style="color: #007BFF;">
+                        <h5><b><center>14: 00 AM</center></b></h4>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block" style="color: #007BFF;">
                         <h5><b><center>14: 00 AM</center></b></h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><center>Indigo  7E</center></div>
+                    <div class="col-md- d-sm-block d-md-none "><center>Indigo  7E</center></div>
+                </div>
+                <div class="row">
+                    <div class="col d-sm-none d-md-block "><center>Indigo  7E</center></div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col"  style="color: #007BFF;">
+                    <div class="col-md- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <h5><b><center>1h: 10Min</center></b></h4>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
                         <h5><b><center>1h: 10Min</center></b></h4>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col"  style="color: #007BFF;">
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <h5><b><center>06: 00 AM</center></b></h4>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
                         <h5><b><center>06: 00 AM</center></b></h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><center>Madurai(IXM)</center></div>
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"><center>Madurai(IXM)</center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center>Madurai(IXM)</center></div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col"  style="color: #007BFF;">
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <hr>
+                        <h5><b><center>Rs,1500</center></b></h4>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
                         <h5><b><center>Rs,1500</center></b></h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><center><a href="/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;">Book Now</button></a></center></div>
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/booking/flightcheckout.html">Book Now</button></a></center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
                 </div>
             </div>
         </div>
     </div>
-</div><div class="row" style="margin-top: 10px;margin-bottom: 5%;">
+</div>
+<div class="row ml-2 mr-2" style="margin-top: 10px;margin-bottom: 5%;font-family: 'Roboto Mono', monospace;">
     <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-md- d-sm-block d-md-none d-lg-none">
+                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block">
                         <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><center>Indigo  7E</center></div>
+                    <div class="col-md- d-sm-block d-md-none d-lg-none"><center>Indigo  7E</center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center>Indigo  7E</center></div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col" style="color: #007BFF;">
+                    <div class="col-md- d-sm-block d-md-none d-lg-none" style="color: #007BFF;">
+                        <h5><b><center>14: 00 AM</center></b></h4>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block" style="color: #007BFF;">
                         <h5><b><center>14: 00 AM</center></b></h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><center>Indigo  7E</center></div>
+                    <div class="col-md- d-sm-block d-md-none "><center>Indigo  7E</center></div>
+                </div>
+                <div class="row">
+                    <div class="col d-sm-none d-md-block "><center>Indigo  7E</center></div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col"  style="color: #007BFF;">
+                    <div class="col-md- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <h5><b><center>1h: 10Min</center></b></h4>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
                         <h5><b><center>1h: 10Min</center></b></h4>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col"  style="color: #007BFF;">
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <h5><b><center>06: 00 AM</center></b></h4>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
                         <h5><b><center>06: 00 AM</center></b></h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><center>Madurai(IXM)</center></div>
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"><center>Madurai(IXM)</center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center>Madurai(IXM)</center></div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col"  style="color: #007BFF;">
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                        <hr>
+                        <h5><b><center>Rs,1500</center></b></h4>
+                    </div>
+                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
                         <h5><b><center>Rs,1500</center></b></h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><center><a href="/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;">Book Now</button></a></center></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div class="row" style="margin-top: 10px;margin-bottom: 5%;">
-    <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <div class="col">
-                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col"><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col" style="color: #007BFF;">
-                        <h5><b><center>14: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col"><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>1h: 10Min</center></b></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>06: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col"><center>Madurai(IXM)</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>Rs,1500</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col"><center><a href="/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;">Book Now</button></a></center></div>
+                    <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/booking/flightcheckout.html">Book Now</button></a></center></div>
+                    <div class="col d-sm-none d-md-block d-lg-block"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
                 </div>
             </div>
         </div>
     </div>
     </div>
-    <div class="row" style="margin-top: 10px;margin-bottom: 5%;">
+    <div class="row ml-2 mr-2" style="margin-top: 10px;margin-bottom: 5%;font-family: 'Roboto Mono', monospace;">
         <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
             <div class="row">
                 <div class="col">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-md- d-sm-block d-md-none d-lg-none">
+                            <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
+                        </div>
+                        <div class="col d-sm-none d-md-block d-lg-block">
                             <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col"><center>Indigo  7E</center></div>
+                        <div class="col-md- d-sm-block d-md-none d-lg-none"><center>Indigo  7E</center></div>
+                        <div class="col d-sm-none d-md-block d-lg-block"><center>Indigo  7E</center></div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="row">
-                        <div class="col" style="color: #007BFF;">
+                        <div class="col-md- d-sm-block d-md-none d-lg-none" style="color: #007BFF;">
+                            <h5><b><center>14: 00 AM</center></b></h4>
+                        </div>
+                        <div class="col d-sm-none d-md-block d-lg-block" style="color: #007BFF;">
                             <h5><b><center>14: 00 AM</center></b></h4>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col"><center>Indigo  7E</center></div>
+                        <div class="col-md- d-sm-block d-md-none "><center>Indigo  7E</center></div>
+                    </div>
+                    <div class="row">
+                        <div class="col d-sm-none d-md-block "><center>Indigo  7E</center></div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="row">
-                        <div class="col"  style="color: #007BFF;">
+                        <div class="col-md- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                            <h5><b><center>1h: 10Min</center></b></h4>
+                        </div>
+                        <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
                             <h5><b><center>1h: 10Min</center></b></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="row">
-                        <div class="col"  style="color: #007BFF;">
+                        <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                            <h5><b><center>06: 00 AM</center></b></h4>
+                        </div>
+                        <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
                             <h5><b><center>06: 00 AM</center></b></h4>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col"><center>Madurai(IXM)</center></div>
+                        <div class="col-sm- d-sm-block d-md-none d-lg-none"><center>Madurai(IXM)</center></div>
+                        <div class="col d-sm-none d-md-block d-lg-block"><center>Madurai(IXM)</center></div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="row">
-                        <div class="col"  style="color: #007BFF;">
+                        <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
+                            <hr>
+                            <h5><b><center>Rs,1500</center></b></h4>
+                        </div>
+                        <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
                             <h5><b><center>Rs,1500</center></b></h4>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col"><center><a href="/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;">Book Now</button></a></center></div>
+                        <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/booking/flightcheckout.html">Book Now</button></a></center></div>
+                        <div class="col d-sm-none d-md-block d-lg-block"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
                     </div>
                 </div>
             </div>

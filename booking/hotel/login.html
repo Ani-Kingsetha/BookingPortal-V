@@ -138,67 +138,25 @@
         <div class="content">
         <div class="header-left">
         <a href="index.html" class="bravo-logo">
-        <img src="uploads/demo/general/logoo.png" alt="UrTripo Aviation" width="45%">
+        <img src="/uploads/demo/general/logo.png" alt="UrTripo Aviation" height="34">
         </a>
         <div class="bravo-menu">
         <ul class="main-menu menu-generated">
             <li class=" depth-0">
                 <a target href="index.html">Home <!--<i class="caret fa fa-angle-down"></i>--></a>
-                <!-- <ul class="children-menu menu-dropdown">
-                    <li class=" depth-1">
-                        <a target href="index.html">Home Page</a>
-                    </li>
-                    <li class=" depth-1">
-                        <a target href="page/home-page-v2.html">Home Page v2</a>
-                    </li>
-                    <li class=" depth-1">
-                        <a target href="page/hotel.html">Home Hotel</a>
-                    </li>
-                    <li class=" depth-1">
-                        <a target href="page/home-tour-agency.html">Home Tour Agency</a>
-                    </li>
-                    <li class=" depth-1">
-                        <a target href="page/tour.html">Home Tour</a>
-                    </li>
-                    <li class=" depth-1">
-                        <a target href="page/space.html">Home Space</a>
-                    </li>
-                    <li class=" depth-1">
-                        <a target href="page/car.html">Home Car</a>
-                    </li>
-                </ul> -->
             </li>
             <li class=" depth-0">
                 <a target href="flight.html">Flights <!-- <i class="caret fa fa-angle-down"></i> --></a>
-                <!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="hotel.html">Hotel List</a></li><li class=" depth-1"><a target href="hotel76a0.html?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="index.html">Hotel Detail</a></li></ul> -->
             </li>
             <li class=" depth-0">
                 <a target href="hotel.html">Hotels <!-- <i class="caret fa fa-angle-down"></i> --></a>
-                <!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="tour.html">Tour List</a></li><li class=" depth-1"><a target href="tour76a0.html?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="tour/paris-vacation-travel.html">Tour Detail</a></li></ul> -->
             </li>
             <li class=" depth-0">
                 <a target href="bus.html">Bus <!-- <i class="caret fa fa-angle-down"></i> --></a>
-                <!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="space.html">Space List</a></li><li class=" depth-1"><a target href="space76a0.html?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="space/stay-greenwich-village.html">Space Detail</a></li></ul> -->
             </li>
             <li class=" depth-0">
                 <a target href="package.html">Packages <!-- <i class="caret fa fa-angle-down"></i> --></a>
-                <!-- <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="car.html">Car List</a></li><li class=" depth-1"><a target href="car76a0.html?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="car/vinfast-lux-a20-plus.html">Car Detail</a></li></ul> -->
             </li>
-            <!-- <li class=" depth-0">
-                <a target href="event.html">Event <i class="caret fa fa-angle-down"></i></a>
-                <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="event.html">Event List</a></li><li class=" depth-1"><a target href="event76a0.html?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="event/aspen-glade-weddings-events.html">Event Detail</a></li></0ul>
-            </li>
-            <li class=" depth-0">
-                <a target href=".html">Flight</a>
-            </li>
-            <li class=" depth-0">
-                <a target href="boat.html">Boat <i class="caret fa fa-angle-down"></i></a>
-                <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="boat.html">Boat List</a></li><li class=" depth-1"><a target href="boat76a0.html?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="boat/blue-moon-yc-300.html">Boat Detail</a></li></ul>
-            </li>
-            <li class=" depth-0">
-                <a target href="#">Pages <i class="caret fa fa-angle-down"></i></a>
-                <ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="login.html">Plan</a></li><li class=" depth-1"><a target href="news.html">News List</a></li><li class=" depth-1"><a target href="news/morning-in-the-northern-sea.html">News Detail</a></li><li class=" depth-1"><a target href="location/paris.html">Location Detail</a></li><li class=" depth-1"><a target href="page/become-a-vendor.html">Become a vendor</a></li><li class=" depth-1"><a target href="contact.html">Contact</a></li></ul>
-            </li> -->
         </ul> 
         </div>
         </div>
@@ -277,7 +235,7 @@ Français
 <div class="col-md-8">
     <div class="row mb-5" style="border: 1px solid #5191fab8;padding: 30px 20px;border-radius: 7px;">
         <div class="col-4" style="margin-top:auto;margin-bottom:auto;margin-left:auto;margin-right:auto;">
-            <img src="/landing/img/logoen.png" alt="">
+            <img src="/uploads/demo/space/space-2.jpg" style="max-width:202px;">
         </div>
         <div class="col-8">
             <h3>Dylan Hotel</h3>
@@ -317,9 +275,11 @@ Français
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-actions">
-                                        <button style="width:100%;" class="btn btn-danger" @click="doCheckout">Continue to Book
-                                            <i class="fa fa-spin fa-spinner" v-show="onSubmit"></i>
-                                        </button>
+                                        <a href="/booking/hotel/checkout.html">
+                                            <button style="width:100%;" class="btn btn-danger" @click="doCheckout">Continue to Book
+                                                <i class="fa fa-spin fa-spinner" v-show="onSubmit"></i>
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -417,7 +377,7 @@ Français
         </div>
         </div>
         </div>
-<div class="modal fade" id="detailBookingDate4f5d39525e743e86d7c6a0eef7ef4bdb" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" style="background-color: #00000060">
+<div class="modal fade" id="detailBookingDatehotel" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" style="background-color: #00000060">
 <div class="modal-dialog modal-dialog-centered" role="document">
 <div class="modal-content">
 <div class="modal-header">
@@ -948,7 +908,7 @@ Already have an account?
 <script type="text/javascript">
         jQuery(function () {
             $.ajax({
-                'url': bookingCore.url + '/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/check-status',
+                'url': bookingCore.url + '/booking/hotel/check-status',
                 'cache': false,
                 'type': 'GET',
                 success: function (data) {
@@ -992,7 +952,7 @@ Already have an account?
                 parent.find(".group-form .fa-spin").removeClass("d-none");
                 parent.find(".message").html('');
                 $.ajax({
-                    'url': bookingCore.url + '/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/apply-coupon',
+                    'url': bookingCore.url + '/booking/hotel/apply-coupon',
                     'data': parent.find('input,textarea,select').serialize(),
                     'cache': false,
                     'method':"post",
@@ -1018,7 +978,7 @@ Already have an account?
                 var parentItem = $(this).closest('.item');
                 parentItem.find(".fa-spin").removeClass("d-none");
                 $.ajax({
-                    'url': bookingCore.url + '/booking/4f5d39525e743e86d7c6a0eef7ef4bdb/remove-coupon',
+                    'url': bookingCore.url + '/booking/hotel/remove-coupon',
                     'data': {
                         coupon_code:$(this).attr('data-code')
                     },
