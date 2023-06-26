@@ -233,9 +233,9 @@ Français
 <div id="bravo-checkout-page">
 <div class="row">
 <div class="col-md-8">
-    <div class="row mb-5" style="border: 1px solid #5191fab8;padding: 30px 20px;border-radius: 7px;">
-        <div class="col-4" style="margin-top:auto;margin-bottom:auto;margin-left:auto;margin-right:auto;">
-            <img src="/uploads/demo/space/space-2.jpg" style="max-width:202px;">
+    <div class="row mb-5" style="border: 1px solid #5191fab8;padding: 30px 20px;border-radius: 7px;margin: 0;">
+        <div class="col-4" style="margin-top:auto;margin-bottom:auto;margin-left:auto;margin-right:auto;padding:0;">
+            <img src="/uploads/demo/space/space-2.jpg" style="max-width:100%;">
         </div>
         <div class="col-8">
             <h3>Dylan Hotel</h3>
@@ -258,7 +258,6 @@ Français
             <div class="form-section">
                 
                 <div class="row">
-                    <div class="row">
                         <div class="col-5" style="display: flex;justify-content: center;align-items: center;">
                             <div class="row">
                                 <div class="col-md-12 field-email">
@@ -276,7 +275,7 @@ Français
                                 <div class="col-md-12">
                                     <div class="form-actions">
                                         <a href="/booking/hotel/checkout.html">
-                                            <button style="width:100%;" class="btn btn-danger" @click="doCheckout">Continue to Book
+                                            <button style="width:100%;background:#3490de;" class="btn btn-danger" @click="doCheckout">Continue to Book
                                                 <i class="fa fa-spin fa-spinner" v-show="onSubmit"></i>
                                             </button>
                                         </a>
@@ -311,9 +310,6 @@ Français
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-
                 </div>
             </div>
 
