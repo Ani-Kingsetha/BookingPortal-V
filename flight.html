@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" class>
-
-<!-- Mirrored from sandbox.bookingcore.org/flight by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Apr 2023 03:43:32 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,9 +35,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     var bookingCore = {
-        url:'https://sandbox.bookingcore.org',
-        url_root:'https://sandbox.bookingcore.org',
-        admin_url:'https://sandbox.bookingcore.org/admin',
+        url:'/',
+        url_root:'/',
+        admin_url:'/admin',
         booking_decimals:0,
         thousand_separator:'.',
         decimal_separator:',',
@@ -57,16 +54,16 @@
             map_fit_bounds:'on',
         },
         routes:{
-            login:'https://sandbox.bookingcore.org/login',
-            register:'https://sandbox.bookingcore.org/register',
-            checkout:'https://sandbox.bookingcore.org/booking/doCheckout'
+            login:'/login',
+            register:'/register',
+            checkout:'/booking/doCheckout'
         },
         currentUser: 0,
         isAdmin : 0,
         rtl: false,
-        markAsRead:'https://sandbox.bookingcore.org/notify/markAsRead',
-        markAllAsRead:'https://sandbox.bookingcore.org/notify/markAllAsRead',
-        loadNotify : 'https://sandbox.bookingcore.org/notify/notifications',
+        markAsRead:'/notify/markAsRead',
+        markAllAsRead:'/notify/markAllAsRead',
+        loadNotify : '/notify/notifications',
         pusher_api_key : '',
         pusher_cluster : '',
         language: 'en',
@@ -1074,7 +1071,7 @@ UrTripO Aviation
 </span>
 </div>
 <div class="modal-body relative">
-<form class="bravo-form-login" method="POST" action="https://sandbox.bookingcore.org/login">
+<form class="bravo-form-login" method="POST" action="/login">
 <input type="hidden" name="redirect" value>
 <input type="hidden" name="_token" value="uXXPxxuoKSLKPFxWgc6voTPRqwnx7Boss7BQFExL"> <div class="form-group">
 <input type="text" class="form-control" name="email" autocomplete="off" placeholder="Email address">
@@ -1142,7 +1139,7 @@ Twitter
 </span>
 </div>
 <div class="modal-body">
-<form class="form bravo-form-register" method="post" action="https://sandbox.bookingcore.org/register">
+<form class="form bravo-form-register" method="post" action="/register">
 <input type="hidden" name="_token" value="uXXPxxuoKSLKPFxWgc6voTPRqwnx7Boss7BQFExL"> <div class="row">
 <div class="col-lg-6 col-md-12">
 <div class="form-group">
