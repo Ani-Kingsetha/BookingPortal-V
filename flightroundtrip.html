@@ -341,7 +341,7 @@ select,.input-group-text,input.form-control{outline:none;border:none}
 					</div>
 				</div>
 			</div>
-			<div class="bravo_search_hotel">
+			<div class="bravo_search_hotel" >
 				<div class="bravo_banner" style="background-image: url(uploads/demo/flight/banner-flight.jpg)">
 					<div class="container">
 						<h1>
@@ -351,14 +351,15 @@ select,.input-group-text,input.form-control{outline:none;border:none}
 				</div>
 				<div class="bravo_form_search">
 					<div class="container">
+						
 						<div class="row">
 							<div class="col-lg-12 col-md-12">
 								<form action="/bus" class="form bravo_form" method="get">
 									<div class="g-field-search">
-                                        <div class="row">
-                                            <div class="col-md-2 m-2 " style=" background: #b2d6fc; color: black; padding: 7px 20px; border-radius: 15px;cursor: pointer;max-width: 30%;"><center>One way</center></div>
-                                            <div class="col-md-3 m-2" onclick="window.location.href='/flightroundtrip.html'" style="background: white; color: black; padding: 7px 20px; border-radius: 4px;cursor: pointer;"><center>Round Trip / Return</center></div>
-                                        </div>
+										<div class="row">
+											<div class="col-md-2 m-2 "  onclick="window.location.href='/flight.html'" style="background: white; color: black; padding: 7px 20px; border-radius: 4px;cursor: pointer;"><center>Oneway</center></div>
+											<div class="col-md-3 m-2" style=" background: #b2d6fc; color: black; padding: 7px 20px; border-radius: 15px;cursor: pointer;"><center>Round Trip / Return</center></div>
+										</div>
 										<div class="row">
 											<div class="col-md-3 border-right border-top">
 												<div class="form-group">
@@ -384,19 +385,21 @@ select,.input-group-text,input.form-control{outline:none;border:none}
 													</div>
 												</div>
 											</div>
-											<div class="col-md-3 border-right border-top">
+											<div class="col-md-4 border-right border-top">
 												<div class="form-group">
-													<!-- <i class="field-icon icofont-wall-clock"></i> -->
 													<div class="form-content">
 														<div class="form-date-search-hotel">
 															<div class="date-wrapper">
 																<div class="check-in-wrapper">
-																	<label>Departure</label>
+																	<label>Departure & Return</label>
 																	<div class="render check-in-render">06/13/2023</div>
+																	<span> - </span>
+																	<div class="render check-out-render">06/14/2023</div>
 																</div>
 															</div>
 															<input type="hidden" class="check-in-input" value="06/13/2023" name="start">
-															<input type="text" class="check-in-out" name="date" value="2023-06-13">
+															<input type="hidden" class="check-out-input" value="06/14/2023" name="end">
+															<input type="text" class="check-in-out" name="date" value="2023-06-13 - 2023-06-14">
 														</div>
 													</div>
 												</div>
@@ -418,7 +421,7 @@ select,.input-group-text,input.form-control{outline:none;border:none}
 													</div>
 												</div>
 											</div> -->
-                                            <div class="col-md-3 border-right border-top">
+                                            <div class="col-md-2 border-right border-top">
 												<div class="form-group">
 													<!-- <i class="field-icon fa icofont-map"></i> -->
 													<div class="form-content">
@@ -440,7 +443,7 @@ select,.input-group-text,input.form-control{outline:none;border:none}
 						</div>
 					</div>
 				</div>
-				<div class="container">
+				<div class="container" style="width: 100%;">
 					<div class="row">
 						<div class="col-lg-3 col-md-12">
 							<div class="bravo_filter">
@@ -657,6 +660,49 @@ select,.input-group-text,input.form-control{outline:none;border:none}
 													<div class="col-md-2">Duration</div>
 													<div class="col-md-2">Arive</div>
 													<div class="col-md-2">Price</div>
+													<div class="col-md-1"></div>
+												</div>
+											</div>
+											
+										</div>
+										<div class="col-lg-12 col-md-12 mb-4">
+											<div class="border border-primary bod-rad">
+												<div class="row hei-bus-list pb-sm-3 pb-md-0">
+													<div class="col-md-1"></div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<img src="images/flight icon.png" width="35" height="35">
+															<div class="">
+																<span style="color: gray;" class="fs-co">Indigo7E</span>
+
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">14:00 AM</span><br>
+															<span class="fs-co-li">Indigo7E</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">1h 10min</span><br>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">06: 00 AM</span><br>
+															<span class="fs-co-li">Madurai(IXM)</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color bolder">RS.1,500</span><br>
+															<span class="fs-co-li">
+																<a href="/bus2.html"><button class="btn btn-sm a-bg" style="color: white;">Book Now</button></a>
+															</span>
+														</div>
+													</div>
 													<div class="col-md-1"></div>
 												</div>
 											</div>
