@@ -1,1339 +1,1304 @@
 <!DOCTYPE html>
 <html lang="en" class>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="/uploads/demo/general/favicon.png" />
+		<title>Search for Bus - Booking Portal</title>
+		<meta name="description" content />
+		<meta property="og:url" content="/bus" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Search for Bus" />
+		<meta property="og:description" content />
+		<!-- <meta property="og:image" content="/uploads/demo/hotel/banner-search-hotel.jpg" /> -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Search for Bus">
+		<meta name="twitter:description" content>
+		<!-- <meta name="twitter:image" content="/uploads/demo/hotel/banner-search-hotel.jpg"> -->
+		<link rel="canonical" href="/bus" />
+		<link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="/libs/ionicons/css/ionicons.min.css" rel="stylesheet">
+		<link href="/libs/icofont/icofont.min.css" rel="stylesheet">
+		<link href="/libs/select2/css/select2.min.css" rel="stylesheet">
+		<link href="/dist/frontend/css/notification.css" rel="newest stylesheet">
+		<link href="/dist/frontend/css/app.css?_ver=3.2.1" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/libs/daterange/daterangepicker.css">
+		<link rel="dns-prefetch" href="//fonts.gstatic.com">
+		<link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&display=swap" type="text/css" media="all" />
+		<script>
+			var bookingCore = {
+			    url:'/',
+			    url_root:'/',
+			    admin_url:'/admin',
+			    booking_decimals:0,
+			    thousand_separator:'.',
+			    decimal_separator:',',
+			    currency_position:'left',
+			    currency_symbol:'$',
+			    currency_rate:'1',
+			    date_format:'MM/DD/YYYY',
+			    map_provider:'gmap',
+			    map_gmap_key:'',
+			    map_options:{
+			        map_lat_default:'',
+			        map_lng_default:'',
+			        map_clustering:'on',
+			        map_fit_bounds:'on',
+			    },
+			    routes:{
+			        login:'/login',
+			        register:'/register',
+			        checkout:'/booking/doCheckout'
+			    },
+			    currentUser: 0,
+			    isAdmin : 0,
+			    rtl: false,
+			    markAsRead:'/notify/markAsRead',
+			    markAllAsRead:'/notify/markAllAsRead',
+			    loadNotify : '/notify/notifications',
+			    pusher_api_key : '',
+			    pusher_cluster : '',
+			    language: 'en',
+			    module:{}
+			};
+			                        bookingCore.module.hotel = '/hotel';
+			                            bookingCore.module.space = '/space';
+			                            bookingCore.module.car = '/car';
+			                            bookingCore.module.event = '/event';
+			                            bookingCore.module.tour = '/tour';
+			                            bookingCore.module.flight = '/flight';
+			                            bookingCore.module.boat = '/boat';
+			            var i18n = {
+			    warning:"Warning",
+			    success:"Success",
+			    confirm_delete:"Do you want to delete?",
+			    confirm:"Confirm",
+			    cancel:"Cancel",
+			};
+			var daterangepickerLocale = {
+			    "applyLabel": "Apply",
+			    "cancelLabel": "Cancel",
+			    "fromLabel": "From",
+			    "toLabel": "To",
+			    "customRangeLabel": "Custom",
+			    "weekLabel": "W",
+			    "first_day_of_week": 1,
+			    "daysOfWeek": [
+			        "Su",
+			        "Mo",
+			        "Tu",
+			        "We",
+			        "Th",
+			        "Fr",
+			        "Sa"
+			    ],
+			    "monthNames": [
+			        "January",
+			        "February",
+			        "March",
+			        "April",
+			        "May",
+			        "June",
+			        "July",
+			        "August",
+			        "September",
+			        "October",
+			        "November",
+			        "December"
+			    ],
+			};
+		</script>
+		<link href="/dist/frontend/module/hotel/css/hotel.css?_ver=3.2.1" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/libs/ion_rangeslider/css/ion.rangeSlider.min.css" />
+		<link href="/custom-css" rel="stylesheet">
+		<link href="/libs/carousel-2/owl.carousel.css" rel="stylesheet">
+		<style>
+			.bus-banner-inner{padding:9px;position:relative;height:140px}
+.fs-fw-co{color:#fff;font-weight:500;font-size:large}
+.con-width{width:75%}
+.fs-co{color:#000;font-size:large;font-weight:500}
+.hei-bus-list{height:140px}
+.hei{height:140px}
+[data-bs-toggle="collapse"]{font-size:16px}
+.rcmd-align{text-align:end}
+.fs-co-li{font-size:13px;font-weight:400}
+.bod-rad{border-radius:10px;}
+.img-rotate{width:100px}
+@media screen and (max-width:440px) {
+.bus-list-header{display:none}
+.img-rotate{transform:rotate(90deg);width:80px}
+.con-width{width:100%}
+.bod-rad{border-radius:10px}
+.hei{height:auto}
+.fs-fw-co{font-size:large}
+.rcmd-align{text-align:start}
+.hei-bus-list{height:fit-content}
+div.hei.col-md-3{margin-top:10px}
+.fs-co-li{font-size:10px;font-weight:400}
+.input-group{margin-bottom:5px}
+}
+@media screen and (min-width:440px) and (max-width:600px) {
+.hei{height:auto}
+.con-width{width:100%}
+.img-rotate{transform:rotate(90deg);width:80px}
+.bus-list-header{display:none}
+.bod-rad{border-radius:10px}
+.fs-fw-co{font-size:large}
+.rcmd-align{text-align:start}
+.hei-bus-list{height:fit-content}
+div.hei.col-md-3{margin-top:10px}
+.fs-co-li{font-size:10px;font-weight:400}
+.input-group{margin-bottom:5px}
+}
+@media screen and (min-width:600px) and (max-width:750px) {
+.hei{height:auto}
+.bus-list-header{display:none}
+.bod-rad{border-radius:10px}
+.fs-fw-co{font-size:large}
+div.hei.col-md-3{margin-top:10px}
+.hei-bus-list{height:fit-content}
+.input-group{margin-bottom:5px}
+.fs-co-li{font-size:10px;font-weight:400}
+}
+@media screen and (min-width:750px) and (max-width:770px) {
+.hei{height:auto}
+.bus-list-header{display:none}
+.bod-rad{border-radius:10px}
+.fs-fw-co{font-size:large}
+div.hei.col-md-3{margin-top:10px}
+.hei-bus-list{height:fit-content}
+.fs-co-li{font-size:11px;font-weight:400}
+.input-group{margin-bottom:5px}
+}
+@media screen and (min-width:770px) and (max-width:900px) {
+.fs-fw-co,.fs-co{font-size:15px}
+.rcmd-align{text-align:end}
+#fs-co{font-size:14px}
+[data-bs-toggle="collapse"]{font-size:12px}
+select.fs-co{font-size:11px}
+.float-flo{float:left}
+.fs-co-li{font-size:10px;font-weight:400}
+.hei{height:120px}
+}
+@media screen and (min-width:900px) and (max-width:1000px) {
+.fs-fw-co,.fs-co{font-size:14px}
+.rcmd-align{text-align:end}
+.fs-co-li{font-size:10px;font-weight:400}
+#fs-co{font-size:14px}
+[data-bs-toggle="collapse"]{font-size:12px}
+select.fs-co{font-size:11px}
+.float-flo{float:left}
+.hei{height:120px}
+}
+@media screen and (min-width:1000px) and (max-width:1100px) {
+.fs-fw-co,.fs-co{font-size:15px}
+.rcmd-align{text-align:end}
+#fs-co{font-size:14px}
+[data-bs-toggle="collapse"]{font-size:12px}
+select.fs-co{font-size:11px}
+.fs-co-li{font-size:10px;font-weight:400}
+.float-flo{float:left}
+.hei{height:120px}
+}
+@media screen and (min-width:1100px) and (max-width:1300px) {
+.fs-fw-co,.fs-co{font-size:15px}
+.rcmd-align{text-align:end}
+#fs-co{font-size:14px}
+[data-bs-toggle="collapse"]{font-size:12px}
+select.fs-co{font-size:11px}
+.float-flo{float:left}
+.hei{height:120px}
+}
+@media screen and (min-width:1300px) and (max-width:1350px) {
+.fs-fw-co,.fs-co{font-size:15px}
+.rcmd-align{text-align:end}
+#fs-co{font-size:14px}
+[data-bs-toggle="collapse"]{font-size:12px}
+select.fs-co{font-size:11px}
+.float-flo{float:left}
+.hei{height:120px}
+}
+@media screen and (min-width:1700px) {
+.rcmd-align{text-align:end}
+}
+@media screen and (min-height:760px) and (max-height:1000px) {
+.fs-fw-co,.fs-co{font-size:15px}
+.rcmd-align{text-align:end}
+#fs-co{font-size:14px}
+[data-bs-toggle="collapse"]{font-size:12px}
+select.fs-co{font-size:11px}
+.float-flo{float:left}
+.hei{height:120px}
+}
+select,.input-group-text,input.form-control{outline:none;border:none}
+.u-color{color:#007BFF}
+.u-bg{background-color:#007BFF}
+.a-bg{background-color:#363198}
+.a-color{color:#363198}
+.sha{box-shadow:0 1px #b3b1b1}
+		</style>
+	</head>
+	<body class="frontend-page header-normal   ">
+		<div class="bravo_wrap">
+			<div class="bravo_topbar">
+				<div class="container">
+					<div class="content">
+						<div class="topbar-left">
+						</div>
+						<div class="topbar-right">
+							<ul class="topbar-items">
+								<li class="dropdown">
+									<ul class="dropdown-menu text-left sf-hidden"></ul>
+								</li>
+								<li class="login-item">
+									<a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+								</li>
+								<li class="signup-item">
+									<a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bravo_header">
+				<div class="container">
+					<div class="content">
+						<div class="header-left">
+							<a href="index.html" class="bravo-logo">
+							<img src="uploads/demo/general/logo.png" alt="UrTripo Aviation" height="34">
+							</a>
+							<div class="bravo-menu">
+								<ul class="main-menu menu-generated">
+									<li class=" depth-0">
+										<a target href="index.html">
+											Home
+										</a>
+									</li>
+									<li class=" depth-0">
+										<a target href="flight.html">
+											<div class="" style=" background: #5191fa; color: white; padding: 7px 20px; border-radius: 4px; ">Flights</div>
+										</a>
+									</li>
+									<li class=" depth-0">
+										<a target href="hotel.html">
+											Hotels
+										</a>
+									</li>
+									<li class=" depth-0">
+										<a target href="bus.html">
+											Bus
+										</a>
+									</li>
+									<li class=" depth-0">
+										<a target href="package.html">
+											Packages
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="header-right">
+							<button class="bravo-more-menu">
+							<i class="fa fa-bars"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="bravo-menu-mobile" style="display:none;">
+					<div class="user-profile">
+						<div class="b-close"><i class="icofont-scroll-left"></i></div>
+						<div class="avatar"></div>
+						<ul>
+							<li>
+								<a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+							</li>
+							<li>
+								<a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+							</li>
+						</ul>
+					</div>
+					<div class="g-menu">
+						<ul class="main-menu menu-generated">
+						<li class=" depth-0">
+							<a target href="index.html">Home</a>
+						</li>
+						<li class=" depth-0">
+							<a target href="hotel.html">Hotel </a>
+						</li>
+						<li class=" depth-0">
+							<a target href="tour.html">Flights</a>
+						</li>
+						<li class=" depth-0">
+							<a target href="bus.html">
+								<div style=" background: #5191fa; color: white; padding: 7px 20px; border-radius: 4px; ">Bus</div>
+							</a>
+						</li>
+						<li class=" depth-0">
+							<a target href="car.html">Packages</a>
+						</li>
+					</div>
+				</div>
+			</div>
+			<div class="bravo_search_hotel">
+				<div class="bravo_banner" style="background-image: url(uploads/demo/flight/banner-flight.jpg)">
+					<div class="container">
+						<h1>
+							Search for Flight
+						</h1>
+					</div>
+				</div>
+				<div class="bravo_form_search">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12 col-md-12">
+								<form action="/bus" class="form bravo_form" method="get">
+									<div class="g-field-search">
+                                        <div class="row">
+                                            <div class="col-md-2 m-2 " style=" background: #b2d6fc; color: black; padding: 7px 20px; border-radius: 15px;cursor: pointer;max-width: 30%;"><center>One way</center></div>
+                                            <div class="col-md-3 m-2" onclick="window.location.href='/flightroundtrip.html'" style="background: white; color: black; padding: 7px 20px; border-radius: 4px;cursor: pointer;"><center>Round Trip / Return</center></div>
+                                        </div>
+										<div class="row">
+											<div class="col-md-3 border-right border-top">
+												<div class="form-group">
+													<!-- <i class="field-icon fa icofont-map"></i> -->
+													<div class="form-content">
+														<label> From </label>
+														<div class="smart-search">
+															<input type="text" class="smart-search-location parent_text form-control" readonly placeholder="Location" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; Paris&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; California&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;- New York, United States&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; United States&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; Los Angeles&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; New Jersey&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; San Francisco&quot;},{&quot;id&quot;:8,&quot;title&quot;:&quot; Virginia&quot;},{&quot;id&quot;:9,&quot;title&quot;:&quot; London&quot;},{&quot;id&quot;:10,&quot;title&quot;:&quot; Germany&quot;},{&quot;id&quot;:11,&quot;title&quot;:&quot; Istanbul&quot;},{&quot;id&quot;:12,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:13,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:14,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:15,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:16,&quot;title&quot;:&quot; Naran&quot;},{&quot;id&quot;:17,&quot;title&quot;:&quot; Ha Noi&quot;}]">
+															<input type="hidden" class="child_id" name="location_id" value>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 border-right border-top">
+												<div class="form-group">
+													<!-- <i class="field-icon fa icofont-map"></i> -->
+													<div class="form-content">
+														<label> To </label>
+														<div class="smart-search">
+															<input type="text" class="smart-search-location parent_text form-control" readonly placeholder="Location" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; Paris&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; California&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;- New York, United States&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; United States&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; Los Angeles&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; New Jersey&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; San Francisco&quot;},{&quot;id&quot;:8,&quot;title&quot;:&quot; Virginia&quot;},{&quot;id&quot;:9,&quot;title&quot;:&quot; London&quot;},{&quot;id&quot;:10,&quot;title&quot;:&quot; Germany&quot;},{&quot;id&quot;:11,&quot;title&quot;:&quot; Istanbul&quot;},{&quot;id&quot;:12,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:13,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:14,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:15,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:16,&quot;title&quot;:&quot; Naran&quot;},{&quot;id&quot;:17,&quot;title&quot;:&quot; Ha Noi&quot;}]">
+															<input type="hidden" class="child_id" name="location_id" value>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 border-right border-top">
+												<div class="form-group">
+													<!-- <i class="field-icon icofont-wall-clock"></i> -->
+													<div class="form-content">
+														<div class="form-date-search-hotel">
+															<div class="date-wrapper">
+																<div class="check-in-wrapper">
+																	<label>Departure</label>
+																	<div class="render check-in-render">06/13/2023</div>
+																</div>
+															</div>
+															<input type="hidden" class="check-in-input" value="06/13/2023" name="start">
+															<input type="text" class="check-in-out" name="date" value="2023-06-13">
+														</div>
+													</div>
+												</div>
+											</div>
+                                            <!-- <div class="col-md-2 border-right border-top">
+												<div class="form-group">
+													<i class="field-icon icofont-wall-clock"></i>
+													<div class="form-content">
+														<div class="form-date-search-hotel">
+															<div class="date-wrapper">
+																<div class="check-in-wrapper">
+																	<label>Return</label>
+																	<div class="render check-in-render">06/13/2023</div>
+																</div>
+															</div>
+															<input type="hidden" class="check-in-input" value="06/13/2023" name="start">
+															<input type="text" class="check-in-out" name="date" value="2023-06-13">
+														</div>
+													</div>
+												</div>
+											</div> -->
+                                            <div class="col-md-3 border-right border-top">
+												<div class="form-group">
+													<!-- <i class="field-icon fa icofont-map"></i> -->
+													<div class="form-content">
+														<label> Travellers </label>
+														<div class="smart-search">
+															<input type="text" class="smart-search-location parent_text form-control" readonly placeholder="" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; 1&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; 2&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;3&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; 4&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; 5&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; 6&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; 7&quot;}]">
+															<input type="hidden" class="child_id" name="location_id" value>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="g-button-submit">
+										<button class="btn btn-primary btn-search" type="submit">Modify Search</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-12">
+							<div class="bravo_filter">
+                                <form action="/flight.html" class="bravo_form_filter">
+                                <div class="filter-title">
+                                FILTER BY
+                                </div>
+                                <div class="g-filter-item">
+                                <div class="item-title #4A148C" >
+                                <h3>Filter Price</h3>
+                                <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                </div>
+                                <div class="item-content">
+                                <div class="bravo-filter-price">
+                                <input type="hidden" class="filter-price irs-hidden-input" name="price_range" data-symbol="  ₹" data-min="5000" data-max="18000" data-from="5000" data-to="18000" readonly value>
+                                <button type="submit" class="btn btn-link btn-apply-price-range " >APPLY</button>
+                                </div>
+                                </div>
+                                </div>
+                                <div class="g-filter-item">
+                                    <div class="item-title #4A148C" >
+                                    <h3>Filter Price</h3>
+                                    <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="item-content">
+                                    <div class="bravo-filter-price">
+                                        <button type="button" class="btn btn-outline-primary text-black">0 Stop</button>
+                                        <button type="button" class="btn btn-outline-primary text-black">1 Stop</button>
+                                        <button type="button" class="btn btn-outline-primary text-black">0 Stop</button>
+                                    </div>
+                                    </div>
+                                    </div>
+                                <div class="g-filter-item">
+                                    <div class="item-title">
+                                    <h3> Cabin Classes </h3>
+                                    <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="item-content">
+                                    <ul>
+                                    <li>
+                                    <div class="bravo-checkbox">
+                                    <label>
+                                    <input type="checkbox" name="terms[]" value="83"> Business
+                                    <span class="checkmark"></span>
+                                    </label>
+                                    </div>
+                                    </li>
+                                    <li>
+                                    <div class="bravo-checkbox">
+                                    <label>
+                                    <input type="checkbox" name="terms[]" value="84"> First Class
+                                    <span class="checkmark"></span>
+                                    </label>
+                                    </div>
+                                    </li>
+                                    <li>
+                                    <div class="bravo-checkbox">
+                                    <label>
+                                    <input type="checkbox" name="terms[]" value="85"> Economy
+                                    <span class="checkmark"></span>
+                                    </label>
+                                    </div>
+                                    </li>
+                                    <li class="hide">
+                                    <div class="bravo-checkbox">
+                                    <label>
+                                    <input type="checkbox" name="terms[]" value="86"> Premium Economy
+                                    <span class="checkmark"></span>
+                                    </label>
+                                    </div>
+                                    </li>
+                                    </ul>
+                                    <button type="button" class="btn btn-link btn-more-item">More <i class="fa fa-caret-down"></i></button>
+                                    </div>
+                                    </div>
+                                    <div class="g-filter-item">
+                                        <div class="item-title">
+                                        <h3> Depature Time </h3>
+                                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="item-content">
+                                        <ul>
+                                        <li>
+                                        <div class="bravo-checkbox">
+                                        <label>
+                                        <input type="checkbox" name="terms[]" value="83"> Early Morning Flight
+                                        <span class="checkmark"></span>
+                                        </label>
+                                        </div>
+                                        </li>
+                                        <li>
+                                        <div class="bravo-checkbox">
+                                        <label>
+                                        <input type="checkbox" name="terms[]" value="84"> Morning Flight
+                                        <span class="checkmark"></span>
+                                        </label>
+                                        </div>
+                                        </li>
+                                        <li>
+                                        <div class="bravo-checkbox">
+                                        <label>
+                                        <input type="checkbox" name="terms[]" value="85"> Mid-Day Flight
+                                        <span class="checkmark"></span>
+                                        </label>
+                                        </div>
+                                        </li>
+                                        <li class="hide">
+                                        <div class="bravo-checkbox">
+                                        <label>
+                                        <input type="checkbox" name="terms[]" value="86"> Evening Flight
+                                        <span class="checkmark"></span>
+                                        </label>
+                                        </div>
+                                        </li>
+                                        <li class="hide">
+                                            <div class="bravo-checkbox">
+                                            <label>
+                                            <input type="checkbox" name="terms[]" value="86"> Mid-Night Flight
+                                            <span class="checkmark"></span>
+                                            </label>
+                                            </div>
+                                            </li>
+                                            </ul>
+                                        <button type="button" class="btn btn-link btn-more-item">More <i class="fa fa-caret-down"></i></button>
+                                        </div>
+                                        </div>
+                                <div class="g-filter-item">
+                                <div class="item-title">
+                                <h3> Airlines </h3>
+                                <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                </div>
+                                <div class="item-content">
+                                <ul>
+                                <li>
+                                <div class="bravo-checkbox">
+                                <label>
+                                <input type="checkbox" name="terms[]" value="87"> AirAsia
+                                <span class="checkmark"></span>
+                                </label>
+                                </div>
+                                </li>
+                                <li>
+                                <div class="bravo-checkbox">
+                                <label>
+                                <input type="checkbox" name="terms[]" value="88"> Indigo
+                                <span class="checkmark"></span>
+                                </label>
+                                </div>
+                                </li>
+                                <li>
+                                <div class="bravo-checkbox">
+                                <label>
+                                <input type="checkbox" name="terms[]" value="89"> Vistara
+                                <span class="checkmark"></span>
+                                </label>
+                                </div>
+                                </li>
+                                <li class="hide">
+                                <div class="bravo-checkbox">
+                                <label>
+                                <input type="checkbox" name="terms[]" value="90"> Air India
+                                <span class="checkmark"></span>
+                                </label>
+                                </div>
+                                </li>
+                                <li class="hide">
+                                    <div class="bravo-checkbox">
+                                    <label>
+                                    <input type="checkbox" name="terms[]" value="90"> Akasa Air
+                                    <span class="checkmark"></span>
+                                    </label>
+                                    </div>
+                                    </li>
+                                </ul>
+                                <button type="button" class="btn btn-link btn-more-item">More <i class="fa fa-caret-down"></i></button>
+                                </div>
+                                </div>
+                                </form>
+                                </div>
+						</div>
+						<div class="col-lg-9 col-md-12">
+							<div class="bravo-list-item">
+								<div class="topbar-search">
+									<h2 class="text">
+										22 Flights found
+									</h2>
+									<div class="control">
+										<div class="item">
+											<div class="item-title">
+												Sort by:
+											</div>
+											<div class="dropdown">
+												<span class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												Recommended
+												</span>
+												<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+													<a class="dropdown-item" href="/bus?orderby=">Recommended</a>
+													<a class="dropdown-item" href="/bus?orderby=price_low_high">Price (Low to high)</a>
+													<a class="dropdown-item" href="/bus?orderby=price_high_low">Price (High to low)</a>
+													<a class="dropdown-item" href="/bus?orderby=rate_high_low">Rating (High to low)</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="list-item" id="flight_list">
+									<div class="row">
+										<div class="col-12">
+											<div class="bus-list-header" style="background-color:#363198;border-top-left-radius: 10px;border-top-right-radius: 10px;">
+												<div class="row text-light text-center" style="font-size: 12px;padding: 4px;">
+													<div class="col-md-1"></div>
+													<div class="col-md-2">Airline</div>
+													<div class="col-md-2">Depart</div>
+													<div class="col-md-2">Duration</div>
+													<div class="col-md-2">Arive</div>
+													<div class="col-md-2">Price</div>
+													<div class="col-md-1"></div>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-12 col-md-12">
+											<div class="border border-primary bod-rad">
+												<div class="row hei-bus-list pb-sm-3 pb-md-0">
+													<div class="col-md-1"></div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<img src="images/flight icon.png" width="35" height="35">
+															<div class="">
+																<span style="color: gray;" class="fs-co">Indigo7E</span>
 
-<!-- Mirrored from sandbox.bookingcore.org/flight by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Apr 2023 03:43:32 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">14:00 AM</span><br>
+															<span class="fs-co-li">Indigo7E</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">1h 10min</span><br>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">06: 00 AM</span><br>
+															<span class="fs-co-li">Madurai(IXM)</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color bolder">RS.1,500</span><br>
+															<span class="fs-co-li">
+																<a href="/bus2.html"><button class="btn btn-sm a-bg" style="color: white;">Book Now</button></a>
+															</span>
+														</div>
+													</div>
+													<div class="col-md-1"></div>
+												</div>
+											</div>
+										</div>
 
-<meta name="csrf-token" content="uXXPxxuoKSLKPFxWgc6voTPRqwnx7Boss7BQFExL">
-<link rel="icon" type="image/png" href="#">
-<title>Search for flight - UrTripO</title>
-<meta name="description" content />
-<meta property="og:url" content="flight.html" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Search for flight" />
-<meta property="og:description" content />
-<meta property="og:image" content="uploads/demo/flight/banner-flight.jpg" />
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Search for flight">
-<meta name="twitter:description" content>
-<meta name="twitter:image" content="uploads/demo/flight/banner-flight.jpg">
-<link rel="canonical" href="flight.html" />
-<link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="libs/font-awesome/css/font-awesome.css" rel="stylesheet">
-<link href="libs/ionicons/css/ionicons.min.css" rel="stylesheet">
-<link href="libs/icofont/icofont.min.css" rel="stylesheet">
-<link href="libs/select2/css/select2.min.css" rel="stylesheet">
-<link href="dist/frontend/css/notification.css" rel="newest stylesheet">
-<link href="dist/frontend/css/app7471.css?_ver=3.2.1" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="libs/daterange/daterangepicker.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="dns-prefetch" href="http://fonts.gstatic.com/">
-<link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&amp;display=swap" type="text/css" media="all" />
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    var bookingCore = {
-        url:'https://sandbox.bookingcore.org',
-        url_root:'https://sandbox.bookingcore.org',
-        admin_url:'https://sandbox.bookingcore.org/admin',
-        booking_decimals:0,
-        thousand_separator:'.',
-        decimal_separator:',',
-        currency_position:'left',
-        currency_symbol:'$',
-        currency_rate:'1',
-        date_format:'MM/DD/YYYY',
-        map_provider:'gmap',
-        map_gmap_key:'',
-        map_options:{
-            map_lat_default:'',
-            map_lng_default:'',
-            map_clustering:'on',
-            map_fit_bounds:'on',
-        },
-        routes:{
-            login:'https://sandbox.bookingcore.org/login',
-            register:'https://sandbox.bookingcore.org/register',
-            checkout:'https://sandbox.bookingcore.org/booking/doCheckout'
-        },
-        currentUser: 0,
-        isAdmin : 0,
-        rtl: false,
-        markAsRead:'https://sandbox.bookingcore.org/notify/markAsRead',
-        markAllAsRead:'https://sandbox.bookingcore.org/notify/markAllAsRead',
-        loadNotify : 'https://sandbox.bookingcore.org/notify/notifications',
-        pusher_api_key : '',
-        pusher_cluster : '',
-        language: 'en',
-        module:{}
-    };
-                            bookingCore.module.hotel = 'hotel.html';
-                                bookingCore.module.space = 'space.html';
-                                bookingCore.module.car = 'car.html';
-                                bookingCore.module.event = 'event.html';
-                                bookingCore.module.tour = 'tour.html';
-                                bookingCore.module.flight = 'flight.html';
-                                bookingCore.module.boat = 'boat.html';
-                var i18n = {
-        warning:"Warning",
-        success:"Success",
-        confirm_delete:"Do you want to delete?",
-        confirm:"Confirm",
-        cancel:"Cancel",
-    };
-    var daterangepickerLocale = {
-        "applyLabel": "Apply",
-        "cancelLabel": "Cancel",
-        "fromLabel": "From",
-        "toLabel": "To",
-        "customRangeLabel": "Custom",
-        "weekLabel": "W",
-        "first_day_of_week": 1,
-        "daysOfWeek": [
-            "Su",
-            "Mo",
-            "Tu",
-            "We",
-            "Th",
-            "Fr",
-            "Sa"
-        ],
-        "monthNames": [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-        ],
-    };
-</script>
+										<div class="col-lg-12 col-md-12 mt-4">
+											<div class="border border-primary bod-rad">
+												<div class="row hei-bus-list pb-sm-3 pb-md-0">
+													<div class="col-md-1"></div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<img src="images/flight icon.png" width="35" height="35">
+															<div class="">
+																<span style="color: gray;" class="fs-co">Indigo7E</span>
 
-<link href="dist/frontend/module/flight/css/flight7471.css?_ver=3.2.1" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="libs/ion_rangeslider/css/ion.rangeSlider.min.css" />
-<link href="custom-css.css" rel="stylesheet">
-<link href="libs/carousel-2/owl.carousel.css" rel="stylesheet">
-</head>
-<body class="frontend-page header-normal   ">
-<div class="bravo_wrap">
-<div class="bravo_topbar">
-<div class="container">
-<div class="content">
-<div class="topbar-left">
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">14:00 AM</span><br>
+															<span class="fs-co-li">Indigo7E</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">1h 10min</span><br>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">06: 00 AM</span><br>
+															<span class="fs-co-li">Madurai(IXM)</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color bolder">RS.1,500</span><br>
+															<span class="fs-co-li">
+																<a href="/bus2.html"><button class="btn btn-sm a-bg" style="color: white;">Book Now</button></a>
+															</span>
+														</div>
+													</div>
+													<div class="col-md-1"></div>
+												</div>
+											</div>
+										</div>
 
-</div>
+										<div class="col-lg-12 col-md-12 mt-4">
+											<div class="border border-primary bod-rad">
+												<div class="row hei-bus-list pb-sm-3 pb-md-0">
+													<div class="col-md-1"></div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<img src="images/flight icon.png" width="35" height="35">
+															<div class="">
+																<span style="color: gray;" class="fs-co">Indigo7E</span>
 
-<div class="topbar-right">
-<ul class="topbar-items">
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">14:00 AM</span><br>
+															<span class="fs-co-li">Indigo7E</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">1h 10min</span><br>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">06: 00 AM</span><br>
+															<span class="fs-co-li">Madurai(IXM)</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color bolder">RS.1,500</span><br>
+															<span class="fs-co-li">
+																<a href="/bus2.html"><button class="btn btn-sm a-bg" style="color: white;">Book Now</button></a>
+															</span>
+														</div>
+													</div>
+													<div class="col-md-1"></div>
+												</div>
+											</div>
+										</div>
 
-<li class="login-item">
-<a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
-</li>
-<li class="signup-item">
-<a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="bravo_header">
-<div class="container">
-<div class="content">
-<div class="header-left">
-<a href="index.html" class="bravo-logo">
-<img src="uploads/demo/general/logo.png" width="50%" height="80%" alt="Booking Core">
-</a>
-<div class="bravo-menu">
-<ul class="main-menu menu-generated"><li class=" depth-0"><a target href="../BookingPortal-V/index.html">HOME<li class=" depth-0"><a target href="flight.html">Flight<li class=" depth-0"><a target href="hotel.html">HOTELS<li class=" depth-0"><a target href="bus1.php">BUS<li class=" depth-0"><a target href="packages.html">PACKAGES <li class=" depth-0"></li></div>
-</div>
-<div class="header-right">
-<button class="bravo-more-menu">
-<i class="fa fa-bars"></i>
-</button>
-</div>
-</div>
-</div>
-<div class="bravo-menu-mobile" style="display:none;">
-<div class="user-profile">
-<div class="b-close"><i class="icofont-scroll-left"></i></div>
-<div class="avatar"></div>
-<ul>
-<li>
-<a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
-</li>
-<li>
-<a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
-</li>
-</ul>
-<ul class="multi-lang">
-<li class="dropdown">
-<a href="#" data-toggle="dropdown" class="is_login">
-USD
-<i class="fa fa-angle-down"></i>
-</a>
-<ul class="dropdown-menu text-left width-auto">
-<li>
-<a href="flight.html?set_currency=eur" class="is_login">
-EUR
-</a>
-</li>
-<li>
-<a href="flight.html?set_currency=jpy" class="is_login">
-JPY
-</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="multi-lang">
-<li class="dropdown">
-<ul class="dropdown-menu text-left">
-<li>
-<a href="ar/flight.html?set_lang=ar" class="is_login">
-<span class="flag-icon flag-icon-ar"></span>
-arabic
-</a>
-</li>
-<li>
-<a href="en_US/flight.html?set_lang=en_US" class="is_login">
-<span class="flag-icon flag-icon-us"></span>
-American
-</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="g-menu">
-<ul class="main-menu menu-generated"><li class=" depth-0"><a target href="index.html">Home <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="index.html">Home Page</a></li><li class=" depth-1"><a target href="page/home-page-v2.html">Home Page v2</a></li><li class=" depth-1"><a target href="page/hotel.html">Home Hotel</a></li><li class=" depth-1"><a target href="page/home-tour-agency.html">Home Tour Agency</a></li><li class=" depth-1"><a target href="page/tour.html">Home Tour</a></li><li class=" depth-1"><a target href="page/space.html">Home Space</a></li><li class=" depth-1"><a target href="page/car.html">Home Car</a></li></ul></li><li class=" depth-0"><a target href="hotel.html">Hotel <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="hotel.html">Hotel List</a></li><li class=" depth-1"><a target href="hotel76a0.html?_layout=map">Hotel Map</a></li><li class=" depth-1"><a target href="index.html">Hotel Detail</a></li></ul></li><li class=" depth-0"><a target href="tour.html">Tours <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="tour.html">Tour List</a></li><li class=" depth-1"><a target href="tour76a0.html?_layout=map">Tour Map</a></li><li class=" depth-1"><a target href="tour/paris-vacation-travel.html">Tour Detail</a></li></ul></li><li class=" depth-0"><a target href="space.html">Space <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="space.html">Space List</a></li><li class=" depth-1"><a target href="space76a0.html?_layout=map">Space Map</a></li><li class=" depth-1"><a target href="space/stay-greenwich-village.html">Space Detail</a></li></ul></li><li class=" depth-0"><a target href="car.html">Car <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="car.html">Car List</a></li><li class=" depth-1"><a target href="car76a0.html?_layout=map">Car Map</a></li><li class=" depth-1"><a target href="car/vinfast-lux-a20-plus.html">Car Detail</a></li></ul></li><li class=" depth-0"><a target href="event.html">Event <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="event.html">Event List</a></li><li class=" depth-1"><a target href="event76a0.html?_layout=map">Event Map</a></li><li class=" depth-1"><a target href="event/aspen-glade-weddings-events.html">Event Detail</a></li></ul></li><li class=" active depth-0"><a target href="flight.html">Flight</a></li><li class=" depth-0"><a target href="boat.html">Boat <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="boat.html">Boat List</a></li><li class=" depth-1"><a target href="boat76a0.html?_layout=map">Boat Map</a></li><li class=" depth-1"><a target href="boat/blue-moon-yc-300.html">Boat Detail</a></li></ul></li><li class=" depth-0"><a target href="#">Pages <i class="caret fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" depth-1"><a target href="login.html">Plan</a></li><li class=" depth-1"><a target href="news.html">News List</a></li><li class=" depth-1"><a target href="news/morning-in-the-northern-sea.html">News Detail</a></li><li class=" depth-1"><a target href="location/paris.html">Location Detail</a></li><li class=" depth-1"><a target href="page/become-a-vendor.html">Become a vendor</a></li><li class=" depth-1"><a target href="contact.html">Contact</a></li></ul></li></ul> </div>
-</div>
-</div>
-<div class="bravo_search_flight">
-<div class="bravo_banner" style="background-image: url(uploads/demo/flight/banner-flight.jpg)">
-<div class="container">
-<h1>
-Search for flight
-</h1>
-</div>
-</div>
-<div class="bravo_form_search">
-<div class="container">
-<div class="row" style="background-color: #fff;border-radius: 5px;box-shadow: 1px 1px 0px 0px rgb(173, 170, 170);">
+										<div class="col-lg-12 col-md-12 mt-4">
+											<div class="border border-primary bod-rad">
+												<div class="row hei-bus-list pb-sm-3 pb-md-0">
+													<div class="col-md-1"></div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<img src="images/flight icon.png" width="35" height="35">
+															<div class="">
+																<span style="color: gray;" class="fs-co">Indigo7E</span>
 
-<div class="col-sm-10" >
-    <div class="row mt-3 mb-2 ml-1 mr-1 " style="border-bottom: 1px solid rgb(173, 170, 170);">
-        <div class="col-sm-2 mb-2">Oneway</div>
-        <div class="col-sm-2 mb-2">Roundtrip</div>
-    </div>
-    
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">14:00 AM</span><br>
+															<span class="fs-co-li">Indigo7E</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">1h 10min</span><br>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">06: 00 AM</span><br>
+															<span class="fs-co-li">Madurai(IXM)</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color bolder">RS.1,500</span><br>
+															<span class="fs-co-li">
+																<a href="/bus2.html"><button class="btn btn-sm a-bg" style="color: white;">Book Now</button></a>
+															</span>
+														</div>
+													</div>
+													<div class="col-md-1"></div>
+												</div>
+											</div>
+										</div>
 
-    <div class="row ml-1 mr-1 mb-3"  >
-        <div class="col-sm-3" style="border: 1px solid rgb(173, 170, 170);">
-            From
-            <div class="drop-down">
-                <button type="button" class="btn dropdown-toggle ml-0 pl-0" style="color: #007BFF;box-shadow: 0px 0px 0px 0px white;" data-bs-toggle="dropdown">Location</button>
-            </div>
-        </div>
-        <div class="col-sm-3" style="border: 1px solid rgb(173, 170, 170);">
-            To
-            <div class="drop-down">
-                <button type="button" class="btn dropdown-toggle ml-0 pl-0" style="color: #007BFF;box-shadow: 0px 0px 0px 0px white;" data-bs-toggle="dropdown">Location</button>
-            </div>
-        </div>
-        <div class="col-sm-3" style="border: 1px solid rgb(173, 170, 170);">
-            Departure<br >
-            <input type="hidden" name="redirect" value>
-            <input type="hidden" name="_token" value="uXXPxxuoKSLKPFxWgc6voTPRqwnx7Boss7BQFExL" class="mb-2">
-            27/06/2023
+                                        <div class="col-lg-12 col-md-12 mt-4">
+											<div class="border border-primary bod-rad">
+												<div class="row hei-bus-list pb-sm-3 pb-md-0">
+													<div class="col-md-1"></div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<img src="images/flight icon.png" width="35" height="35">
+															<div class="">
+																<span style="color: gray;" class="fs-co">Indigo7E</span>
 
-        </div>
-        <div class="col-sm-3" style="border: 1px solid rgb(173, 170, 170);">
-            0 Travellers
-            <div class="drop-down">
-                <button type="button" class="btn dropdown-toggle" data-bs-toggle="drop-down"></button>
-            </div>
-        </div>
-    </div>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">14:00 AM</span><br>
+															<span class="fs-co-li">Indigo7E</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">1h 10min</span><br>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">06: 00 AM</span><br>
+															<span class="fs-co-li">Madurai(IXM)</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color bolder">RS.1,500</span><br>
+															<span class="fs-co-li">
+																<a href="/bus2.html"><button class="btn btn-sm a-bg" style="color: white;">Book Now</button></a>
+															</span>
+														</div>
+													</div>
+													<div class="col-md-1"></div>
+												</div>
+											</div>
+										</div>
+                                        <div class="col-lg-12 col-md-12 mt-4">
+											<div class="border border-primary bod-rad">
+												<div class="row hei-bus-list pb-sm-3 pb-md-0">
+													<div class="col-md-1"></div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<img src="images/flight icon.png" width="35" height="35">
+															<div class="">
+																<span style="color: gray;" class="fs-co">Indigo7E</span>
 
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">14:00 AM</span><br>
+															<span class="fs-co-li">Indigo7E</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">1h 10min</span><br>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">06: 00 AM</span><br>
+															<span class="fs-co-li">Madurai(IXM)</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color bolder">RS.1,500</span><br>
+															<span class="fs-co-li">
+																<a href="/bus2.html"><button class="btn btn-sm a-bg" style="color: white;">Book Now</button></a>
+															</span>
+														</div>
+													</div>
+													<div class="col-md-1"></div>
+												</div>
+											</div>
+										</div>
+                                        <div class="col-lg-12 col-md-12 mt-4">
+											<div class="border border-primary bod-rad">
+												<div class="row hei-bus-list pb-sm-3 pb-md-0">
+													<div class="col-md-1"></div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<img src="images/flight icon.png" width="35" height="35">
+															<div class="">
+																<span style="color: gray;" class="fs-co">Indigo7E</span>
 
-</div>
-<div class="col-sm-2 pr-0 pl-0">
-    <button type="button" class="btn" style="background-color: #007BFF;width: 100%;height: 100%;border-top-left-radius: 0px;border-bottom-left-radius: 0px;color: #fff;">Modify Search</button>
-</div>
-</div>
-</div>
-</div>
-<div class="container">
-<div class="row">
-<div class="col-lg-3 col-md-12">
-<div class="bravo_filter">
-<form action="/flight.html" class="bravo_form_filter">
-<div class="filter-title">
-FILTER BY
-</div>
-<div class="g-filter-item">
-<div class="item-title #4A148C" >
-<h3>Filter Price</h3>
-<i class="fa fa-angle-up" aria-hidden="true"></i>
-</div>
-<div class="item-content">
-<div class="bravo-filter-price">
-<input type="hidden" class="filter-price irs-hidden-input" name="price_range" data-symbol="  ₹" data-min="5000" data-max="18000" data-from="5000" data-to="18000" readonly value>
-<button type="submit" class="btn btn-link btn-apply-price-range " >APPLY</button>
-</div>
-</div>
-</div>
-<div class="g-filter-item">
-    <div class="item-title #4A148C" >
-    <h3>Filter Price</h3>
-    <i class="fa fa-angle-up" aria-hidden="true"></i>
-    </div>
-    <div class="item-content">
-    <div class="bravo-filter-price">
-        <button type="button" class="btn btn-outline-primary text-black">0 Stop</button>
-        <button type="button" class="btn btn-outline-primary text-black">1 Stop</button>
-        <button type="button" class="btn btn-outline-primary text-black">0 Stop</button>
-    </div>
-    </div>
-    </div>
-<div class="g-filter-item">
-    <div class="item-title">
-    <h3> Cabin Classes </h3>
-    <i class="fa fa-angle-up" aria-hidden="true"></i>
-    </div>
-    <div class="item-content">
-    <ul>
-    <li>
-    <div class="bravo-checkbox">
-    <label>
-    <input type="checkbox" name="terms[]" value="83"> Business
-    <span class="checkmark"></span>
-    </label>
-    </div>
-    </li>
-    <li>
-    <div class="bravo-checkbox">
-    <label>
-    <input type="checkbox" name="terms[]" value="84"> First Class
-    <span class="checkmark"></span>
-    </label>
-    </div>
-    </li>
-    <li>
-    <div class="bravo-checkbox">
-    <label>
-    <input type="checkbox" name="terms[]" value="85"> Economy
-    <span class="checkmark"></span>
-    </label>
-    </div>
-    </li>
-    <li class="hide">
-    <div class="bravo-checkbox">
-    <label>
-    <input type="checkbox" name="terms[]" value="86"> Premium Economy
-    <span class="checkmark"></span>
-    </label>
-    </div>
-    </li>
-    </ul>
-    <button type="button" class="btn btn-link btn-more-item">More <i class="fa fa-caret-down"></i></button>
-    </div>
-    </div>
-    <div class="g-filter-item">
-        <div class="item-title">
-        <h3> Depature Time </h3>
-        <i class="fa fa-angle-up" aria-hidden="true"></i>
-        </div>
-        <div class="item-content">
-        <ul>
-        <li>
-        <div class="bravo-checkbox">
-        <label>
-        <input type="checkbox" name="terms[]" value="83"> Early Morning Flight
-        <span class="checkmark"></span>
-        </label>
-        </div>
-        </li>
-        <li>
-        <div class="bravo-checkbox">
-        <label>
-        <input type="checkbox" name="terms[]" value="84"> Morning Flight
-        <span class="checkmark"></span>
-        </label>
-        </div>
-        </li>
-        <li>
-        <div class="bravo-checkbox">
-        <label>
-        <input type="checkbox" name="terms[]" value="85"> Mid-Day Flight
-        <span class="checkmark"></span>
-        </label>
-        </div>
-        </li>
-        <li class="hide">
-        <div class="bravo-checkbox">
-        <label>
-        <input type="checkbox" name="terms[]" value="86"> Evening Flight
-        <span class="checkmark"></span>
-        </label>
-        </div>
-        </li>
-        <li class="hide">
-            <div class="bravo-checkbox">
-            <label>
-            <input type="checkbox" name="terms[]" value="86"> Mid-Night Flight
-            <span class="checkmark"></span>
-            </label>
-            </div>
-            </li>
-            </ul>
-        <button type="button" class="btn btn-link btn-more-item">More <i class="fa fa-caret-down"></i></button>
-        </div>
-        </div>
-<div class="g-filter-item">
-<div class="item-title">
-<h3> Airlines </h3>
-<i class="fa fa-angle-up" aria-hidden="true"></i>
-</div>
-<div class="item-content">
-<ul>
-<li>
-<div class="bravo-checkbox">
-<label>
-<input type="checkbox" name="terms[]" value="87"> AirAsia
-<span class="checkmark"></span>
-</label>
-</div>
-</li>
-<li>
-<div class="bravo-checkbox">
-<label>
-<input type="checkbox" name="terms[]" value="88"> Indigo
-<span class="checkmark"></span>
-</label>
-</div>
-</li>
-<li>
-<div class="bravo-checkbox">
-<label>
-<input type="checkbox" name="terms[]" value="89"> Vistara
-<span class="checkmark"></span>
-</label>
-</div>
-</li>
-<li class="hide">
-<div class="bravo-checkbox">
-<label>
-<input type="checkbox" name="terms[]" value="90"> Air India
-<span class="checkmark"></span>
-</label>
-</div>
-</li>
-<li class="hide">
-    <div class="bravo-checkbox">
-    <label>
-    <input type="checkbox" name="terms[]" value="90"> Akasa Air
-    <span class="checkmark"></span>
-    </label>
-    </div>
-    </li>
-</ul>
-<button type="button" class="btn btn-link btn-more-item">More <i class="fa fa-caret-down"></i></button>
-</div>
-</div>
-</form>
-</div>
-</div>
-<div class="col-lg-9 col-md-12">
-<div class="bravo-list-item">
-<div class="d-flex justify-content-between align-items-center mb-4 topbar-search">
-<h3 class="font-size-21 font-weight-bold mb-0 text-lh-1">
-21 flights found
-</h3>
-<div class="control">
-<div class="item">
-<div class="item-title">
-Sort by:
-</div>
-<div class="dropdown">
-<span class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-Recommended
-</span>
-<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-<a class="dropdown-item" href="flight0cbb.html?orderby=">Recommended</a>
-<a class="dropdown-item" href="flight783b.html?orderby=price_low_high">Price (Low to high)</a>
-<a class="dropdown-item" href="flight6f4c.html?orderby=price_high_low">Price (High to low)</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="row ml-2 mr-2" style="margin-top: 10px;margin-bottom: 5%;border: 1px solid #363198;background-color: #363198;padding: 50px;border-radius: 10px;">
-    <div class="col-sm-2 d-sm-block d-md-none" style="color: white;margin-top: -45px;">
-    <!-- <center>Airline</center> -->
-    </div>
-    <div class="col-sm-2 d-sm-none d-md-block d-lg-block" style="color: white;margin-top: -45px;">
-        <center>Airline</center>
-    </div>
-    <div class="col-sm-3" style="color: white;margin-top: -45px;">
-    <center> Depart</center>
-    </div>
-    <div class="col-sm-2" style="color: white;margin-top: -45px;">
-    <center>  Duration</center>
-    </div>
-    <div class="col-sm-3" style="color: white;margin-top: -45px;">
-    <center>  Arrive</center>
-    </div>
-    <div class="col-sm-2" style="color: white;margin-top: -45px;">
-    <center> Price</center>
-    </div>
-</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">14:00 AM</span><br>
+															<span class="fs-co-li">Indigo7E</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">1h 10min</span><br>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">06: 00 AM</span><br>
+															<span class="fs-co-li">Madurai(IXM)</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color bolder">RS.1,500</span><br>
+															<span class="fs-co-li">
+																<a href="/bus2.html"><button class="btn btn-sm a-bg" style="color: white;">Book Now</button></a>
+															</span>
+														</div>
+													</div>
+													<div class="col-md-1"></div>
+												</div>
+											</div>
+										</div>
+                                        <div class="col-lg-12 col-md-12 mt-4">
+											<div class="border border-primary bod-rad">
+												<div class="row hei-bus-list pb-sm-3 pb-md-0">
+													<div class="col-md-1"></div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<img src="images/flight icon.png" width="35" height="35">
+															<div class="">
+																<span style="color: gray;" class="fs-co">Indigo7E</span>
 
-<div class="row ml-2 mr-2" style="margin-top: -110px;margin-bottom: 5%;font-family: 'Roboto Mono', monospace;">
-    <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <div class="col">
-                        <center><i class="fa fa-plane" style="font-size: 25px;color: #007BFF;"></i></center>
-                    </div>
-                    
-                    
-                </div>
-                <div class="row">
-                    <!-- <div class="col d-sm-block d-md-none d-lg-none mt-2" style="font-size: small;"><center>Indigo  7E</center></div> -->
-                    <div class="col"><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none" style="color: #007BFF;">
-                        <h6><b><center>14:00 AM</center></b></h6>
-                    </div> -->
-                    <div class="col d-sm-none d-md-block d-lg-block" style="color: #007BFF;">
-                        <h5><b><center>14: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <!-- <div class="row">
-                    <div class="col-md- d-sm-block d-md-none mt-2" style="font-size: small;"><center>Indigo  7E</center></div>
-                </div> -->
-                <div class="row">
-                    <div class="col d-sm-none d-md-block "><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col-md- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <h6><b><center>1h:10Min</center></b></h6>
-                    </div>
-                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
-                        <h5><b><center>1h: 10Min</center></b></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <h6><b><center>06:00 AM</center></b></h6>
-                    </div>
-                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
-                        <h5><b><center>06: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm- d-sm-block d-md-none d-lg-none mt-2" style="font-size: small;"><center>Madurai(IXM)</center></div>
-                    <div class="col d-sm-none d-md-block d-lg-block"><center>Madurai(IXM)</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <hr>
-                        <h5><b><center>Rs,1500</center></b></h5>
-                    </div>
-                    <div class="col d-sm-none d-md-block d-lg-block"  style="color: #007BFF;">
-                        <h5><b><center>Rs,1500</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/booking/flightcheckout.html">Book Now</button></a></center></div>
-                    <div class="col d-sm-none d-md-block d-lg-block"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row ml-2 mr-2" style="margin-top: 10px;margin-bottom: 5%;font-family: 'Roboto Mono', monospace;">
-    <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none">
-                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
-                    </div> -->
-                    <div class="col">
-                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none"><center>Indigo  7E</center></div> -->
-                    <div class="col"><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none" style="color: #007BFF;">
-                        <h5><b><center>14: 00 AM</center></b></h4>
-                    </div> -->
-                    <div class="col" style="color: #007BFF;">
-                        <h5><b><center>14: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <!-- <div class="row">
-                    <div class="col-md- d-sm-block d-md-none "><center>Indigo  7E</center></div>
-                </div> -->
-                <div class="row">
-                    <div class="col d-sm-none d-md-block "><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <h5><b><center>1h: 10Min</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>1h: 10Min</center></b></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <h5><b><center>06: 00 AM</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>06: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"><center>Madurai(IXM)</center></div> -->
-                    <div class="col"><center>Madurai(IXM)</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <hr>
-                        <h5><b><center>Rs,1500</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>Rs,1500</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/booking/flightcheckout.html">Book Now</button></a></center></div> -->
-                    <div class="col"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row ml-2 mr-2" style="margin-top: 10px;margin-bottom: 5%;font-family: 'Roboto Mono', monospace;">
-    <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none">
-                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
-                    </div> -->
-                    <div class="col">
-                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none"><center>Indigo  7E</center></div> -->
-                    <div class="col"><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none" style="color: #007BFF;">
-                        <h5><b><center>14: 00 AM</center></b></h4>
-                    </div> -->
-                    <div class="col" style="color: #007BFF;">
-                        <h5><b><center>14: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <!-- <div class="row">
-                    <div class="col-md- d-sm-block d-md-none "><center>Indigo  7E</center></div>
-                </div> -->
-                <div class="row">
-                    <div class="col d-sm-none d-md-block "><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <h5><b><center>1h: 10Min</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>1h: 10Min</center></b></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <h5><b><center>06: 00 AM</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>06: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"><center>Madurai(IXM)</center></div> -->
-                    <div class="col"><center>Madurai(IXM)</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <hr>
-                        <h5><b><center>Rs,1500</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>Rs,1500</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/booking/flightcheckout.html">Book Now</button></a></center></div> -->
-                    <div class="col"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row ml-2 mr-2" style="margin-top: 10px;margin-bottom: 5%;font-family: 'Roboto Mono', monospace;">
-    <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none">
-                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
-                    </div> -->
-                    <div class="col">
-                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none"><center>Indigo  7E</center></div> -->
-                    <div class="col"><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none" style="color: #007BFF;">
-                        <h5><b><center>14: 00 AM</center></b></h4>
-                    </div> -->
-                    <div class="col" style="color: #007BFF;">
-                        <h5><b><center>14: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <!-- <div class="row">
-                    <div class="col-md- d-sm-block d-md-none "><center>Indigo  7E</center></div>
-                </div> -->
-                <div class="row">
-                    <div class="col d-sm-none d-md-block "><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <h5><b><center>1h: 10Min</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>1h: 10Min</center></b></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <h5><b><center>06: 00 AM</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>06: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"><center>Madurai(IXM)</center></div> -->
-                    <div class="col"><center>Madurai(IXM)</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <hr>
-                        <h5><b><center>Rs,1500</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>Rs,1500</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/booking/flightcheckout.html">Book Now</button></a></center></div> -->
-                    <div class="col"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row ml-2 mr-2" style="margin-top: 10px;margin-bottom: 5%;font-family: 'Roboto Mono', monospace;">
-    <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none">
-                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
-                    </div> -->
-                    <div class="col">
-                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none"><center>Indigo  7E</center></div> -->
-                    <div class="col"><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none" style="color: #007BFF;">
-                        <h5><b><center>14: 00 AM</center></b></h4>
-                    </div> -->
-                    <div class="col" style="color: #007BFF;">
-                        <h5><b><center>14: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <!-- <div class="row">
-                    <div class="col-md- d-sm-block d-md-none "><center>Indigo  7E</center></div>
-                </div> -->
-                <div class="row">
-                    <div class="col d-sm-none d-md-block "><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <h5><b><center>1h: 10Min</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>1h: 10Min</center></b></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <h5><b><center>06: 00 AM</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>06: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"><center>Madurai(IXM)</center></div> -->
-                    <div class="col"><center>Madurai(IXM)</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <hr>
-                        <h5><b><center>Rs,1500</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>Rs,1500</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/booking/flightcheckout.html">Book Now</button></a></center></div> -->
-                    <div class="col"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row ml-2 mr-2" style="margin-top: 10px;margin-bottom: 5%;font-family: 'Roboto Mono', monospace;">
-    <div class="col" style="border: 1px solid #007BFF;padding: 30px;border-radius: 10px;background-color: white;">
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none">
-                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
-                    </div> -->
-                    <div class="col">
-                        <center><i class="fa fa-plane" style="font-size: 35px;color: #007BFF;"></i></center>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none"><center>Indigo  7E</center></div> -->
-                    <div class="col"><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none" style="color: #007BFF;">
-                        <h5><b><center>14: 00 AM</center></b></h4>
-                    </div> -->
-                    <div class="col" style="color: #007BFF;">
-                        <h5><b><center>14: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <!-- <div class="row">
-                    <div class="col-md- d-sm-block d-md-none "><center>Indigo  7E</center></div>
-                </div> -->
-                <div class="row">
-                    <div class="col d-sm-none d-md-block "><center>Indigo  7E</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-md- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <h5><b><center>1h: 10Min</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>1h: 10Min</center></b></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <h5><b><center>06: 00 AM</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>06: 00 AM</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"><center>Madurai(IXM)</center></div> -->
-                    <div class="col"><center>Madurai(IXM)</center></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"  style="color: #007BFF;">
-                        <hr>
-                        <h5><b><center>Rs,1500</center></b></h4>
-                    </div> -->
-                    <div class="col"  style="color: #007BFF;">
-                        <h5><b><center>Rs,1500</center></b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="col-sm- d-sm-block d-md-none d-lg-none"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;" href="/booking/flightcheckout.html">Book Now</button></a></center></div> -->
-                    <div class="col"><center><a href="/booking/flightcheckout.html"><button type="button" class="btn" style="background-color: #363198;color: white;"> Book Now</button></a></center></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-<div class="bravo_footer">
-
-<div class="main-footer">
-<div class="container">
-<div class="row">
-<div class="col-lg-4 col-md-4">
-<div class="nav-footer">
-<div class="title">
-NEED HELP?
-</div>
-<div class="context">
-<div class="contact">
-<div class="c-title">
-Call Us
-</div>
-<div class="sub">
-+ 00 222 44 5678
-</div>
-</div>
-<div class="contact">
-<div class="c-title">
-Email for Us
-</div>
-<div class="sub">
-customercare@urtripo.com
-</div>
-</div>
-<div class="contact">
-<div class="c-title">
-Follow Us
-</div>
-<div class="sub">
-<a href="#">
-<i class="icofont-facebook"></i>
-</a>
-<a href="#">
-<i class="icofont-twitter"></i>
-</a>
-<a href="#">
-<i class="icofont-instagram"></i>
-</a>
-<a href="#">
-    <i class="icofont-linkedin"></i>
-    </a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-4">
-<div class="nav-footer">
-<div class="title">
-URTRIPO AVIATION
-</div>
-<div class="context">
-<ul>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">Customer Support</a></li>
-<li><a href="#">Jobs</a></li>
-<li><a href="#">Privacy Policy</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-4">
-<div class="nav-footer">
-<div class="title">
-EXPLORE
-</div>
-<div class="context">
-<ul>
-<li><a href="#">Airports</a></li>
-<li><a href="#">Hotels</a></li>
-<li><a href="#">Flights</a></li>
-<li><a href="#">Bus</a></li>
-<li><a href="#">Packages</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-lg-2 col-md-4">
-<div class="nav-footer">
-<div class="title">
-BOOK
-</div>
-<div class="context">
-<ul>
-<li><a href="#">Restart</a></li>
-<li><a href="#">Apartment</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="copy-right">
-<div class="container context">
-<div class="row">
-<div class="col-md-12">
-Copyright © 2019 by UrTripO Aviation
-<div class="f-visa">
-UrTripO Aviation
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade login" id="login" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered" role="document">
-<div class="modal-content relative">
-<div class="modal-header">
-<h4 class="modal-title">Log In</h4>
-<span class="c-pointer" data-dismiss="modal" aria-label="Close">
-<i class="input-icon field-icon fa">
-<img src="images/ico_close.svg" alt="close">
-</i>
-</span>
-</div>
-<div class="modal-body relative">
-<form class="bravo-form-login" method="POST" action="https://sandbox.bookingcore.org/login">
-<input type="hidden" name="redirect" value>
-<input type="hidden" name="_token" value="uXXPxxuoKSLKPFxWgc6voTPRqwnx7Boss7BQFExL"> <div class="form-group">
-<input type="text" class="form-control" name="email" autocomplete="off" placeholder="Email address">
-<i class="input-icon icofont-mail"></i>
-<span class="invalid-feedback error error-email"></span>
-</div>
-<div class="form-group">
-<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password">
-<i class="input-icon icofont-ui-password"></i>
-<span class="invalid-feedback error error-password"></span>
-</div>
-<div class="form-group">
-<div class="d-flex justify-content-between">
-<label for="remember-me" class="mb0">
-<input type="checkbox" name="remember" id="remember-me" value="1"> Remember me <span class="checkmark fcheckbox"></span>
-</label>
-<a href="forgot-password.html">Forgot Password?</a>
-</div>
-</div>
-<div class="error message-error invalid-feedback"></div>
-<div class="form-group">
-<button class="btn btn-primary form-submit" type="submit">
-Login
-<span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
-</button>
-</div>
-<div class="advanced">
-<p class="text-center f14 c-grey">or continue with</p>
-<div class="row">
-<div class="col-xs-12 col-sm-4">
-<a href="https://www.facebook.com/v3.3/dialog/oauth?client_id=738807186188291&amp;redirect_uri=https%3A%2F%2Fsandbox.bookingcore.org%2Fsocial-callback%2Ffacebook&amp;scope=email&amp;response_type=code&amp;state=VnLQKOes9FBShWMylNmDIo27DMCnNXmqchNn0QSD" class="btn btn_login_fb_link" data-channel="facebook">
-<i class="input-icon fa fa-facebook"></i>
-Facebook
-</a>
-</div>
-<div class="col-xs-12 col-sm-4">
-<a href="https://accounts.google.com/o/oauth2/auth?client_id=240140366958-8dddnfljlqqj4jbriv22md213lhpe7e8.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fsandbox.bookingcore.org%2Fsocial-callback%2Fgoogle&amp;scope=openid+profile+email&amp;response_type=code&amp;state=MXtzmlbniGq8XRTyjIfrEyzCpJ8JLsxe7dNP6CKY" class="btn btn_login_gg_link" data-channel="google">
-<i class="input-icon fa fa-google"></i>
-Google
-</a>
-</div>
-<div class="col-xs-12 col-sm-4">
-<a href="social-login/twitter.html" class="btn btn_login_tw_link" data-channel="twitter">
-<i class="input-icon fa fa-twitter"></i>
-Twitter
-</a>
-</div>
-</div>
-</div>
-<div class="c-grey font-medium f14 text-center"> Do not have an account? <a href data-target="#register" data-toggle="modal">Sign Up</a></div>
-</form>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade login" id="register" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered" role="document">
-<div class="modal-content relative">
-<div class="modal-header">
-<h4 class="modal-title">Sign Up</h4>
-<span class="c-pointer" data-dismiss="modal" aria-label="Close">
-<i class="input-icon field-icon fa">
-<img src="images/ico_close.svg" alt="close">
-</i>
-</span>
-</div>
-<div class="modal-body">
-<form class="form bravo-form-register" method="post" action="https://sandbox.bookingcore.org/register">
-<input type="hidden" name="_token" value="uXXPxxuoKSLKPFxWgc6voTPRqwnx7Boss7BQFExL"> <div class="row">
-<div class="col-lg-6 col-md-12">
-<div class="form-group">
-<input type="text" class="form-control" name="first_name" autocomplete="off" placeholder="First Name">
-<i class="input-icon field-icon icofont-waiter-alt"></i>
-<span class="invalid-feedback error error-first_name"></span>
-</div>
-</div>
-<div class="col-lg-6 col-md-12">
-<div class="form-group">
-<input type="text" class="form-control" name="last_name" autocomplete="off" placeholder="Last Name">
-<i class="input-icon field-icon icofont-waiter-alt"></i>
-<span class="invalid-feedback error error-last_name"></span>
-</div>
-</div>
-</div>
-<div class="form-group">
-<input type="text" class="form-control" name="phone" autocomplete="off" placeholder="Phone">
-<i class="input-icon field-icon icofont-ui-touch-phone"></i>
-<span class="invalid-feedback error error-phone"></span>
-</div>
-<div class="form-group">
-<input type="email" class="form-control" name="email" autocomplete="off" placeholder="Email address">
-<i class="input-icon field-icon icofont-mail"></i>
-<span class="invalid-feedback error error-email"></span>
-</div>
-<div class="form-group">
-<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password">
-<i class="input-icon field-icon icofont-ui-password"></i>
-<span class="invalid-feedback error error-password"></span>
-</div>
-<div class="form-group">
-<label for="term">
-<input id="term" type="checkbox" name="term" class="mr5">
-I have read and accept the <a href target="_blank">Terms and Privacy Policy</a>
-<span class="checkmark fcheckbox"></span>
-</label>
-<div><span class="invalid-feedback error error-term"></span></div>
-</div>
-<div class="error message-error invalid-feedback"></div>
-<div class="form-group">
-<button type="submit" class="btn btn-primary form-submit">
-Sign Up
-<span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
-</button>
-</div>
-<div class="advanced">
-<p class="text-center f14 c-grey">or continue with</p>
-<div class="row">
-<div class="col-xs-12 col-sm-4">
-<a href="https://www.facebook.com/v3.3/dialog/oauth?client_id=738807186188291&amp;redirect_uri=https%3A%2F%2Fsandbox.bookingcore.org%2Fsocial-callback%2Ffacebook&amp;scope=email&amp;response_type=code&amp;state=D0afb0pgsjhMMbAmGNxlSu9ScWVszx5d88ez6xmq" class="btn btn_login_fb_link" data-channel="facebook">
-<i class="input-icon fa fa-facebook"></i>
-Facebook
-</a>
-</div>
-<div class="col-xs-12 col-sm-4">
-<a href="https://accounts.google.com/o/oauth2/auth?client_id=240140366958-8dddnfljlqqj4jbriv22md213lhpe7e8.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fsandbox.bookingcore.org%2Fsocial-callback%2Fgoogle&amp;scope=openid+profile+email&amp;response_type=code&amp;state=TRV7mqFt7GzkLRYykfunGLB0IGI5iUvIZIdu0jFF" class="btn btn_login_gg_link" data-channel="google">
-<i class="input-icon fa fa-google"></i>
-Google
-</a>
-</div>
-<div class="col-xs-12 col-sm-4">
-<a href="social-login/twitter.html" class="btn btn_login_tw_link" data-channel="twitter">
-<i class="input-icon fa fa-twitter"></i>
-Twitter
-</a>
-</div>
-</div>
-</div>
-<div class="c-grey f14 text-center">
-Already have an account?
-<a href="#" data-target="#login" data-toggle="modal">Log In</a>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div><link rel="stylesheet" href="libs/flags/css/flag-icon.min.css">
-<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="libs/lazy-load/intersection-observer.js"></script>
-<script async src="libs/lazy-load/lazyload.min.js"></script>
-<script>
-    // Set the options to make LazyLoad self-initialize
-    window.lazyLoadOptions = {
-        elements_selector: ".lazy",
-        // ... more custom settings?
-    };
-
-    // Listen to the initialization event and get the instance of LazyLoad
-    window.addEventListener('LazyLoad::Initialized', function (event) {
-        window.lazyLoadInstance = event.detail.instance;
-    }, false);
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">14:00 AM</span><br>
+															<span class="fs-co-li">Indigo7E</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">1h 10min</span><br>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color">06: 00 AM</span><br>
+															<span class="fs-co-li">Madurai(IXM)</span>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
+														<div>
+															<span class="fs-co u-color bolder">RS.1,500</span><br>
+															<span class="fs-co-li">
+																<a href="/bus2.html"><button class="btn btn-sm a-bg" style="color: white;">Book Now</button></a>
+															</span>
+														</div>
+													</div>
+													<div class="col-md-1"></div>
+												</div>
+											</div>
+										</div>
 
 
-</script>
-<script src="libs/lodash.min.js"></script>
-<script src="libs/jquery-3.6.3.min.js"></script>
-<script src="libs/vue/vue.min.js"></script>
-<script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="libs/bootbox/bootbox.min.js"></script>
-<script src="libs/carousel-2/owl.carousel.min.js"></script>
-<script type="text/javascript" src="libs/daterange/moment.min.js"></script>
-<script type="text/javascript" src="libs/daterange/daterangepicker.min.js"></script>
-<script src="libs/select2/js/select2.min.js"></script>
-<script src="js/functions7471.js?_ver=3.2.1"></script>
-<script src="libs/pusher.min.js"></script>
-<script src="js/home7471.js?_ver=3.2.1"></script>
+									</div>
+								</div>
+								<div class="bravo-pagination">
+									<nav class="mt-2">
+										<ul class="pagination">
+											<li class="disabled page-item" aria-disabled="true" aria-label="&laquo; Previous">
+												<span aria-hidden="true" class="page-link">&lsaquo;</span>
+											</li>
+											<li class="active page-item " aria-current="page"><span class="page-link">1</span></li>
+											<li><a class="page-link" href="/hotel?page=2">2</a></li>
+											<li class="page-item">
+												<a class="page-link" href="/hotel?page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
+											</li>
+										</ul>
+									</nav>
+									<span class="count-string">Showing 1 - 9 of 14 Hotels</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bravo_footer">
+				<div class="main-footer">
+					<div class="container">
+						<div class="mt-4 p-5 text-primary text-white rounded">
+							<div class="row">
+								<div class="col-lg-3 col-md-6">
+									<div class="nav-footer">
+										<div class="title">NEED HELP?</div>
+										<div class="context">
+											<div class="contact">
+												<div class="c-title">Call Us</div>
+												<div class="sub">+ 11 111 11 1111</div>
+											</div>
+											<div class="contact">
+												<div class="c-title">Email for Us</div>					
+												<div class="sub">
+													customercare<br>@urtripo.com
+												</div>
+											</div>
+											<div class="contact">
+												<div class="c-title">Follow Us</div>
+												<div class="sub">
+													<a href="#"><i class="icofont-facebook"></i></a>
+													<a href="#"><i class="icofont-twitter"></i></a>
+													<a href="#"><i class="icofont-youtube-play"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6">
+									<div class="nav-footer">
+										<div class="title">URTRIPO AVIATION</div>
+										<div class="context">
+											<ul>
+												<li><a href="#">About Us</a></li>
+												<li><a href="#">Blog</a></li>
+												<li><a href="#">Customer Support</a></li>
+												<li><a href="#">Jobs</a></li>
+												<li><a href="#">Privacy Policy</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6">
+									<div class="nav-footer">
+										<div class="title">EXPLORE</div>
+										<div class="context">
+											<ul>
+												<li><a href="#">Airports</a></li>
+												<li><a href="#">Hotels</a></li>
+												<li><a href="#">Flights</a></li>
+												<li><a href="#">Bus</a></li>
+												<li><a href="#">Packages</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6">
+									<div class="nav-footer">
+										<div class="title">BOOK</div>
+										<div class="context">
+											<ul>
+												<li><a href="#">Resort</a></li>
+												<li><a href="#">Apartment</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="copy-right">
+					<div class="container context">
+						<div class="row">
+							<div class="col-md-12">
+								Copyright © 2023 by UrTripo Aviation
+								<div class="f-visa">UrTripo Aviation</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade login" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header">
+							<h4 class="modal-title">Log In</h4>
+							<span class="c-pointer" data-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="/images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body relative">
+							<form class="bravo-form-login" method="POST" action="/login">
+								<input type="hidden" name="redirect" value>
+								<input type="hidden" name="_token" value="zzaPBleChcMC42TW7qB8Le0kUD3LDSgdGWYq6eTm"> 
+								<div class="form-group">
+									<input type="text" class="form-control" name="email" autocomplete="off" placeholder="Email address">
+									<i class="input-icon icofont-mail"></i>
+									<span class="invalid-feedback error error-email"></span>
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password">
+									<i class="input-icon icofont-ui-password"></i>
+									<span class="invalid-feedback error error-password"></span>
+								</div>
+								<div class="form-group">
+									<div class="d-flex justify-content-between">
+										<label for="remember-me" class="mb0">
+										<input type="checkbox" name="remember" id="remember-me" value="1"> Remember me <span class="checkmark fcheckbox"></span>
+										</label>
+										<a href="/forgot-password">Forgot Password?</a>
+									</div>
+								</div>
+								<div class="error message-error invalid-feedback"></div>
+								<div class="form-group">
+									<button class="btn btn-primary form-submit" type="submit">
+									Login
+									<span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
+									</button>
+								</div>
+								<div class="advanced">
+									<p class="text-center f14 c-grey">or continue with</p>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4">
+											<a href="/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+											<i class="input-icon fa fa-facebook"></i>
+											Facebook
+											</a>
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<a href="/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+											<i class="input-icon fa fa-google"></i>
+											Google
+											</a>
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<a href="/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
+											<i class="input-icon fa fa-twitter"></i>
+											Twitter
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="c-grey font-medium f14 text-center"> Do not have an account? <a href data-target="#register" data-toggle="modal">Sign Up</a></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade login" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header">
+							<h4 class="modal-title">Sign Up</h4>
+							<span class="c-pointer" data-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="/images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body">
+							<form class="form bravo-form-register" method="post" action="/register">
+								<input type="hidden" name="_token" value="zzaPBleChcMC42TW7qB8Le0kUD3LDSgdGWYq6eTm"> 
+								<div class="row">
+									<div class="col-lg-6 col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" name="first_name" autocomplete="off" placeholder="First Name">
+											<i class="input-icon field-icon icofont-waiter-alt"></i>
+											<span class="invalid-feedback error error-first_name"></span>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" name="last_name" autocomplete="off" placeholder="Last Name">
+											<i class="input-icon field-icon icofont-waiter-alt"></i>
+											<span class="invalid-feedback error error-last_name"></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="phone" autocomplete="off" placeholder="Phone">
+									<i class="input-icon field-icon icofont-ui-touch-phone"></i>
+									<span class="invalid-feedback error error-phone"></span>
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-control" name="email" autocomplete="off" placeholder="Email address">
+									<i class="input-icon field-icon icofont-mail"></i>
+									<span class="invalid-feedback error error-email"></span>
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password">
+									<i class="input-icon field-icon icofont-ui-password"></i>
+									<span class="invalid-feedback error error-password"></span>
+								</div>
+								<div class="form-group">
+									<label for="term">
+									<input id="term" type="checkbox" name="term" class="mr5">
+									I have read and accept the <a href target="_blank">Terms and Privacy Policy</a>
+									<span class="checkmark fcheckbox"></span>
+									</label>
+									<div><span class="invalid-feedback error error-term"></span></div>
+								</div>
+								<div class="error message-error invalid-feedback"></div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-primary form-submit">
+									Sign Up
+									<span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
+									</button>
+								</div>
+								<div class="advanced">
+									<p class="text-center f14 c-grey">or continue with</p>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4">
+											<a href="/social-login/facebook" class="btn btn_login_fb_link" data-channel="facebook">
+											<i class="input-icon fa fa-facebook"></i>
+											Facebook
+											</a>
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<a href="/social-login/google" class="btn btn_login_gg_link" data-channel="google">
+											<i class="input-icon fa fa-google"></i>
+											Google
+											</a>
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<a href="/social-login/twitter" class="btn btn_login_tw_link" data-channel="twitter">
+											<i class="input-icon fa fa-twitter"></i>
+											Twitter
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="c-grey f14 text-center">
+									Already have an account?
+									<a href="#" data-target="#login" data-toggle="modal">Log In</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<link rel="stylesheet" href="/libs/flags/css/flag-icon.min.css">
+			<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/libs/lazy-load/intersection-observer.js"></script>
+			<script async src="/libs/lazy-load/lazyload.min.js"></script>
+			<script>
+				// Set the options to make LazyLoad self-initialize
+				window.lazyLoadOptions = {
+				    elements_selector: ".lazy",
+				    // ... more custom settings?
+				};				
+				// Listen to the initialization event and get the instance of LazyLoad
+				window.addEventListener('LazyLoad::Initialized', function (event) {
+				    window.lazyLoadInstance = event.detail.instance;
+				}, false);
+			</script>
+			<script src="/libs/lodash.min.js"></script>
+			<script src="/libs/jquery-3.6.3.min.js"></script>
+			<script src="/libs/vue/vue.min.js"></script>
+			<script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+			<script src="/libs/bootbox/bootbox.min.js"></script>
+			<script src="/libs/carousel-2/owl.carousel.min.js"></script>
+			<script type="text/javascript" src="/libs/daterange/moment.min.js"></script>
+			<script type="text/javascript" src="/libs/daterange/daterangepicker.min.js"></script>
+			<script src="/libs/select2/js/select2.min.js"></script>
+			<script src="/js/functions.js?_ver=3.2.1"></script>
+			<script src="/libs/pusher.min.js"></script>
+			<script src="/js/home.js?_ver=3.2.1"></script>
+			<script type="text/javascript" src="/libs/ion_rangeslider/js/ion.rangeSlider.min.js"></script>
+			<script type="text/javascript" src="/module/hotel/js/hotel.js?_ver=3.2.1"></script>
+		</div>
 
-<script src="js/cookie7471.js?_ver=3.2.1"></script>
-<script src="libs/custombox/custombox.min.js"></script>
-<script src="libs/custombox/custombox.legacy.min.js"></script>
-<script src="libs/custombox/window.modal.js"></script>
-<script type="text/javascript" src="libs/ion_rangeslider/js/ion.rangeSlider.min.js"></script>
-<script type="text/javascript" src="module/flight/js/flight7471.js?_ver=3.2.1"></script>
-<script>
-        $(document).ready(function () {
-            $.BCoreModal.init('[data-modal-target]');
-        })
-    </script>
-</div>
-
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W7B5HJJ');</script>
-
-
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7B5HJJ"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-
-<div id="fb-root"></div>
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            xfbml            : true,
-            version          : 'v3.3'
-        });
-    };
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = '../connect.facebook.net/en_US/sdk/xfbml.customerchat.html';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-
-<div class="fb-customerchat" attribution="setup_tool" page_id="2280007165584589">
-</div>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115740936-4"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-115740936-4');
-</script>
-<style>
-    .bravo-buy-button{
-        text-align: center;
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        background-color: #0072bc;
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 12px;
-        padding: 10px 20px 8px;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        font-weight: 600;
-        z-index: 99;
-    }
-    .bravo-buy-button:hover{
-        text-decoration: none;
-        color: #fff;
-    }
-    .bravo-buy-button .tf-text{
-        background-image: url('landing/img/logoen.png');
-        width: 66px;
-        height: 12px;
-        display: inline-block;
-        background-repeat: no-repeat;
-
-    }
-</style>
-
-
-</body>
-
+	</body>
 </html>
