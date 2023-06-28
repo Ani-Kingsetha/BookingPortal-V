@@ -1600,29 +1600,39 @@ select,.input-group-text,input.form-control{outline:none;border:none}
 													<div class="form-group"><label>Phone <span class="required">*</span></label> <input type="text" placeholder="Your Phone" name="phone" class="form-control"></div>
 												</div>
 												<div class="col-md-12">
-													<div class="form-actions"><button class="btn btn-danger" style="width: 100%;">Continue to Book
+													<!-- <div class="form-actions"><button class="btn btn-danger" style="width: 100%;background-color: #007BFF;">Continue to Book
 														<i class="fa fa-spin fa-spinner" style="display: none;"></i></button>
-													</div>
+													</div> -->
 												</div>
 											</div>
 										</div>
-										<div class="col-2" style="display: flex; justify-content: center; align-items: center;"><b>OR</b></div>
-										<div class="col-5" style="display: flex; justify-content: center; align-items: center;">
+										<div class="col-1" style="display: flex; justify-content: center; align-items: center;"><b>OR</b></div>
+										<div class="col-5" style="display: flex;align-items: center;width: 100%;">
 											<div class="row">
-												<div class="col-12 mb-4"><a href="https://www.facebook.com/v3.3/dialog/oauth?client_id=738807186188291&amp;redirect_uri=https%3A%2F%.org%2Fsocial-callback%2Ffacebook&amp;scope=email&amp;response_type=code&amp;state=3dUuVSSRj0otFneiCJ6b2o7mWCMTSlm8cHiueQ1O" data-channel="facebook" class="btn btn_login_fb_link"><i class="input-icon fa fa-facebook"></i>
-													Facebook
-													</a>
+												<div class="col-12 mb-4" style="width: 100%;" >
+													<!-- <a href="https://accounts.google.com/o/oauth2/auth?client_id=240140366958-8dddnfljlqqj4jbriv22md213lhpe7e8.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fsandbox.bookingcore.org%2Fsocial-callback%2Fgoogle&amp;scope=openid+profile+email&amp;response_type=code&amp;state=SmxqanJkjKP0Cb8ydnsalyXaYdJPQxJhCCOinO8T" class="btn btn_login_gg_link btn-lg" data-channel="google" style="background-color: #363198;width: 100%;border-radius: 5px;"> -->
+													<!-- <i class="input-icon fa fa-google"></i> -->
+													<!-- Google -->
+													<!-- </a> -->
+													<a href=""><button type="button" class="btn" style="background-color: #363198;color: #fff;width: 100%;">Login with Google</button></a>
 												</div>
-												<br> 
-												<div class="col-12 mb-4"><a href="https://accounts.google.com/o/oauth2/auth?client_id=240140366958-8dddnfljlqqj4jbriv22md213lhpe7e8.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%.org%2Fsocial-callback%2Fgoogle&amp;scope=openid+profile+email&amp;response_type=code&amp;state=SmxqanJkjKP0Cb8ydnsalyXaYdJPQxJhCCOinO8T" data-channel="google" class="btn btn_login_gg_link"><i class="input-icon fa fa-google"></i>
-													Google
-													</a>
+												<br>
+												<div class="col-12 mb-4" style="width: 100%;">
+													<!-- <a href="https://www.facebook.com/v3.3/dialog/oauth?client_id=738807186188291&amp;redirect_uri=https%3A%2F%2Fsandbox.bookingcore.org%2Fsocial-callback%2Ffacebook&amp;scope=email&amp;response_type=code&amp;state=3dUuVSSRj0otFneiCJ6b2o7mWCMTSlm8cHiueQ1O" class="btn btn_login_fb_link" data-channel="facebook" style="background-color: #007BFF;border-radius: 5px;"> -->
+														<!-- <i class="input-icon fa fa-facebook"></i> -->
+														<!-- Facebook -->
+													<!-- </a> -->
+													<a href=""><button type="button" class="btn" style="background-color: #007BFF;color: #fff;width: 100%;">Login with Facebook</button></a>
+				
 												</div>
-												<br> 
-												<div class="col-12 mb-4"><a href="social-login/twitter.html" data-channel="twitter" class="btn btn_login_tw_link"><i class="input-icon fa fa-twitter"></i>
+												<!-- <br> -->
+												
+												<!-- <div class="col-12 mb-4">
+													<a href="social-login/twitter.html" class="btn btn_login_tw_link" data-channel="twitter">
+													<i class="input-icon fa fa-twitter"></i>
 													Twitter
 													</a>
-												</div>
+												</div> -->
 											</div>
 										</div>
 									</div>
@@ -1630,7 +1640,7 @@ select,.input-group-text,input.form-control{outline:none;border:none}
 									<div class="booked-seat-details my-3">
 										<label>Selected Seats</label>
 										<div class="list-group seat-details-animate">
-											<span style="background:#0e9e4d !important;" class="list-group-item d-flex bg--base text-white justify-content-between">Seat Details<span>Price</span></span>
+											<span style="background:#363198 !important;" class="list-group-item d-flex bg--base text-white justify-content-between">Seat Details<span>Price</span></span>
 											<div class="selected-seat-details">
 												<span class="list-group-item d-flex justify-content-between">1-D1 <span> 10 INR</span></span>
 												<span class="list-group-item d-flex justify-content-between">1-E2 <span> 10 INR</span></span>
@@ -1640,7 +1650,7 @@ select,.input-group-text,input.form-control{outline:none;border:none}
 										</div>
 									</div>
 									<div class="col-12" style="padding:0;">
-										<button type="submit" class="book-bus-btn" style="width:100%;-webkit-appearance:button;cursor:pointer;margin-top:25px;background:#0e9e4d;color:#fff;font-weight:600;text-transform:capitalize;border-radius:5px;-webkit-transition:all ease 0.4s;transition:all ease 0.4s;line-height:1;padding:13px 30px;border:0;">Book As Guest</button>
+										<button type="submit" class="book-bus-btn" style="width:100%;-webkit-appearance:button;cursor:pointer;margin-top:25px;background:#007BFF;color:#fff;font-weight:600;text-transform:capitalize;border-radius:5px;-webkit-transition:all ease 0.4s;transition:all ease 0.4s;line-height:1;padding:13px 30px;border:0;">Book As Guest</button>
 									</div>
 								</div>
 
