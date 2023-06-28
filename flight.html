@@ -420,15 +420,29 @@ select,.input-group-text,input.form-control{outline:none;border:none}
 											</div> -->
                                             <div class="col-md-3 border-right border-top">
 												<div class="form-group">
-													<!-- <i class="field-icon fa icofont-map"></i> -->
-													<div class="form-content">
-														<label> Travellers </label>
-														<div class="smart-search">
-															<input type="text" class="smart-search-location parent_text form-control" readonly placeholder="" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; 1&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; 2&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;3&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; 4&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; 5&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; 6&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; 7&quot;}]">
-															<input type="hidden" class="child_id" name="location_id" value>
-														</div>
+
+													<div class="form-content dropdown-toggle" data-toggle="dropdown">
+													<div class="wrapper-more">
+													<label> Travelers </label>
+													<div class="render font-size-14">
+													<span class id="seat_type_eco_render">
+													<span class="one ">0 Economy</span>
+													<span class=" d-none  multi" data-html=":count Economy">0Economy</span>
+													</span>
 													</div>
-												</div>
+													</div>
+													</div>
+													<div class="dropdown-menu select-seat-type-dropdown">
+													<div class="dropdown-item-row">
+													<div class="label">Adults Economy</div>
+													<div class="val">
+													<span class="btn-minus" data-input="seat_type_eco" data-input-attr="id"><i class="icon ion-md-remove"></i></span>
+													<span class="count-display"><input id="seat_type_eco" type="number" name="seat_type[eco]" value="0" min="0"></span>
+													<span class="btn-add" data-input="seat_type_eco" data-input-attr="id"><i class="icon ion-ios-add"></i></span>
+													</div>
+													</div>
+													</div>
+													</div>
 											</div>
 										</div>
 									</div>
@@ -662,7 +676,7 @@ select,.input-group-text,input.form-control{outline:none;border:none}
 											</div>
 											
 										</div>
-                                        <div class="col-lg-12 col-md-12 mb-4" style="">
+                                        <div class="col-lg-12 col-md-12 mb-4">
                                             <div class="border border-primary bod-rad" style="border-radius:0 0 10px 10px;">
                                                 <div class="row pb-sm-3 pb-md-0" style="padding:12px 34px !important;">
                                                     <div class="col-md-2 text-center d-flex justify-content-center align-items-md-center mt-1 mb-1">
@@ -1028,9 +1042,9 @@ select,.input-group-text,input.form-control{outline:none;border:none}
 												<span aria-hidden="true" class="page-link">&lsaquo;</span>
 											</li>
 											<li class="active page-item " aria-current="page"><span class="page-link">1</span></li>
-											<li><a class="page-link" href="/hotel?page=2">2</a></li>
+											<li><a class="page-link" href="/flight.html">2</a></li>
 											<li class="page-item">
-												<a class="page-link" href="/hotel?page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
+												<a class="page-link" href="/flight.html" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
 											</li>
 										</ul>
 									</nav>
