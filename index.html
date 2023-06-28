@@ -170,8 +170,8 @@
           <li> </li>
         </ul>
         <ul>
-          <li><a href="#login" data-toggle="modal" data-target="#login">Login</a></li>
-          <li class="signup-button"><a href="#register" data-toggle="modal" data-target="#register">Sign Up</a></li>&nbsp;&nbsp;
+          <li class="mr-3"><a href="#login" data-toggle="modal" data-target="#login">Login</a></li>
+          <li class="signup-button mr-5"><a href="#register" data-toggle="modal" data-target="#register">Sign Up</a></li>&nbsp;&nbsp;
         </ul>
       </div>
 <style>
@@ -193,7 +193,7 @@
 </style>
       <div class="bravo_header">
         <div class="container-fluid" style="position: relative;">
-            <div class="content">
+            <div class="content ml-5">
                 <div class="header-left">
                     <a href="index.html" class="bravo-logo">
                     <img src="uploads/demo/general/logo.png" alt="UrTripo Aviation" height="34">
@@ -230,8 +230,14 @@
                 </div>
                 <div class="navbar-right">
                     <a href="#" class="account-icon">
-                        <i class="fa fa-user"></i>
-                        MY ACCOUNT
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fa fa-user-circle-o" style="font-size:20px"></i>
+                            </div>
+                            <div class="col-10">
+                                <p style="font-size: 15px;">MY ACCOUNT</p>
+                            </div>
+                        </div>
                       </a>
                 </div>
             </div>
@@ -284,7 +290,7 @@
 </div>
 </div>
 <div class="container-fluid">
-<div class="row">
+<div class="row ml-5">
 <div class="col-lg-8">
 <h1 class="text-heading" style="color: #363587;">START YOUR JOURNEY</h1>
 <!-- <div class="sub-heading">Where would you like to go?</div> -->
@@ -308,7 +314,7 @@
     <li role="bravo_flight">
         <a href="#bravo_flight"  class aria-controls="bravo_flight"  role="tab" data-toggle="tab" style="color:#2c2b7f;font-size:20px;background-color: transparent;">
         <!-- <i class="icofont-ui-flight"></i> -->
-       <b name="type" id="type" onclick="activate()"> Flight </b>
+       <b name="type" id="type-active" onclick="activate()"> Flight </b>
         <br></a>
         </li>
     <li role="bravo_hotel">
@@ -349,7 +355,7 @@
 <!-- </a> -->
 <!-- </li> -->
 </ul><hr>
-<div class="tab-content" >
+<div class="tab-content" style="border-radius: 10px;">
 <div role="tabpanel" class="tab-pane  active " id="bravo_hotel">
 <form action="" class="form bravo_form" method="get">
 <div class="g-field-search">
@@ -484,85 +490,207 @@
 </form> </div>
 <div role="tabpanel" class="tab-pane " id="bravo_flight">
     <!-- <hr style="background-color: yellow; size: 2px;"> -->
-<form action="/flight.html" class="form bravo_form" method="get" >
-<div class="g-field-search" style="color: #1a2b48;">
-                                        <div class="row">
-                                            <div class="col-md-2 m-2 " style=" background: #b2d6fc; padding: 7px 20px; border-radius: 15px;cursor: pointer;max-width: 30%;"><center>One way</center></div>
-                                            <div class="col-md-3 m-2" onclick="window.location.href='/flightroundtrip.html'" style="background: white; padding: 7px 20px; border-radius: 4px;cursor: pointer;"><center>Round Trip / Return</center></div>
-                                        </div>
-										<div class="row">
-											<div class="col-md-3 border-right border-top">
-												<div class="form-group">
-													<!-- <i class="field-icon fa icofont-map"></i> -->
-													<div class="form-content">
-														<label style="color: #1a2b48;"> From </label>
-														<div class="smart-search">
-															<input type="text" class="smart-search-location parent_text form-control" readonly placeholder="Location" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; Paris&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; California&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;- New York, United States&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; United States&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; Los Angeles&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; New Jersey&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; San Francisco&quot;},{&quot;id&quot;:8,&quot;title&quot;:&quot; Virginia&quot;},{&quot;id&quot;:9,&quot;title&quot;:&quot; London&quot;},{&quot;id&quot;:10,&quot;title&quot;:&quot; Germany&quot;},{&quot;id&quot;:11,&quot;title&quot;:&quot; Istanbul&quot;},{&quot;id&quot;:12,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:13,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:14,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:15,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:16,&quot;title&quot;:&quot; Naran&quot;},{&quot;id&quot;:17,&quot;title&quot;:&quot; Ha Noi&quot;}]">
-															<input type="hidden" class="child_id" name="location_id" value>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 border-right border-top">
-												<div class="form-group">
-													<!-- <i class="field-icon fa icofont-map"></i> -->
-													<div class="form-content">
-														<label style="color: #1a2b48;"> To </label>
-														<div class="smart-search">
-															<input type="text" class="smart-search-location parent_text form-control" readonly placeholder="Location" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; Paris&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; California&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;- New York, United States&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; United States&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; Los Angeles&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; New Jersey&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; San Francisco&quot;},{&quot;id&quot;:8,&quot;title&quot;:&quot; Virginia&quot;},{&quot;id&quot;:9,&quot;title&quot;:&quot; London&quot;},{&quot;id&quot;:10,&quot;title&quot;:&quot; Germany&quot;},{&quot;id&quot;:11,&quot;title&quot;:&quot; Istanbul&quot;},{&quot;id&quot;:12,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:13,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:14,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:15,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:16,&quot;title&quot;:&quot; Naran&quot;},{&quot;id&quot;:17,&quot;title&quot;:&quot; Ha Noi&quot;}]">
-															<input type="hidden" class="child_id" name="location_id" value>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-3 border-right border-top">
-												<div class="form-group">
-													<!-- <i class="field-icon icofont-wall-clock"></i> -->
-													<div class="form-content">
-														<div class="form-date-search-hotel">
-															<div class="date-wrapper">
-																<div class="check-in-wrapper">
-																	<label style="color: #1a2b48;">Departure</label>
-																	<div class="render check-in-render">06-13-2023</div>
-																</div>
-															</div>
-															<input type="hidden" class="check-in-input" value="06/13/2023" name="start">
-															<input type="text" class="check-in-out" name="date" value="2023-06-13">
-														</div>
-													</div>
-												</div>
-											</div>
-                                            <!-- <div class="col-md-2 border-right border-top">
-												<div class="form-group">
-													<i class="field-icon icofont-wall-clock"></i>
-													<div class="form-content">
-														<div class="form-date-search-hotel">
-															<div class="date-wrapper">
-																<div class="check-in-wrapper">
-																	<label>Return</label>
-																	<div class="render check-in-render">06/13/2023</div>
-																</div>
-															</div>
-															<input type="hidden" class="check-in-input" value="06/13/2023" name="start">
-															<input type="text" class="check-in-out" name="date" value="2023-06-13">
-														</div>
-													</div>
-												</div>
-											</div> -->
-                                            <div class="col-md-3 border-right border-top">
-												<div class="form-group">
-													<!-- <i class="field-icon fa icofont-map"></i> -->
-													<div class="form-content">
-														<label style="color: #1a2b48;">1 Travellers</label>
-														<div class="smart-search">
-															<input type="text" class="smart-search-location parent_text form-control" readonly placeholder="" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; 1&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; 2&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;3&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; 4&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; 5&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; 6&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; 7&quot;}]">
-															<input type="hidden" class="child_id" name="location_id" value>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+<form action="/flight.html" class="form bravo_form" method="get" style="border-radius: 10px 10px 10px 10px;">
+    <div class="g-field-search" id="onew" >
+        <div class="row">
+            <div class="col-md-2 m-2 " style=" background: #b2d6fc; color: black; padding: 7px 20px; border-radius: 15px;cursor: pointer;max-width: 30%;"><center>One way</center></div>
+            <div class="col-md-3 m-2" onclick="roundSwitch()" style="background: white; color: black; padding: 7px 20px; border-radius: 4px;cursor: pointer;"><center>Round Trip / Return</center></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 border-right border-top">
+                <div class="form-group">
+                    <!-- <i class="field-icon fa icofont-map"></i> -->
+                    <div class="form-content">
+                        <label> From </label>
+                        <div class="smart-search">
+                            <input type="text" class="smart-search-location parent_text form-control" readonly placeholder="Location" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; Paris&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; California&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;- New York, United States&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; United States&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; Los Angeles&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; New Jersey&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; San Francisco&quot;},{&quot;id&quot;:8,&quot;title&quot;:&quot; Virginia&quot;},{&quot;id&quot;:9,&quot;title&quot;:&quot; London&quot;},{&quot;id&quot;:10,&quot;title&quot;:&quot; Germany&quot;},{&quot;id&quot;:11,&quot;title&quot;:&quot; Istanbul&quot;},{&quot;id&quot;:12,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:13,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:14,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:15,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:16,&quot;title&quot;:&quot; Naran&quot;},{&quot;id&quot;:17,&quot;title&quot;:&quot; Ha Noi&quot;}]">
+                            <input type="hidden" class="child_id" name="location_id" value>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 border-right border-top">
+                <div class="form-group">
+                    <!-- <i class="field-icon fa icofont-map"></i> -->
+                    <div class="form-content">
+                        <label> To </label>
+                        <div class="smart-search">
+                            <input type="text" class="smart-search-location parent_text form-control" readonly placeholder="Location" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; Paris&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; California&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;- New York, United States&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; United States&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; Los Angeles&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; New Jersey&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; San Francisco&quot;},{&quot;id&quot;:8,&quot;title&quot;:&quot; Virginia&quot;},{&quot;id&quot;:9,&quot;title&quot;:&quot; London&quot;},{&quot;id&quot;:10,&quot;title&quot;:&quot; Germany&quot;},{&quot;id&quot;:11,&quot;title&quot;:&quot; Istanbul&quot;},{&quot;id&quot;:12,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:13,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:14,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:15,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:16,&quot;title&quot;:&quot; Naran&quot;},{&quot;id&quot;:17,&quot;title&quot;:&quot; Ha Noi&quot;}]">
+                            <input type="hidden" class="child_id" name="location_id" value>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 border-right border-top">
+                <div class="form-group">
+                    <!-- <i class="field-icon icofont-wall-clock"></i> -->
+                    <div class="form-content">
+                        <div class="form-date-search-hotel">
+                            <div class="date-wrapper">
+                                <div class="check-in-wrapper">
+                                    <label>Departure</label>
+                                    <div class="render check-in-render">06/13/2023</div>
+                                </div>
+                            </div>
+                            <input type="hidden" class="check-in-input" value="06/13/2023" name="start">
+                            <input type="text" class="check-in-out" name="date" value="2023-06-13">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-2 border-right border-top">
+                <div class="form-group">
+                    <i class="field-icon icofont-wall-clock"></i>
+                    <div class="form-content">
+                        <div class="form-date-search-hotel">
+                            <div class="date-wrapper">
+                                <div class="check-in-wrapper">
+                                    <label>Return</label>
+                                    <div class="render check-in-render">06/13/2023</div>
+                                </div>
+                            </div>
+                            <input type="hidden" class="check-in-input" value="06/13/2023" name="start">
+                            <input type="text" class="check-in-out" name="date" value="2023-06-13">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-md-3 border-right border-top">
+                <div class="form-group">
+
+                    <div class="form-content dropdown-toggle" data-toggle="dropdown">
+                    <div class="wrapper-more">
+                    <label> Travelers </label>
+                    <div class="render font-size-14">
+                    <span class id="seat_type_eco_render">
+                    <span class="one ">0 Economy</span>
+                    <span class=" d-none  multi" data-html=":count Economy">0Economy</span>
+                    </span>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="dropdown-menu select-seat-type-dropdown">
+                    <div class="dropdown-item-row">
+                    <div class="label">Adults Economy</div>
+                    <div class="val">
+                    <span class="btn-minus" data-input="seat_type_eco" data-input-attr="id"><i class="icon ion-md-remove"></i></span>
+                    <span class="count-display"><input id="seat_type_eco" type="number" name="seat_type[eco]" value="0" min="0"></span>
+                    <span class="btn-add" data-input="seat_type_eco" data-input-attr="id"><i class="icon ion-ios-add"></i></span>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="g-field-search" id="round" style="display: none;">
+        <div class="row">
+            <div class="col-md-2 m-2 "  onclick="oneSwitch()" style="background: white; color: black; padding: 7px 20px; border-radius: 4px;cursor: pointer;"><center>Oneway</center></div>
+            <div class="col-md-3 m-2" style=" background: #b2d6fc; color: black; padding: 7px 20px; border-radius: 15px;cursor: pointer;"><center>Round Trip / Return</center></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 border-right border-top">
+                <div class="form-group">
+                    <!-- <i class="field-icon fa icofont-map"></i> -->
+                    <div class="form-content">
+                        <label> From </label>
+                        <div class="smart-search">
+                            <input type="text" class="smart-search-location parent_text form-control" readonly placeholder="Location" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; Paris&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; California&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;- New York, United States&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; United States&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; Los Angeles&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; New Jersey&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; San Francisco&quot;},{&quot;id&quot;:8,&quot;title&quot;:&quot; Virginia&quot;},{&quot;id&quot;:9,&quot;title&quot;:&quot; London&quot;},{&quot;id&quot;:10,&quot;title&quot;:&quot; Germany&quot;},{&quot;id&quot;:11,&quot;title&quot;:&quot; Istanbul&quot;},{&quot;id&quot;:12,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:13,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:14,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:15,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:16,&quot;title&quot;:&quot; Naran&quot;},{&quot;id&quot;:17,&quot;title&quot;:&quot; Ha Noi&quot;}]">
+                            <input type="hidden" class="child_id" name="location_id" value>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 border-right border-top">
+                <div class="form-group">
+                    <!-- <i class="field-icon fa icofont-map"></i> -->
+                    <div class="form-content">
+                        <label> To </label>
+                        <div class="smart-search">
+                            <input type="text" class="smart-search-location parent_text form-control" readonly placeholder="Location" value data-onload="Loading..." data-default="[{&quot;id&quot;:1,&quot;title&quot;:&quot; Paris&quot;},{&quot;id&quot;:3,&quot;title&quot;:&quot; California&quot;},{&quot;id&quot;:2,&quot;title&quot;:&quot;- New York, United States&quot;},{&quot;id&quot;:4,&quot;title&quot;:&quot; United States&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot; Los Angeles&quot;},{&quot;id&quot;:6,&quot;title&quot;:&quot; New Jersey&quot;},{&quot;id&quot;:7,&quot;title&quot;:&quot; San Francisco&quot;},{&quot;id&quot;:8,&quot;title&quot;:&quot; Virginia&quot;},{&quot;id&quot;:9,&quot;title&quot;:&quot; London&quot;},{&quot;id&quot;:10,&quot;title&quot;:&quot; Germany&quot;},{&quot;id&quot;:11,&quot;title&quot;:&quot; Istanbul&quot;},{&quot;id&quot;:12,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:13,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:14,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:15,&quot;title&quot;:&quot; &quot;},{&quot;id&quot;:16,&quot;title&quot;:&quot; Naran&quot;},{&quot;id&quot;:17,&quot;title&quot;:&quot; Ha Noi&quot;}]">
+                            <input type="hidden" class="child_id" name="location_id" value>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 border-right border-top">
+                <div class="form-group">
+                    <div class="form-content">
+                        <div class="form-date-search-hotel">
+                            <div class="date-wrapper">
+                                <div class="check-in-wrapper">
+                                    <label>Departure & Return</label>
+                                    <div class="render check-in-render">06/13/2023</div>
+                                    <span> - </span>
+                                    <div class="render check-out-render">06/14/2023</div>
+                                </div>
+                            </div>
+                            <input type="hidden" class="check-in-input" value="06/13/2023" name="start">
+                            <input type="hidden" class="check-out-input" value="06/14/2023" name="end">
+                            <input type="text" class="check-in-out" name="date" value="2023-06-13 - 2023-06-14">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-2 border-right border-top">
+                <div class="form-group">
+                    <i class="field-icon icofont-wall-clock"></i>
+                    <div class="form-content">
+                        <div class="form-date-search-hotel">
+                            <div class="date-wrapper">
+                                <div class="check-in-wrapper">
+                                    <label>Return</label>
+                                    <div class="render check-in-render">06/13/2023</div>
+                                </div>
+                            </div>
+                            <input type="hidden" class="check-in-input" value="06/13/2023" name="start">
+                            <input type="text" class="check-in-out" name="date" value="2023-06-13">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-md-3 border-right border-top">
+                <div class="form-group">
+
+                    <div class="form-content dropdown-toggle" data-toggle="dropdown">
+                    <div class="wrapper-more">
+                    <label> Travelers </label>
+                    <div class="render font-size-14">
+                    <span class id="seat_type_eco_render">
+                    <span class="one ">0 Economy</span>
+                    <span class=" d-none  multi" data-html=":count Economy">0Economy</span>
+                    </span>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="dropdown-menu select-seat-type-dropdown">
+                    <div class="dropdown-item-row">
+                    <div class="label">Adults Economy</div>
+                    <div class="val">
+                    <span class="btn-minus" data-input="seat_type_eco" data-input-attr="id"><i class="icon ion-md-remove"></i></span>
+                    <span class="count-display"><input id="seat_type_eco" type="number" name="seat_type[eco]" value="0" min="0"></span>
+                    <span class="btn-add" data-input="seat_type_eco" data-input-attr="id"><i class="icon ion-ios-add"></i></span>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function roundSwitch(){
+            doc = document.getElementById("onew");
+            doc.style.display = "none";
+            doc = document.getElementById("round");
+            doc.style.display = "block";
+        }
+        function oneSwitch() {
+            doc = document.getElementById("round");
+            doc.style.display = "none";
+            doc = document.getElementById("onew");
+            doc.style.display = "block";
+        }
+    </script>
 <div class="g-button-submit">
 <button class="btn btn-primary btn-search" type="submit">Search</button>
 </div>
