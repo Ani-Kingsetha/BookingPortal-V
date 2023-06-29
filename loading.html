@@ -34,7 +34,7 @@
   top: 20%;
   left: 25%;
   width: 50%;
-  height: 70%;
+  height: 100%;
   padding: 16px;
 
   z-index: 1002;
@@ -48,14 +48,23 @@
     <div class="container">
         <div id="light" class="white_content">
             <div class="row ml-1 mr-1" style="background-color: #cceaf7;border-radius: 10px;box-shadow: 2px 2px 0px 0px #c3c3c3;border: 1px #5191fa">
-                <div class="col">
-                    <center><img src="/images/loading screen/Airplane.gif" width="80%" height="80%" alt=""></center>
+                <div class="row">
+                    <div class="ovr mt-5" style="z-index: 1;">
+                        <h5 style="color: #363198;"><center>Please wait finding best routes for you...</center></h5>
+                    </div>
+                    <div class="col">
+                        <center><img src="/images/loading screen/Airplane.gif" width="80%" height="80%" alt=""></center>
+                    </div>
                 </div>
-                <div class="ovr" style="z-index: 1;">
-                    Hey
+                <div class="row mb-5" style="z-index: 1;margin-bottom: 30%;">
+                    <div class="col-5"><h5 style="color: #363198;"><center>Chennai(MAA)</center></h5></div>
+                    <div class="col-2"></div>
+                    <div class="col-5"><h5 style="color: #363198;"><center>Madurai(IXM)</center></h5></div>
                 </div>
             </div>
+            
         </div>
+
     </div>
     <div id="fade" class="black_overlay"></div>
 </body>
