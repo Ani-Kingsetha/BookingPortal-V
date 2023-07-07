@@ -1,0 +1,906 @@
+<html lang="en" class="">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- CSRF Token -->
+		<link rel="icon" type="image/png" href="/uploads/demo/general/favicon.png">
+		<title>Booking History - Urtripo Aviation</title>
+		<meta name="description" content="">
+		<link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="/libs/ionicons/css/ionicons.min.css" rel="stylesheet">
+		<link href="/libs/icofont/icofont.min.css" rel="stylesheet">
+		<link href="/dist/frontend/css/notification.css" rel="newest stylesheet">
+		<link href="/dist/frontend/css/app.css?_ver=3.2.1" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/libs/daterange/daterangepicker.css">
+		<link rel="stylesheet" type="text/css" href="/libs/select2/css/select2.min.css">
+		<!-- Fonts -->
+		<link rel="dns-prefetch" href="//fonts.gstatic.com">
+		<link rel="stylesheet" id="google-font-css-css" href="https://fonts.googleapis.com/css?family=Poppins%3A400%2C500%2C600" type="text/css" media="all">
+		<link href="/dist/frontend/module/user/css/user.css?_ver=3.2.1" rel="stylesheet">
+		<!-- Styles -->
+		<style type="text/css">
+			
+			.bravo_topbar,
+			.bravo_header,
+			.bravo_footer {
+			display: none;
+			}
+			html,
+			body,
+			.bravo_wrap,
+			.bravo_user_profile,
+			.bravo_user_profile>.container-fluid>.row-eq-height>.col-md-3 {
+			min-height: 100vh !important;
+			}
+			
+body {font-family: poppins;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: none
+  
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #5191FA;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+/* Style the close button */
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.topright:hover {color: red;}
+		</style>
+		<link href="/custom-css" rel="stylesheet">
+		<link href="/libs/carousel-2/owl.carousel.css" rel="stylesheet">
+		<style>
+			.phpdebugbar pre.sf-dump {
+			display: block;
+			white-space: pre;
+			padding: 5px;
+			overflow: initial !important;
+			}
+			.phpdebugbar pre.sf-dump:after {
+			content: "";
+			visibility: hidden;
+			display: block;
+			height: 0;
+			clear: both;
+			}
+			.phpdebugbar pre.sf-dump span {
+			display: inline;
+			}
+			.phpdebugbar pre.sf-dump a {
+			text-decoration: none;
+			cursor: pointer;
+			border: 0;
+			outline: none;
+			color: inherit;
+			}
+			.phpdebugbar pre.sf-dump img {
+			max-width: 50em;
+			max-height: 50em;
+			margin: .5em 0 0 0;
+			padding: 0;
+			background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAHUlEQVQY02O8zAABilCaiQEN0EeA8QuUcX9g3QEAAjcC5piyhyEAAAAASUVORK5CYII=) #D3D3D3;
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-ellipsis {
+			display: inline-block;
+			overflow: visible;
+			text-overflow: ellipsis;
+			max-width: 5em;
+			white-space: nowrap;
+			overflow: hidden;
+			vertical-align: top;
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-ellipsis+.sf-dump-ellipsis {
+			max-width: none;
+			}
+			.phpdebugbar pre.sf-dump code {
+			display: inline;
+			padding: 0;
+			background: none;
+			}
+			.sf-dump-public.sf-dump-highlight,
+			.sf-dump-protected.sf-dump-highlight,
+			.sf-dump-private.sf-dump-highlight,
+			.sf-dump-str.sf-dump-highlight,
+			.sf-dump-key.sf-dump-highlight {
+			background: rgba(111, 172, 204, 0.3);
+			border: 1px solid #7DA0B1;
+			border-radius: 3px;
+			}
+			.sf-dump-public.sf-dump-highlight-active,
+			.sf-dump-protected.sf-dump-highlight-active,
+			.sf-dump-private.sf-dump-highlight-active,
+			.sf-dump-str.sf-dump-highlight-active,
+			.sf-dump-key.sf-dump-highlight-active {
+			background: rgba(253, 175, 0, 0.4);
+			border: 1px solid #ffa500;
+			border-radius: 3px;
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-search-hidden {
+			display: none !important;
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-search-wrapper {
+			font-size: 0;
+			white-space: nowrap;
+			margin-bottom: 5px;
+			display: flex;
+			position: -webkit-sticky;
+			position: sticky;
+			top: 5px;
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-search-wrapper>* {
+			vertical-align: top;
+			box-sizing: border-box;
+			height: 21px;
+			font-weight: normal;
+			border-radius: 0;
+			background: #FFF;
+			color: #757575;
+			border: 1px solid #BBB;
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-search-wrapper>input.sf-dump-search-input {
+			padding: 3px;
+			height: 21px;
+			font-size: 12px;
+			border-right: none;
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+			color: #000;
+			min-width: 15px;
+			width: 100%;
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-search-wrapper>.sf-dump-search-input-next,
+			.phpdebugbar pre.sf-dump .sf-dump-search-wrapper>.sf-dump-search-input-previous {
+			background: #F2F2F2;
+			outline: none;
+			border-left: none;
+			font-size: 0;
+			line-height: 0;
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-search-wrapper>.sf-dump-search-input-next {
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-search-wrapper>.sf-dump-search-input-next>svg,
+			.phpdebugbar pre.sf-dump .sf-dump-search-wrapper>.sf-dump-search-input-previous>svg {
+			pointer-events: none;
+			width: 12px;
+			height: 12px;
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-search-wrapper>.sf-dump-search-count {
+			display: inline-block;
+			padding: 0 5px;
+			margin: 0;
+			border-left: none;
+			line-height: 21px;
+			font-size: 12px;
+			}
+			.phpdebugbar pre.sf-dump,
+			.phpdebugbar pre.sf-dump .sf-dump-default {
+			word-wrap: break-word;
+			white-space: pre-wrap;
+			word-break: normal
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-num {
+			font-weight: bold;
+			color: #1299DA
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-const {
+			font-weight: bold
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-str {
+			font-weight: bold;
+			color: #3A9B26
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-note {
+			color: #1299DA
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-ref {
+			color: #7B7B7B
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-public {
+			color: #000000
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-protected {
+			color: #000000
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-private {
+			color: #000000
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-meta {
+			color: #B729D9
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-key {
+			color: #3A9B26
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-index {
+			color: #1299DA
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-ellipsis {
+			color: #A0A000
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-ns {
+			user-select: none;
+			}
+			.phpdebugbar pre.sf-dump .sf-dump-ellipsis-note {
+			color: #1299DA
+			}
+		</style>
+		<style type="text/css">@font-face {
+			font-family: poppins;
+			src:  url('https://cdn.scaleflex.it/plugins/filerobot-image-editor/assets/fonts/filerobot-image-editor-font/v5/filerobot-image-editor-font.eot?ua0hzun3');
+			src:  url('https://cdn.scaleflex.it/plugins/filerobot-image-editor/assets/fonts/filerobot-image-editor-font/v5/filerobot-image-editor-font.eot?ua0hzun3#iefix') format('embedded-opentype'),
+			url('https://cdn.scaleflex.it/plugins/filerobot-image-editor/assets/fonts/filerobot-image-editor-font/v5/filerobot-image-editor-font.ttf?ua0hzun3') format('truetype'),
+			url('https://cdn.scaleflex.it/plugins/filerobot-image-editor/assets/fonts/filerobot-image-editor-font/v5/filerobot-image-editor-font.woff?ua0hzun3') format('woff'),
+			url('https://cdn.scaleflex.it/plugins/filerobot-image-editor/assets/fonts/filerobot-image-editor-font/v5/filerobot-image-editor-font.svg?ua0hzun3#filerobot-image-editor-font') format('svg');
+			font-weight: normal;
+			font-style: normal;
+			}
+			[class^="sf-i-"], [class*=" sf-i-"] {
+			/* use !important to prevent issues with browser extensions that change fonts */
+			font-family: poppins;
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			/* Better Font Rendering =========== */
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			}
+			.sf-i-shape:before {
+			content: "\E91B";
+			}
+			.sf-i-image:before {
+			content: "\E91A";
+			}
+			.sf-i-focus-point:before {
+			content: "\E919";
+			}
+			.sf-i-watermark:before {
+			content: "\E918";
+			}
+			.sf-i-attention:before {
+			content: "\E917";
+			}
+			.sf-i-reset:before {
+			content: "\E912";
+			}
+			.sf-i-rotate-right:before {
+			content: "\E913";
+			}
+			.sf-i-flip-vertically:before {
+			content: "\E914";
+			}
+			.sf-i-rotate-left:before {
+			content: "\E915";
+			}
+			.sf-i-flip-horizontally:before {
+			content: "\E916";
+			}
+			.sf-i-arrows-back:before {
+			content: "\E905";
+			}
+			.sf-i-arrows-forward:before {
+			content: "\E906";
+			}
+			.sf-i-filter:before {
+			content: "\E904";
+			}
+			.sf-i-minus:before {
+			content: "\E910";
+			}
+			.sf-i-plus:before {
+			content: "\E911";
+			}
+			.sf-i-effects:before {
+			content: "\E900";
+			}
+			.sf-i-crop:before {
+			content: "\E901";
+			}
+			.sf-i-rotation-left:before {
+			content: "\E902";
+			}
+			.sf-i-mirror-vertical:before {
+			content: "\E903";
+			}
+			.sf-i-resize:before {
+			content: "\E907";
+			}
+			.sf-i-rotation-right:before {
+			content: "\E908";
+			}
+			.sf-i-mirrot-horizontal:before {
+			content: "\E909";
+			}
+			.sf-i-adjust:before {
+			content: "\E90A";
+			}
+			.sf-i-orientation:before {
+			content: "\E90B";
+			}
+			.sf-i-cross:before {
+			content: "\E90C";
+			}
+			.sf-i-point-orientation:before {
+			content: "\E90D";
+			}
+			.sf-i-link:before {
+			content: "\E90E";
+			}
+			.sf-i-without-link:before {
+			content: "\E90F";
+			}
+		</style>
+	</head>
+	<body class="user-page  ">
+		<div class="bravo_wrap">
+			<div class="bravo_header">
+				<div class="container">
+					<div class="content">
+						<div class="header-left">
+							<a href="" class="bravo-logo">
+							<img src="/uploads/demo/general/logo.svg" alt="Urtripo">
+							</a>
+							<div class="bravo-menu">
+								<ul class="main-menu menu-generated">
+									<li class=" depth-0">
+										<a target="" href="/">Home <i class="caret fa fa-angle-down"></i></a>
+										<ul class="children-menu menu-dropdown">
+											<li class=" depth-1"><a target="" href="/">Home Page</a></li>
+											<li class=" depth-1"><a target="" href="/page/home-page-v2">Home Page v2</a></li>
+											<li class=" depth-1"><a target="" href="/page/hotel">Home Hotel</a></li>
+											<li class=" depth-1"><a target="" href="/page/home-tour-agency">Home Tour Agency</a></li>
+											<li class=" depth-1"><a target="" href="/page/tour">Home Tour</a></li>
+											<li class=" depth-1"><a target="" href="/page/space">Home Space</a></li>
+											<li class=" depth-1"><a target="" href="/page/car">Home Car</a></li>
+										</ul>
+									</li>
+									<li class=" depth-0">
+										<a target="" href="/hotel">Hotel <i class="caret fa fa-angle-down"></i></a>
+										<ul class="children-menu menu-dropdown">
+											<li class=" depth-1"><a target="" href="/hotel">Hotel List</a></li>
+											<li class=" depth-1"><a target="" href="/hotel?_layout=map">Hotel Map</a></li>
+											<li class=" depth-1"><a target="" href="/hotel/parian-holiday-villas">Hotel Detail</a></li>
+										</ul>
+									</li>
+									<li class=" depth-0">
+										<a target="" href="/tour">Tours <i class="caret fa fa-angle-down"></i></a>
+										<ul class="children-menu menu-dropdown">
+											<li class=" depth-1"><a target="" href="/tour">Tour List</a></li>
+											<li class=" depth-1"><a target="" href="/tour?_layout=map">Tour Map</a></li>
+											<li class=" depth-1"><a target="" href="/tour/paris-vacation-travel">Tour Detail</a></li>
+										</ul>
+									</li>
+									<li class=" depth-0">
+										<a target="" href="/space">Space <i class="caret fa fa-angle-down"></i></a>
+										<ul class="children-menu menu-dropdown">
+											<li class=" depth-1"><a target="" href="/space">Space List</a></li>
+											<li class=" depth-1"><a target="" href="/space?_layout=map">Space Map</a></li>
+											<li class=" depth-1"><a target="" href="/space/stay-greenwich-village">Space Detail</a></li>
+										</ul>
+									</li>
+									<li class=" depth-0">
+										<a target="" href="/car">Car <i class="caret fa fa-angle-down"></i></a>
+										<ul class="children-menu menu-dropdown">
+											<li class=" depth-1"><a target="" href="/car">Car List</a></li>
+											<li class=" depth-1"><a target="" href="/car?_layout=map">Car Map</a></li>
+											<li class=" depth-1"><a target="" href="/car/vinfast-lux-a20-plus">Car Detail</a></li>
+										</ul>
+									</li>
+									<li class=" depth-0">
+										<a target="" href="/event">Event <i class="caret fa fa-angle-down"></i></a>
+										<ul class="children-menu menu-dropdown">
+											<li class=" depth-1"><a target="" href="/event">Event List</a></li>
+											<li class=" depth-1"><a target="" href="/event?_layout=map">Event Map</a></li>
+											<li class=" depth-1"><a target="" href="/event/aspen-glade-weddings-events">Event Detail</a></li>
+										</ul>
+									</li>
+									<li class=" depth-0"><a target="" href="/flight">Flight</a></li>
+									<li class=" depth-0">
+										<a target="" href="/boat">Boat <i class="caret fa fa-angle-down"></i></a>
+										<ul class="children-menu menu-dropdown">
+											<li class=" depth-1"><a target="" href="/boat">Boat List</a></li>
+											<li class=" depth-1"><a target="" href="/boat?_layout=map">Boat Map</a></li>
+											<li class=" depth-1"><a target="" href="/boat/blue-moon-yc-300">Boat Detail</a></li>
+										</ul>
+									</li>
+									<li class=" depth-0">
+										<a target="" href="#">Pages <i class="caret fa fa-angle-down"></i></a>
+										<ul class="children-menu menu-dropdown">
+											<li class=" depth-1"><a target="" href="/plan">Plan</a></li>
+											<li class=" depth-1"><a target="" href="/news">News List</a></li>
+											<li class=" depth-1"><a target="" href="/news/morning-in-the-northern-sea">News Detail</a></li>
+											<li class=" depth-1"><a target="" href="/location/paris">Location Detail</a></li>
+											<li class=" depth-1"><a target="" href="/page/become-a-vendor">Become a vendor</a></li>
+											<li class=" depth-1"><a target="" href="/contact">Contact</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="header-right">
+							<button class="bravo-more-menu">
+							<i class="fa fa-bars"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="bravo-menu-mobile" style="display:none;">
+					<div class="user-profile">
+						<div class="b-close"><i class="icofont-scroll-left"></i></div>
+						<div class="avatar"></div>
+						<ul>
+							<li>
+								<a href="/user/profile">
+								<i class="icofont-user-suited"></i> Hi, Ani
+								</a>
+							</li>
+							<li><a href="/user/dashboard"><i class="icon ion-md-analytics"></i> Vendor Dashboard</a></li>
+							<li>
+								<a href="/admin"><i class="icon ion-ios-ribbon"></i> Admin Dashboard</a>
+							</li>
+							<li>
+								<a href="/user/profile">
+								<i class="icon ion-md-construct"></i> My profile
+								</a>
+							</li>
+							<li>
+								<a href="#" onclick="event.preventDefault(); document.getElementById('logout-form-mobile').submit();">
+								<i class="fa fa-sign-out"></i> Logout
+								</a>
+								<form id="logout-form-mobile" action="/logout" method="POST" style="display: none;">
+									<input type="hidden" name="_token" value="BjzUXF3o5pMAk2DtpqgblwLQEBvDtqwtwwogrXOP">
+								</form>
+							</li>
+						</ul>
+						<ul class="multi-lang">
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="is_login">
+								USD
+								<i class="fa fa-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu text-left width-auto">
+									<li>
+										<a href="/user/profile/change-password?set_currency=eur" class="is_login">
+										EUR
+										</a>
+									</li>
+									<li>
+										<a href="/user/profile/change-password?set_currency=jpy" class="is_login">
+										JPY
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="multi-lang">
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="is_login">
+								<span class="flag-icon flag-icon-gb"></span>
+								English
+								<i class="fa fa-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu text-left">
+									<li>
+										<a href="/user/profile/change-password?set_lang=tr" class="is_login">
+										<span class="flag-icon flag-icon-tr"></span>
+										Türkçe
+										</a>
+									</li>
+									<li>
+										<a href="/user/profile/change-password?set_lang=ar" class="is_login">
+										<span class="flag-icon flag-icon-ar"></span>
+										عربي
+										</a>
+									</li>
+									<li>
+										<a href="/user/profile/change-password?set_lang=twq" class="is_login">
+										<span class="flag-icon flag-icon-fa"></span>
+										tamil
+										</a>
+									</li>
+									<li>
+										<a href="/user/profile/change-password?set_lang=id" class="is_login">
+										<span class="flag-icon flag-icon-id"></span>
+										indonesia
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="g-menu" style="max-height: 595px;">
+						<ul class="main-menu menu-generated">
+							<li class=" depth-0">
+								<a target="" href="/">Home <i class="caret fa fa-angle-down"></i></a>
+								<ul class="children-menu menu-dropdown">
+									<li class=" depth-1"><a target="" href="/">Home Page</a></li>
+									<li class=" depth-1"><a target="" href="/page/home-page-v2">Home Page v2</a></li>
+									<li class=" depth-1"><a target="" href="/page/hotel">Home Hotel</a></li>
+									<li class=" depth-1"><a target="" href="/page/home-tour-agency">Home Tour Agency</a></li>
+									<li class=" depth-1"><a target="" href="/page/tour">Home Tour</a></li>
+									<li class=" depth-1"><a target="" href="/page/space">Home Space</a></li>
+									<li class=" depth-1"><a target="" href="/page/car">Home Car</a></li>
+								</ul>
+							</li>
+							<li class=" depth-0">
+								<a target="" href="/hotel">Hotel <i class="caret fa fa-angle-down"></i></a>
+								<ul class="children-menu menu-dropdown">
+									<li class=" depth-1"><a target="" href="/hotel">Hotel List</a></li>
+									<li class=" depth-1"><a target="" href="/hotel?_layout=map">Hotel Map</a></li>
+									<li class=" depth-1"><a target="" href="/hotel/parian-holiday-villas">Hotel Detail</a></li>
+								</ul>
+							</li>
+							<li class=" depth-0">
+								<a target="" href="/tour">Tours <i class="caret fa fa-angle-down"></i></a>
+								<ul class="children-menu menu-dropdown">
+									<li class=" depth-1"><a target="" href="/tour">Tour List</a></li>
+									<li class=" depth-1"><a target="" href="/tour?_layout=map">Tour Map</a></li>
+									<li class=" depth-1"><a target="" href="/tour/paris-vacation-travel">Tour Detail</a></li>
+								</ul>
+							</li>
+							<li class=" depth-0">
+								<a target="" href="/space">Space <i class="caret fa fa-angle-down"></i></a>
+								<ul class="children-menu menu-dropdown">
+									<li class=" depth-1"><a target="" href="/space">Space List</a></li>
+									<li class=" depth-1"><a target="" href="/space?_layout=map">Space Map</a></li>
+									<li class=" depth-1"><a target="" href="/space/stay-greenwich-village">Space Detail</a></li>
+								</ul>
+							</li>
+							<li class=" depth-0">
+								<a target="" href="/car">Car <i class="caret fa fa-angle-down"></i></a>
+								<ul class="children-menu menu-dropdown">
+									<li class=" depth-1"><a target="" href="/car">Car List</a></li>
+									<li class=" depth-1"><a target="" href="/car?_layout=map">Car Map</a></li>
+									<li class=" depth-1"><a target="" href="/car/vinfast-lux-a20-plus">Car Detail</a></li>
+								</ul>
+							</li>
+							<li class=" depth-0">
+								<a target="" href="/event">Event <i class="caret fa fa-angle-down"></i></a>
+								<ul class="children-menu menu-dropdown">
+									<li class=" depth-1"><a target="" href="/event">Event List</a></li>
+									<li class=" depth-1"><a target="" href="/event?_layout=map">Event Map</a></li>
+									<li class=" depth-1"><a target="" href="/event/aspen-glade-weddings-events">Event Detail</a></li>
+								</ul>
+							</li>
+							<li class=" depth-0"><a target="" href="/flight">Flight</a></li>
+							<li class=" depth-0">
+								<a target="" href="/boat">Boat <i class="caret fa fa-angle-down"></i></a>
+								<ul class="children-menu menu-dropdown">
+									<li class=" depth-1"><a target="" href="/boat">Boat List</a></li>
+									<li class=" depth-1"><a target="" href="/boat?_layout=map">Boat Map</a></li>
+									<li class=" depth-1"><a target="" href="/boat/blue-moon-yc-300">Boat Detail</a></li>
+								</ul>
+							</li>
+							<li class=" depth-0">
+								<a target="" href="#">Pages <i class="caret fa fa-angle-down"></i></a>
+								<ul class="children-menu menu-dropdown">
+									<li class=" depth-1"><a target="" href="/plan">Plan</a></li>
+									<li class=" depth-1"><a target="" href="/news">News List</a></li>
+									<li class=" depth-1"><a target="" href="/news/morning-in-the-northern-sea">News Detail</a></li>
+									<li class=" depth-1"><a target="" href="/location/paris">Location Detail</a></li>
+									<li class=" depth-1"><a target="" href="/page/become-a-vendor">Become a vendor</a></li>
+									<li class=" depth-1"><a target="" href="/contact">Contact</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="bravo_user_profile">
+				<div class="container-fluid">
+					<div class="row row-eq-height">
+						<div class="col-md-3" id="menu" style="background: #363587;">
+							<div class="sidebar-user">
+								<div class="bravo-close-menu-user"><i class="icofont-scroll-left"></i></div>
+								<div class="logo">
+									<div class="avatar avatar-cover" style="background-image: url('/images/avatar.png')"></div>
+								</div>
+								<div class="user-profile-avatar" style="
+									background: #363587 !important;
+									">
+									<div class="info-new">
+										<span class="role-name badge badge-info" style="
+											background-color: #5191fa;
+											padding: 12px 20px;
+											">customer</span>
+										<h5>Ani</h5>
+										<p>Member Since Jun 2023</p>
+									</div>
+								</div>
+								<div class="user-profile-plan" style="
+									background: #363587 !important;
+									border: 0;
+									">
+								</div>
+								<div class="sidebar-menu" style="
+									border: 0;
+									">
+									<ul class="main-menu">
+										
+										<li class="active" position="20">
+											<a href="/user/booking-history">
+											<span class="icon text-center"><i class="fa fa-clock-o"></i></span>
+											Booking History
+											</a>
+										</li>
+	
+										<li class="" position="22">
+											<a href="/user/profile">
+											<span class="icon text-center"><i class="fa fa-cogs"></i></span>
+											My Profile
+											</a>
+										</li>
+                                        <li class="" position="85">
+											<a href="/user/verification">
+											<span class="icon text-center"><i class="fa fa-handshake-o"></i></span>
+											Verifications
+											</a>
+										</li>
+                                        <li class="" position="100">
+											<a href="/user/profile/change-password">
+											<span class="icon text-center"><i class="fa fa-lock"></i></span>
+											Change password
+											</a>
+										</li></ul>
+								</div>
+								<div class="logout">
+									<form id="logout-form-vendor" action="/logout" method="POST" style="display: none;">
+										<input type="hidden" name="_token" value="BjzUXF3o5pMAk2DtpqgblwLQEBvDtqwtwwogrXOP">
+									</form>
+									<a href="#" onclick="event.preventDefault(); document.getElementById('logout-form-vendor').submit();"><i class="fa fa-sign-out"></i> Log Out
+									</a>
+								</div>
+								<div class="logout">
+									<a href="index.html" style="color: #1ABC9C"><i class="fa fa-long-arrow-left"></i> Back to Homepage</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-9">
+							<div class="user-form-settings" >
+								<div class="breadcrumb-page-bar" aria-label="breadcrumb">
+									<div class="bravo-more-menu-user">
+										<i class="icofont-settings"></i>
+									</div>
+								</div>
+								<h2 class="title-bar">
+									Booking History
+								</h2>
+								
+<div class="tab">
+	<button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Booking</button>
+	<button class="tablinks" onclick="openCity(event, 'Paris')">&nbsp;&nbsp;&nbsp;&nbsp;Completed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+	<button class="tablinks" onclick="openCity(event, 'Tokyo')">&nbsp;&nbsp;&nbsp;&nbsp;Confirmed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+	<button class="tablinks" onclick="openCity(event, 'Tokyo')">&nbsp;&nbsp;&nbsp;&nbsp;Cancelled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+  </div>
+  
+  <div id="London" class="tabcontent">
+	<span onclick="this.parentElement.style.display='none'" class="topright"></span>
+	<h3>Partial Payment</h3><br>
+	<p>No Booking History</p><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+  
+  <div id="Paris" class="tabcontent">
+	<span onclick="this.parentElement.style.display='none'" class="topright"></span>
+	<h3>Partial Payment</h3><br>
+	<p>No Booking History</p> <br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+  
+  <div id="Tokyo" class="tabcontent">
+	<span onclick="this.parentElement.style.display='none'" class="topright"></span>
+	<h3>Partial Payment</h3><br>
+	<p>No Booking History</p><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+  
+  <div id="Tokyoo" class="tabcontent">
+	<span onclick="this.parentElement.style.display='none'" class="topright"></span>
+	<h3>Partial Payment</h3><br>
+	<p>No Booking History</p><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+  <script>
+  function openCity(evt, cityName) {
+	var i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+	  tabcontent[i].style.display = "none";
+	}
+	tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) {
+	  tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+	document.getElementById(cityName).style.display = "block";
+	evt.currentTarget.className += " active";
+  }
+  
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  </script>
+	 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bravo_footer">
+				<div class="mailchimp">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 col-lg-10 col-lg-offset-1">
+								<div class="row">
+									<div class="col-xs-12  col-md-7 col-lg-6">
+										<div class="media ">
+											<div class="media-left hidden-xs">
+												<i class="icofont-island-alt"></i>
+											</div>
+											<div class="media-body">
+												<h4 class="media-heading">Get Updates &amp; More</h4>
+												<p>Thoughtful thoughts to your inbox</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-md-5 col-lg-6">
+										<form action="/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
+											<input type="hidden" name="_token" value="BjzUXF3o5pMAk2DtpqgblwLQEBvDtqwtwwogrXOP">
+											<div class="form-group">
+												<input type="text" name="email" class="form-control email-input" placeholder="Your Email">
+												<button type="submit" class="btn-submit">Subscribe
+												<i class="fa fa-spinner fa-pulse fa-fw"></i>
+												</button>
+											</div>
+											<div class="form-mess"></div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-3 col-md-6">
+								<div class="nav-footer">
+									<div class="title">
+										NEED HELP?
+									</div>
+									<div class="context">
+										<div class="contact">
+											<div class="c-title">
+												Call Us
+											</div>
+											<div class="sub">
+												+ 00 222 44 5678
+											</div>
+										</div>
+										<div class="contact">
+											<div class="c-title">
+												Email for Us
+											</div>
+											<div class="sub">
+												hello@yoursite.com
+											</div>
+										</div>
+										<div class="contact">
+											<div class="c-title">
+												Follow Us
+											</div>
+											<div class="sub">
+												<a href="#">
+												<i class="icofont-facebook"></i>
+												</a>
+												<a href="#">
+												<i class="icofont-twitter"></i>
+												</a>
+												<a href="#">
+												<i class="icofont-youtube-play"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6">
+								<div class="nav-footer">
+									<div class="title">
+										COMPANY
+									</div>
+									<div class="context">
+										<ul>
+											<li><a href="#">About Us</a></li>
+											<li><a href="#">Community Blog</a></li>
+											<li><a href="#">Rewards</a></li>
+											<li><a href="#">Work with Us</a></li>
+											<li><a href="#">Meet the Team</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6">
+								<div class="nav-footer">
+									<div class="title">
+										SUPPORT
+									</div>
+									<div class="context">
+										<ul>
+											<li><a href="#">Account</a></li>
+											<li><a href="#">Legal</a></li>
+											<li><a href="#">Contact</a></li>
+											<li><a href="#">Affiliate Program</a></li>
+											<li><a href="#">Privacy Policy</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6">
+								<div class="nav-footer">
+									<div class="title">
+										SETTINGS
+									</div>
+									<div class="context">
+										<ul>
+											<li><a href="#">Setting 1</a></li>
+											<li><a href="#">Setting 2</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="copy-right">
+					<div class="container context">
+						<div class="row">
+							<div class="col-md-12">
+								Copyright © 2023 by Urtripo Aviation
+								<div class="f-visa">
+									Urtripo Aviation
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<link rel="stylesheet" href="/libs/flags/css/flag-icon.min.css">
+		</div>
+	<script src="/libs/jquery-3.6.3.min.js"></script>
+	<script src="/js/home.js?_ver=3.2.1"></script>
+	</body>
+</html>
