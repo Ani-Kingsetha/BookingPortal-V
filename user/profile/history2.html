@@ -709,35 +709,23 @@ body {font-family: poppins;
                                     <div class="tabbable">
                                         <ul class="nav nav-tabs ht-nav-tabs">
                                             <li class=" active ">
-                                                <a onclick="ChangeTab('all')">All Booking</a>
+                                                <a onclick="ChangeTab('All')">All Booking</a>
                                             </li>
                                             <li class="">
-                                                <a onclick="ChangeTab('all')">Completed</a>
+                                                <a onclick="ChangeTab('Completed')">Completed</a>
                                             </li>
                                             <li class="">
-                                                <a href="https://sandbox.bookingcore.co/user/booking-history?status=processing">Processing</a>
+                                                <a onclick="ChangeTab('Confirmed')">Confirmed</a>
                                             </li>
                                             <li class="">
-                                                <a href="https://sandbox.bookingcore.co/user/booking-history?status=confirmed">Confirmed</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="https://sandbox.bookingcore.co/user/booking-history?status=cancelled">Cancelled</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="https://sandbox.bookingcore.co/user/booking-history?status=paid">Paid</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="https://sandbox.bookingcore.co/user/booking-history?status=unpaid">Unpaid</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="https://sandbox.bookingcore.co/user/booking-history?status=partial_payment">Partial Payment</a>
+                                                <a onclick="ChangeTab('Cancelled')">Cancelled</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
                                             <div id="all">
                                                 No Booking History
                                             </div>
-                                            <div id="completed">
+                                            <div id="completed" style="display: none;">
                                                 No Completed Booking History
                                             </div>
                                         </div>
