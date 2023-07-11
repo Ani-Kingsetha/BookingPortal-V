@@ -3,7 +3,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- CSRF Token -->
-		<link rel="icon" type="image/png" href="/uploads/demo/general/favicon.png">
+		<link rel="icon" type="image/png" href="">
 		<title>Change Password - Urtripo Aviation</title>
 		<meta name="description" content="">
 		<link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -605,32 +605,31 @@
 									border: 0;
 									">
 									<ul class="main-menu">
-										
 										<li class="" position="20">
-											<a href="/user/booking-history">
+											<a href="/user/profile/history.html">
 											<span class="icon text-center"><i class="fa fa-clock-o"></i></span>
 											Booking History
 											</a>
 										</li>
-	
 										<li class="" position="22">
-											<a href="/user/profile">
+											<a href="/user/profile/my-profile.html">
 											<span class="icon text-center"><i class="fa fa-cogs"></i></span>
 											My Profile
 											</a>
 										</li>
-                                        <li class="active" position="85">
-											<a href="/user/verification">
+										<li class="active" position="85">
+											<a href="/user/profile/verification.html">
 											<span class="icon text-center"><i class="fa fa-handshake-o"></i></span>
 											Verifications
 											</a>
 										</li>
-                                        <li class="" position="100">
-											<a href="/user/profile/change-password">
+										<li class="" position="100">
+											<a href="/user/profile/change-password.html">
 											<span class="icon text-center"><i class="fa fa-lock"></i></span>
 											Change password
 											</a>
-										</li></ul>
+										</li>
+									</ul>
 								</div>
 								<div class="logout">
 									<form id="logout-form-vendor" action="/logout" method="POST" style="display: none;">
@@ -646,50 +645,83 @@
 						</div>
 						<div class="col-md-9">
 							<div class="user-form-settings">
-								<div class="breadcrumb-page-bar" aria-label="breadcrumb">
-									<div class="bravo-more-menu-user">
-										<i class="icofont-settings"></i>
-									</div>
-								</div>
-								<h2 class="title-bar">
-									Verification
-								</h2>
-								<form action="/user/verification" method="post">
-                                    
-									<div class="row">
-										<div class="col-md-6">
-                                            <div class="form-title">
-                                                <strong>Verification data</strong>
-                                            </div>
-											<div class="row" style="padding: 4%;padding-left: 40%;">
-                                                <div class="col"><h5>Phone : </h5></div>
-                                                <div class="col d-flex justify-content-end" >
-                                                    <h4><strong>N/A</strong></h4>                                                  
-                                                </div>
-                                            </div>
-                                            <div class="row" style="padding: 4%;padding-left: 40%;">
-                                                <div class="col"><h5>ID Card : </h5></div>
-                                                <div class="col d-flex justify-content-end" >
-                                                    <h4><strong>N/A</strong></h4>
-                                                </div>
-                                            </div>
-                                            <div class="row" style="padding: 4%;padding-left: 40%;">
-                                                <div class="col"><h5>License : </h5></div>
-                                                <div class="col d-flex justify-content-end" >
-                                                    <h4><strong>N/A</strong></h4>
-                                                </div>
-                                            </div>
-										</div>
-
-										<div class="col-md-12">
-                                            <div class="row" style="padding: 4%;padding-right: 30%;"><hr><input type="submit" class="btn btn-primary" value="Update verification data" style="
-												background-color: #5191fa;
-												"></div>
-											
-										</div>
-									</div>
-								</form>
-							</div>
+                                <div class="breadcrumb-page-bar" aria-label="breadcrumb">
+        <ul class="page-breadcrumb">
+            <li class="">
+                <a href="/"><i class="fa fa-home"></i> Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+                        <li class=" active">
+                                        Verification
+                                </li>
+                </ul>
+        
+        <div class="bravo-more-menu-user">
+            <i class="icofont-settings"></i>
+        </div>
+    </div>
+                                    <h2 class="title-bar">
+            Verification data
+        </h2>
+            <div class="booking-history-manager">
+                                                        <div class="form-group">
+        <div class="row align-items-center">
+            <label class="col-md-3 text-right col-form-label">Phone
+    
+                            :
+            </label>
+            <div class="col-md-4">
+                                <div class=""><strong>123123222323</strong></div>
+                                        <a class="badge badge-success" href="#" onclick="return false"><i>Verified</i></a>
+                                        </div>
+        </div>
+    </div>
+                                                        <div class="form-group">
+        <div class="row align-items-center">
+    
+            <label class="col-md-3 text-right col-form-label">ID Card
+    
+                                <span class="text-danger">*</span>
+                            :
+            </label>
+            <div class="col-md-4 btn-upload-private-wrap">
+                <div class="private-file-lists mb-2">
+                                                        
+                        <a target="_blank" href="/" class="file-item">screenshot-1png <i class="fa fa-download"></i></a>
+                                </div>
+                                                                    <span class="badge badge-success"><i>Verified</i></span>
+                                        </div>
+        </div>
+    </div>
+                                                        <div class="form-group">
+        <div class="row">
+    
+            <label class="col-md-3 text-right col-form-label">Trade License
+    
+                                <span class="text-danger">*</span>
+                            :
+            </label>
+            <div class="col-md-4 btn-upload-private-wrap">
+                <div class="private-file-lists mb-2">
+                                                                                <div>
+                                
+                                <a target="_blank" href="/" class="file-item">screenshot-2png <i class="fa fa-download"></i></a>
+                            </div>
+                                                    </div>
+    
+                                                                    <a class="badge badge-success" href="#" onclick="return false"><i>Verified</i></a>
+                                        </div>
+        </div>
+    </div>
+                                    <hr>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-4">
+                    <a href="/" class="btn btn-warning" style="background-color:#5191fa;color:white;"> <i class="fa fa-edit"></i> Update verification data </a>
+                </div>
+            </div>
+        </div>
+                            </div>
 						</div>
 					</div>
 				</div>
@@ -835,7 +867,7 @@
 			</div>
 			<link rel="stylesheet" href="/libs/flags/css/flag-icon.min.css">
 		</div>
-	<script src="/libs/jquery-3.6.3.min.js"></script>
-	<script src="/js/home.js?_ver=3.2.1"></script>
+		<script src="/libs/jquery-3.6.3.min.js"></script>
+		<script src="/js/home.js?_ver=3.2.1"></script>
 	</body>
 </html>
