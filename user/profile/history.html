@@ -5,7 +5,8 @@
 		<!-- CSRF Token -->
 		<link rel="icon" type="image/png" href="/uploads/demo/general/favicon.png">
 		<title>Booking History - Urtripo Aviation</title>
-		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
 		<link href="/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
 		<link href="/libs/ionicons/css/ionicons.min.css" rel="stylesheet">
@@ -39,40 +40,16 @@ body {font-family: poppins;
 
 /* Style the tab */
 .tab {
-  overflow: hidden;
-  border: none
+  
+	border: 1px solid #FFFFFF;
+  padding: 6px 12px;
+  background-color: #FFFFFF;
   
 }
-
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
+.col-md-9{
+	background-color: #f4f0ec;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #5191FA;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ddd;
-  border-top: none;
-}
 
 /* Style the close button */
 .topright {
@@ -704,56 +681,62 @@ body {font-family: poppins;
 								<h2 class="title-bar">
 									Booking History
 								</h2>
-								
-<div class="tab">
-	<button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Booking</button>
-	<button class="tablinks" onclick="openCity(event, 'Paris')">&nbsp;&nbsp;&nbsp;&nbsp;Completed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-	<button class="tablinks" onclick="openCity(event, 'Tokyo')">&nbsp;&nbsp;&nbsp;&nbsp;Confirmed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-	<button class="tablinks" onclick="openCity(event, 'Tokyo')">&nbsp;&nbsp;&nbsp;&nbsp;Cancelled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-  </div>
+								<div class="tab">
+								<div class="w3-container" styles="border:4px;">
   
-  <div id="London" class="tabcontent">
-	<span onclick="this.parentElement.style.display='none'" class="topright"></span>
-	<h3>Partial Payment</h3><br>
-	<p>No Booking History</p><br><br><br><br><br><br><br><br><br><br><br><br>
-  </div>
-  
-  <div id="Paris" class="tabcontent">
-	<span onclick="this.parentElement.style.display='none'" class="topright"></span>
-	<h3>Partial Payment</h3><br>
-	<p>No Booking History</p> <br><br><br><br><br><br><br><br><br><br><br><br>
-  </div>
-  
-  <div id="Tokyo" class="tabcontent">
-	<span onclick="this.parentElement.style.display='none'" class="topright"></span>
-	<h3>Partial Payment</h3><br>
-	<p>No Booking History</p><br><br><br><br><br><br><br><br><br><br><br><br>
-  </div>
-  
-  <div id="Tokyoo" class="tabcontent">
-	<span onclick="this.parentElement.style.display='none'" class="topright"></span>
-	<h3>Partial Payment</h3><br>
-	<p>No Booking History</p><br><br><br><br><br><br><br><br><br><br><br><br>
-  </div>
-  <script>
-  function openCity(evt, cityName) {
-	var i, tabcontent, tablinks;
-	tabcontent = document.getElementsByClassName("tabcontent");
-	for (i = 0; i < tabcontent.length; i++) {
-	  tabcontent[i].style.display = "none";
-	}
-	tablinks = document.getElementsByClassName("tablinks");
-	for (i = 0; i < tablinks.length; i++) {
-	  tablinks[i].className = tablinks[i].className.replace(" active", "");
-	}
-	document.getElementById(cityName).style.display = "block";
-	evt.currentTarget.className += " active";
-  }
-  
-  // Get the element with id="defaultOpen" and click on it
-  document.getElementById("defaultOpen").click();
-  </script>
-	 
+
+									<div class="w3-row ">
+											
+									  <a href="javascript:void(0)" onclick="openCity(event, 'London');">
+										<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">All Bookings</div>
+									  </a>
+									  <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
+										<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Completed</div>
+									  </a>
+									  <a href="javascript:void(0)" onclick="openCity(event, 'Tokyo');">
+										<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Confirmed</div>
+									  </a>
+									  <a href="javascript:void(0)" onclick="openCity(event, 'Tokyo');">
+										<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Cancelled</div>
+									  </a>
+									</div>
+								  
+									<div id="London" class="w3-container city" style="display:none"><br><br>
+									  <h2>Partial Payment</h2>
+									  <p>No Booking History</p><br><br><br><br><br><br><br><br>
+									</div>
+								  
+									<div id="Paris" class="w3-container city" style="display:none">
+									  <h2>Partial Payment</h2><br><br>
+									  <p>No Booking History</p> <br><br><br><br><br><br><br><br>
+									</div>
+								  
+									<div id="Tokyo" class="w3-container city" style="display:none">
+									  <h2>Partial Payment</h2><br><br>
+									  <p>No Booking History</p><br><br><br><br><br><br><br><br>
+									</div>
+									<div id="Tokyo" class="w3-container city" style="display:none">
+										<h2>Partial Payment</h2><br><br>
+										<p>No Booking History</p><br><br><br><br><br><br><br><br>
+									  </div>
+								  </div>
+								  </div>
+								  <script>
+								  function openCity(evt, cityName) {
+									var i, x, tablinks;
+									x = document.getElementsByClassName("city");
+									for (i = 0; i < x.length; i++) {
+									  x[i].style.display = "none";
+									}
+									tablinks = document.getElementsByClassName("tablink");
+									for (i = 0; i < x.length; i++) {
+									  tablinks[i].className = tablinks[i].className.replace(" w3-border-blue", "");
+									}
+									document.getElementById(cityName).style.display = "block";
+									evt.currentTarget.firstElementChild.className += " w3-border-blue";
+								  }
+								  </script>
+								  
 							</div>
 						</div>
 					</div>
