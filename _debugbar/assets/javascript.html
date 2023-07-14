@@ -79,7 +79,7 @@ o.call(this)},get:function(e){return null==e?o.call(this):e
                                     n;p&&(t=t.parentNode),e=e.slice(u.shift().value.length)}o=V.needsContext.test(e)?0:u.length;while(o--){if(l=u[o],r.relative[c=l.type])break;if((f=r.find[c])&&(i=f(l.matches[0].replace(Z,ee),K.test(u[0].type)&&ge(t.parentNode)||t))){if(u.splice(o,1),!(e=i.length&&ve(u)))return
                                     L.apply(n,i),n;break}}}return(p||s(e,d))(i,t,!g,n,!t||K.test(e)&&ge(t.parentNode)||t),n},n.sortStable=b.split("").sort(D).join("")===b,n.detectDuplicates=!!f,p(),n.sortDetached=ue(function(e){return 1&e.compareDocumentPosition(d.createElement("fieldset"))}),ue(function(e){return
                                     e.innerHTML="<a href='#'></a>","#"===e.firstChild.getAttribute("href")})||le("type|href|height|width",function(e,t,n){if(!n)return e.getAttribute(t,"type"===t.toLowerCase()?1:2)}),n.attributes&&ue(function(e){return
-                                    e.innerHTML="<input/>",e.firstChild.setAttribute("value",""),""===e.firstChild.getAttribute("value")})||le("value",function(e,t,n){if(!n&&"input"===e.nodeName.toLowerCase())return e.defaultValue}),ue(function(e){return
+                                    e.innerHTML="<input readonly/>",e.firstChild.setAttribute("value",""),""===e.firstChild.getAttribute("value")})||le("value",function(e,t,n){if(!n&&"input"===e.nodeName.toLowerCase())return e.defaultValue}),ue(function(e){return
                                     null==e.getAttribute("disabled")})||le(P,function(e,t,n){var r;if(!n)return!0===e[t]?t.toLowerCase():(r=e.getAttributeNode(t))&&r.specified?r.value:null}),oe}(e);w.find=E,w.expr=E.selectors,w.expr[":"]=w.expr.pseudos,w.uniqueSort=w.unique=E.uniqueSort,w.text=E.getText,w.isXMLDoc=E.isXML,w.contains=E.contains,w.escapeSelector=E.escape;var
                                     k=function(e,t,n){var r=[],i=void 0!==n;while((e=e[t])&&9!==e.nodeType)if(1===e.nodeType){if(i&&w(e).is(n))break;r.push(e)}return r},S=function(e,t){for(var n=[];e;e=e.nextSibling)1===e.nodeType&&e!==t&&n.push(e);return
                                     n},D=w.expr.match.needsContext;function N(e,t){return e.nodeName&&e.nodeName.toLowerCase()===t.toLowerCase()}var A=/^
@@ -4052,7 +4052,7 @@ o.call(this)},get:function(e){return null==e?o.call(this):e
             this.$list.$el.appendTo(this.$el);
             this.$toolbar = $('<div><i class="phpdebugbar-fa phpdebugbar-fa-search"></i></div>').addClass(csscls('toolbar')).appendTo(this.$el);
 
-            $('<input type="text" />')
+            $('<input readonly type="text" />')
                 .on('change', function() { self.set('search', this.value); })
                 .appendTo(this.$toolbar);
 
@@ -4330,9 +4330,9 @@ o.call(this)},get:function(e){return null==e?o.call(this):e
                                                                                                                                                                                                                                 <form />') .append('
                                                                                                                                                                                                                                 <br/><b>Filter results</b><br/>')
                                                                                                                                                                                                                                 .append('Method: <select name="method"><option></option><option>GET</option><option>POST</option><option>PUT</option><option>DELETE</option></select><br/>')
-                                                                                                                                                                                                                                .append('Uri: <input type="text"
+                                                                                                                                                                                                                                .append('Uri: <input readonly type="text"
                                                                                                                                                                                                                                     name="uri"><br/>') .append('IP:
-                                                                                                                                                                                                                                <input type="text" name="ip"><br/>')
+                                                                                                                                                                                                                                <input readonly type="text" name="ip"><br/>')
                                                                                                                                                                                                                                 .append(searchBtn) .appendTo(this.$actions);
                                                                                                                                                                                                                                 }, handleFind: function(data)
                                                                                                                                                                                                                                 { var self = this; $.each(data,
