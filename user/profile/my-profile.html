@@ -36,55 +36,41 @@
 		<link href="/libs/carousel-2/owl.carousel.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-		<style>
-			.upload{
-    width:100px;
-    position:relative;
-    margin:auto;
-}
+		
 
-.upload img{
-    border-radius:50%;
-    border:6px solid #eaeaea;
-
-}
-
-.upload .round{
-    position:absolute;
-    button:0;
-    right:0;
-    background:lightgray;
-    width:32px;
-    height:32px;
-    line-height:10px;
-    text-align:center;
-    border-radius:50%;
-    overflow:hidden;
-    top:-40px;
-}
-
-.upload .round input[type='file']{
-    position:absolute;
-    transform:scale(2);
-    opacity:0;
-}
-
-input[type=file]::-webkit-file-upload-button{
-    cursor:pointer;
-}
-             .phpdebugbar pre.sf-dump {
-			display: block;
-			white-space: pre;
-			padding: 5px;
-			overflow: initial !important;
-			}
-			.phpdebugbar pre.sf-dump:after {
-			content: "";
-			visibility: hidden;
-			display: block;
-			height: 0;
-			clear: both;
-			}
+<style>
+    .upload-icon {
+      position: relative;
+	  left:320px;
+	  top:-40px;
+      display: inline-block;
+      overflow: hidden;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #ccc;
+      cursor: pointer;
+    }
+  
+    .upload-icon input[type="file"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+    }
+  
+    .upload-icon i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color:black ;
+      font-size: 16px;
+    }
+  
 			.phpdebugbar pre.sf-dump span {
 			display: inline;
 			}
@@ -619,6 +605,12 @@ input[type=file]::-webkit-file-upload-button{
 								<div class="bravo-close-menu-user"><i class="icofont-scroll-left"></i></div>
 								<div class="logo">
 									<div class="avatar avatar-cover" style="background-image: url('/images/avatar.png')"></div>
+								</div>
+
+								<div class="upload-icon">
+									<input type="file" id="profile-picture" accept="image/*">
+									<i class="fa fa-camera"></i>
+									<i class="fa fa-camera" style="font-size:20px"></i>
 								</div>
 								<div class="user-profile-avatar" style="
 									background: #363587 !important;
@@ -1293,7 +1285,7 @@ input[type=file]::-webkit-file-upload-button{
 			document.querySelector('#editProfile').style.display='';
 			document.querySelector('#saveChanges').style.display='none';
 			document.querySelector('select').setAttribute("disabled","disabled");
-
+            
 		}
 	</script>
 </body></html>
