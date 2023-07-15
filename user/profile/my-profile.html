@@ -3,7 +3,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- CSRF Token -->
 		<link rel="icon" type="image/png" href="">
-		<title>Change Password - Urtripo Aviation</title>
+		<title>My Profile - Urtripo Aviation</title>
 		<meta name="description" content="">
 		<link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
 		<link href="/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -34,20 +34,43 @@
 		</style>
 		<link href="/custom-css" rel="stylesheet">
 		<link href="/libs/carousel-2/owl.carousel.css" rel="stylesheet">
-		<style>
-			.phpdebugbar pre.sf-dump {
-			display: block;
-			white-space: pre;
-			padding: 5px;
-			overflow: initial !important;
-			}
-			.phpdebugbar pre.sf-dump:after {
-			content: "";
-			visibility: hidden;
-			display: block;
-			height: 0;
-			clear: both;
-			}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		
+
+<style>
+    .upload-icon {
+      position: relative;
+	  left:320px;
+	  top:-40px;
+      display: inline-block;
+      overflow: hidden;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #ccc;
+      cursor: pointer;
+    }
+  
+    .upload-icon input[type="file"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+    }
+  
+    .upload-icon i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color:black ;
+      font-size: 16px;
+    }
+  
 			.phpdebugbar pre.sf-dump span {
 			display: inline;
 			}
@@ -436,7 +459,7 @@
 								<i class="fa fa-sign-out"></i> Logout
 								</a>
 								<form id="logout-form-mobile" action="/logout" method="POST" style="display: none;">
-									<input type="hidden" name="_token" value="BjzUXF3o5pMAk2DtpqgblwLQEBvDtqwtwwogrXOP">
+									<input readonly type="hidden" name="_token" value="BjzUXF3o5pMAk2DtpqgblwLQEBvDtqwtwwogrXOP">
 								</form>
 							</li>
 						</ul>
@@ -583,9 +606,16 @@
 								<div class="logo">
 									<div class="avatar avatar-cover" style="background-image: url('/images/avatar.png')"></div>
 								</div>
+
+								<div class="upload-icon">
+									<input type="file" id="profile-picture" accept="image/*">
+									<i class="fa fa-camera"></i>
+									<i class="fa fa-camera" style="font-size:20px"></i>
+								</div>
 								<div class="user-profile-avatar" style="
 									background: #363587 !important;
 									">
+									
 									<div class="info-new">
 										<span class="role-name badge badge-info" style="
 											background-color: #5191fa;
@@ -633,7 +663,7 @@
 								</div>
 								<div class="logout">
 									<form id="logout-form-vendor" action="/logout" method="POST" style="display: none;">
-										<input type="hidden" name="_token" value="BjzUXF3o5pMAk2DtpqgblwLQEBvDtqwtwwogrXOP">
+										<input readonly type="hidden" name="_token" value="BjzUXF3o5pMAk2DtpqgblwLQEBvDtqwtwwogrXOP">
 									</form>
 									<a href="#" onclick="event.preventDefault(); document.getElementById('logout-form-vendor').submit();"><i class="fa fa-sign-out"></i> Log Out
 									</a>
@@ -743,7 +773,7 @@
 									
 								</h2>
 								<form action="https://sandbox.bookingcore.co/user/profile" method="post" class="input-has-icon">
-									<input type="hidden" name="_token" value="tblbRPLTpNwX4Ma5Zau64BpFTOGaK9TzvDbNAYMt">        
+									<input readonly type="hidden" name="_token" value="tblbRPLTpNwX4Ma5Zau64BpFTOGaK9TzvDbNAYMt">        
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-title">
@@ -751,24 +781,24 @@
 											</div>
 											<div class="form-group">
 												<label>Firstname:</label>
-												<input type="text" value="" name="first_name" placeholder="Enter your Firstname" class="form-control">
+												<input readonly type="text" value="" name="first_name" placeholder="Enter your Firstname" class="form-control">
 												
 											</div>
 											<div class="form-group">
 												<label>Lastname:<span class="text-danger"></span></label>
-												<input type="text" required="" minlength="4" name="last_name" value="" placeholder="Enter your Lastname" class="form-control">
+												<input readonly type="text" required="" minlength="4" name="last_name" value="" placeholder="Enter your Lastname" class="form-control">
 											
 											</div>
 
 											<div class="form-group">
 												<label>Username:<span class="text-danger"></span></label>
-												<input type="text" required="" minlength="4" name="user_name" value="" placeholder="Enter your Username" class="form-control">
+												<input readonly type="text" required="" minlength="4" name="user_name" value="" placeholder="Enter your Username" class="form-control">
 											
 											</div>
 
 											<div class="form-group">
 												<label>E-mail</label>
-												<input type="text" name="email" value="" placeholder="Enter your Email-id" class="form-control">
+												<input readonly type="text" name="email" value="" placeholder="Enter your Email-id" class="form-control">
 												
 											</div>
 											<div class="row">
@@ -781,12 +811,12 @@
 											</div>
 											<div class="form-group">
 												<label>Mobile Number</label>
-												<input type="text" value="" name="phone" placeholder="Enter your Mobile Number" class="form-control">
+												<input readonly type="text" value="" name="phone" placeholder="Enter your Mobile Number" class="form-control">
 												
 											</div>
 											<div class="form-group">
 												<label>Date of Birth</label>
-												<input type="date" value="" name="birthday" placeholder="Birthday" class="form-control date-picker">
+												<input readonly type="date" value="" name="birthday" placeholder="Birthday" class="form-control date-picker">
 												<i class="fa fa-birthday-cake input-icon"></i>
 											</div></div>
 										<div class="col-md-6">
@@ -795,22 +825,22 @@
 											</div>
 											<div class="form-group">
 												<label>Address line 1:</label>
-												<input type="text" value="" name="address" placeholder="Address line 1" class="form-control">
+												<input readonly type="text" value="" name="address" placeholder="Address line 1" class="form-control">
 												
 											</div>
 											<div class="form-group">
 												<label>Address line 2:</label>
-												<input type="text" value="" name="address2" placeholder="Address line 2" class="form-control">
+												<input readonly type="text" value="" name="address2" placeholder="Address line 2" class="form-control">
 												
 											</div>
 											<div class="form-group">
 												<label>City:</label>
-												<input type="text" value="" name="city" placeholder="Enter your City" class="form-control">
+												<input readonly type="text" value="" name="city" placeholder="Enter your City" class="form-control">
 												
 											</div>
 											<div class="form-group">
 												<label>State</label>
-												<input type="text" value="" name="state" placeholder="Enter your State" class="form-control">
+												<input readonly type="text" value="" name="state" placeholder="Enter your State" class="form-control">
 												
 											</div>
 											<div class="form-group">
@@ -1066,13 +1096,21 @@
 											</div>
 											<div class="form-group">
 												<label>Zip Code:</label>
-												<input type="text" value="" name="zip_code" placeholder="Enter your Zip code" class="form-control">
+												<input readonly readonly type="text" value="" name="zip_code" placeholder="Enter your Zip code" class="form-control">
 												<i class="fa fa-map-pin input-icon"></i>
 											</div>
 										</div>
 										<div class="col-md-12">
+											
 											<hr>
-											<button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Save Changes</button>
+											<div id="EditProfile">
+												
+												<button class="btn btn-primary" onclick="EditProfile()" type="submit"><i class="fa fa-save"></i> Edit Profile</button>
+											</div>
+											<div id="SaveChanges" style="display:none">
+												<button class="btn btn-primary" onclick="SaveChanges()" type="submit"><i class="fa fa-save"></i> Save Changes</button>
+											</div>
+											
 										</div>
 									</div>
 								</form>
@@ -1100,9 +1138,9 @@
 									</div>
 									<div class="col-xs-12 col-md-5 col-lg-6">
 										<form action="/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
-											<input type="hidden" name="_token" value="BjzUXF3o5pMAk2DtpqgblwLQEBvDtqwtwwogrXOP">
+											<input readonly type="hidden" name="_token" value="BjzUXF3o5pMAk2DtpqgblwLQEBvDtqwtwwogrXOP">
 											<div class="form-group">
-												<input type="text" name="email" class="form-control email-input" placeholder="Your Email">
+												<input readonly type="text" name="email" class="form-control email-input" placeholder="Your Email">
 												<button type="submit" class="btn-submit">Subscribe
 												<i class="fa fa-spinner fa-pulse fa-fw"></i>
 												</button>
@@ -1224,6 +1262,30 @@
 		</div>
 	<script src="/libs/jquery-3.6.3.min.js"></script>
 	<script src="/js/home.js?_ver=3.2.1"></script>
-	
+	<script >
+		function EditProfile(){
+            var data = document.querySelectorAll('input');
+			for(i=0;i<data.length;i++)
+			{
+				data[i].removeAttribute("readonly");
+			}
+			document.querySelector('#editProfile').style.display='none';
+			document.querySelector('#saveChanges').style.display='';
+			document.querySelector('select').removeAttribute("disabled");
+		}
 
+		function SaveChanges(){
+			alert("Changes made successfully");
+			var data = document.querySelectorAll('input');
+			console.log(data);
+			for(i=0;i<data.length;i++)
+			{
+				data[i].setAttribute("readonly","true");
+			}
+			document.querySelector('#editProfile').style.display='';
+			document.querySelector('#saveChanges').style.display='none';
+			document.querySelector('select').setAttribute("disabled","disabled");
+            
+		}
+	</script>
 </body></html>
