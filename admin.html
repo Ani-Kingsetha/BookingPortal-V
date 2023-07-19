@@ -9,32 +9,44 @@
 
     <title>Dashboard - Booking Core</title>
 
-                                    <link rel="icon" type="image/png" href="https://sandbox.bookingcore.co/uploads/demo/general/favicon.png" />
+                                    <link rel="icon" type="image/png" href=" /uploads/demo/general/favicon.png" />
             
     <meta name="robots" content="noindex, nofollow" />
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
     <!-- Styles -->
-    <link href="https://sandbox.bookingcore.co/libs/select2/css/select2.min.css" rel="stylesheet">
-    <link href="https://sandbox.bookingcore.co/libs/flags/css/flag-icon.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://sandbox.bookingcore.co/libs/daterange/daterangepicker.css"/>
-    <link href="https://sandbox.bookingcore.co/themes/admin/libs/bootstrap-4.6.2-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://sandbox.bookingcore.co/themes/admin/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://sandbox.bookingcore.co/dist/admin/css/app.css" rel="stylesheet">
+    <link href=" /libs/select2/css/select2.min.css" rel="stylesheet">
+    <link href=" /libs/flags/css/flag-icon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href=" /libs/daterange/daterangepicker.css"/>
+    <link href=" /themes/admin/libs/bootstrap-4.6.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href=" /themes/admin/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href=" /dist/admin/css/app.css" rel="stylesheet">
     
-    
+    <style>
+        .main-sidebar {
+    background: #363198;
+    bottom: 0;
+    color: #d4d4d4;
+    left: 0;
+    overflow-y: auto;
+    position: fixed;
+    top: 56px;
+    width: 240px;
+    z-index: 10;
+}
+    </style>
     <script>
         var bookingCore  = {
             url:'https://sandbox.bookingcore.co',
-            admin_url:'https://sandbox.bookingcore.co/admin',
+            admin_url:' /admin',
             map_provider:'gmap',
             map_gmap_key:'',
             csrf:'ORpSGpuYkPnvhvt4SSYfJXSF3f9CMCCYTPdTt4zt',
             date_format:'MM/DD/YYYY',
-            markAsRead:'https://sandbox.bookingcore.co/admin/module/core/markAsRead',
-            markAllAsRead:'https://sandbox.bookingcore.co/admin/module/core/markAllAsRead',
-            loadNotify : 'https://sandbox.bookingcore.co/admin/module/core/notifications',
+            markAsRead:' /admin/module/core/markAsRead',
+            markAllAsRead:' /admin/module/core/markAllAsRead',
+            loadNotify : ' /admin/module/core/notifications',
             pusher_api_key : '',
             pusher_cluster : '',
             isAdmin : 1,
@@ -143,7 +155,7 @@
             }
         };
     </script>
-    <script src="https://sandbox.bookingcore.co/libs/tinymce/js/tinymce/tinymce.min.js" ></script>
+    <script src=" /libs/tinymce/js/tinymce/tinymce.min.js" ></script>
     
 <link rel='stylesheet' type='text/css' property='stylesheet' href='//sandbox.bookingcore.co/_debugbar/assets/stylesheets?v=1657531602&theme=auto' data-turbolinks-eval='false' data-turbo-eval='false'><script src='//sandbox.bookingcore.co/_debugbar/assets/javascript?v=1657531602' data-turbolinks-eval='false' data-turbo-eval='false'></script><script data-turbo-eval="false">jQuery.noConflict(true);</script>
 <script> Sfdump = window.Sfdump || (function (doc) { var refStyle = doc.createElement('style'), rxEsc = /([.*+?^${}()|\[\]\/\\])/g, idRx = /\bsf-dump-\d+-ref[012]\w+\b/, keyHint = 0 <= navigator.platform.toUpperCase().indexOf('MAC') ? 'Cmd' : 'Ctrl', addEventListener = function (e, n, cb) { e.addEventListener(n, cb, false); }; refStyle.innerHTML = '.phpdebugbar pre.sf-dump .sf-dump-compact, .sf-dump-str-collapse .sf-dump-str-collapse, .sf-dump-str-expand .sf-dump-str-expand { display: none; }'; (doc.documentElement.firstElementChild || doc.documentElement.children[0]).appendChild(refStyle); refStyle = doc.createElement('style'); (doc.documentElement.firstElementChild || doc.documentElement.children[0]).appendChild(refStyle); if (!doc.addEventListener) { addEventListener = function (element, eventName, callback) { element.attachEvent('on' + eventName, function (e) { e.preventDefault = function () {e.returnValue = false;}; e.target = e.srcElement; callback(e); }); }; } function toggle(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className, arrow, newClass; if (/\bsf-dump-compact\b/.test(oldClass)) { arrow = '▼'; newClass = 'sf-dump-expanded'; } else if (/\bsf-dump-expanded\b/.test(oldClass)) { arrow = '▶'; newClass = 'sf-dump-compact'; } else { return false; } if (doc.createEvent && s.dispatchEvent) { var event = doc.createEvent('Event'); event.initEvent('sf-dump-expanded' === newClass ? 'sfbeforedumpexpand' : 'sfbeforedumpcollapse', true, false); s.dispatchEvent(event); } a.lastChild.innerHTML = arrow; s.className = s.className.replace(/\bsf-dump-(compact|expanded)\b/, newClass); if (recursive) { try { a = s.querySelectorAll('.'+oldClass); for (s = 0; s < a.length; ++s) { if (-1 == a[s].className.indexOf(newClass)) { a[s].className = newClass; a[s].previousSibling.lastChild.innerHTML = arrow; } } } catch (e) { } } return true; }; function collapse(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-expanded\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function expand(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-compact\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function collapseAll(root) { var a = root.querySelector('a.sf-dump-toggle'); if (a) { collapse(a, true); expand(a); return true; } return false; } function reveal(node) { var previous, parents = []; while ((node = node.parentNode || {}) && (previous = node.previousSibling) && 'A' === previous.tagName) { parents.push(previous); } if (0 !== parents.length) { parents.forEach(function (parent) { expand(parent); }); return true; } return false; } function highlight(root, activeNode, nodes) { resetHighlightedNodes(root); Array.from(nodes||[]).forEach(function (node) { if (!/\bsf-dump-highlight\b/.test(node.className)) { node.className = node.className + ' sf-dump-highlight'; } }); if (!/\bsf-dump-highlight-active\b/.test(activeNode.className)) { activeNode.className = activeNode.className + ' sf-dump-highlight-active'; } } function resetHighlightedNodes(root) { Array.from(root.querySelectorAll('.sf-dump-str, .sf-dump-key, .sf-dump-public, .sf-dump-protected, .sf-dump-private')).forEach(function (strNode) { strNode.className = strNode.className.replace(/\bsf-dump-highlight\b/, ''); strNode.className = strNode.className.replace(/\bsf-dump-highlight-active\b/, ''); }); } return function (root, x) { root = doc.getElementById(root); var indentRx = new RegExp('^('+(root.getAttribute('data-indent-pad') || ' ').replace(rxEsc, '\\$1')+')+', 'm'), options = {"maxDepth":1,"maxStringLength":160,"fileLinkFormat":false}, elt = root.getElementsByTagName('A'), len = elt.length, i = 0, s, h, t = []; while (i < len) t.push(elt[i++]); for (i in x) { options[i] = x[i]; } function a(e, f) { addEventListener(root, e, function (e, n) { if ('A' == e.target.tagName) { f(e.target, e); } else if ('A' == e.target.parentNode.tagName) { f(e.target.parentNode, e); } else { n = /\bsf-dump-ellipsis\b/.test(e.target.className) ? e.target.parentNode : e.target; if ((n = n.nextElementSibling) && 'A' == n.tagName) { if (!/\bsf-dump-toggle\b/.test(n.className)) { n = n.nextElementSibling || n; } f(n, e, true); } } }); }; function isCtrlKey(e) { return e.ctrlKey || e.metaKey; } function xpathString(str) { var parts = str.match(/[^'"]+|['"]/g).map(function (part) { if ("'" == part) { return '"\'"'; } if ('"' == part) { return "'\"'"; } return "'" + part + "'"; }); return "concat(" + parts.join(",") + ", '')"; } function xpathHasClass(className) { return "contains(concat(' ', normalize-space(@class), ' '), ' " + className +" ')"; } addEventListener(root, 'mouseover', function (e) { if ('' != refStyle.innerHTML) { refStyle.innerHTML = ''; } }); a('mouseover', function (a, e, c) { if (c) { e.target.style.cursor = "pointer"; } else if (a = idRx.exec(a.className)) { try { refStyle.innerHTML = '.phpdebugbar pre.sf-dump .'+a[0]+'{background-color: #B729D9; color: #FFF !important; border-radius: 2px}'; } catch (e) { } } }); a('click', function (a, e, c) { if (/\bsf-dump-toggle\b/.test(a.className)) { e.preventDefault(); if (!toggle(a, isCtrlKey(e))) { var r = doc.getElementById(a.getAttribute('href').slice(1)), s = r.previousSibling, f = r.parentNode, t = a.parentNode; t.replaceChild(r, a); f.replaceChild(a, s); t.insertBefore(s, r); f = f.firstChild.nodeValue.match(indentRx); t = t.firstChild.nodeValue.match(indentRx); if (f && t && f[0] !== t[0]) { r.innerHTML = r.innerHTML.replace(new RegExp('^'+f[0].replace(rxEsc, '\\$1'), 'mg'), t[0]); } if (/\bsf-dump-compact\b/.test(r.className)) { toggle(s, isCtrlKey(e)); } } if (c) { } else if (doc.getSelection) { try { doc.getSelection().removeAllRanges(); } catch (e) { doc.getSelection().empty(); } } else { doc.selection.empty(); } } else if (/\bsf-dump-str-toggle\b/.test(a.className)) { e.preventDefault(); e = a.parentNode.parentNode; e.className = e.className.replace(/\bsf-dump-str-(expand|collapse)\b/, a.parentNode.className); } }); elt = root.getElementsByTagName('SAMP'); len = elt.length; i = 0; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; if ('SAMP' == elt.tagName) { a = elt.previousSibling || {}; if ('A' != a.tagName) { a = doc.createElement('A'); a.className = 'sf-dump-ref'; elt.parentNode.insertBefore(a, elt); } else { a.innerHTML += ' '; } a.title = (a.title ? a.title+'\n[' : '[')+keyHint+'+click] Expand all children'; a.innerHTML += elt.className == 'sf-dump-compact' ? '<span>▶</span>' : '<span>▼</span>'; a.className += ' sf-dump-toggle'; x = 1; if ('sf-dump' != elt.parentNode.className) { x += elt.parentNode.getAttribute('data-depth')/1; } } else if (/\bsf-dump-ref\b/.test(elt.className) && (a = elt.getAttribute('href'))) { a = a.slice(1); elt.className += ' '+a; if (/[\[{]$/.test(elt.previousSibling.nodeValue)) { a = a != elt.nextSibling.id && doc.getElementById(a); try { s = a.nextSibling; elt.appendChild(a); s.parentNode.insertBefore(a, s); if (/^[@#]/.test(elt.innerHTML)) { elt.innerHTML += ' <span>▶</span>'; } else { elt.innerHTML = '<span>▶</span>'; elt.className = 'sf-dump-ref'; } elt.className += ' sf-dump-toggle'; } catch (e) { if ('&' == elt.innerHTML.charAt(0)) { elt.innerHTML = '…'; elt.className = 'sf-dump-ref'; } } } } } if (doc.evaluate && Array.from && root.children.length > 1) { root.setAttribute('tabindex', 0); SearchState = function () { this.nodes = []; this.idx = 0; }; SearchState.prototype = { next: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx < (this.nodes.length - 1) ? this.idx + 1 : 0; return this.current(); }, previous: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx > 0 ? this.idx - 1 : (this.nodes.length - 1); return this.current(); }, isEmpty: function () { return 0 === this.count(); }, current: function () { if (this.isEmpty()) { return null; } return this.nodes[this.idx]; }, reset: function () { this.nodes = []; this.idx = 0; }, count: function () { return this.nodes.length; }, }; function showCurrent(state) { var currentNode = state.current(), currentRect, searchRect; if (currentNode) { reveal(currentNode); highlight(root, currentNode, state.nodes); if ('scrollIntoView' in currentNode) { currentNode.scrollIntoView(true); currentRect = currentNode.getBoundingClientRect(); searchRect = search.getBoundingClientRect(); if (currentRect.top < (searchRect.top + searchRect.height)) { window.scrollBy(0, -(searchRect.top + searchRect.height + 5)); } } } counter.textContent = (state.isEmpty() ? 0 : state.idx + 1) + ' of ' + state.count(); } var search = doc.createElement('div'); search.className = 'sf-dump-search-wrapper sf-dump-search-hidden'; search.innerHTML = ' <input type="text" class="sf-dump-search-input"> <span class="sf-dump-search-count">0 of 0<\/span> <button type="button" class="sf-dump-search-input-previous" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 1331l-166 165q-19 19-45 19t-45-19L896 965l-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> <button type="button" class="sf-dump-search-input-next" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 808l-742 741q-19 19-45 19t-45-19L109 808q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> '; root.insertBefore(search, root.firstChild); var state = new SearchState(); var searchInput = search.querySelector('.sf-dump-search-input'); var counter = search.querySelector('.sf-dump-search-count'); var searchInputTimer = 0; var previousSearchQuery = ''; addEventListener(searchInput, 'keyup', function (e) { var searchQuery = e.target.value; /* Don't perform anything if the pressed key didn't change the query */ if (searchQuery === previousSearchQuery) { return; } previousSearchQuery = searchQuery; clearTimeout(searchInputTimer); searchInputTimer = setTimeout(function () { state.reset(); collapseAll(root); resetHighlightedNodes(root); if ('' === searchQuery) { counter.textContent = '0 of 0'; return; } var classMatches = [ "sf-dump-str", "sf-dump-key", "sf-dump-public", "sf-dump-protected", "sf-dump-private", ].map(xpathHasClass).join(' or '); var xpathResult = doc.evaluate('.//span[' + classMatches + '][contains(translate(child::text(), ' + xpathString(searchQuery.toUpperCase()) + ', ' + xpathString(searchQuery.toLowerCase()) + '), ' + xpathString(searchQuery.toLowerCase()) + ')]', root, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null); while (node = xpathResult.iterateNext()) state.nodes.push(node); showCurrent(state); }, 400); }); Array.from(search.querySelectorAll('.sf-dump-search-input-next, .sf-dump-search-input-previous')).forEach(function (btn) { addEventListener(btn, 'click', function (e) { e.preventDefault(); -1 !== e.target.className.indexOf('next') ? state.next() : state.previous(); searchInput.focus(); collapseAll(root); showCurrent(state); }) }); addEventListener(root, 'keydown', function (e) { var isSearchActive = !/\bsf-dump-search-hidden\b/.test(search.className); if ((114 === e.keyCode && !isSearchActive) || (isCtrlKey(e) && 70 === e.keyCode)) { /* F3 or CMD/CTRL + F */ if (70 === e.keyCode && document.activeElement === searchInput) { /* * If CMD/CTRL + F is hit while having focus on search input, * the user probably meant to trigger browser search instead. * Let the browser execute its behavior: */ return; } e.preventDefault(); search.className = search.className.replace(/\bsf-dump-search-hidden\b/, ''); searchInput.focus(); } else if (isSearchActive) { if (27 === e.keyCode) { /* ESC key */ search.className += ' sf-dump-search-hidden'; e.preventDefault(); resetHighlightedNodes(root); searchInput.value = ''; } else if ( (isCtrlKey(e) && 71 === e.keyCode) /* CMD/CTRL + G */ || 13 === e.keyCode /* Enter */ || 114 === e.keyCode /* F3 */ ) { e.preventDefault(); e.shiftKey ? state.previous() : state.next(); collapseAll(root); showCurrent(state); } } }); } if (0 >= options.maxStringLength) { return; } try { elt = root.querySelectorAll('.sf-dump-str'); len = elt.length; i = 0; t = []; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; s = elt.innerText || elt.textContent; x = s.length - options.maxStringLength; if (0 < x) { h = elt.innerHTML; elt[elt.innerText ? 'innerText' : 'textContent'] = s.substring(0, options.maxStringLength); elt.className += ' sf-dump-str-collapse'; elt.innerHTML = '<span class=sf-dump-str-collapse>'+h+'<a class="sf-dump-ref sf-dump-str-toggle" title="Collapse"> ◀</a></span>'+ '<span class=sf-dump-str-expand>'+elt.innerHTML+'<a class="sf-dump-ref sf-dump-str-toggle" title="'+x+' remaining characters"> ▶</a></span>'; } } } catch (e) { } }; })(document); </script><style> .phpdebugbar pre.sf-dump { display: block; white-space: pre; padding: 5px; overflow: initial !important; } .phpdebugbar pre.sf-dump:after { content: ""; visibility: hidden; display: block; height: 0; clear: both; } .phpdebugbar pre.sf-dump span { display: inline; } .phpdebugbar pre.sf-dump a { text-decoration: none; cursor: pointer; border: 0; outline: none; color: inherit; } .phpdebugbar pre.sf-dump img { max-width: 50em; max-height: 50em; margin: .5em 0 0 0; padding: 0; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAHUlEQVQY02O8zAABilCaiQEN0EeA8QuUcX9g3QEAAjcC5piyhyEAAAAASUVORK5CYII=) #D3D3D3; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis { display: inline-block; overflow: visible; text-overflow: ellipsis; max-width: 5em; white-space: nowrap; overflow: hidden; vertical-align: top; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis+.sf-dump-ellipsis { max-width: none; } .phpdebugbar pre.sf-dump code { display:inline; padding:0; background:none; } .sf-dump-public.sf-dump-highlight, .sf-dump-protected.sf-dump-highlight, .sf-dump-private.sf-dump-highlight, .sf-dump-str.sf-dump-highlight, .sf-dump-key.sf-dump-highlight { background: rgba(111, 172, 204, 0.3); border: 1px solid #7DA0B1; border-radius: 3px; } .sf-dump-public.sf-dump-highlight-active, .sf-dump-protected.sf-dump-highlight-active, .sf-dump-private.sf-dump-highlight-active, .sf-dump-str.sf-dump-highlight-active, .sf-dump-key.sf-dump-highlight-active { background: rgba(253, 175, 0, 0.4); border: 1px solid #ffa500; border-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-hidden { display: none !important; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper { font-size: 0; white-space: nowrap; margin-bottom: 5px; display: flex; position: -webkit-sticky; position: sticky; top: 5px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > * { vertical-align: top; box-sizing: border-box; height: 21px; font-weight: normal; border-radius: 0; background: #FFF; color: #757575; border: 1px solid #BBB; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > input.sf-dump-search-input { padding: 3px; height: 21px; font-size: 12px; border-right: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px; color: #000; min-width: 15px; width: 100%; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous { background: #F2F2F2; outline: none; border-left: none; font-size: 0; line-height: 0; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next { border-top-right-radius: 3px; border-bottom-right-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next > svg, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous > svg { pointer-events: none; width: 12px; height: 12px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-count { display: inline-block; padding: 0 5px; margin: 0; border-left: none; line-height: 21px; font-size: 12px; }.phpdebugbar pre.sf-dump, .phpdebugbar pre.sf-dump .sf-dump-default{word-wrap: break-word; white-space: pre-wrap; word-break: normal}.phpdebugbar pre.sf-dump .sf-dump-num{font-weight:bold; color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-const{font-weight:bold}.phpdebugbar pre.sf-dump .sf-dump-str{font-weight:bold; color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-note{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ref{color:#7B7B7B}.phpdebugbar pre.sf-dump .sf-dump-public{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-protected{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-private{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-meta{color:#B729D9}.phpdebugbar pre.sf-dump .sf-dump-key{color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-index{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ellipsis{color:#A0A000}.phpdebugbar pre.sf-dump .sf-dump-ns{user-select:none;}.phpdebugbar pre.sf-dump .sf-dump-ellipsis-note{color:#1299DA}</style>
@@ -152,174 +164,52 @@
 <div id="app">
     <div class="main-header d-flex">
         <div class="header-logo flex-shrink-0">
-    <h3 class="logo-text"><a href="https://sandbox.bookingcore.co/admin">Booking Core <span class="app-version">3.3.0</span></a></h3>
+    <h3 class="logo-text"><a href=" /admin">Urtripo Aviation</a></h3>
 </div>
 <div class="header-widgets d-flex flex-grow-1">
     <div class="widgets-left d-flex flex-grow-1 align-items-center">
         <div class="header-widget">
-            <span class="btn-toggle-admin-menu btn btn-sm btn-link"><i class="icon ion-ios-menu"></i></span>
+            <span class="btn-toggle-admin-menu btn btn-sm btn-link">
         </div>
         <div class="header-widget search-widget">
             
-            <a href="https://sandbox.bookingcore.co" class="btn btn-link" target="_blank"><i class="fa fa-eye"></i> Home
+            <a href=" " class="btn btn-link" target="_blank">Home
             </a>
         </div>
     </div>
     <div class="widgets-right flex-shrink-0 d-flex">
-                <div class="dropdown header-widget widget-user widget-language flex-shrink-0">
-            <div data-toggle="dropdown" class="user-dropdown d-flex align-items-center" aria-haspopup="true" aria-expanded="false">
-                                                            <div class="user-info flex-grow-1 d-flex">
-                                                            <span class="flag-icon mr-2 flag-icon-gb"></span>
-                                                        Englist
-                        </div>
-                                                                                                                                                                <i class="fa fa-angle-down"></i>
-            </div>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        
-                    <a class="dropdown-item" href="https://sandbox.bookingcore.co/language/set-admin-lang/tr">
-                                                    <span class="flag-icon flag-icon-tr"></span>
-                                                Turkish
-                    </a>
-                                    
-                    <a class="dropdown-item" href="https://sandbox.bookingcore.co/language/set-admin-lang/ar">
-                                                    <span class="flag-icon flag-icon-ar"></span>
-                                                عربي
-                    </a>
-                                    
-                    <a class="dropdown-item" href="https://sandbox.bookingcore.co/language/set-admin-lang/th">
-                                                    <span class="flag-icon flag-icon-th"></span>
-                                                Thailand
-                    </a>
-                            </div>
-        </div>
+          
                 <div class="dropdown header-widget widget-user pt-2 dropdown-notifications flex-shrink-0" style="min-width: 0">
             <div data-toggle="dropdown" class="user-dropdown d-flex align-items-center" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-lg fa-bell m-1 p-1"></i>
                 <span class="badge badge-danger notification-icon">34</span>
             </div>
-            <div class="dropdown-menu overflow-auto notify-items dropdown-container dropdown-menu-right dropdown-large" aria-labelledby="dropdownMenuButton">
-                <div class="dropdown-toolbar">
-                    <div class="dropdown-toolbar-actions">
-                        <a href="#" class="markAllAsRead">Mark all as read</a>
-                    </div>
-                    <h3 class="dropdown-toolbar-title">Notifications (<span class="notif-count">34</span>)</h3>
-                </div>
-                <ul class="dropdown-list-items p-0 m-0">
-                                                                                                    <li class="notification active">
-                                <a class="markAsRead" data-id="2c246c04-c2a3-410e-9cd2-83cd75e2854a" href="https://sandbox.bookingcore.co/admin/module/report/booking">
-                                    <div class="media">
-                                        <div class="media-left">
-                                              <div class="media-object">
-                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="mohamed zobi">
-                                                                                                </div>
-                                            </div>
-                                        <div class="media-body">
-                                            mohamed zobi has created new Booking
-                                              <div class="notification-meta">
-                                                    <small class="timestamp">11 hours 46 minutes 54 seconds </small>
-                                                  </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                                                                                <li class="notification active">
-                                <a class="markAsRead" data-id="efb9ed08-8b1c-45b9-b0d2-ffe45ae27024" href="https://sandbox.bookingcore.co/admin/module/user/userUpgradeRequest">
-                                    <div class="media">
-                                        <div class="media-left">
-                                              <div class="media-object">
-                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="mohamed zobi">
-                                                                                                </div>
-                                            </div>
-                                        <div class="media-body">
-                                            mohamed zobi has requested to become a vendor
-                                              <div class="notification-meta">
-                                                    <small class="timestamp">12 hours 35 minutes 7 seconds </small>
-                                                  </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                                                                                <li class="notification active">
-                                <a class="markAsRead" data-id="3fd0bfe4-93f1-418d-8ed6-526a48b46d51" href="https://sandbox.bookingcore.co/admin/module/user?s=38">
-                                    <div class="media">
-                                        <div class="media-left">
-                                              <div class="media-object">
-                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="mohamed zobi">
-                                                                                                </div>
-                                            </div>
-                                        <div class="media-body">
-                                            mohamed zobi has been registered
-                                              <div class="notification-meta">
-                                                    <small class="timestamp">12 hours 36 minutes 30 seconds </small>
-                                                  </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                                                                                <li class="notification active">
-                                <a class="markAsRead" data-id="c7a56a2e-a4bc-42cf-ba25-8175c5e77db4" href="https://sandbox.bookingcore.co/admin/module/boat?id=13">
-                                    <div class="media">
-                                        <div class="media-left">
-                                              <div class="media-object">
-                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="System Admin">
-                                                                                                </div>
-                                            </div>
-                                        <div class="media-body">
-                                            My Way 100 has been deleted by System Admin
-                                              <div class="notification-meta">
-                                                    <small class="timestamp">15 hours 33 minutes 1 seconds </small>
-                                                  </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                                                                                <li class="notification active">
-                                <a class="markAsRead" data-id="927695df-c064-4a04-b10b-03c40d52f628" href="https://sandbox.bookingcore.co/admin/module/boat?id=10">
-                                    <div class="media">
-                                        <div class="media-left">
-                                              <div class="media-object">
-                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="System Admin">
-                                                                                                </div>
-                                            </div>
-                                        <div class="media-body">
-                                            Endless Summer W-10 has been deleted by System Admin
-                                              <div class="notification-meta">
-                                                    <small class="timestamp">15 hours 33 minutes 1 seconds </small>
-                                                  </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                                                            </ul>
-                <div class="dropdown-footer text-center">
-                    <a href="https://sandbox.bookingcore.co/admin/module/core/notifications">View More</a>
-                </div>
-            </div>
+           
         </div>
         <div class="dropdown header-widget widget-user flex-shrink-0">
             <div data-toggle="dropdown" class="user-dropdown d-flex align-items-center" aria-haspopup="true" aria-expanded="false">
                 <span class="user-avatar flex-shrink-0">
-                                             <div class="avatar avatar-cover" style="background-image: url('https://sandbox.bookingcore.co/images/avatar.png')"></div>
+                                             <div class="avatar avatar-cover" style="background-image: url(' /images/avatar.png')"></div>
                                     </span>
                 <div class="user-info flex-grow-1">
                     <div class="user-name">System Admin</div>
                     <div class="user-role">Administrator</div>
                 </div>
-                <i class="fa fa-angle-down"></i>
+                
             </div>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="https://sandbox.bookingcore.co/admin/module/user/edit/1">Edit Profile</a>
-                <a class="dropdown-item" href="https://sandbox.bookingcore.co/admin/module/user/password/1">Change Password</a>
+           <!---- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href=" /admin/module/user/edit/1">Edit Profile</a>
+                <a class="dropdown-item" href=" /admin/module/user/password/1">Change Password</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Vendor Dashboard</h6>
-                <a href="https://sandbox.bookingcore.co/user/dashboard" class="dropdown-item">Dashboard</a>
+                <a href=" /user/dashboard" class="dropdown-item">Dashboard</a>
                 <div class="dropdown-divider"></div>
                 <a href="https://sandbox.bookingcore.co" class="dropdown-item"><i class="fa fa-home"></i> Homepage</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Logout
                 </a>
-            </div>
-            <form id="logout-form" action="https://sandbox.bookingcore.co/logout" method="POST" style="display: none;">
+            </div>-->
+            <form id="logout-form" action=" /logout" method="POST" style="display: none;">
                 <input type="hidden" name="_token" value="ORpSGpuYkPnvhvt4SSYfJXSF3f9CMCCYTPdTt4zt">
             </form>
         </div>
@@ -328,421 +218,398 @@
     </div>
     <div class="main-sidebar">
         <ul class="main-menu pb-5">
-                    <li class=" https:__sandbox.bookingcore.co_admin"><a href="https://sandbox.bookingcore.co/admin">
-                                    <span class="icon text-center"><i class="icon ion-ios-desktop"></i></span>
+                    <li class=" https:__sandbox.bookingcore.co_admin"><a href="admin.html">
+                                    <span class="icon text-center"></span>
                                 Dashboard
-            </a>
+            <!--</a>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news">
-                                    <span class="icon text-center"><i class="ion-md-bookmarks"></i></span>
-                                News
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href=" /admin/module/news">
+                                    <span class="icon text-center">
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href=" /admin/module/news">
                                                                 All News</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href=" /admin/module/news/create">
                                                                 Add News</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news/category">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href=" /admin/module/news/category">
                                                                 Categories</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news/tag">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href=" /admin/module/news/tag">
                                                                 Tags</a>
                         </li>
                                     </ul>
-                    </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_page"><a href="https://sandbox.bookingcore.co/admin/module/page">
-                                    <span class="icon text-center"><i class="icon ion-ios-bookmarks"></i></span>
+                    </li>-->
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_page"><a href=" ">
+                                    <span class="icon text-center"></span>
                                 Page
             </a>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href="https://sandbox.bookingcore.co/admin/module/location">
-                                    <span class="icon text-center"><i class="icon ion-md-compass"></i></span>
+                  <!---- <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href=" /admin/module/location">
+                                    <span class="icon text-center"></span>
                                 Location
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href="https://sandbox.bookingcore.co/admin/module/location">
-                                                                    <i class="icon ion-md-compass"></i>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href=" /admin/module/location">
+                                                                    
                                                                 All Location</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href="https://sandbox.bookingcore.co/admin/module/location/category">
-                                                                    <i class="icon ion-md-compass"></i>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href=" /admin/module/location/category">
+                                                                   
                                                                 All Category</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel">
-                                    <span class="icon text-center"><i class="fa fa-building-o"></i></span>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href=" /admin/module/hotel">
+                                    <span class="icon text-center"></span>
                                 Hotel
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href=" /admin/module/hotel">
                                                                 All Hotels</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href=" /admin/module/hotel/create">
                                                                 Add new Hotel</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href=" /admin/module/hotel/attribute">
                                                                 Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel/room/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href=" /admin/module/hotel/room/attribute">
                                                                 Room Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel/recovery">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href=" /admin/module/hotel/recovery">
                                                                 Recovery</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour">
-                                    <span class="icon text-center"><i class="icon ion-md-umbrella"></i></span>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href=" /admin/module/tour">
+                                    <span class="icon text-center"></span>
                                 Tour
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href=" /admin/module/tour">
                                                                 All Tours</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href=" /admin/module/tour/create">
                                                                 Add Tour</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/category">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href=" /admin/module/tour/category">
                                                                 Categories</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href=" /admin/module/tour/attribute">
                                                                 Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/availability">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href=" /admin/module/tour/availability">
                                                                 Availability</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/booking">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href=" /admin/module/tour/booking">
                                                                 Booking Calendar</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/recovery">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href=" /admin/module/tour/recovery">
                                                                 Recovery</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space">
-                                    <span class="icon text-center"><i class="ion ion-md-home"></i></span>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href=" /admin/module/space">
+                                    <span class="icon text-center"></span>
                                 Space
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href=" /admin/module/space">
                                                                 All Spaces</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href=" /admin/module/space/create">
                                                                 Add new Space</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href=" /admin/module/space/attribute">
                                                                 Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space/availability">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href=" /admin/module/space/availability">
                                                                 Availability</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space/recovery">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href=" /admin/module/space/recovery">
                                                                 Recovery</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight">
-                                    <span class="icon text-center"><i class="ion ion-md-airplane"></i></span>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href=" /admin/module/flight">
+                                    <span class="icon text-center"></span>
                                 Flight
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href=" /admin/module/flight">
                                                                 All Flights</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href=" /admin/module/flight/create">
                                                                 Add new Flight</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/airline">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href=" /admin/module/flight/airline">
                                                                 Airline</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/airport">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href=" /admin/module/flight/airport">
                                                                 Airport</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/seat-type">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href=" /admin/module/flight/seat-type">
                                                                 Seat Type</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href=" /admin/module/flight/attribute">
                                                                 Attributes</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car">
-                                    <span class="icon text-center"><i class="ion-logo-model-s"></i></span>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href=" /admin/module/car">
+                                    <span class="icon text-center"></span>
                                 Car
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href=" /admin/module/car">
                                                                 All Cars</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href=" /admin/module/car/create">
                                                                 Add new Car</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href=" /admin/module/car/attribute">
                                                                 Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car/availability">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href=" /admin/module/car/availability">
                                                                 Availability</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car/recovery">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href=" /admin/module/car/recovery">
                                                                 Recovery</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat">
-                                    <span class="icon text-center"><i class="ion-md-boat"></i></span>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href=" /admin/module/boat">
+                                    <span class="icon text-center"></span>
                                 Boat
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href=" /admin/module/boat">
                                                                 All Boats</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href=" /admin/module/boat/create">
                                                                 Add new Boat</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href=" /admin/module/boat/attribute">
                                                                 Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat/availability">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href=" /admin/module/boat/availability">
                                                                 Availability</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat/recovery">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href=" /admin/module/boat/recovery">
                                                                 Recovery</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event">
-                                    <span class="icon text-center"><i class="ion-ios-calendar"></i></span>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href=" /admin/module/event">
+                                    <span class="icon text-center"></span>
                                 Event
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href=" /admin/module/event">
                                                                 All Events</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href=" /admin/module/event/create">
                                                                 Add new Event</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href=" /admin/module/event/attribute">
                                                                 Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event/availability">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href=" /admin/module/event/availability">
                                                                 Availability</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event/recovery">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href=" /admin/module/event/recovery">
                                                                 Recovery</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="https://sandbox.bookingcore.co/admin/module/user/plan">
-                                    <span class="icon text-center"><i class="fa fa-list-alt"></i></span>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href=" /admin/module/user/plan">
+                                    <span class="icon text-center"></span>
                                 User Plans 
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="https://sandbox.bookingcore.co/admin/module/user/plan">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href=" /admin/module/user/plan">
                                                                 User Plans</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="https://sandbox.bookingcore.co/admin/module/user/plan-report">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href=" /admin/module/user/plan-report">
                                                                 Plan Report</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="https://sandbox.bookingcore.co/admin/module/user/plan-request">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href=" /admin/module/user/plan-request">
                                                                 Plan Request </a>
                         </li>
                                     </ul>
-                    </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_popup"><a href="https://sandbox.bookingcore.co/admin/module/popup">
-                                    <span class="icon text-center"><i class="ion ion-ios-cube"></i></span>
+                    </li>-->
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_popup"><a href=" ">
+                                    <span class="icon text-center"></span>
                                 Popup
             </a>
                     </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_coupon"><a href="https://sandbox.bookingcore.co/admin/module/coupon">
-                                    <span class="icon text-center"><i class="fa fa-ticket"></i></span>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_coupon"><a href=" ">
+                                    <span class="icon text-center"></span>
                                 Coupon
             </a>
                     </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_review"><a href="https://sandbox.bookingcore.co/admin/module/review">
-                                    <span class="icon text-center"><i class="icon ion-ios-text"></i></span>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_review"><a href=" ">
+                                    <span class="icon text-center"></span>
                                 Reviews
             </a>
                     </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_media"><a href="https://sandbox.bookingcore.co/admin/module/media">
-                                    <span class="icon text-center"><i class="fa fa-picture-o"></i></span>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_media"><a href=" ">
+                                    <span class="icon text-center"></span>
                                 Media
             </a>
                     </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_core_menu"><a href="https://sandbox.bookingcore.co/admin/module/core/menu">
-                                    <span class="icon text-center"><i class="icon ion-ios-apps"></i></span>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_core_menu"><a href=" ">
+                                    <span class="icon text-center"></span>
                                 Menu
             </a>
                     </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_vendor_payout"><a href="https://sandbox.bookingcore.co/admin/module/vendor/payout">
-                                    <span class="icon text-center"><i class="icon ion-md-card"></i></span>
+                 <!----   <li class=" https:__sandbox.bookingcore.co_admin_module_vendor_payout"><a href=" /admin/module/vendor/payout">
+                                    <span class="icon text-center"></span>
                                 Payouts 
             </a>
                     </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_theme"><a href="https://sandbox.bookingcore.co/admin/module/theme">
-                                    <span class="icon text-center"><i class="fa fa-paint-brush"></i></span>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_theme"><a href=" /admin/module/theme">
+                                    <span class="icon text-center"></span>
                                 Themes
             </a>
-                    </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/general">
-                                    <span class="icon text-center"><i class="icon ion-ios-cog"></i></span>
+                    </li>-->
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" ">
+                                    <span class="icon text-center"></span>
                                 Setting
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/general">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/general">
                                                                 General Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/hotel">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/hotel">
                                                                 Hotel Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/space">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/space">
                                                                 Space Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/car">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/car">
                                                                 Car Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/event">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/event">
                                                                 Event Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/tour">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/tour">
                                                                 Tour Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/flight">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/flight">
                                                                 Flight Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/boat">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/boat">
                                                                 Boat Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/news">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/news">
                                                                 News Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/booking">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/booking">
                                                                 Booking Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/enquiry">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/enquiry">
                                                                 Enquiry Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/user">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/user">
                                                                 User Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/vendor">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/vendor">
                                                                 Vendor Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/user_plans">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/user_plans">
                                                                 User Plans Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/payment">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/payment">
                                                                 Payment Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/style">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/style">
                                                                 Style Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/advance">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/advance">
                                                                 Advanced Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/media">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/media">
                                                                 Media Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/email">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/email">
                                                                 Email Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/sms">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/sms">
                                                                 Sms Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/api">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/api">
                                                                 Mobile App Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/review">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href=" /admin/module/core/settings/index/review">
                                                                 Review Advanced Settings</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/module/core/tools">
-                                    <span class="icon text-center"><i class="icon ion-ios-hammer"></i></span>
-                                Tools
-            </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
-                <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/module/language">
-                                                                    <i class="icon ion-ios-globe"></i>
-                                                                Languages</a>
-                        </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/module/language/translation">
-                                                                    <i class="icon ion-ios-globe"></i>
-                                                                Translation Manager</a>
-                        </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/logs">
-                                                                    <i class="icon ion-ios-nuclear"></i>
-                                                                System Logs</a>
-                        </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/module/core/plugins">
-                                                                    <i class="icon ion-md-color-wand"></i>
-                                                                Plugins</a>
-                        </li>
-                                    </ul>
+                   
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user">
-                                    <span class="icon text-center"><i class="icon ion-ios-contacts"></i></span>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href=" ">
+                                    <span class="icon text-center"></span>
                                 Users 
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user">
-                                                                    <i class="fa fa-user"></i>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href=" /admin/module/user">
+                                                                   
                                                                 All Users</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user/role">
-                                                                    <i class="fa fa-lock"></i>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href=" /admin/module/user/role">
+                                                                   
                                                                 Role Manager</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user/subscriber">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href=" /admin/module/user/subscriber">
                                                                 Subscribers</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user/userUpgradeRequest">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href=" /admin/module/user/userUpgradeRequest">
                                                                 Upgrade Request <span class="badge badge-warning">2</span></a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user/verification">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href=" /admin/module/user/verification">
                                                                 Verification Request </a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/report/booking">
-                                    <span class="icon text-center"><i class="icon ion-ios-pie"></i></span>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href=" ">
+                                    <span class="icon text-center"></span>
                                 Reports 
             </a>
-                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                            <span class="btn-toggle"></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/report/enquiry">
-                                                                    <i class="icon ion-ios-pricetags"></i>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href=" /admin/module/report/enquiry">
+                                                                   
                                                                 Enquiry Reports</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/report/booking">
-                                                                    <i class="icon ion-ios-pricetags"></i>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href=" /admin/module/report/booking">
+                                                             
                                                                 Booking Reports</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/report/statistic">
-                                                                    <i class="icon ion ion-md-podium"></i>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href=" /admin/module/report/statistic">
+                                                                  
                                                                 Booking Statistic</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/contact">
-                                                                    <i class="icon ion ion-md-mail"></i>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href=" /admin/module/contact">
+                                                                    
                                                                 Contact Submissions</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/user/wallet/report">
-                                                                    <i class="fa fa-money"></i>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href=" /admin/module/user/wallet/report">
+                                                                  
                                                                 Credit Purchase Report </a>
                         </li>
                                     </ul>
@@ -760,24 +627,20 @@
                         <div class="dashboard-report-card card purple">
                             <div class="card-content">
                                 <span class="card-title">Revenue</span>
-                                <span class="card-amount">$97.432</span>
+                                <span class="card-amount">Rs.1500</span>
                                 <span class="card-desc">Total revenue</span>
                             </div>
-                            <div class="card-media">
-                                <i class="icon ion-ios-cart"></i>
-                            </div>
+                          
                         </div>
                     </div>
                                     <div class="col-sm-6 col-md-3">
                         <div class="dashboard-report-card card pink">
                             <div class="card-content">
                                 <span class="card-title">Earning</span>
-                                <span class="card-amount">$13.509</span>
+                                <span class="card-amount">Rs.1200</span>
                                 <span class="card-desc">Total Earning</span>
                             </div>
-                            <div class="card-media">
-                                <i class="icon ion-ios-gift"></i>
-                            </div>
+                           
                         </div>
                     </div>
                                     <div class="col-sm-6 col-md-3">
@@ -787,23 +650,10 @@
                                 <span class="card-amount">33</span>
                                 <span class="card-desc">Total bookings</span>
                             </div>
-                            <div class="card-media">
-                                <i class="icon ion-ios-pricetags"></i>
-                            </div>
+                            
                         </div>
                     </div>
-                                    <div class="col-sm-6 col-md-3">
-                        <div class="dashboard-report-card card success">
-                            <div class="card-content">
-                                <span class="card-title">Services</span>
-                                <span class="card-amount">87</span>
-                                <span class="card-desc">Total bookable services</span>
-                            </div>
-                            <div class="card-media">
-                                <i class="icon ion-ios-flash"></i>
-                            </div>
-                        </div>
-                    </div>
+                   
                                     </div>
         <div class="row">
             <div class="col-md-12 col-lg-6 mb-3">
@@ -811,8 +661,8 @@
                     <div class="panel-title d-flex justify-content-between align-items-center">
                         <strong>Earning statistics</strong>
                         <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                            <i class="fa fa-calendar"></i>&nbsp;
-                            <span></span> <i class="fa fa-caret-down"></i>
+                          &nbsp;
+                            <span></span>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -827,8 +677,8 @@
                 <div class="panel">
                     <div class="panel-title d-flex justify-content-between">
                         <strong>Recent Bookings</strong>
-                        <a href="https://sandbox.bookingcore.co/admin/module/report/booking" class="btn-link">More
-                            <i class="icon ion-ios-arrow-forward"></i></a>
+                        <a href="" class="btn-link">More
+                        </a>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -838,7 +688,7 @@
                                     <th width="60px">#</th>
                                     <th>Item</th>
                                     <th width="100px">Total</th>
-                                    <th width="100px">Paid</th>
+                                    
                                     <th width="100px">Status</th>
                                     <th width="100px">Created At</th>
                                 </tr>
@@ -847,10 +697,10 @@
                                                                                                             <tr>
                                             <td>#76</td>
                                             <td>
-                                                                                                    <a href="https://sandbox.bookingcore.co/space/stay-greenwich-village" target="_blank">STAY GREENWICH VILLAGE</a>
+                                                                                                    <a href=" " target="_blank">bus 1</a>
                                                                                             </td>
-                                            <td>$1.350</td>
-                                            <td>$0</td>
+                                            <td>Rs.1200</td>
+                                            
                                             <td>
                                                 <span class="badge badge-primary">Processing</span>
                                             </td>
@@ -859,10 +709,10 @@
                                                                             <tr>
                                             <td>#75</td>
                                             <td>
-                                                                                                    <a href="https://sandbox.bookingcore.co/tour/southwest-states" target="_blank">Southwest States (Ex Los Angeles) </a>
+                                                                                                    <a href=" " target="_blank">bus 2 </a>
                                                                                             </td>
-                                            <td>$2.400</td>
-                                            <td>$0</td>
+                                            <td>Rs.400</td>
+                                           
                                             <td>
                                                 <span class="badge badge-">Unpaid</span>
                                             </td>
@@ -871,10 +721,10 @@
                                                                             <tr>
                                             <td>#68</td>
                                             <td>
-                                                                                                    <a href="#" target="_blank">Mr. Roosevelt Schamberger IV</a>
+                                                                                                    <a href="#" target="_blank">bus 3</a>
                                                                                             </td>
-                                            <td>$10</td>
-                                            <td>$0</td>
+                                            <td>Rs.1110</td>
+                                            
                                             <td>
                                                 <span class="badge badge-">Unpaid</span>
                                             </td>
@@ -883,10 +733,10 @@
                                                                             <tr>
                                             <td>#66</td>
                                             <td>
-                                                                                                    <a href="https://sandbox.bookingcore.co/hotel/testing-hotel" target="_blank">Testing hotel</a>
+                                                                                                    <a href="#" target="_blank">bus 4</a>
                                                                                             </td>
-                                            <td>$18.100</td>
-                                            <td>$0</td>
+                                            <td>Rs.6900</td>
+                                           
                                             <td>
                                                 <span class="badge badge-primary">Processing</span>
                                             </td>
@@ -895,10 +745,10 @@
                                                                             <tr>
                                             <td>#65</td>
                                             <td>
-                                                                                                    <a href="https://sandbox.bookingcore.co/tour/eastern-discovery-start-new-orleans" target="_blank">Eastern Discovery (Start New Orleans)</a>
+                                                                                                    <a href="#" target="_blank">bus 5</a>
                                                                                             </td>
-                                            <td>$1.200</td>
-                                            <td>$0</td>
+                                            <td>Rs.5200</td>
+                                          
                                             <td>
                                                 <span class="badge badge-primary">Processing</span>
                                             </td>
@@ -907,10 +757,10 @@
                                                                             <tr>
                                             <td>#61</td>
                                             <td>
-                                                                                                    <a href="https://sandbox.bookingcore.co/tour/eastern-discovery-start-new-orleans" target="_blank">Eastern Discovery (Start New Orleans)</a>
+                                                                                                    <a href="#" target="_blank">bus 6</a>
                                                                                             </td>
-                                            <td>$1.100</td>
-                                            <td>$0</td>
+                                            <td>Rs.6500</td>
+                                            
                                             <td>
                                                 <span class="badge badge-primary">Processing</span>
                                             </td>
@@ -919,10 +769,10 @@
                                                                             <tr>
                                             <td>#60</td>
                                             <td>
-                                                                                                    <a href="https://sandbox.bookingcore.co/hotel/envision-hotel-biston" target="_blank">EnVision Hotel Boston</a>
+                                                                                                    <a href="#" target="_blank">bus 7</a>
                                                                                             </td>
-                                            <td>$450</td>
-                                            <td>$0</td>
+                                            <td>Rs.1250</td>
+                                            
                                             <td>
                                                 <span class="badge badge-primary">Processing</span>
                                             </td>
@@ -931,10 +781,10 @@
                                                                             <tr>
                                             <td>#59</td>
                                             <td>
-                                                                                                    <a href="https://sandbox.bookingcore.co/tour/paris-vacation-travel" target="_blank">Paris Vacation Travel </a>
+                                                                                                    <a href="#" target="_blank">bus 8 </a>
                                                                                             </td>
                                             <td>$2.100</td>
-                                            <td>$0</td>
+                                           
                                             <td>
                                                 <span class="badge badge-">Unpaid</span>
                                             </td>
@@ -943,10 +793,10 @@
                                                                             <tr>
                                             <td>#57</td>
                                             <td>
-                                                                                                    <a href="https://sandbox.bookingcore.co/car/2019-audi-s3" target="_blank">2019 Audi S3</a>
+                                                                                                    <a href="#" target="_blank">bus 9</a>
                                                                                             </td>
-                                            <td>$1.500</td>
-                                            <td>$0</td>
+                                            <td>Rs.2500</td>
+                                            
                                             <td>
                                                 <span class="badge badge-">Unpaid</span>
                                             </td>
@@ -955,10 +805,10 @@
                                                                             <tr>
                                             <td>#52</td>
                                             <td>
-                                                                                                    <a href="#" target="_blank">Mr. Roosevelt Schamberger IV</a>
+                                                                                                    <a href="#" target="_blank">bus 10</a>
                                                                                             </td>
-                                            <td>$10</td>
-                                            <td>$0</td>
+                                            <td>Rs.1300</td>
+                                          
                                             <td>
                                                 <span class="badge badge-">Unpaid</span>
                                             </td>
@@ -977,17 +827,7 @@
     </div>
         <footer class="main-footer">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6 copy-right" >
-                        2023 &copy; Booking Core by <a href="https://www.bookingcore.org" target="_blank">BookingCore Team</a>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="text-md-right footer-links d-none d-sm-block">
-                            <a href="https://www.bookingcore.org" target="_blank">About Us</a>
-                            <a href="https://m.me/bookingcore" target="_blank">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </footer>
     </div>
@@ -1153,28 +993,28 @@
 
 <!-- Scripts -->
 
-<script src="https://sandbox.bookingcore.co/libs/pusher.min.js"></script>
-<script src="https://sandbox.bookingcore.co/dist/admin/js/manifest.js?_ver=3.2.1" ></script>
-<script src="https://sandbox.bookingcore.co/libs/jquery-3.6.3.min.js?_ver=3.2.1" ></script>
-<script src="https://sandbox.bookingcore.co/themes/admin/libs/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js?_ver=3.2.1" ></script>
-<script src="https://sandbox.bookingcore.co/dist/admin/js/vendor.js?_ver=3.2.1" ></script>
-<script src="https://sandbox.bookingcore.co/libs/filerobot-image-editor/filerobot-image-editor.min.js?_ver=3.2.1"></script>
+<script src=" /libs/pusher.min.js"></script>
+<script src=" /dist/admin/js/manifest.js?_ver=3.2.1" ></script>
+<script src=" /libs/jquery-3.6.3.min.js?_ver=3.2.1" ></script>
+<script src=" /themes/admin/libs/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js?_ver=3.2.1" ></script>
+<script src=" /dist/admin/js/vendor.js?_ver=3.2.1" ></script>
+<script src=" /libs/filerobot-image-editor/filerobot-image-editor.min.js?_ver=3.2.1"></script>
 
-<script src="https://sandbox.bookingcore.co/dist/admin/js/app.js?_ver=3.2.1" ></script>
-<script src="https://sandbox.bookingcore.co/libs/vue/vue.js"></script>
+<script src=" /dist/admin/js/app.js?_ver=3.2.1" ></script>
+<script src=" /libs/vue/vue.js"></script>
 
-<script src="https://sandbox.bookingcore.co/libs/select2/js/select2.min.js" ></script>
-<script src="https://sandbox.bookingcore.co/libs/bootbox/bootbox.min.js"></script>
+<script src=" /libs/select2/js/select2.min.js" ></script>
+<script src=" /libs/bootbox/bootbox.min.js"></script>
 
-<script src="https://sandbox.bookingcore.co/libs/daterange/moment.min.js"></script>
-<script src="https://sandbox.bookingcore.co/libs/daterange/daterangepicker.min.js?_ver=3.2.1"></script>
+<script src=" /libs/daterange/moment.min.js"></script>
+<script src=" /libs/daterange/daterangepicker.min.js?_ver=3.2.1"></script>
 
 
 
-    <script src="https://sandbox.bookingcore.co/libs/chart_js/Chart.min.js"></script>
-    <script src="https://sandbox.bookingcore.co/libs/daterange/moment.min.js"></script>
-    <script src="https://sandbox.bookingcore.co/libs/daterange/daterangepicker.min.js?_ver=3.2.1"></script>
-    <link rel="stylesheet" href="https://sandbox.bookingcore.co/libs/daterange/daterangepicker.css"/>
+    <script src=" /libs/chart_js/Chart.min.js"></script>
+    <script src=" /libs/daterange/moment.min.js"></script>
+    <script src=" /libs/daterange/daterangepicker.min.js?_ver=3.2.1"></script>
+    <link rel="stylesheet" href=" /libs/daterange/daterangepicker.css"/>
     <script>
         var ctx = document.getElementById('earning_chart').getContext('2d');
         window.myMixedChart = new Chart(ctx, {
@@ -1246,7 +1086,7 @@
         }, cb).on('apply.daterangepicker', function (ev, picker) {
             // Reload Earning JS
             $.ajax({
-                url: 'https://sandbox.bookingcore.co/admin/module/report/statistic/reloadChart',
+                url: ' /admin/module/report/statistic/reloadChart',
                 data: {
                     chart: 'earning',
                     from: picker.startDate.format('YYYY-MM-DD'),
