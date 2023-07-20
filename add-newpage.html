@@ -4,52 +4,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="ORpSGpuYkPnvhvt4SSYfJXSF3f9CMCCYTPdTt4zt">
-
     <title>Dashboard - Booking Core</title>
 
-                                    <link rel="icon" type="image/png" href="https://sandbox.bookingcore.co/uploads/demo/general/favicon.png" />
+    <link rel="icon" type="image/png" href="/uploads/demo/general/favicon.png" />
             
     <meta name="robots" content="noindex, nofollow" />
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
     <!-- Styles -->
-    <link href="https://sandbox.bookingcore.co/libs/select2/css/select2.min.css" rel="stylesheet">
-    <link href="https://sandbox.bookingcore.co/libs/flags/css/flag-icon.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://sandbox.bookingcore.co/libs/daterange/daterangepicker.css"/>
-    <link href="https://sandbox.bookingcore.co/themes/admin/libs/bootstrap-4.6.2-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://sandbox.bookingcore.co/themes/admin/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://sandbox.bookingcore.co/dist/admin/css/app.css" rel="stylesheet">
+    <link href="/libs/select2/css/select2.min.css" rel="stylesheet">
+    <link href="/libs/flags/css/flag-icon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/libs/daterange/daterangepicker.css"/>
+    <link href="/themes/admin/libs/bootstrap-4.6.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/themes/admin/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/dist/admin/css/app.css" rel="stylesheet">
     
     <style>
         .main-sidebar {
-    background: #363198;
-    bottom: 0;
-    color: #d4d4d4;
-    left: 0;
-    overflow-y: auto;
-    position: fixed;
-    top: 56px;
-    width: 240px;
-    z-index: 10;
-}
-
+            background: #363198;
+            bottom: 0;
+            color: #d4d4d4;
+            left: 0;
+            overflow-y: auto;
+            position: fixed;
+            top: 56px;
+            width: 240px;
+            z-index: 10;
+        }
     </style>
-
 
     <script>
         var bookingCore  = {
             url:'https://sandbox.bookingcore.co',
-            admin_url:'https://sandbox.bookingcore.co/admin',
+            admin_url:'/admin',
             map_provider:'gmap',
             map_gmap_key:'',
             csrf:'ORpSGpuYkPnvhvt4SSYfJXSF3f9CMCCYTPdTt4zt',
             date_format:'MM/DD/YYYY',
-            markAsRead:'https://sandbox.bookingcore.co/admin/module/core/markAsRead',
-            markAllAsRead:'https://sandbox.bookingcore.co/admin/module/core/markAllAsRead',
-            loadNotify : 'https://sandbox.bookingcore.co/admin/module/core/notifications',
+            markAsRead:'/admin/module/core/markAsRead',
+            markAllAsRead:'/admin/module/core/markAllAsRead',
+            loadNotify : '/admin/module/core/notifications',
             pusher_api_key : '',
             pusher_cluster : '',
             isAdmin : 1,
@@ -158,55 +153,24 @@
             }
         };
     </script>
-    <script src="https://sandbox.bookingcore.co/libs/tinymce/js/tinymce/tinymce.min.js" ></script>
+    <script src="/libs/tinymce/js/tinymce/tinymce.min.js" ></script>
     
-<link rel='stylesheet' type='text/css' property='stylesheet' href='//sandbox.bookingcore.co/_debugbar/assets/stylesheets?v=1657531602&theme=auto' data-turbolinks-eval='false' data-turbo-eval='false'><script src='//sandbox.bookingcore.co/_debugbar/assets/javascript?v=1657531602' data-turbolinks-eval='false' data-turbo-eval='false'></script><script data-turbo-eval="false">jQuery.noConflict(true);</script>
-<script> Sfdump = window.Sfdump || (function (doc) { var refStyle = doc.createElement('style'), rxEsc = /([.*+?^${}()|\[\]\/\\])/g, idRx = /\bsf-dump-\d+-ref[012]\w+\b/, keyHint = 0 <= navigator.platform.toUpperCase().indexOf('MAC') ? 'Cmd' : 'Ctrl', addEventListener = function (e, n, cb) { e.addEventListener(n, cb, false); }; refStyle.innerHTML = '.phpdebugbar pre.sf-dump .sf-dump-compact, .sf-dump-str-collapse .sf-dump-str-collapse, .sf-dump-str-expand .sf-dump-str-expand { display: none; }'; (doc.documentElement.firstElementChild || doc.documentElement.children[0]).appendChild(refStyle); refStyle = doc.createElement('style'); (doc.documentElement.firstElementChild || doc.documentElement.children[0]).appendChild(refStyle); if (!doc.addEventListener) { addEventListener = function (element, eventName, callback) { element.attachEvent('on' + eventName, function (e) { e.preventDefault = function () {e.returnValue = false;}; e.target = e.srcElement; callback(e); }); }; } function toggle(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className, arrow, newClass; if (/\bsf-dump-compact\b/.test(oldClass)) { arrow = '▼'; newClass = 'sf-dump-expanded'; } else if (/\bsf-dump-expanded\b/.test(oldClass)) { arrow = '▶'; newClass = 'sf-dump-compact'; } else { return false; } if (doc.createEvent && s.dispatchEvent) { var event = doc.createEvent('Event'); event.initEvent('sf-dump-expanded' === newClass ? 'sfbeforedumpexpand' : 'sfbeforedumpcollapse', true, false); s.dispatchEvent(event); } a.lastChild.innerHTML = arrow; s.className = s.className.replace(/\bsf-dump-(compact|expanded)\b/, newClass); if (recursive) { try { a = s.querySelectorAll('.'+oldClass); for (s = 0; s < a.length; ++s) { if (-1 == a[s].className.indexOf(newClass)) { a[s].className = newClass; a[s].previousSibling.lastChild.innerHTML = arrow; } } } catch (e) { } } return true; }; function collapse(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-expanded\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function expand(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-compact\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function collapseAll(root) { var a = root.querySelector('a.sf-dump-toggle'); if (a) { collapse(a, true); expand(a); return true; } return false; } function reveal(node) { var previous, parents = []; while ((node = node.parentNode || {}) && (previous = node.previousSibling) && 'A' === previous.tagName) { parents.push(previous); } if (0 !== parents.length) { parents.forEach(function (parent) { expand(parent); }); return true; } return false; } function highlight(root, activeNode, nodes) { resetHighlightedNodes(root); Array.from(nodes||[]).forEach(function (node) { if (!/\bsf-dump-highlight\b/.test(node.className)) { node.className = node.className + ' sf-dump-highlight'; } }); if (!/\bsf-dump-highlight-active\b/.test(activeNode.className)) { activeNode.className = activeNode.className + ' sf-dump-highlight-active'; } } function resetHighlightedNodes(root) { Array.from(root.querySelectorAll('.sf-dump-str, .sf-dump-key, .sf-dump-public, .sf-dump-protected, .sf-dump-private')).forEach(function (strNode) { strNode.className = strNode.className.replace(/\bsf-dump-highlight\b/, ''); strNode.className = strNode.className.replace(/\bsf-dump-highlight-active\b/, ''); }); } return function (root, x) { root = doc.getElementById(root); var indentRx = new RegExp('^('+(root.getAttribute('data-indent-pad') || ' ').replace(rxEsc, '\\$1')+')+', 'm'), options = {"maxDepth":1,"maxStringLength":160,"fileLinkFormat":false}, elt = root.getElementsByTagName('A'), len = elt.length, i = 0, s, h, t = []; while (i < len) t.push(elt[i++]); for (i in x) { options[i] = x[i]; } function a(e, f) { addEventListener(root, e, function (e, n) { if ('A' == e.target.tagName) { f(e.target, e); } else if ('A' == e.target.parentNode.tagName) { f(e.target.parentNode, e); } else { n = /\bsf-dump-ellipsis\b/.test(e.target.className) ? e.target.parentNode : e.target; if ((n = n.nextElementSibling) && 'A' == n.tagName) { if (!/\bsf-dump-toggle\b/.test(n.className)) { n = n.nextElementSibling || n; } f(n, e, true); } } }); }; function isCtrlKey(e) { return e.ctrlKey || e.metaKey; } function xpathString(str) { var parts = str.match(/[^'"]+|['"]/g).map(function (part) { if ("'" == part) { return '"\'"'; } if ('"' == part) { return "'\"'"; } return "'" + part + "'"; }); return "concat(" + parts.join(",") + ", '')"; } function xpathHasClass(className) { return "contains(concat(' ', normalize-space(@class), ' '), ' " + className +" ')"; } addEventListener(root, 'mouseover', function (e) { if ('' != refStyle.innerHTML) { refStyle.innerHTML = ''; } }); a('mouseover', function (a, e, c) { if (c) { e.target.style.cursor = "pointer"; } else if (a = idRx.exec(a.className)) { try { refStyle.innerHTML = '.phpdebugbar pre.sf-dump .'+a[0]+'{background-color: #B729D9; color: #FFF !important; border-radius: 2px}'; } catch (e) { } } }); a('click', function (a, e, c) { if (/\bsf-dump-toggle\b/.test(a.className)) { e.preventDefault(); if (!toggle(a, isCtrlKey(e))) { var r = doc.getElementById(a.getAttribute('href').slice(1)), s = r.previousSibling, f = r.parentNode, t = a.parentNode; t.replaceChild(r, a); f.replaceChild(a, s); t.insertBefore(s, r); f = f.firstChild.nodeValue.match(indentRx); t = t.firstChild.nodeValue.match(indentRx); if (f && t && f[0] !== t[0]) { r.innerHTML = r.innerHTML.replace(new RegExp('^'+f[0].replace(rxEsc, '\\$1'), 'mg'), t[0]); } if (/\bsf-dump-compact\b/.test(r.className)) { toggle(s, isCtrlKey(e)); } } if (c) { } else if (doc.getSelection) { try { doc.getSelection().removeAllRanges(); } catch (e) { doc.getSelection().empty(); } } else { doc.selection.empty(); } } else if (/\bsf-dump-str-toggle\b/.test(a.className)) { e.preventDefault(); e = a.parentNode.parentNode; e.className = e.className.replace(/\bsf-dump-str-(expand|collapse)\b/, a.parentNode.className); } }); elt = root.getElementsByTagName('SAMP'); len = elt.length; i = 0; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; if ('SAMP' == elt.tagName) { a = elt.previousSibling || {}; if ('A' != a.tagName) { a = doc.createElement('A'); a.className = 'sf-dump-ref'; elt.parentNode.insertBefore(a, elt); } else { a.innerHTML += ' '; } a.title = (a.title ? a.title+'\n[' : '[')+keyHint+'+click] Expand all children'; a.innerHTML += elt.className == 'sf-dump-compact' ? '<span>▶</span>' : '<span>▼</span>'; a.className += ' sf-dump-toggle'; x = 1; if ('sf-dump' != elt.parentNode.className) { x += elt.parentNode.getAttribute('data-depth')/1; } } else if (/\bsf-dump-ref\b/.test(elt.className) && (a = elt.getAttribute('href'))) { a = a.slice(1); elt.className += ' '+a; if (/[\[{]$/.test(elt.previousSibling.nodeValue)) { a = a != elt.nextSibling.id && doc.getElementById(a); try { s = a.nextSibling; elt.appendChild(a); s.parentNode.insertBefore(a, s); if (/^[@#]/.test(elt.innerHTML)) { elt.innerHTML += ' <span>▶</span>'; } else { elt.innerHTML = '<span>▶</span>'; elt.className = 'sf-dump-ref'; } elt.className += ' sf-dump-toggle'; } catch (e) { if ('&' == elt.innerHTML.charAt(0)) { elt.innerHTML = '…'; elt.className = 'sf-dump-ref'; } } } } } if (doc.evaluate && Array.from && root.children.length > 1) { root.setAttribute('tabindex', 0); SearchState = function () { this.nodes = []; this.idx = 0; }; SearchState.prototype = { next: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx < (this.nodes.length - 1) ? this.idx + 1 : 0; return this.current(); }, previous: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx > 0 ? this.idx - 1 : (this.nodes.length - 1); return this.current(); }, isEmpty: function () { return 0 === this.count(); }, current: function () { if (this.isEmpty()) { return null; } return this.nodes[this.idx]; }, reset: function () { this.nodes = []; this.idx = 0; }, count: function () { return this.nodes.length; }, }; function showCurrent(state) { var currentNode = state.current(), currentRect, searchRect; if (currentNode) { reveal(currentNode); highlight(root, currentNode, state.nodes); if ('scrollIntoView' in currentNode) { currentNode.scrollIntoView(true); currentRect = currentNode.getBoundingClientRect(); searchRect = search.getBoundingClientRect(); if (currentRect.top < (searchRect.top + searchRect.height)) { window.scrollBy(0, -(searchRect.top + searchRect.height + 5)); } } } counter.textContent = (state.isEmpty() ? 0 : state.idx + 1) + ' of ' + state.count(); } var search = doc.createElement('div'); search.className = 'sf-dump-search-wrapper sf-dump-search-hidden'; search.innerHTML = ' <input type="text" class="sf-dump-search-input"> <span class="sf-dump-search-count">0 of 0<\/span> <button type="button" class="sf-dump-search-input-previous" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 1331l-166 165q-19 19-45 19t-45-19L896 965l-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> <button type="button" class="sf-dump-search-input-next" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 808l-742 741q-19 19-45 19t-45-19L109 808q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> '; root.insertBefore(search, root.firstChild); var state = new SearchState(); var searchInput = search.querySelector('.sf-dump-search-input'); var counter = search.querySelector('.sf-dump-search-count'); var searchInputTimer = 0; var previousSearchQuery = ''; addEventListener(searchInput, 'keyup', function (e) { var searchQuery = e.target.value; /* Don't perform anything if the pressed key didn't change the query */ if (searchQuery === previousSearchQuery) { return; } previousSearchQuery = searchQuery; clearTimeout(searchInputTimer); searchInputTimer = setTimeout(function () { state.reset(); collapseAll(root); resetHighlightedNodes(root); if ('' === searchQuery) { counter.textContent = '0 of 0'; return; } var classMatches = [ "sf-dump-str", "sf-dump-key", "sf-dump-public", "sf-dump-protected", "sf-dump-private", ].map(xpathHasClass).join(' or '); var xpathResult = doc.evaluate('.//span[' + classMatches + '][contains(translate(child::text(), ' + xpathString(searchQuery.toUpperCase()) + ', ' + xpathString(searchQuery.toLowerCase()) + '), ' + xpathString(searchQuery.toLowerCase()) + ')]', root, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null); while (node = xpathResult.iterateNext()) state.nodes.push(node); showCurrent(state); }, 400); }); Array.from(search.querySelectorAll('.sf-dump-search-input-next, .sf-dump-search-input-previous')).forEach(function (btn) { addEventListener(btn, 'click', function (e) { e.preventDefault(); -1 !== e.target.className.indexOf('next') ? state.next() : state.previous(); searchInput.focus(); collapseAll(root); showCurrent(state); }) }); addEventListener(root, 'keydown', function (e) { var isSearchActive = !/\bsf-dump-search-hidden\b/.test(search.className); if ((114 === e.keyCode && !isSearchActive) || (isCtrlKey(e) && 70 === e.keyCode)) { /* F3 or CMD/CTRL + F */ if (70 === e.keyCode && document.activeElement === searchInput) { /* * If CMD/CTRL + F is hit while having focus on search input, * the user probably meant to trigger browser search instead. * Let the browser execute its behavior: */ return; } e.preventDefault(); search.className = search.className.replace(/\bsf-dump-search-hidden\b/, ''); searchInput.focus(); } else if (isSearchActive) { if (27 === e.keyCode) { /* ESC key */ search.className += ' sf-dump-search-hidden'; e.preventDefault(); resetHighlightedNodes(root); searchInput.value = ''; } else if ( (isCtrlKey(e) && 71 === e.keyCode) /* CMD/CTRL + G */ || 13 === e.keyCode /* Enter */ || 114 === e.keyCode /* F3 */ ) { e.preventDefault(); e.shiftKey ? state.previous() : state.next(); collapseAll(root); showCurrent(state); } } }); } if (0 >= options.maxStringLength) { return; } try { elt = root.querySelectorAll('.sf-dump-str'); len = elt.length; i = 0; t = []; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; s = elt.innerText || elt.textContent; x = s.length - options.maxStringLength; if (0 < x) { h = elt.innerHTML; elt[elt.innerText ? 'innerText' : 'textContent'] = s.substring(0, options.maxStringLength); elt.className += ' sf-dump-str-collapse'; elt.innerHTML = '<span class=sf-dump-str-collapse>'+h+'<a class="sf-dump-ref sf-dump-str-toggle" title="Collapse"> ◀</a></span>'+ '<span class=sf-dump-str-expand>'+elt.innerHTML+'<a class="sf-dump-ref sf-dump-str-toggle" title="'+x+' remaining characters"> ▶</a></span>'; } } } catch (e) { } }; })(document); </script><style> .phpdebugbar pre.sf-dump { display: block; white-space: pre; padding: 5px; overflow: initial !important; } .phpdebugbar pre.sf-dump:after { content: ""; visibility: hidden; display: block; height: 0; clear: both; } .phpdebugbar pre.sf-dump span { display: inline; } .phpdebugbar pre.sf-dump a { text-decoration: none; cursor: pointer; border: 0; outline: none; color: inherit; } .phpdebugbar pre.sf-dump img { max-width: 50em; max-height: 50em; margin: .5em 0 0 0; padding: 0; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAHUlEQVQY02O8zAABilCaiQEN0EeA8QuUcX9g3QEAAjcC5piyhyEAAAAASUVORK5CYII=) #D3D3D3; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis { display: inline-block; overflow: visible; text-overflow: ellipsis; max-width: 5em; white-space: nowrap; overflow: hidden; vertical-align: top; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis+.sf-dump-ellipsis { max-width: none; } .phpdebugbar pre.sf-dump code { display:inline; padding:0; background:none; } .sf-dump-public.sf-dump-highlight, .sf-dump-protected.sf-dump-highlight, .sf-dump-private.sf-dump-highlight, .sf-dump-str.sf-dump-highlight, .sf-dump-key.sf-dump-highlight { background: rgba(111, 172, 204, 0.3); border: 1px solid #7DA0B1; border-radius: 3px; } .sf-dump-public.sf-dump-highlight-active, .sf-dump-protected.sf-dump-highlight-active, .sf-dump-private.sf-dump-highlight-active, .sf-dump-str.sf-dump-highlight-active, .sf-dump-key.sf-dump-highlight-active { background: rgba(253, 175, 0, 0.4); border: 1px solid #ffa500; border-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-hidden { display: none !important; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper { font-size: 0; white-space: nowrap; margin-bottom: 5px; display: flex; position: -webkit-sticky; position: sticky; top: 5px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > * { vertical-align: top; box-sizing: border-box; height: 21px; font-weight: normal; border-radius: 0; background: #FFF; color: #757575; border: 1px solid #BBB; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > input.sf-dump-search-input { padding: 3px; height: 21px; font-size: 12px; border-right: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px; color: #000; min-width: 15px; width: 100%; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous { background: #F2F2F2; outline: none; border-left: none; font-size: 0; line-height: 0; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next { border-top-right-radius: 3px; border-bottom-right-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next > svg, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous > svg { pointer-events: none; width: 12px; height: 12px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-count { display: inline-block; padding: 0 5px; margin: 0; border-left: none; line-height: 21px; font-size: 12px; }.phpdebugbar pre.sf-dump, .phpdebugbar pre.sf-dump .sf-dump-default{word-wrap: break-word; white-space: pre-wrap; word-break: normal}.phpdebugbar pre.sf-dump .sf-dump-num{font-weight:bold; color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-const{font-weight:bold}.phpdebugbar pre.sf-dump .sf-dump-str{font-weight:bold; color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-note{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ref{color:#7B7B7B}.phpdebugbar pre.sf-dump .sf-dump-public{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-protected{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-private{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-meta{color:#B729D9}.phpdebugbar pre.sf-dump .sf-dump-key{color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-index{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ellipsis{color:#A0A000}.phpdebugbar pre.sf-dump .sf-dump-ns{user-select:none;}.phpdebugbar pre.sf-dump .sf-dump-ellipsis-note{color:#1299DA}</style>
+    <link rel='stylesheet' type='text/css' property='stylesheet' href='//sandbox.bookingcore.co/_debugbar/assets/stylesheets?v=1657531602&theme=auto' data-turbolinks-eval='false' data-turbo-eval='false'><script src='//sandbox.bookingcore.co/_debugbar/assets/javascript?v=1657531602' data-turbolinks-eval='false' data-turbo-eval='false'></script><script data-turbo-eval="false">jQuery.noConflict(true);</script>
+    <script> Sfdump = window.Sfdump || (function (doc) { var refStyle = doc.createElement('style'), rxEsc = /([.*+?^${}()|\[\]\/\\])/g, idRx = /\bsf-dump-\d+-ref[012]\w+\b/, keyHint = 0 <= navigator.platform.toUpperCase().indexOf('MAC') ? 'Cmd' : 'Ctrl', addEventListener = function (e, n, cb) { e.addEventListener(n, cb, false); }; refStyle.innerHTML = '.phpdebugbar pre.sf-dump .sf-dump-compact, .sf-dump-str-collapse .sf-dump-str-collapse, .sf-dump-str-expand .sf-dump-str-expand { display: none; }'; (doc.documentElement.firstElementChild || doc.documentElement.children[0]).appendChild(refStyle); refStyle = doc.createElement('style'); (doc.documentElement.firstElementChild || doc.documentElement.children[0]).appendChild(refStyle); if (!doc.addEventListener) { addEventListener = function (element, eventName, callback) { element.attachEvent('on' + eventName, function (e) { e.preventDefault = function () {e.returnValue = false;}; e.target = e.srcElement; callback(e); }); }; } function toggle(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className, arrow, newClass; if (/\bsf-dump-compact\b/.test(oldClass)) { arrow = '▼'; newClass = 'sf-dump-expanded'; } else if (/\bsf-dump-expanded\b/.test(oldClass)) { arrow = '▶'; newClass = 'sf-dump-compact'; } else { return false; } if (doc.createEvent && s.dispatchEvent) { var event = doc.createEvent('Event'); event.initEvent('sf-dump-expanded' === newClass ? 'sfbeforedumpexpand' : 'sfbeforedumpcollapse', true, false); s.dispatchEvent(event); } a.lastChild.innerHTML = arrow; s.className = s.className.replace(/\bsf-dump-(compact|expanded)\b/, newClass); if (recursive) { try { a = s.querySelectorAll('.'+oldClass); for (s = 0; s < a.length; ++s) { if (-1 == a[s].className.indexOf(newClass)) { a[s].className = newClass; a[s].previousSibling.lastChild.innerHTML = arrow; } } } catch (e) { } } return true; }; function collapse(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-expanded\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function expand(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-compact\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function collapseAll(root) { var a = root.querySelector('a.sf-dump-toggle'); if (a) { collapse(a, true); expand(a); return true; } return false; } function reveal(node) { var previous, parents = []; while ((node = node.parentNode || {}) && (previous = node.previousSibling) && 'A' === previous.tagName) { parents.push(previous); } if (0 !== parents.length) { parents.forEach(function (parent) { expand(parent); }); return true; } return false; } function highlight(root, activeNode, nodes) { resetHighlightedNodes(root); Array.from(nodes||[]).forEach(function (node) { if (!/\bsf-dump-highlight\b/.test(node.className)) { node.className = node.className + ' sf-dump-highlight'; } }); if (!/\bsf-dump-highlight-active\b/.test(activeNode.className)) { activeNode.className = activeNode.className + ' sf-dump-highlight-active'; } } function resetHighlightedNodes(root) { Array.from(root.querySelectorAll('.sf-dump-str, .sf-dump-key, .sf-dump-public, .sf-dump-protected, .sf-dump-private')).forEach(function (strNode) { strNode.className = strNode.className.replace(/\bsf-dump-highlight\b/, ''); strNode.className = strNode.className.replace(/\bsf-dump-highlight-active\b/, ''); }); } return function (root, x) { root = doc.getElementById(root); var indentRx = new RegExp('^('+(root.getAttribute('data-indent-pad') || ' ').replace(rxEsc, '\\$1')+')+', 'm'), options = {"maxDepth":1,"maxStringLength":160,"fileLinkFormat":false}, elt = root.getElementsByTagName('A'), len = elt.length, i = 0, s, h, t = []; while (i < len) t.push(elt[i++]); for (i in x) { options[i] = x[i]; } function a(e, f) { addEventListener(root, e, function (e, n) { if ('A' == e.target.tagName) { f(e.target, e); } else if ('A' == e.target.parentNode.tagName) { f(e.target.parentNode, e); } else { n = /\bsf-dump-ellipsis\b/.test(e.target.className) ? e.target.parentNode : e.target; if ((n = n.nextElementSibling) && 'A' == n.tagName) { if (!/\bsf-dump-toggle\b/.test(n.className)) { n = n.nextElementSibling || n; } f(n, e, true); } } }); }; function isCtrlKey(e) { return e.ctrlKey || e.metaKey; } function xpathString(str) { var parts = str.match(/[^'"]+|['"]/g).map(function (part) { if ("'" == part) { return '"\'"'; } if ('"' == part) { return "'\"'"; } return "'" + part + "'"; }); return "concat(" + parts.join(",") + ", '')"; } function xpathHasClass(className) { return "contains(concat(' ', normalize-space(@class), ' '), ' " + className +" ')"; } addEventListener(root, 'mouseover', function (e) { if ('' != refStyle.innerHTML) { refStyle.innerHTML = ''; } }); a('mouseover', function (a, e, c) { if (c) { e.target.style.cursor = "pointer"; } else if (a = idRx.exec(a.className)) { try { refStyle.innerHTML = '.phpdebugbar pre.sf-dump .'+a[0]+'{background-color: #B729D9; color: #FFF !important; border-radius: 2px}'; } catch (e) { } } }); a('click', function (a, e, c) { if (/\bsf-dump-toggle\b/.test(a.className)) { e.preventDefault(); if (!toggle(a, isCtrlKey(e))) { var r = doc.getElementById(a.getAttribute('href').slice(1)), s = r.previousSibling, f = r.parentNode, t = a.parentNode; t.replaceChild(r, a); f.replaceChild(a, s); t.insertBefore(s, r); f = f.firstChild.nodeValue.match(indentRx); t = t.firstChild.nodeValue.match(indentRx); if (f && t && f[0] !== t[0]) { r.innerHTML = r.innerHTML.replace(new RegExp('^'+f[0].replace(rxEsc, '\\$1'), 'mg'), t[0]); } if (/\bsf-dump-compact\b/.test(r.className)) { toggle(s, isCtrlKey(e)); } } if (c) { } else if (doc.getSelection) { try { doc.getSelection().removeAllRanges(); } catch (e) { doc.getSelection().empty(); } } else { doc.selection.empty(); } } else if (/\bsf-dump-str-toggle\b/.test(a.className)) { e.preventDefault(); e = a.parentNode.parentNode; e.className = e.className.replace(/\bsf-dump-str-(expand|collapse)\b/, a.parentNode.className); } }); elt = root.getElementsByTagName('SAMP'); len = elt.length; i = 0; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; if ('SAMP' == elt.tagName) { a = elt.previousSibling || {}; if ('A' != a.tagName) { a = doc.createElement('A'); a.className = 'sf-dump-ref'; elt.parentNode.insertBefore(a, elt); } else { a.innerHTML += ' '; } a.title = (a.title ? a.title+'\n[' : '[')+keyHint+'+click] Expand all children'; a.innerHTML += elt.className == 'sf-dump-compact' ? '<span>▶</span>' : '<span>▼</span>'; a.className += ' sf-dump-toggle'; x = 1; if ('sf-dump' != elt.parentNode.className) { x += elt.parentNode.getAttribute('data-depth')/1; } } else if (/\bsf-dump-ref\b/.test(elt.className) && (a = elt.getAttribute('href'))) { a = a.slice(1); elt.className += ' '+a; if (/[\[{]$/.test(elt.previousSibling.nodeValue)) { a = a != elt.nextSibling.id && doc.getElementById(a); try { s = a.nextSibling; elt.appendChild(a); s.parentNode.insertBefore(a, s); if (/^[@#]/.test(elt.innerHTML)) { elt.innerHTML += ' <span>▶</span>'; } else { elt.innerHTML = '<span>▶</span>'; elt.className = 'sf-dump-ref'; } elt.className += ' sf-dump-toggle'; } catch (e) { if ('&' == elt.innerHTML.charAt(0)) { elt.innerHTML = '…'; elt.className = 'sf-dump-ref'; } } } } } if (doc.evaluate && Array.from && root.children.length > 1) { root.setAttribute('tabindex', 0); SearchState = function () { this.nodes = []; this.idx = 0; }; SearchState.prototype = { next: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx < (this.nodes.length - 1) ? this.idx + 1 : 0; return this.current(); }, previous: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx > 0 ? this.idx - 1 : (this.nodes.length - 1); return this.current(); }, isEmpty: function () { return 0 === this.count(); }, current: function () { if (this.isEmpty()) { return null; } return this.nodes[this.idx]; }, reset: function () { this.nodes = []; this.idx = 0; }, count: function () { return this.nodes.length; }, }; function showCurrent(state) { var currentNode = state.current(), currentRect, searchRect; if (currentNode) { reveal(currentNode); highlight(root, currentNode, state.nodes); if ('scrollIntoView' in currentNode) { currentNode.scrollIntoView(true); currentRect = currentNode.getBoundingClientRect(); searchRect = search.getBoundingClientRect(); if (currentRect.top < (searchRect.top + searchRect.height)) { window.scrollBy(0, -(searchRect.top + searchRect.height + 5)); } } } counter.textContent = (state.isEmpty() ? 0 : state.idx + 1) + ' of ' + state.count(); } var search = doc.createElement('div'); search.className = 'sf-dump-search-wrapper sf-dump-search-hidden'; search.innerHTML = ' <input type="text" class="sf-dump-search-input"> <span class="sf-dump-search-count">0 of 0<\/span> <button type="button" class="sf-dump-search-input-previous" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 1331l-166 165q-19 19-45 19t-45-19L896 965l-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> <button type="button" class="sf-dump-search-input-next" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 808l-742 741q-19 19-45 19t-45-19L109 808q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> '; root.insertBefore(search, root.firstChild); var state = new SearchState(); var searchInput = search.querySelector('.sf-dump-search-input'); var counter = search.querySelector('.sf-dump-search-count'); var searchInputTimer = 0; var previousSearchQuery = ''; addEventListener(searchInput, 'keyup', function (e) { var searchQuery = e.target.value; /* Don't perform anything if the pressed key didn't change the query */ if (searchQuery === previousSearchQuery) { return; } previousSearchQuery = searchQuery; clearTimeout(searchInputTimer); searchInputTimer = setTimeout(function () { state.reset(); collapseAll(root); resetHighlightedNodes(root); if ('' === searchQuery) { counter.textContent = '0 of 0'; return; } var classMatches = [ "sf-dump-str", "sf-dump-key", "sf-dump-public", "sf-dump-protected", "sf-dump-private", ].map(xpathHasClass).join(' or '); var xpathResult = doc.evaluate('.//span[' + classMatches + '][contains(translate(child::text(), ' + xpathString(searchQuery.toUpperCase()) + ', ' + xpathString(searchQuery.toLowerCase()) + '), ' + xpathString(searchQuery.toLowerCase()) + ')]', root, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null); while (node = xpathResult.iterateNext()) state.nodes.push(node); showCurrent(state); }, 400); }); Array.from(search.querySelectorAll('.sf-dump-search-input-next, .sf-dump-search-input-previous')).forEach(function (btn) { addEventListener(btn, 'click', function (e) { e.preventDefault(); -1 !== e.target.className.indexOf('next') ? state.next() : state.previous(); searchInput.focus(); collapseAll(root); showCurrent(state); }) }); addEventListener(root, 'keydown', function (e) { var isSearchActive = !/\bsf-dump-search-hidden\b/.test(search.className); if ((114 === e.keyCode && !isSearchActive) || (isCtrlKey(e) && 70 === e.keyCode)) { /* F3 or CMD/CTRL + F */ if (70 === e.keyCode && document.activeElement === searchInput) { /* * If CMD/CTRL + F is hit while having focus on search input, * the user probably meant to trigger browser search instead. * Let the browser execute its behavior: */ return; } e.preventDefault(); search.className = search.className.replace(/\bsf-dump-search-hidden\b/, ''); searchInput.focus(); } else if (isSearchActive) { if (27 === e.keyCode) { /* ESC key */ search.className += ' sf-dump-search-hidden'; e.preventDefault(); resetHighlightedNodes(root); searchInput.value = ''; } else if ( (isCtrlKey(e) && 71 === e.keyCode) /* CMD/CTRL + G */ || 13 === e.keyCode /* Enter */ || 114 === e.keyCode /* F3 */ ) { e.preventDefault(); e.shiftKey ? state.previous() : state.next(); collapseAll(root); showCurrent(state); } } }); } if (0 >= options.maxStringLength) { return; } try { elt = root.querySelectorAll('.sf-dump-str'); len = elt.length; i = 0; t = []; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; s = elt.innerText || elt.textContent; x = s.length - options.maxStringLength; if (0 < x) { h = elt.innerHTML; elt[elt.innerText ? 'innerText' : 'textContent'] = s.substring(0, options.maxStringLength); elt.className += ' sf-dump-str-collapse'; elt.innerHTML = '<span class=sf-dump-str-collapse>'+h+'<a class="sf-dump-ref sf-dump-str-toggle" title="Collapse"> ◀</a></span>'+ '<span class=sf-dump-str-expand>'+elt.innerHTML+'<a class="sf-dump-ref sf-dump-str-toggle" title="'+x+' remaining characters"> ▶</a></span>'; } } } catch (e) { } }; })(document); </script><style> .phpdebugbar pre.sf-dump { display: block; white-space: pre; padding: 5px; overflow: initial !important; } .phpdebugbar pre.sf-dump:after { content: ""; visibility: hidden; display: block; height: 0; clear: both; } .phpdebugbar pre.sf-dump span { display: inline; } .phpdebugbar pre.sf-dump a { text-decoration: none; cursor: pointer; border: 0; outline: none; color: inherit; } .phpdebugbar pre.sf-dump img { max-width: 50em; max-height: 50em; margin: .5em 0 0 0; padding: 0; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAHUlEQVQY02O8zAABilCaiQEN0EeA8QuUcX9g3QEAAjcC5piyhyEAAAAASUVORK5CYII=) #D3D3D3; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis { display: inline-block; overflow: visible; text-overflow: ellipsis; max-width: 5em; white-space: nowrap; overflow: hidden; vertical-align: top; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis+.sf-dump-ellipsis { max-width: none; } .phpdebugbar pre.sf-dump code { display:inline; padding:0; background:none; } .sf-dump-public.sf-dump-highlight, .sf-dump-protected.sf-dump-highlight, .sf-dump-private.sf-dump-highlight, .sf-dump-str.sf-dump-highlight, .sf-dump-key.sf-dump-highlight { background: rgba(111, 172, 204, 0.3); border: 1px solid #7DA0B1; border-radius: 3px; } .sf-dump-public.sf-dump-highlight-active, .sf-dump-protected.sf-dump-highlight-active, .sf-dump-private.sf-dump-highlight-active, .sf-dump-str.sf-dump-highlight-active, .sf-dump-key.sf-dump-highlight-active { background: rgba(253, 175, 0, 0.4); border: 1px solid #ffa500; border-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-hidden { display: none !important; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper { font-size: 0; white-space: nowrap; margin-bottom: 5px; display: flex; position: -webkit-sticky; position: sticky; top: 5px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > * { vertical-align: top; box-sizing: border-box; height: 21px; font-weight: normal; border-radius: 0; background: #FFF; color: #757575; border: 1px solid #BBB; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > input.sf-dump-search-input { padding: 3px; height: 21px; font-size: 12px; border-right: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px; color: #000; min-width: 15px; width: 100%; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous { background: #F2F2F2; outline: none; border-left: none; font-size: 0; line-height: 0; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next { border-top-right-radius: 3px; border-bottom-right-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next > svg, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous > svg { pointer-events: none; width: 12px; height: 12px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-count { display: inline-block; padding: 0 5px; margin: 0; border-left: none; line-height: 21px; font-size: 12px; }.phpdebugbar pre.sf-dump, .phpdebugbar pre.sf-dump .sf-dump-default{word-wrap: break-word; white-space: pre-wrap; word-break: normal}.phpdebugbar pre.sf-dump .sf-dump-num{font-weight:bold; color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-const{font-weight:bold}.phpdebugbar pre.sf-dump .sf-dump-str{font-weight:bold; color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-note{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ref{color:#7B7B7B}.phpdebugbar pre.sf-dump .sf-dump-public{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-protected{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-private{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-meta{color:#B729D9}.phpdebugbar pre.sf-dump .sf-dump-key{color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-index{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ellipsis{color:#A0A000}.phpdebugbar pre.sf-dump .sf-dump-ns{user-select:none;}.phpdebugbar pre.sf-dump .sf-dump-ellipsis-note{color:#1299DA}</style>
 </head>
 <body class="  site_enable_multi_lang ">
 <div id="app">
     <div class="main-header d-flex">
         <div class="header-logo flex-shrink-0">
-    <h3 class="logo-text"><a href="https://sandbox.bookingcore.co/admin">Urtripo Aviation</a></h3>
-</div>
-<div class="header-widgets d-flex flex-grow-1">
-    <div class="widgets-left d-flex flex-grow-1 align-items-center">
-        <div class="header-widget">
-            <!--<span class="btn-toggle-admin-menu btn btn-sm btn-link"><i class="icon ion-ios-menu"></i></span>-->
+            <h3 class="logo-text"><a href="/admin">Urtripo Aviation</a></h3>
         </div>
-        <div class="header-widget search-widget">
-            
-            <a href="https://sandbox.bookingcore.co" class="btn btn-link" target="_blank"> Home
-            </a>
-        </div>
-    </div>
-    <!--<div class="widgets-right flex-shrink-0 d-flex">
-                <div class="dropdown header-widget widget-user widget-language flex-shrink-0">
-            <div data-toggle="dropdown" class="user-dropdown d-flex align-items-center" aria-haspopup="true" aria-expanded="false">
-                                                            <div class="user-info flex-grow-1 d-flex">
-                                                            <span class="flag-icon mr-2 flag-icon-gb"></span>
-                                                        Englist
-                        </div>
-                                                                                                                                                                <i class="fa fa-angle-down"></i>
+        <div class="header-widgets d-flex flex-grow-1">
+            <div class="widgets-left d-flex flex-grow-1 align-items-center">
+                <div class="header-widget search-widget">
+                    <a href="https://sandbox.bookingcore.co" class="btn btn-link" target="_blank"> Home</a>
+                </div>
             </div>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        
-                    <a class="dropdown-item" href="https://sandbox.bookingcore.co/language/set-admin-lang/tr">
-                                                    <span class="flag-icon flag-icon-tr"></span>
-                                                Turkish
-                    </a>
-                                    
-                    <a class="dropdown-item" href="https://sandbox.bookingcore.co/language/set-admin-lang/ar">
-                                                    <span class="flag-icon flag-icon-ar"></span>
-                                                عربي
-                    </a>
-                                    
-                    <a class="dropdown-item" href="https://sandbox.bookingcore.co/language/set-admin-lang/th">
-                                                    <span class="flag-icon flag-icon-th"></span>
-                                                Thailand
-                    </a>
-                            </div>
-        </div>-->
+        <div class="widgets-right flex-shrink-0 d-flex">
                 <div class="dropdown header-widget widget-user pt-2 dropdown-notifications flex-shrink-0" style="min-width: 0   ">
             <div data-toggle="dropdown" class="user-dropdown d-flex align-items-center" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-lg fa-bell m-1 p-1"></i>
@@ -222,11 +186,11 @@
                 </div>
                 <ul class="dropdown-list-items p-0 m-0">
                                                                                                     <li class="notification active">
-                                <a class="markAsRead" data-id="2c246c04-c2a3-410e-9cd2-83cd75e2854a" href="https://sandbox.bookingcore.co/admin/module/report/booking">
+                                <a class="markAsRead" data-id="2c246c04-c2a3-410e-9cd2-83cd75e2854a" href="/admin/module/report/booking">
                                     <div class="media">
                                         <div class="media-left">
                                               <div class="media-object">
-                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="mohamed zobi">
+                                                                                                      <img class="image-responsive" src="/images/avatar.png" alt="mohamed zobi">
                                                                                                 </div>
                                             </div>
                                         <div class="media-body">
@@ -239,11 +203,11 @@
                                 </a>
                             </li>
                                                                                 <li class="notification active">
-                                <a class="markAsRead" data-id="efb9ed08-8b1c-45b9-b0d2-ffe45ae27024" href="https://sandbox.bookingcore.co/admin/module/user/userUpgradeRequest">
+                                <a class="markAsRead" data-id="efb9ed08-8b1c-45b9-b0d2-ffe45ae27024" href="/admin/module/user/userUpgradeRequest">
                                     <div class="media">
                                         <div class="media-left">
                                               <div class="media-object">
-                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="mohamed zobi">
+                                                                                                      <img class="image-responsive" src="/images/avatar.png" alt="mohamed zobi">
                                                                                                 </div>
                                             </div>
                                         <div class="media-body">
@@ -256,11 +220,11 @@
                                 </a>
                             </li>
                                                                                 <li class="notification active">
-                                <a class="markAsRead" data-id="3fd0bfe4-93f1-418d-8ed6-526a48b46d51" href="https://sandbox.bookingcore.co/admin/module/user?s=38">
+                                <a class="markAsRead" data-id="3fd0bfe4-93f1-418d-8ed6-526a48b46d51" href="/admin/module/user?s=38">
                                     <div class="media">
                                         <div class="media-left">
                                               <div class="media-object">
-                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="mohamed zobi">
+                                                                                                      <img class="image-responsive" src="/images/avatar.png" alt="mohamed zobi">
                                                                                                 </div>
                                             </div>
                                         <div class="media-body">
@@ -273,11 +237,11 @@
                                 </a>
                             </li>
                                                                                 <li class="notification active">
-                                <a class="markAsRead" data-id="c7a56a2e-a4bc-42cf-ba25-8175c5e77db4" href="https://sandbox.bookingcore.co/admin/module/boat?id=13">
+                                <a class="markAsRead" data-id="c7a56a2e-a4bc-42cf-ba25-8175c5e77db4" href="/admin/module/boat?id=13">
                                     <div class="media">
                                         <div class="media-left">
                                               <div class="media-object">
-                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="System Admin">
+                                                                                                      <img class="image-responsive" src="/images/avatar.png" alt="System Admin">
                                                                                                 </div>
                                             </div>
                                         <div class="media-body">
@@ -290,11 +254,11 @@
                                 </a>
                             </li>
                                                                                 <li class="notification active">
-                                <a class="markAsRead" data-id="927695df-c064-4a04-b10b-03c40d52f628" href="https://sandbox.bookingcore.co/admin/module/boat?id=10">
+                                <a class="markAsRead" data-id="927695df-c064-4a04-b10b-03c40d52f628" href="/admin/module/boat?id=10">
                                     <div class="media">
                                         <div class="media-left">
                                               <div class="media-object">
-                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="System Admin">
+                                                                                                      <img class="image-responsive" src="/images/avatar.png" alt="System Admin">
                                                                                                 </div>
                                             </div>
                                         <div class="media-body">
@@ -308,14 +272,14 @@
                             </li>
                                                             </ul>
                 <div class="dropdown-footer text-center">
-                    <a href="https://sandbox.bookingcore.co/admin/module/core/notifications">View More</a>
+                    <a href="/admin/module/core/notifications">View More</a>
                 </div>
             </div>
         </div>-->
         <div class="dropdown header-widget widget-user flex-shrink-0">
             <div data-toggle="dropdown" class="user-dropdown d-flex align-items-center" aria-haspopup="true" aria-expanded="false">
                 <span class="user-avatar flex-shrink-0.1">
-                                             <div class="avatar avatar-cover" style="background-image: url('https://sandbox.bookingcore.co/images/avatar.png')"></div>
+                                             <div class="avatar avatar-cover" style="background-image: url('/images/avatar.png')"></div>
                                     </span>
                 <div class="user-info flex-grow-1">
                     <div class="user-name">System Admin</div>
@@ -324,18 +288,18 @@
                 <!--<i class="fa fa-angle-down"></i>-->
             </div>
             <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="https://sandbox.bookingcore.co/admin/module/user/edit/1">Edit Profile</a>
-                <a class="dropdown-item" href="https://sandbox.bookingcore.co/admin/module/user/password/1">Change Password</a>
+                <a class="dropdown-item" href="/admin/module/user/edit/1">Edit Profile</a>
+                <a class="dropdown-item" href="/admin/module/user/password/1">Change Password</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Vendor Dashboard</h6>
-                <a href="https://sandbox.bookingcore.co/user/dashboard" class="dropdown-item">Dashboard</a>
+                <a href="/user/dashboard" class="dropdown-item">Dashboard</a>
                 <div class="dropdown-divider"></div>
                 <a href="https://sandbox.bookingcore.co" class="dropdown-item"><i class="fa fa-home"></i> Homepage</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Logout
                 </a>
             </div>-->
-            <form id="logout-form" action="https://sandbox.bookingcore.co/logout" method="POST" style="display: none;">
+            <form id="logout-form" action="/logout" method="POST" style="display: none;">
                 <input type="hidden" name="_token" value="ORpSGpuYkPnvhvt4SSYfJXSF3f9CMCCYTPdTt4zt">
             </form>
         </div>
@@ -344,420 +308,420 @@
     </div>
     <div class="main-sidebar">
         <ul class="main-menu pb-5">
-                    <li class=" https:__sandbox.bookingcore.co_admin"><a href="https://sandbox.bookingcore.co/admin">
+                    <li class=" https:__sandbox.bookingcore.co_admin"><a href="/admin">
                                     <span class="icon text-center"><!--<i class="icon ion-ios-desktop"></i>--></span>
                                 Dashboard
             </a>
                     </li>
-                   <!-- <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news">
+                   <!-- <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="/admin/module/news">
                                     <span class="icon text-center"><i class="ion-md-bookmarks"></i></span>
                                 News
             </a>
                             <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="/admin/module/news">
                                                                 All News</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="/admin/module/news/create">
                                                                 Add News</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news/category">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="/admin/module/news/category">
                                                                 Categories</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news/tag">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="/admin/module/news/tag">
                                                                 Tags</a>
                         </li>
                                     </ul>
                     </li>-->
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_page"><a href="https://sandbox.bookingcore.co/admin/module/page">
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_page"><a href="/admin/module/page">
                         <span class="icon text-center"><!--<i class="icon ion-ios-desktop"></i>--></span>
                                 Page
             </a>
                     <!--</li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href="https://sandbox.bookingcore.co/admin/module/location">
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href="/admin/module/location">
                                     <span class="icon text-center"><i class="icon ion-md-compass"></i></span>
                                 Location
             </a>
                             <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href="https://sandbox.bookingcore.co/admin/module/location">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href="/admin/module/location">
                                                                     <i class="icon ion-md-compass"></i>
                                                                 All Location</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href="https://sandbox.bookingcore.co/admin/module/location/category">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href="/admin/module/location/category">
                                                                     <i class="icon ion-md-compass"></i>
                                                                 All Category</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel">
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="/admin/module/hotel">
                                     <span class="icon text-center"><i class="fa fa-building-o"></i></span>
                                 Hotel
             </a>
                             <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="/admin/module/hotel">
                                                                 All Hotels</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="/admin/module/hotel/create">
                                                                 Add new Hotel</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="/admin/module/hotel/attribute">
                                                                 Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel/room/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="/admin/module/hotel/room/attribute">
                                                                 Room Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel/recovery">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="/admin/module/hotel/recovery">
                                                                 Recovery</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour">
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="/admin/module/tour">
                                     <span class="icon text-center"><i class="icon ion-md-umbrella"></i></span>
                                 Tour
             </a>
                             <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="/admin/module/tour">
                                                                 All Tours</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="/admin/module/tour/create">
                                                                 Add Tour</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/category">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="/admin/module/tour/category">
                                                                 Categories</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="/admin/module/tour/attribute">
                                                                 Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/availability">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="/admin/module/tour/availability">
                                                                 Availability</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/booking">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="/admin/module/tour/booking">
                                                                 Booking Calendar</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/recovery">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="/admin/module/tour/recovery">
                                                                 Recovery</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space">
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="/admin/module/space">
                                     <span class="icon text-center"><i class="ion ion-md-home"></i></span>
                                 Space
             </a>
                             <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="/admin/module/space">
                                                                 All Spaces</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="/admin/module/space/create">
                                                                 Add new Space</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="/admin/module/space/attribute">
                                                                 Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space/availability">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="/admin/module/space/availability">
                                                                 Availability</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space/recovery">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="/admin/module/space/recovery">
                                                                 Recovery</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight">
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="/admin/module/flight">
                                     <span class="icon text-center"><i class="ion ion-md-airplane"></i></span>
                                 Flight
             </a>
                             <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="/admin/module/flight">
                                                                 All Flights</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="/admin/module/flight/create">
                                                                 Add new Flight</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/airline">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="/admin/module/flight/airline">
                                                                 Airline</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/airport">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="/admin/module/flight/airport">
                                                                 Airport</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/seat-type">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="/admin/module/flight/seat-type">
                                                                 Seat Type</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="/admin/module/flight/attribute">
                                                                 Attributes</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car">
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="/admin/module/car">
                                     <span class="icon text-center"><i class="ion-logo-model-s"></i></span>
                                 Car
             </a>
                             <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="/admin/module/car">
                                                                 All Cars</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="/admin/module/car/create">
                                                                 Add new Car</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="/admin/module/car/attribute">
                                                                 Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car/availability">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="/admin/module/car/availability">
                                                                 Availability</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car/recovery">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="/admin/module/car/recovery">
                                                                 Recovery</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat">
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="/admin/module/boat">
                                     <span class="icon text-center"><i class="ion-md-boat"></i></span>
                                 Boat
             </a>
                             <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="/admin/module/boat">
                                                                 All Boats</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="/admin/module/boat/create">
                                                                 Add new Boat</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="/admin/module/boat/attribute">
                                                                 Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat/availability">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="/admin/module/boat/availability">
                                                                 Availability</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat/recovery">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="/admin/module/boat/recovery">
                                                                 Recovery</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event">
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="/admin/module/event">
                                     <span class="icon text-center"><i class="ion-ios-calendar"></i></span>
                                 Event
             </a>
                             <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="/admin/module/event">
                                                                 All Events</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event/create">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="/admin/module/event/create">
                                                                 Add new Event</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event/attribute">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="/admin/module/event/attribute">
                                                                 Attributes</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event/availability">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="/admin/module/event/availability">
                                                                 Availability</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event/recovery">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="/admin/module/event/recovery">
                                                                 Recovery</a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="https://sandbox.bookingcore.co/admin/module/user/plan">
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="/admin/module/user/plan">
                                     <span class="icon text-center"><i class="fa fa-list-alt"></i></span>
                                 User Plans 
             </a>
                             <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="https://sandbox.bookingcore.co/admin/module/user/plan">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="/admin/module/user/plan">
                                                                 User Plans</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="https://sandbox.bookingcore.co/admin/module/user/plan-report">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="/admin/module/user/plan-report">
                                                                 Plan Report</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="https://sandbox.bookingcore.co/admin/module/user/plan-request">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="/admin/module/user/plan-request">
                                                                 Plan Request </a>
                         </li>
                                     </ul>
                     </li>-->
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_popup"><a href="https://sandbox.bookingcore.co/admin/module/popup">
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_popup"><a href="/admin/module/popup">
                         <span class="icon text-center"><!--<i class="icon ion-ios-desktop"></i>--></span>
                                 Popup
             </a>
                     </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_coupon"><a href="https://sandbox.bookingcore.co/admin/module/coupon">
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_coupon"><a href="/admin/module/coupon">
                         <span class="icon text-center"><!--<i class="icon ion-ios-desktop"></i>--></span>
                                 Coupon
             </a>
                     </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_review"><a href="https://sandbox.bookingcore.co/admin/module/review">
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_review"><a href="/admin/module/review">
                         <span class="icon text-center"><!--<i class="icon ion-ios-desktop"></i>--></span>
                                 Reviews
             </a>
                     </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_media"><a href="https://sandbox.bookingcore.co/admin/module/media">
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_media"><a href="/admin/module/media">
                         <span class="icon text-center"><!--<i class="icon ion-ios-desktop"></i>--></span>
                                 Media
             </a>
                     </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_core_menu"><a href="https://sandbox.bookingcore.co/admin/module/core/menu">
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_core_menu"><a href="/admin/module/core/menu">
                         <span class="icon text-center"><!--<i class="icon ion-ios-desktop"></i>--></span>
                                 Menu
             </a>
                   <!--  </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_vendor_payout"><a href="https://sandbox.bookingcore.co/admin/module/vendor/payout">
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_vendor_payout"><a href="/admin/module/vendor/payout">
                                     <span class="icon text-center"><i class="icon ion-md-card"></i></span>
                                 Payouts 
             </a>
                     </li>
-                    <li class=" https:__sandbox.bookingcore.co_admin_module_theme"><a href="https://sandbox.bookingcore.co/admin/module/theme">
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_theme"><a href="/admin/module/theme">
                                     <span class="icon text-center"><i class="fa fa-paint-brush"></i></span>
                                 Themes
             </a>
                     </li>-->
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/general">
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/general">
                         <span class="icon text-center"><!--<i class="icon ion-ios-desktop"></i>--></span>
                                 Setting
             </a>
                             <!--<span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>-->
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/general">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/general">
                                                                 General Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/hotel">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/hotel">
                                                                 Hotel Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/space">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/space">
                                                                 Space Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/car">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/car">
                                                                 Car Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/event">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/event">
                                                                 Event Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/tour">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/tour">
                                                                 Tour Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/flight">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/flight">
                                                                 Flight Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/boat">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/boat">
                                                                 Boat Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/news">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/news">
                                                                 News Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/booking">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/booking">
                                                                 Booking Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/enquiry">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/enquiry">
                                                                 Enquiry Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/user">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/user">
                                                                 User Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/vendor">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/vendor">
                                                                 Vendor Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/user_plans">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/user_plans">
                                                                 User Plans Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/payment">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/payment">
                                                                 Payment Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/style">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/style">
                                                                 Style Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/advance">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/advance">
                                                                 Advanced Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/media">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/media">
                                                                 Media Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/email">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/email">
                                                                 Email Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/sms">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/sms">
                                                                 Sms Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/api">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/api">
                                                                 Mobile App Settings</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/review">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="/admin/module/core/settings/index/review">
                                                                 Review Advanced Settings</a>
                         </li>
                                     </ul>
                     </li>
-                   <!-- <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/module/core/tools">
+                   <!-- <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="/admin/module/core/tools">
                                     <span class="icon text-center"><i class="icon ion-ios-hammer"></i></span>
                                 Tools
             </a>
                             <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/module/language">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="/admin/module/language">
                                                                     <i class="icon ion-ios-globe"></i>
                                                                 Languages</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/module/language/translation">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="/admin/module/language/translation">
                                                                     <i class="icon ion-ios-globe"></i>
                                                                 Translation Manager</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/logs">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="/admin/logs">
                                                                     <i class="icon ion-ios-nuclear"></i>
                                                                 System Logs</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/module/core/plugins">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="/admin/module/core/plugins">
                                                                     <i class="icon ion-md-color-wand"></i>
                                                                 Plugins</a>
                         </li>
                                     </ul>
                     </li>-->
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user">
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="/admin/module/user">
                         <span class="icon text-center"><!--<i class="icon ion-ios-desktop"></i>--></span>
                                 Users 
             </a>
             <span class="icon text-center"><!--<i class="icon ion-ios-desktop"></i>--></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="/admin/module/user">
                                                                     <i class="fa fa-user"></i>
                                                                 All Users</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user/role">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="/admin/module/user/role">
                                                                     <i class="fa fa-lock"></i>
                                                                 Role Manager</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user/subscriber">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="/admin/module/user/subscriber">
                                                                 Subscribers</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user/userUpgradeRequest">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="/admin/module/user/userUpgradeRequest">
                                                                 Upgrade Request <span class="badge badge-warning">2</span></a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user/verification">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="/admin/module/user/verification">
                                                                 Verification Request </a>
                         </li>
                                     </ul>
                     </li>
-                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/report/booking">
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="/admin/module/report/booking">
                         <span class="icon text-center"><!--<i class="icon ion-ios-desktop"></i>--></span>
                                 Reports 
             </a>
             <span class="icon text-center"><!--<i class="icon ion-ios-desktop"></i>--></span>
                 <ul class="children">
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/report/enquiry">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="/admin/module/report/enquiry">
                                                                     <i class="icon ion-ios-pricetags"></i>
                                                                 Enquiry Reports</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/report/booking">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="/admin/module/report/booking">
                                                                     <i class="icon ion-ios-pricetags"></i>
                                                                 Booking Reports</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/report/statistic">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="/admin/module/report/statistic">
                                                                     <i class="icon ion ion-md-podium"></i>
                                                                 Booking Statistic</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/contact">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="/admin/module/contact">
                                                                     <i class="icon ion ion-md-mail"></i>
                                                                 Contact Submissions</a>
                         </li>
-                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/user/wallet/report">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="/admin/module/user/wallet/report">
                                                                     <i class="fa fa-money"></i>
                                                                 Credit Purchase Report </a>
                         </li>
@@ -768,10 +732,10 @@
     <div class="main-content">
         <nav class="main-breadcrumb" aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="https://sandbox.bookingcore.co/admin"> Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="/admin"> Dashboard</a></li>
 
                             <li class="breadcrumb-item ">
-                                            <a href="https://sandbox.bookingcore.co/admin/module/page">Pages</a>
+                                            <a href="/admin/module/page">Pages</a>
                                     </li>
                             <li class="breadcrumb-item active">
                                             Add Page
@@ -780,7 +744,7 @@
     </ol>
 </nav>
         
-    <form action="https://sandbox.bookingcore.co/admin/module/page/store/-1" method="post">
+    <form action="/admin/module/page/store/-1" method="post">
         <input type="hidden" name="_token" value="ORpSGpuYkPnvhvt4SSYfJXSF3f9CMCCYTPdTt4zt">        <div class="container">
             <div class="d-flex justify-content-between mb20">
                 <div class="">
@@ -1431,75 +1395,25 @@
 
 <!-- Scripts -->
 
-<script src="https://sandbox.bookingcore.co/libs/pusher.min.js"></script>
-<script src="https://sandbox.bookingcore.co/dist/admin/js/manifest.js?_ver=3.2.1" ></script>
-<script src="https://sandbox.bookingcore.co/libs/jquery-3.6.3.min.js?_ver=3.2.1" ></script>
-<script src="https://sandbox.bookingcore.co/themes/admin/libs/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js?_ver=3.2.1" ></script>
-<script src="https://sandbox.bookingcore.co/dist/admin/js/vendor.js?_ver=3.2.1" ></script>
-<script src="https://sandbox.bookingcore.co/libs/filerobot-image-editor/filerobot-image-editor.min.js?_ver=3.2.1"></script>
+<script src="/libs/pusher.min.js"></script>
+<script src="/dist/admin/js/manifest.js?_ver=3.2.1" ></script>
+<script src="/libs/jquery-3.6.3.min.js?_ver=3.2.1" ></script>
+<script src="/themes/admin/libs/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js?_ver=3.2.1" ></script>
+<script src="/dist/admin/js/vendor.js?_ver=3.2.1" ></script>
+<script src="/libs/filerobot-image-editor/filerobot-image-editor.min.js?_ver=3.2.1"></script>
 
-<script src="https://sandbox.bookingcore.co/dist/admin/js/app.js?_ver=3.2.1" ></script>
-<script src="https://sandbox.bookingcore.co/libs/vue/vue.js"></script>
+<script src="/dist/admin/js/app.js?_ver=3.2.1" ></script>
+<script src="/libs/vue/vue.js"></script>
 
-<script src="https://sandbox.bookingcore.co/libs/select2/js/select2.min.js" ></script>
-<script src="https://sandbox.bookingcore.co/libs/bootbox/bootbox.min.js"></script>
+<script src="/libs/select2/js/select2.min.js" ></script>
+<script src="/libs/bootbox/bootbox.min.js"></script>
 
-<script src="https://sandbox.bookingcore.co/libs/daterange/moment.min.js"></script>
-<script src="https://sandbox.bookingcore.co/libs/daterange/daterangepicker.min.js?_ver=3.2.1"></script>
-
-
+<script src="/libs/daterange/moment.min.js"></script>
+<script src="/libs/daterange/daterangepicker.min.js?_ver=3.2.1"></script>
 
 
-<script type="text/javascript">
-var phpdebugbar = new PhpDebugBar.DebugBar();
-phpdebugbar.addIndicator("php_version", new PhpDebugBar.DebugBar.Indicator({"icon":"code","tooltip":"PHP Version"}), "right");
-phpdebugbar.addTab("messages", new PhpDebugBar.DebugBar.Tab({"icon":"list-alt","title":"Messages", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
-phpdebugbar.addIndicator("time", new PhpDebugBar.DebugBar.Indicator({"icon":"clock-o","tooltip":"Request Duration"}), "right");
-phpdebugbar.addTab("timeline", new PhpDebugBar.DebugBar.Tab({"icon":"tasks","title":"Timeline", "widget": new PhpDebugBar.Widgets.TimelineWidget()}));
-phpdebugbar.addIndicator("memory", new PhpDebugBar.DebugBar.Indicator({"icon":"cogs","tooltip":"Memory Usage"}), "right");
-phpdebugbar.addTab("exceptions", new PhpDebugBar.DebugBar.Tab({"icon":"bug","title":"Exceptions", "widget": new PhpDebugBar.Widgets.ExceptionsWidget()}));
-phpdebugbar.addTab("views", new PhpDebugBar.DebugBar.Tab({"icon":"leaf","title":"Views", "widget": new PhpDebugBar.Widgets.TemplatesWidget()}));
-phpdebugbar.addTab("route", new PhpDebugBar.DebugBar.Tab({"icon":"share","title":"Route", "widget": new PhpDebugBar.Widgets.HtmlVariableListWidget()}));
-phpdebugbar.addIndicator("currentroute", new PhpDebugBar.DebugBar.Indicator({"icon":"share","tooltip":"Route"}), "right");
-phpdebugbar.addTab("queries", new PhpDebugBar.DebugBar.Tab({"icon":"database","title":"Queries", "widget": new PhpDebugBar.Widgets.LaravelSQLQueriesWidget()}));
-phpdebugbar.addTab("models", new PhpDebugBar.DebugBar.Tab({"icon":"cubes","title":"Models", "widget": new PhpDebugBar.Widgets.HtmlVariableListWidget()}));
-phpdebugbar.addTab("auth", new PhpDebugBar.DebugBar.Tab({"icon":"lock","title":"Auth", "widget": new PhpDebugBar.Widgets.VariableListWidget()}));
-phpdebugbar.addIndicator("auth.name", new PhpDebugBar.DebugBar.Indicator({"icon":"user","tooltip":"Auth status"}), "right");
-phpdebugbar.addTab("gate", new PhpDebugBar.DebugBar.Tab({"icon":"list-alt","title":"Gate", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
-phpdebugbar.addTab("session", new PhpDebugBar.DebugBar.Tab({"icon":"archive","title":"Session", "widget": new PhpDebugBar.Widgets.VariableListWidget()}));
-phpdebugbar.addTab("request", new PhpDebugBar.DebugBar.Tab({"icon":"tags","title":"Request", "widget": new PhpDebugBar.Widgets.HtmlVariableListWidget()}));
-phpdebugbar.setDataMap({
-"php_version": ["php.version", ],
-"messages": ["messages.messages", []],
-"messages:badge": ["messages.count", null],
-"time": ["time.duration_str", '0ms'],
-"timeline": ["time", {}],
-"memory": ["memory.peak_usage_str", '0B'],
-"exceptions": ["exceptions.exceptions", []],
-"exceptions:badge": ["exceptions.count", null],
-"views": ["views", []],
-"views:badge": ["views.nb_templates", 0],
-"route": ["route", {}],
-"currentroute": ["route.uri", ],
-"queries": ["queries", []],
-"queries:badge": ["queries.nb_statements", 0],
-"models": ["models.data", {}],
-"models:badge": ["models.count", 0],
-"auth": ["auth.guards", {}],
-"auth.name": ["auth.names", ],
-"gate": ["gate.messages", []],
-"gate:badge": ["gate.count", null],
-"session": ["session", {}],
-"request": ["request", {}]
-});
-phpdebugbar.restoreState();
-phpdebugbar.ajaxHandler = new PhpDebugBar.AjaxHandler(phpdebugbar, undefined, true);
-phpdebugbar.ajaxHandler.bindToFetch();
-phpdebugbar.ajaxHandler.bindToXHR();
-phpdebugbar.setOpenHandler(new PhpDebugBar.OpenHandler({"url":"https:\/\/sandbox.bookingcore.co\/_debugbar\/open"}));
-phpdebugbar.addDataSet({"__meta":{"id":"X70eea3e552dbd5e95598fcd1960d83ec","datetime":"2023-07-14 05:32:22","utime":1689312742.944161,"method":"GET","uri":"\/admin\/module\/page\/create","ip":"2402:3a80:190d:c938:e055:c54a:a87f:3c99"},"php":{"version":"8.0.29","interface":"fpm-fcgi"},"messages":{"count":0,"messages":[]},"time":{"start":1689312742.753673,"end":1689312742.944187,"duration":0.19051384925842285,"duration_str":"191ms","measures":[{"label":"Booting","start":1689312742.753673,"relative_start":0,"end":1689312742.799095,"relative_end":1689312742.799095,"duration":0.04542183876037598,"duration_str":"45.42ms","params":[],"collector":null},{"label":"Application","start":1689312742.799173,"relative_start":0.04550004005432129,"end":1689312742.944191,"relative_end":4.0531158447265625e-6,"duration":0.1450178623199463,"duration_str":"145ms","params":[],"collector":null}]},"memory":{"peak_usage":12066968,"peak_usage_str":"12MB"},"exceptions":{"count":0,"exceptions":[]},"views":{"nb_templates":10,"templates":[{"name":"Page::admin.detail (modules\/Page\/Views\/admin\/detail.blade.php)","param_count":4,"params":["row","translation","templates","breadcrumbs"],"type":"blade"},{"name":"admin.message (resources\/views\/admin\/message.blade.php)","param_count":7,"params":["__env","app","errors","row","translation","templates","breadcrumbs"],"type":"blade"},{"name":"Core::admin.seo-meta.seo-meta (modules\/Core\/Views\/admin\/seo-meta\/seo-meta.blade.php)","param_count":7,"params":["__env","app","errors","row","translation","templates","breadcrumbs"],"type":"blade"},{"name":"Page::admin.advanced (modules\/Page\/Views\/admin\/advanced.blade.php)","param_count":7,"params":["__env","app","errors","row","translation","templates","breadcrumbs"],"type":"blade"},{"name":"admin.layouts.app (resources\/views\/admin\/layouts\/app.blade.php)","param_count":7,"params":["__env","app","errors","row","translation","templates","breadcrumbs"],"type":"blade"},{"name":"Layout::admin.app (modules\/Layout\/admin\/app.blade.php)","param_count":7,"params":["__env","app","errors","row","translation","templates","breadcrumbs"],"type":"blade"},{"name":"Layout::admin.parts.header (modules\/Layout\/admin\/parts\/header.blade.php)","param_count":9,"params":["__env","app","errors","row","translation","templates","breadcrumbs","favicon","file"],"type":"blade"},{"name":"Layout::admin.parts.sidebar (modules\/Layout\/admin\/parts\/sidebar.blade.php)","param_count":9,"params":["__env","app","errors","row","translation","templates","breadcrumbs","favicon","file"],"type":"blade"},{"name":"Layout::admin.parts.bc (modules\/Layout\/admin\/parts\/bc.blade.php)","param_count":9,"params":["__env","app","errors","row","translation","templates","breadcrumbs","favicon","file"],"type":"blade"},{"name":"Media::browser (modules\/Media\/Views\/browser.blade.php)","param_count":9,"params":["__env","app","errors","row","translation","templates","breadcrumbs","favicon","file"],"type":"blade"}]},"route":{"uri":"GET admin\/module\/page\/create","middleware":"web, dashboard","controller":"Modules\\Page\\Admin\\PageController@create","namespace":"Modules\\Page\\Admin","prefix":"admin\/module\/page","where":[],"as":"page.admin.create","file":"<a href=\"phpstorm:\/\/open?file=\/home\/demo.bookingcore.org\/public_html\/modules\/Page\/Admin\/PageController.php&line=46\">modules\/Page\/Admin\/PageController.php:46-70<\/a>"},"queries":{"nb_statements":14,"nb_failed_statements":0,"accumulated_duration":0.01142,"accumulated_duration_str":"11.42ms","statements":[{"sql":"select * from `users` where `id` = 1 and `users`.`deleted_at` is null limit 1","type":"query","params":[],"bindings":["1"],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table","<code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Auth\/EloquentUserProvider.php","line":59},{"index":16,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Auth\/SessionGuard.php","line":159},{"index":17,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Auth\/AuthManager.php","line":340},{"index":19,"namespace":null,"name":"\/app\/Http\/Middleware\/HideDebugbar.php","line":25},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","line":180}],"duration":0.00213,"duration_str":"2.13ms","stmt_id":"\/vendor\/laravel\/framework\/src\/Illuminate\/Auth\/EloquentUserProvider.php:59","connection":"demo_bookingcore"},{"sql":"select * from `core_roles` where `core_roles`.`id` = 1 limit 1","type":"query","params":[],"bindings":["1"],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table","<code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"],"show_copy":false,"backtrace":[{"index":20,"namespace":null,"name":"\/modules\/User\/Traits\/HasRoles.php","line":23},{"index":21,"namespace":null,"name":"\/app\/Http\/Middleware\/HideDebugbar.php","line":25},{"index":22,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","line":180},{"index":23,"namespace":null,"name":"\/app\/Http\/Middleware\/RedirectForMultiLanguage.php","line":58},{"index":24,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","line":180}],"duration":0.00046,"duration_str":"460\u03bcs","stmt_id":"\/modules\/User\/Traits\/HasRoles.php:23","connection":"demo_bookingcore"},{"sql":"select * from `core_templates` order by `id` desc limit 100","type":"query","params":[],"bindings":[],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table","The <code>SELECT<\/code> statement has no <code>WHERE<\/code> clause and could examine many more rows than intended"],"show_copy":false,"backtrace":[{"index":14,"namespace":null,"name":"\/modules\/Page\/Admin\/PageController.php","line":57},{"index":15,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php","line":54},{"index":16,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php","line":43},{"index":17,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php","line":260},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php","line":205}],"duration":0.00134,"duration_str":"1.34ms","stmt_id":"\/modules\/Page\/Admin\/PageController.php:57","connection":"demo_bookingcore"},{"sql":"select * from `bravo_seo` where `object_id` is null and `object_model` = 'page' limit 1","type":"query","params":[],"bindings":["page"],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table","<code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/app\/BaseModel.php","line":199},{"index":16,"namespace":"view","name":"b3bbb07da92d5eb8f6e1b03fcd2409348e9f1038","line":3},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/CompilerEngine.php","line":70}],"duration":0.00067,"duration_str":"670\u03bcs","stmt_id":"\/app\/BaseModel.php:199","connection":"demo_bookingcore"},{"sql":"select * from `notifications` where (`for_admin` = 1 or `notifiable_id` = 1) order by `created_at` desc limit 5","type":"query","params":[],"bindings":["1","1"],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table"],"show_copy":false,"backtrace":[{"index":14,"namespace":null,"name":"\/app\/Helpers\/AppHelper.php","line":1199},{"index":17,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/CompilerEngine.php","line":70},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/View.php","line":152}],"duration":0.00093,"duration_str":"930\u03bcs","stmt_id":"\/app\/Helpers\/AppHelper.php:1199","connection":"demo_bookingcore"},{"sql":"select count(*) as aggregate from `notifications` where (`for_admin` = 1 or `notifiable_id` = 1) and `read_at` is null limit 5","type":"query","params":[],"bindings":["1","1"],"hints":["<code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/app\/Helpers\/AppHelper.php","line":1200},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/CompilerEngine.php","line":70},{"index":21,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/View.php","line":152}],"duration":0.0005200000000000001,"duration_str":"520\u03bcs","stmt_id":"\/app\/Helpers\/AppHelper.php:1200","connection":"demo_bookingcore"},{"sql":"select * from `user_meta` where (`user_id` = 1 and `name` = 'social_meta_avatar') limit 1","type":"query","params":[],"bindings":["1","social_meta_avatar"],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table","<code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"],"show_copy":false,"backtrace":[{"index":13,"namespace":null,"name":"\/app\/User.php","line":97},{"index":14,"namespace":null,"name":"\/app\/User.php","line":195},{"index":15,"namespace":"view","name":"ae7c17385dae37e02659cfa76ac0245eecdf056c","line":126},{"index":17,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58}],"duration":0.0010500000000000002,"duration_str":"1.05ms","stmt_id":"\/app\/User.php:97","connection":"demo_bookingcore"},{"sql":"select * from `user_meta` where (`user_id` = 1 and `name` = 'social_meta_avatar') limit 1","type":"query","params":[],"bindings":["1","social_meta_avatar"],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table","<code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"],"show_copy":false,"backtrace":[{"index":13,"namespace":null,"name":"\/app\/User.php","line":97},{"index":14,"namespace":null,"name":"\/app\/User.php","line":195},{"index":15,"namespace":"view","name":"ae7c17385dae37e02659cfa76ac0245eecdf056c","line":127},{"index":17,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58}],"duration":0.00035,"duration_str":"350\u03bcs","stmt_id":"\/app\/User.php:97","connection":"demo_bookingcore"},{"sql":"select count(`id`) as aggregate from `core_news` where `status` = 'pending' and `core_news`.`deleted_at` is null","type":"query","params":[],"bindings":["pending"],"hints":[],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/modules\/News\/ModuleProvider.php","line":31},{"index":16,"namespace":"view","name":"b0609f5f3e10c9844e04eb4292a90636fb4c6d3b","line":64},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/CompilerEngine.php","line":70}],"duration":0.0005200000000000001,"duration_str":"520\u03bcs","stmt_id":"\/modules\/News\/ModuleProvider.php:31","connection":"demo_bookingcore"},{"sql":"select count(`id`) as aggregate from `users` where `verify_submit_status` in ('new', 'partial') and `users`.`deleted_at` is null","type":"query","params":[],"bindings":["new","partial"],"hints":[],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/app\/User.php","line":395},{"index":16,"namespace":null,"name":"\/modules\/User\/ModuleProvider.php","line":42},{"index":17,"namespace":"view","name":"b0609f5f3e10c9844e04eb4292a90636fb4c6d3b","line":64},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58}],"duration":0.0004,"duration_str":"400\u03bcs","stmt_id":"\/app\/User.php:395","connection":"demo_bookingcore"},{"sql":"select count(*) as aggregate from `user_upgrade_request` where `status` = 'pending' and `user_upgrade_request`.`deleted_at` is null","type":"query","params":[],"bindings":["pending"],"hints":[],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/modules\/User\/ModuleProvider.php","line":43},{"index":16,"namespace":"view","name":"b0609f5f3e10c9844e04eb4292a90636fb4c6d3b","line":64},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/CompilerEngine.php","line":70}],"duration":0.0009599999999999999,"duration_str":"960\u03bcs","stmt_id":"\/modules\/User\/ModuleProvider.php:43","connection":"demo_bookingcore"},{"sql":"select count(*) as aggregate from `bravo_booking_payments` where `object_model` = 'plan' and `status` = 'processing'","type":"query","params":[],"bindings":["plan","processing"],"hints":[],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/modules\/User\/ModuleProvider.php","line":87},{"index":16,"namespace":"view","name":"b0609f5f3e10c9844e04eb4292a90636fb4c6d3b","line":64},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/CompilerEngine.php","line":70}],"duration":0.001,"duration_str":"1ms","stmt_id":"\/modules\/User\/ModuleProvider.php:87","connection":"demo_bookingcore"},{"sql":"select count(`id`) as aggregate from `bravo_booking_payments` where `object_model` = 'wallet_deposit' and `status` = 'processing'","type":"query","params":[],"bindings":["wallet_deposit","processing"],"hints":[],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/modules\/User\/Models\/Wallet\/DepositPayment.php","line":15},{"index":16,"namespace":null,"name":"\/modules\/Report\/ModuleProvider.php","line":18},{"index":17,"namespace":"view","name":"b0609f5f3e10c9844e04eb4292a90636fb4c6d3b","line":64},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58}],"duration":0.00033,"duration_str":"330\u03bcs","stmt_id":"\/modules\/User\/Models\/Wallet\/DepositPayment.php:15","connection":"demo_bookingcore"},{"sql":"select count(`id`) as aggregate from `bravo_payouts` where `status` = 'initial'","type":"query","params":[],"bindings":["initial"],"hints":[],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/modules\/Vendor\/Models\/VendorPayout.php","line":63},{"index":16,"namespace":null,"name":"\/modules\/Vendor\/ModuleProvider.php","line":27},{"index":17,"namespace":"view","name":"b0609f5f3e10c9844e04eb4292a90636fb4c6d3b","line":64},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58}],"duration":0.00076,"duration_str":"760\u03bcs","stmt_id":"\/modules\/Vendor\/Models\/VendorPayout.php:63","connection":"demo_bookingcore"}]},"models":{"data":{"Modules\\Core\\Models\\NotificationPush":5,"Modules\\Template\\Models\\Template":9,"Modules\\User\\Models\\Role":1,"App\\Models\\User":1},"count":16},"auth":{"guards":{"web":"array:2 [\n  \"name\" => \"admin@bookingcore.test\"\n  \"user\" => array:42 [\n    \"id\" => 1\n    \"name\" => \"System Admin\"\n    \"first_name\" => \"System\"\n    \"last_name\" => \"Admin\"\n    \"business_name\" => null\n    \"email\" => \"admin@bookingcore.test\"\n    \"email_verified_at\" => \"2023-06-27T05:42:22.000000Z\"\n    \"two_factor_secret\" => null\n    \"two_factor_recovery_codes\" => null\n    \"address\" => null\n    \"address2\" => null\n    \"phone\" => \"112 666 888\"\n    \"birthday\" => null\n    \"city\" => \"New York\"\n    \"state\" => null\n    \"country\" => \"US\"\n    \"zip_code\" => null\n    \"last_login_at\" => null\n    \"avatar_id\" => null\n    \"bio\" => \"We're designers who have fallen in love with creating spaces for others to reflect, reset, and create. We split our time between two deserts (the Mojave, and the Sonoran). We love the way the heat sinks into our bones, the vibrant sunsets, and the wildlife we get to call our neighbors.\"\n    \"status\" => \"publish\"\n    \"create_user\" => null\n    \"update_user\" => null\n    \"vendor_commission_amount\" => null\n    \"vendor_commission_type\" => null\n    \"need_update_pw\" => 0\n    \"role_id\" => 1\n    \"deleted_at\" => null\n    \"created_at\" => \"2023-06-27T05:42:22.000000Z\"\n    \"updated_at\" => \"2023-07-01T07:13:17.000000Z\"\n    \"payment_gateway\" => null\n    \"total_guests\" => null\n    \"locale\" => null\n    \"user_name\" => null\n    \"verify_submit_status\" => \"completed\"\n    \"is_verified\" => 1\n    \"active_status\" => 0\n    \"dark_mode\" => 0\n    \"messenger_color\" => \"#2180f3\"\n    \"stripe_customer_id\" => null\n    \"total_before_fees\" => null\n    \"role\" => array:10 [\n      \"id\" => 1\n      \"name\" => \"administrator\"\n      \"code\" => \"administrator\"\n      \"commission\" => null\n      \"commission_type\" => \"default\"\n      \"create_user\" => null\n      \"update_user\" => null\n      \"status\" => null\n      \"created_at\" => \"2023-06-27T05:42:22.000000Z\"\n      \"updated_at\" => \"2023-06-27T05:42:22.000000Z\"\n    ]\n  ]\n]","sanctum":"null"},"names":"web: admin@bookingcore.test"},"gate":{"count":0,"messages":[]},"session":{"_token":"ORpSGpuYkPnvhvt4SSYfJXSF3f9CMCCYTPdTt4zt","_previous":"array:1 [\n  \"url\" => \"https:\/\/sandbox.bookingcore.co\/admin\/module\/page\/create\"\n]","_flash":"array:2 [\n  \"old\" => []\n  \"new\" => []\n]","login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":"1","PHPDEBUGBAR_STACK_DATA":"[]"},"request":{"path_info":"\/admin\/module\/page\/create","status_code":"<pre class=sf-dump id=sf-dump-1744783131 data-indent-pad=\"  \"><span class=sf-dump-num>200<\/span>\n<\/pre><script>Sfdump(\"sf-dump-1744783131\", {\"maxDepth\":0})<\/script>\n","status_text":"OK","format":"html","content_type":"text\/html; charset=UTF-8","request_query":"<pre class=sf-dump id=sf-dump-2137459979 data-indent-pad=\"  \">[]\n<\/pre><script>Sfdump(\"sf-dump-2137459979\", {\"maxDepth\":0})<\/script>\n","request_request":"<pre class=sf-dump id=sf-dump-960497126 data-indent-pad=\"  \">[]\n<\/pre><script>Sfdump(\"sf-dump-960497126\", {\"maxDepth\":0})<\/script>\n","request_headers":"<pre class=sf-dump id=sf-dump-1973477205 data-indent-pad=\"  \"><span class=sf-dump-note>array:28<\/span> [<samp data-depth=1 class=sf-dump-expanded>\n  \"<span class=sf-dump-key>cf-ipcountry<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"2 characters\">IN<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cf-connecting-ip<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"39 characters\">2402:3a80:190d:c938:e055:c54a:a87f:3c99<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cdn-loop<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"10 characters\">cloudflare<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>priority<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"6 characters\">u=0, i<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cookie<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"1007 characters\">booking_cookie_agreement_enable=eyJpdiI6Imw5dmRMeVR3UmtaOVgrSW43cldzclE9PSIsInZhbHVlIjoiNXVkWFd6NHFwbGNFSmRoTVovQmFEdCtFdkpEOEU4UDZ1STBXbWFncmUwZHRPMklFbVRzSkJkOHhqMXh4QVZzbyIsIm1hYyI6IjUzYTU4ZTgxMGI1MzMyYjVlZjYyZWM3NzU3Nzc2MGI3MjkyNjQzYjY3MDk1NGMzMTI0ZjY0MGE4MWUzMzVkYjUiLCJ0YWciOiIifQ%3D%3D; XSRF-TOKEN=eyJpdiI6Iit1WHdvZkV2bTFvd3NqaGZUaGRVSWc9PSIsInZhbHVlIjoiUGdPTW5qSVdLSmoweGxBandPQzgwTVZseDlhdlVlU3ZpcnBwRUdCZGlUZTBSODROUkRoUGNIT2ZJU2dNRzJHRGZHS1c4WTgvTGJ3emJlUEswTWJ2bWxzMVBPWXdjRnN4OVRTOG10UUJzSGVTMUQ2YlNTWW02c1dLZ2xyZjFvR2IiLCJtYWMiOiJmNWI0Mjc1YTM4ZmQ3ZDI0N2Y2OTc5YjEzNTYzZDhhYTc2N2VlMGUyZWE5NmNmNGJjZTczZGE3YjQ0NjU4M2NmIiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6Ik1DazB3UldnTzhPc0VTQm1KbG1CL3c9PSIsInZhbHVlIjoiek1jbkM1cUNpYlJhRWV2cGhvRXViNlVzcmhsUHdJWjJBbENNcndBTzQ3OGRhU0d4aWZRS2ZxMitWcmtkNU1UUStpem1Fek5VQncyVkM4MnpmcUFjUjg1RUpNYTBtZW40QytDeG81YXliQ1BqWmMyVEFuTk00RGtqVkRMWGVITEQiLCJtYWMiOiJlZjFkNmVmZDg1OWVlZjJlZjI5MTg0OTBiYTIyN2NkZjFmNjE1MTY1YmY4OTA0ODg3YjZhZGIxMDY2ZTU0YmEzIiwidGFnIjoiIn0%3D<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>accept-language<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"35 characters\">en-US,en;q=0.9,ta-IN;q=0.8,ta;q=0.7<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>referer<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"48 characters\">https:\/\/sandbox.bookingcore.co\/admin\/module\/page<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-fetch-dest<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"8 characters\">document<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-fetch-user<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"2 characters\">?1<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-fetch-mode<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"8 characters\">navigate<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-fetch-site<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"11 characters\">same-origin<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>accept<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"135 characters\">text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>user-agent<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"111 characters\">Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/114.0.0.0 Safari\/537.36<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>upgrade-insecure-requests<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str>1<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-ch-ua-platform<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"9 characters\">&quot;Windows&quot;<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-ch-ua-mobile<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"2 characters\">?0<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-ch-ua<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"64 characters\">&quot;Not.A\/Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;114&quot;, &quot;Google Chrome&quot;;v=&quot;114&quot;<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cache-control<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"8 characters\">no-cache<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>pragma<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"8 characters\">no-cache<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cf-visitor<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"18 characters\">{&quot;scheme&quot;:&quot;https&quot;}<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>x-forwarded-proto<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"5 characters\">https<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cf-ray<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"20 characters\">7e6762821ae83e08-SIN<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>x-forwarded-for<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"39 characters\">2402:3a80:190d:c938:e055:c54a:a87f:3c99<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>accept-encoding<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"4 characters\">gzip<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>connection<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"10 characters\">Keep-Alive<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>host<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"22 characters\">sandbox.bookingcore.co<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>content-length<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"\"\n  <\/samp>]\n  \"<span class=sf-dump-key>content-type<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"\"\n  <\/samp>]\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-1973477205\", {\"maxDepth\":0})<\/script>\n","request_server":"<pre class=sf-dump id=sf-dump-636768178 data-indent-pad=\"  \"><span class=sf-dump-note>array:53<\/span> [<samp data-depth=1 class=sf-dump-expanded>\n  \"<span class=sf-dump-key>USER<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">www-data<\/span>\"\n  \"<span class=sf-dump-key>HOME<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">\/var\/www<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CF_IPCOUNTRY<\/span>\" => \"<span class=sf-dump-str title=\"2 characters\">IN<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CF_CONNECTING_IP<\/span>\" => \"<span class=sf-dump-str title=\"39 characters\">2402:3a80:190d:c938:e055:c54a:a87f:3c99<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CDN_LOOP<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">cloudflare<\/span>\"\n  \"<span class=sf-dump-key>HTTP_PRIORITY<\/span>\" => \"<span class=sf-dump-str title=\"6 characters\">u=0, i<\/span>\"\n  \"<span class=sf-dump-key>HTTP_COOKIE<\/span>\" => \"<span class=sf-dump-str title=\"1007 characters\">booking_cookie_agreement_enable=eyJpdiI6Imw5dmRMeVR3UmtaOVgrSW43cldzclE9PSIsInZhbHVlIjoiNXVkWFd6NHFwbGNFSmRoTVovQmFEdCtFdkpEOEU4UDZ1STBXbWFncmUwZHRPMklFbVRzSkJkOHhqMXh4QVZzbyIsIm1hYyI6IjUzYTU4ZTgxMGI1MzMyYjVlZjYyZWM3NzU3Nzc2MGI3MjkyNjQzYjY3MDk1NGMzMTI0ZjY0MGE4MWUzMzVkYjUiLCJ0YWciOiIifQ%3D%3D; XSRF-TOKEN=eyJpdiI6Iit1WHdvZkV2bTFvd3NqaGZUaGRVSWc9PSIsInZhbHVlIjoiUGdPTW5qSVdLSmoweGxBandPQzgwTVZseDlhdlVlU3ZpcnBwRUdCZGlUZTBSODROUkRoUGNIT2ZJU2dNRzJHRGZHS1c4WTgvTGJ3emJlUEswTWJ2bWxzMVBPWXdjRnN4OVRTOG10UUJzSGVTMUQ2YlNTWW02c1dLZ2xyZjFvR2IiLCJtYWMiOiJmNWI0Mjc1YTM4ZmQ3ZDI0N2Y2OTc5YjEzNTYzZDhhYTc2N2VlMGUyZWE5NmNmNGJjZTczZGE3YjQ0NjU4M2NmIiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6Ik1DazB3UldnTzhPc0VTQm1KbG1CL3c9PSIsInZhbHVlIjoiek1jbkM1cUNpYlJhRWV2cGhvRXViNlVzcmhsUHdJWjJBbENNcndBTzQ3OGRhU0d4aWZRS2ZxMitWcmtkNU1UUStpem1Fek5VQncyVkM4MnpmcUFjUjg1RUpNYTBtZW40QytDeG81YXliQ1BqWmMyVEFuTk00RGtqVkRMWGVITEQiLCJtYWMiOiJlZjFkNmVmZDg1OWVlZjJlZjI5MTg0OTBiYTIyN2NkZjFmNjE1MTY1YmY4OTA0ODg3YjZhZGIxMDY2ZTU0YmEzIiwidGFnIjoiIn0%3D<\/span>\"\n  \"<span class=sf-dump-key>HTTP_ACCEPT_LANGUAGE<\/span>\" => \"<span class=sf-dump-str title=\"35 characters\">en-US,en;q=0.9,ta-IN;q=0.8,ta;q=0.7<\/span>\"\n  \"<span class=sf-dump-key>HTTP_REFERER<\/span>\" => \"<span class=sf-dump-str title=\"48 characters\">https:\/\/sandbox.bookingcore.co\/admin\/module\/page<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_FETCH_DEST<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">document<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_FETCH_USER<\/span>\" => \"<span class=sf-dump-str title=\"2 characters\">?1<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_FETCH_MODE<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">navigate<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_FETCH_SITE<\/span>\" => \"<span class=sf-dump-str title=\"11 characters\">same-origin<\/span>\"\n  \"<span class=sf-dump-key>HTTP_ACCEPT<\/span>\" => \"<span class=sf-dump-str title=\"135 characters\">text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7<\/span>\"\n  \"<span class=sf-dump-key>HTTP_USER_AGENT<\/span>\" => \"<span class=sf-dump-str title=\"111 characters\">Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/114.0.0.0 Safari\/537.36<\/span>\"\n  \"<span class=sf-dump-key>HTTP_UPGRADE_INSECURE_REQUESTS<\/span>\" => \"<span class=sf-dump-str>1<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_CH_UA_PLATFORM<\/span>\" => \"<span class=sf-dump-str title=\"9 characters\">&quot;Windows&quot;<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_CH_UA_MOBILE<\/span>\" => \"<span class=sf-dump-str title=\"2 characters\">?0<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_CH_UA<\/span>\" => \"<span class=sf-dump-str title=\"64 characters\">&quot;Not.A\/Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;114&quot;, &quot;Google Chrome&quot;;v=&quot;114&quot;<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CACHE_CONTROL<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">no-cache<\/span>\"\n  \"<span class=sf-dump-key>HTTP_PRAGMA<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">no-cache<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CF_VISITOR<\/span>\" => \"<span class=sf-dump-str title=\"18 characters\">{&quot;scheme&quot;:&quot;https&quot;}<\/span>\"\n  \"<span class=sf-dump-key>HTTP_X_FORWARDED_PROTO<\/span>\" => \"<span class=sf-dump-str title=\"5 characters\">https<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CF_RAY<\/span>\" => \"<span class=sf-dump-str title=\"20 characters\">7e6762821ae83e08-SIN<\/span>\"\n  \"<span class=sf-dump-key>HTTP_X_FORWARDED_FOR<\/span>\" => \"<span class=sf-dump-str title=\"39 characters\">2402:3a80:190d:c938:e055:c54a:a87f:3c99<\/span>\"\n  \"<span class=sf-dump-key>HTTP_ACCEPT_ENCODING<\/span>\" => \"<span class=sf-dump-str title=\"4 characters\">gzip<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CONNECTION<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">Keep-Alive<\/span>\"\n  \"<span class=sf-dump-key>HTTP_HOST<\/span>\" => \"<span class=sf-dump-str title=\"22 characters\">sandbox.bookingcore.co<\/span>\"\n  \"<span class=sf-dump-key>REDIRECT_STATUS<\/span>\" => \"<span class=sf-dump-str title=\"3 characters\">200<\/span>\"\n  \"<span class=sf-dump-key>SERVER_NAME<\/span>\" => \"<span class=sf-dump-str title=\"22 characters\">sandbox.bookingcore.co<\/span>\"\n  \"<span class=sf-dump-key>SERVER_PORT<\/span>\" => \"<span class=sf-dump-str title=\"3 characters\">443<\/span>\"\n  \"<span class=sf-dump-key>SERVER_ADDR<\/span>\" => \"<span class=sf-dump-str title=\"14 characters\">178.128.22.219<\/span>\"\n  \"<span class=sf-dump-key>REMOTE_PORT<\/span>\" => \"\"\n  \"<span class=sf-dump-key>REMOTE_ADDR<\/span>\" => \"<span class=sf-dump-str title=\"39 characters\">2402:3a80:190d:c938:e055:c54a:a87f:3c99<\/span>\"\n  \"<span class=sf-dump-key>SERVER_SOFTWARE<\/span>\" => \"<span class=sf-dump-str title=\"12 characters\">nginx\/1.18.0<\/span>\"\n  \"<span class=sf-dump-key>GATEWAY_INTERFACE<\/span>\" => \"<span class=sf-dump-str title=\"7 characters\">CGI\/1.1<\/span>\"\n  \"<span class=sf-dump-key>HTTPS<\/span>\" => \"<span class=sf-dump-str title=\"2 characters\">on<\/span>\"\n  \"<span class=sf-dump-key>REQUEST_SCHEME<\/span>\" => \"<span class=sf-dump-str title=\"5 characters\">https<\/span>\"\n  \"<span class=sf-dump-key>SERVER_PROTOCOL<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">HTTP\/1.1<\/span>\"\n  \"<span class=sf-dump-key>DOCUMENT_ROOT<\/span>\" => \"<span class=sf-dump-str title=\"45 characters\">\/home\/demo.bookingcore.org\/public_html\/public<\/span>\"\n  \"<span class=sf-dump-key>DOCUMENT_URI<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">\/index.php<\/span>\"\n  \"<span class=sf-dump-key>REQUEST_URI<\/span>\" => \"<span class=sf-dump-str title=\"25 characters\">\/admin\/module\/page\/create<\/span>\"\n  \"<span class=sf-dump-key>SCRIPT_NAME<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">\/index.php<\/span>\"\n  \"<span class=sf-dump-key>CONTENT_LENGTH<\/span>\" => \"\"\n  \"<span class=sf-dump-key>CONTENT_TYPE<\/span>\" => \"\"\n  \"<span class=sf-dump-key>REQUEST_METHOD<\/span>\" => \"<span class=sf-dump-str title=\"3 characters\">GET<\/span>\"\n  \"<span class=sf-dump-key>QUERY_STRING<\/span>\" => \"\"\n  \"<span class=sf-dump-key>SCRIPT_FILENAME<\/span>\" => \"<span class=sf-dump-str title=\"55 characters\">\/home\/demo.bookingcore.org\/public_html\/public\/index.php<\/span>\"\n  \"<span class=sf-dump-key>PATH_INFO<\/span>\" => \"\"\n  \"<span class=sf-dump-key>FCGI_ROLE<\/span>\" => \"<span class=sf-dump-str title=\"9 characters\">RESPONDER<\/span>\"\n  \"<span class=sf-dump-key>PHP_SELF<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">\/index.php<\/span>\"\n  \"<span class=sf-dump-key>REQUEST_TIME_FLOAT<\/span>\" => <span class=sf-dump-num>1689312742.7537<\/span>\n  \"<span class=sf-dump-key>REQUEST_TIME<\/span>\" => <span class=sf-dump-num>1689312742<\/span>\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-636768178\", {\"maxDepth\":0})<\/script>\n","request_cookies":"<pre class=sf-dump id=sf-dump-1446094041 data-indent-pad=\"  \"><span class=sf-dump-note>array:3<\/span> [<samp data-depth=1 class=sf-dump-expanded>\n  \"<span class=sf-dump-key>booking_cookie_agreement_enable<\/span>\" => \"<span class=sf-dump-str>1<\/span>\"\n  \"<span class=sf-dump-key>XSRF-TOKEN<\/span>\" => \"<span class=sf-dump-str title=\"40 characters\">ORpSGpuYkPnvhvt4SSYfJXSF3f9CMCCYTPdTt4zt<\/span>\"\n  \"<span class=sf-dump-key>laravel_session<\/span>\" => \"<span class=sf-dump-str title=\"40 characters\">et4wuqvpf1PCbmrSzCOPdxVRn5GORWdVE6unxzL9<\/span>\"\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-1446094041\", {\"maxDepth\":0})<\/script>\n","response_headers":"<pre class=sf-dump id=sf-dump-344661756 data-indent-pad=\"  \"><span class=sf-dump-note>array:5<\/span> [<samp data-depth=1 class=sf-dump-expanded>\n  \"<span class=sf-dump-key>content-type<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"24 characters\">text\/html; charset=UTF-8<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cache-control<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"17 characters\">no-cache, private<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>date<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"29 characters\">Fri, 14 Jul 2023 05:32:22 GMT<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>set-cookie<\/span>\" => <span class=sf-dump-note>array:2<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"428 characters\">XSRF-TOKEN=eyJpdiI6InMyNzhheUhnOVY5Q1JCTStZZ2JQamc9PSIsInZhbHVlIjoiL2VrN1oxT2YxZmNWTFNwR3ZIeDh5VU9aL1huZUV4bjNNbm5MSGIwMkZ6SGl6N2l4NmpINWI4OFliakRZd0ljaGt5YVA3NlBCMGxiaWdNNUZwM3c5aHliKzRsSVJlQms4QlFsNTNsb0J0d0o1NXFWNjdqbnh4VHJqbEhlNEV1anoiLCJtYWMiOiI4MjRjZDZjOTliYzA0MTI5NDZkMzcxMjlkMzMzYzE2YTgwNjlkYzRmODM2MmU0M2Q0YzMzZjc5MDBiYzdmNWU5IiwidGFnIjoiIn0%3D; expires=Fri, 14-Jul-2023 07:32:22 GMT; Max-Age=7200; path=\/; samesite=lax<\/span>\"\n    <span class=sf-dump-index>1<\/span> => \"<span class=sf-dump-str title=\"443 characters\">laravel_session=eyJpdiI6InYyQm5xMjI5Y0NkVXlxL1NlWFowcEE9PSIsInZhbHVlIjoiUVFSK2ovbkZPaXdqclFueHNIeGNGUDl0aXJTNVNwSnprMTF2Mi9saUpOU0c1RUdJdWF2Uk1GNHI5RDNBbmo4UVkycWNGT2VVNm9mSHBMaTZQMlZyeTFmd2tWUGt0dE1UOTFzY09nK3M4M2JFRkQzSzlSUW02eXJnRXJuemQ3MlUiLCJtYWMiOiIzMTQ0NDNkOTY3MTZmNzlmYmZlNmI2ZDJjYTI2ZGRjNTFhZDA5ZWFiZDllMzRlNGFkY2Q1MjY4OWFhNjMyZmRhIiwidGFnIjoiIn0%3D; expires=Fri, 14-Jul-2023 07:32:22 GMT; Max-Age=7200; path=\/; httponly; samesite=lax<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>Set-Cookie<\/span>\" => <span class=sf-dump-note>array:2<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"400 characters\">XSRF-TOKEN=eyJpdiI6InMyNzhheUhnOVY5Q1JCTStZZ2JQamc9PSIsInZhbHVlIjoiL2VrN1oxT2YxZmNWTFNwR3ZIeDh5VU9aL1huZUV4bjNNbm5MSGIwMkZ6SGl6N2l4NmpINWI4OFliakRZd0ljaGt5YVA3NlBCMGxiaWdNNUZwM3c5aHliKzRsSVJlQms4QlFsNTNsb0J0d0o1NXFWNjdqbnh4VHJqbEhlNEV1anoiLCJtYWMiOiI4MjRjZDZjOTliYzA0MTI5NDZkMzcxMjlkMzMzYzE2YTgwNjlkYzRmODM2MmU0M2Q0YzMzZjc5MDBiYzdmNWU5IiwidGFnIjoiIn0%3D; expires=Fri, 14-Jul-2023 07:32:22 GMT; path=\/<\/span>\"\n    <span class=sf-dump-index>1<\/span> => \"<span class=sf-dump-str title=\"415 characters\">laravel_session=eyJpdiI6InYyQm5xMjI5Y0NkVXlxL1NlWFowcEE9PSIsInZhbHVlIjoiUVFSK2ovbkZPaXdqclFueHNIeGNGUDl0aXJTNVNwSnprMTF2Mi9saUpOU0c1RUdJdWF2Uk1GNHI5RDNBbmo4UVkycWNGT2VVNm9mSHBMaTZQMlZyeTFmd2tWUGt0dE1UOTFzY09nK3M4M2JFRkQzSzlSUW02eXJnRXJuemQ3MlUiLCJtYWMiOiIzMTQ0NDNkOTY3MTZmNzlmYmZlNmI2ZDJjYTI2ZGRjNTFhZDA5ZWFiZDllMzRlNGFkY2Q1MjY4OWFhNjMyZmRhIiwidGFnIjoiIn0%3D; expires=Fri, 14-Jul-2023 07:32:22 GMT; path=\/; httponly<\/span>\"\n  <\/samp>]\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-344661756\", {\"maxDepth\":0})<\/script>\n","session_attributes":"<pre class=sf-dump id=sf-dump-1904504398 data-indent-pad=\"  \"><span class=sf-dump-note>array:5<\/span> [<samp data-depth=1 class=sf-dump-expanded>\n  \"<span class=sf-dump-key>_token<\/span>\" => \"<span class=sf-dump-str title=\"40 characters\">ORpSGpuYkPnvhvt4SSYfJXSF3f9CMCCYTPdTt4zt<\/span>\"\n  \"<span class=sf-dump-key>_previous<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    \"<span class=sf-dump-key>url<\/span>\" => \"<span class=sf-dump-str title=\"55 characters\">https:\/\/sandbox.bookingcore.co\/admin\/module\/page\/create<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>_flash<\/span>\" => <span class=sf-dump-note>array:2<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    \"<span class=sf-dump-key>old<\/span>\" => []\n    \"<span class=sf-dump-key>new<\/span>\" => []\n  <\/samp>]\n  \"<span class=sf-dump-key>login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d<\/span>\" => <span class=sf-dump-num>1<\/span>\n  \"<span class=sf-dump-key>PHPDEBUGBAR_STACK_DATA<\/span>\" => []\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-1904504398\", {\"maxDepth\":0})<\/script>\n"}}, "X70eea3e552dbd5e95598fcd1960d83ec");
 
-</script>
+
     <style>
         .tox .tox-statusbar {
     display: none !important;
