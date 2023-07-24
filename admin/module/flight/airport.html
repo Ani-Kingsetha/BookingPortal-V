@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="niF7UiJ6NpIZ4amVPiIALTkBxGGgcLJ8vhTaWijr">
+
+    <title>Airport Management - Booking Core</title>
+
+                                    <link rel="icon" type="image/png" href="https://sandbox.bookingcore.co/uploads/demo/general/favicon.png" />
+            
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+    <!-- Styles -->
+    <link href="https://sandbox.bookingcore.co/libs/select2/css/select2.min.css" rel="stylesheet">
+    <link href="https://sandbox.bookingcore.co/libs/flags/css/flag-icon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://sandbox.bookingcore.co/libs/daterange/daterangepicker.css"/>
+    <link href="https://sandbox.bookingcore.co/themes/admin/libs/bootstrap-4.6.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://sandbox.bookingcore.co/themes/admin/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://sandbox.bookingcore.co/dist/admin/css/app.css" rel="stylesheet">
+    
+    
+    <script>
+        var bookingCore  = {
+            url:'https://sandbox.bookingcore.co',
+            admin_url:'https://sandbox.bookingcore.co/admin',
+            map_provider:'gmap',
+            map_gmap_key:'',
+            csrf:'niF7UiJ6NpIZ4amVPiIALTkBxGGgcLJ8vhTaWijr',
+            date_format:'MM/DD/YYYY',
+            markAsRead:'https://sandbox.bookingcore.co/admin/module/core/markAsRead',
+            markAllAsRead:'https://sandbox.bookingcore.co/admin/module/core/markAllAsRead',
+            loadNotify : 'https://sandbox.bookingcore.co/admin/module/core/notifications',
+            pusher_api_key : '',
+            pusher_cluster : '',
+            isAdmin : 1,
+            currentUser: 6,
+            media:{
+                groups:{"default":{"ext":["jpg","jpeg","png","gif","bmp","docx"],"mime":["image\/png","image\/jpeg","image\/gif","image\/bmp","application\/vnd.openxmlformats-officedocument.wordprocessingml.document"],"max_size":20000000,"max_width":4000,"max_height":4000},"image":{"ext":["jpg","jpeg","png","gif","bmp"],"mime":["image\/png","image\/jpeg","image\/gif","image\/bmp"],"max_size":20000000,"max_width":4000,"max_height":4000}},
+            },
+            language: 'en',
+        };
+        var i18n = {
+            warning:"Warning",
+            success:"Success",
+            confirm_delete:"Do you want to delete?",
+            confirm_recovery:"Do you want to restore?",
+            confirm:"Confirm",
+            cancel:"Cancel",
+            custom_range: "Custom Range",
+            apply: "Apply"
+        };
+        var daterangepickerLocale = {
+            "applyLabel": "Apply",
+            "cancelLabel": "Cancel",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "customRangeLabel": "Custom",
+            "weekLabel": "W",
+            "first_day_of_week": 1,
+            "daysOfWeek": [
+                "Su",
+                "Mo",
+                "Tu",
+                "We",
+                "Th",
+                "Fr",
+                "Sa"
+            ],
+            "monthNames": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ],
+        };
+
+        var image_editer = {
+            language: 'en',
+            translations: {
+                en: {
+                    'header.image_editor_title': 'Image Editor',
+                    'header.toggle_fullscreen': 'Toggle fullscreen',
+                    'header.close': 'Close',
+                    'header.close_modal': 'Close window',
+                    'toolbar.download': 'Save Change',
+                    'toolbar.save': 'Save',
+                    'toolbar.apply': 'Apply',
+                    'toolbar.saveAsNewImage': 'Save As New Image',
+                    'toolbar.cancel': 'Cancel',
+                    'toolbar.go_back': 'Go Back',
+                    'toolbar.adjust': 'Adjust',
+                    'toolbar.effects': 'Effects',
+                    'toolbar.filters': 'Filters',
+                    'toolbar.orientation': 'Orientation',
+                    'toolbar.crop': 'Crop',
+                    'toolbar.resize': 'Resize',
+                    'toolbar.watermark': 'Watermark',
+                    'toolbar.focus_point': 'Focus point',
+                    'toolbar.shapes': 'Shapes',
+                    'toolbar.image': 'Image',
+                    'toolbar.text': 'Text',
+                    'adjust.brightness': 'Brightness',
+                    'adjust.contrast': 'Contrast',
+                    'adjust.exposure': 'Exposure',
+                    'adjust.saturation': 'Saturation',
+                    'orientation.rotate_l': 'Rotate Left',
+                    'orientation.rotate_r': 'Rotate Right',
+                    'orientation.flip_h': 'Flip Horizontally',
+                    'orientation.flip_v': 'Flip Vertically',
+                    'pre_resize.title': 'Would you like to reduce resolution before editing the image?',
+                    'pre_resize.keep_original_resolution': 'Keep original resolution',
+                    'pre_resize.resize_n_continue': 'Resize &amp; Continue',
+                    'footer.reset': 'Reset',
+                    'footer.undo': 'Undo',
+                    'footer.redo': 'Redo',
+                    'spinner.label': 'Processing...',
+                    'warning.too_big_resolution': 'The resolution of the image is too big for the web. It can cause problems with Image Editor performance.',
+                    'common.x': 'x',
+                    'common.y': 'y',
+                    'common.width': 'width',
+                    'common.height': 'height',
+                    'common.custom': 'custom',
+                    'common.original': 'original',
+                    'common.square': 'square',
+                    'common.opacity': 'Opacity',
+                    'common.apply_watermark': 'Apply watermark',
+                    'common.url': 'URL',
+                    'common.upload': 'Upload',
+                    'common.gallery': 'Gallery',
+                    'common.text': 'Text',
+                }
+            }
+        };
+    </script>
+    <script src="https://sandbox.bookingcore.co/libs/tinymce/js/tinymce/tinymce.min.js" ></script>
+    
+<link rel='stylesheet' type='text/css' property='stylesheet' href='//sandbox.bookingcore.co/_debugbar/assets/stylesheets?v=1657531602&theme=auto' data-turbolinks-eval='false' data-turbo-eval='false'><script src='//sandbox.bookingcore.co/_debugbar/assets/javascript?v=1657531602' data-turbolinks-eval='false' data-turbo-eval='false'></script><script data-turbo-eval="false">jQuery.noConflict(true);</script>
+<script> Sfdump = window.Sfdump || (function (doc) { var refStyle = doc.createElement('style'), rxEsc = /([.*+?^${}()|\[\]\/\\])/g, idRx = /\bsf-dump-\d+-ref[012]\w+\b/, keyHint = 0 <= navigator.platform.toUpperCase().indexOf('MAC') ? 'Cmd' : 'Ctrl', addEventListener = function (e, n, cb) { e.addEventListener(n, cb, false); }; refStyle.innerHTML = '.phpdebugbar pre.sf-dump .sf-dump-compact, .sf-dump-str-collapse .sf-dump-str-collapse, .sf-dump-str-expand .sf-dump-str-expand { display: none; }'; (doc.documentElement.firstElementChild || doc.documentElement.children[0]).appendChild(refStyle); refStyle = doc.createElement('style'); (doc.documentElement.firstElementChild || doc.documentElement.children[0]).appendChild(refStyle); if (!doc.addEventListener) { addEventListener = function (element, eventName, callback) { element.attachEvent('on' + eventName, function (e) { e.preventDefault = function () {e.returnValue = false;}; e.target = e.srcElement; callback(e); }); }; } function toggle(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className, arrow, newClass; if (/\bsf-dump-compact\b/.test(oldClass)) { arrow = '▼'; newClass = 'sf-dump-expanded'; } else if (/\bsf-dump-expanded\b/.test(oldClass)) { arrow = '▶'; newClass = 'sf-dump-compact'; } else { return false; } if (doc.createEvent && s.dispatchEvent) { var event = doc.createEvent('Event'); event.initEvent('sf-dump-expanded' === newClass ? 'sfbeforedumpexpand' : 'sfbeforedumpcollapse', true, false); s.dispatchEvent(event); } a.lastChild.innerHTML = arrow; s.className = s.className.replace(/\bsf-dump-(compact|expanded)\b/, newClass); if (recursive) { try { a = s.querySelectorAll('.'+oldClass); for (s = 0; s < a.length; ++s) { if (-1 == a[s].className.indexOf(newClass)) { a[s].className = newClass; a[s].previousSibling.lastChild.innerHTML = arrow; } } } catch (e) { } } return true; }; function collapse(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-expanded\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function expand(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-compact\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function collapseAll(root) { var a = root.querySelector('a.sf-dump-toggle'); if (a) { collapse(a, true); expand(a); return true; } return false; } function reveal(node) { var previous, parents = []; while ((node = node.parentNode || {}) && (previous = node.previousSibling) && 'A' === previous.tagName) { parents.push(previous); } if (0 !== parents.length) { parents.forEach(function (parent) { expand(parent); }); return true; } return false; } function highlight(root, activeNode, nodes) { resetHighlightedNodes(root); Array.from(nodes||[]).forEach(function (node) { if (!/\bsf-dump-highlight\b/.test(node.className)) { node.className = node.className + ' sf-dump-highlight'; } }); if (!/\bsf-dump-highlight-active\b/.test(activeNode.className)) { activeNode.className = activeNode.className + ' sf-dump-highlight-active'; } } function resetHighlightedNodes(root) { Array.from(root.querySelectorAll('.sf-dump-str, .sf-dump-key, .sf-dump-public, .sf-dump-protected, .sf-dump-private')).forEach(function (strNode) { strNode.className = strNode.className.replace(/\bsf-dump-highlight\b/, ''); strNode.className = strNode.className.replace(/\bsf-dump-highlight-active\b/, ''); }); } return function (root, x) { root = doc.getElementById(root); var indentRx = new RegExp('^('+(root.getAttribute('data-indent-pad') || ' ').replace(rxEsc, '\\$1')+')+', 'm'), options = {"maxDepth":1,"maxStringLength":160,"fileLinkFormat":false}, elt = root.getElementsByTagName('A'), len = elt.length, i = 0, s, h, t = []; while (i < len) t.push(elt[i++]); for (i in x) { options[i] = x[i]; } function a(e, f) { addEventListener(root, e, function (e, n) { if ('A' == e.target.tagName) { f(e.target, e); } else if ('A' == e.target.parentNode.tagName) { f(e.target.parentNode, e); } else { n = /\bsf-dump-ellipsis\b/.test(e.target.className) ? e.target.parentNode : e.target; if ((n = n.nextElementSibling) && 'A' == n.tagName) { if (!/\bsf-dump-toggle\b/.test(n.className)) { n = n.nextElementSibling || n; } f(n, e, true); } } }); }; function isCtrlKey(e) { return e.ctrlKey || e.metaKey; } function xpathString(str) { var parts = str.match(/[^'"]+|['"]/g).map(function (part) { if ("'" == part) { return '"\'"'; } if ('"' == part) { return "'\"'"; } return "'" + part + "'"; }); return "concat(" + parts.join(",") + ", '')"; } function xpathHasClass(className) { return "contains(concat(' ', normalize-space(@class), ' '), ' " + className +" ')"; } addEventListener(root, 'mouseover', function (e) { if ('' != refStyle.innerHTML) { refStyle.innerHTML = ''; } }); a('mouseover', function (a, e, c) { if (c) { e.target.style.cursor = "pointer"; } else if (a = idRx.exec(a.className)) { try { refStyle.innerHTML = '.phpdebugbar pre.sf-dump .'+a[0]+'{background-color: #B729D9; color: #FFF !important; border-radius: 2px}'; } catch (e) { } } }); a('click', function (a, e, c) { if (/\bsf-dump-toggle\b/.test(a.className)) { e.preventDefault(); if (!toggle(a, isCtrlKey(e))) { var r = doc.getElementById(a.getAttribute('href').slice(1)), s = r.previousSibling, f = r.parentNode, t = a.parentNode; t.replaceChild(r, a); f.replaceChild(a, s); t.insertBefore(s, r); f = f.firstChild.nodeValue.match(indentRx); t = t.firstChild.nodeValue.match(indentRx); if (f && t && f[0] !== t[0]) { r.innerHTML = r.innerHTML.replace(new RegExp('^'+f[0].replace(rxEsc, '\\$1'), 'mg'), t[0]); } if (/\bsf-dump-compact\b/.test(r.className)) { toggle(s, isCtrlKey(e)); } } if (c) { } else if (doc.getSelection) { try { doc.getSelection().removeAllRanges(); } catch (e) { doc.getSelection().empty(); } } else { doc.selection.empty(); } } else if (/\bsf-dump-str-toggle\b/.test(a.className)) { e.preventDefault(); e = a.parentNode.parentNode; e.className = e.className.replace(/\bsf-dump-str-(expand|collapse)\b/, a.parentNode.className); } }); elt = root.getElementsByTagName('SAMP'); len = elt.length; i = 0; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; if ('SAMP' == elt.tagName) { a = elt.previousSibling || {}; if ('A' != a.tagName) { a = doc.createElement('A'); a.className = 'sf-dump-ref'; elt.parentNode.insertBefore(a, elt); } else { a.innerHTML += ' '; } a.title = (a.title ? a.title+'\n[' : '[')+keyHint+'+click] Expand all children'; a.innerHTML += elt.className == 'sf-dump-compact' ? '<span>▶</span>' : '<span>▼</span>'; a.className += ' sf-dump-toggle'; x = 1; if ('sf-dump' != elt.parentNode.className) { x += elt.parentNode.getAttribute('data-depth')/1; } } else if (/\bsf-dump-ref\b/.test(elt.className) && (a = elt.getAttribute('href'))) { a = a.slice(1); elt.className += ' '+a; if (/[\[{]$/.test(elt.previousSibling.nodeValue)) { a = a != elt.nextSibling.id && doc.getElementById(a); try { s = a.nextSibling; elt.appendChild(a); s.parentNode.insertBefore(a, s); if (/^[@#]/.test(elt.innerHTML)) { elt.innerHTML += ' <span>▶</span>'; } else { elt.innerHTML = '<span>▶</span>'; elt.className = 'sf-dump-ref'; } elt.className += ' sf-dump-toggle'; } catch (e) { if ('&' == elt.innerHTML.charAt(0)) { elt.innerHTML = '…'; elt.className = 'sf-dump-ref'; } } } } } if (doc.evaluate && Array.from && root.children.length > 1) { root.setAttribute('tabindex', 0); SearchState = function () { this.nodes = []; this.idx = 0; }; SearchState.prototype = { next: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx < (this.nodes.length - 1) ? this.idx + 1 : 0; return this.current(); }, previous: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx > 0 ? this.idx - 1 : (this.nodes.length - 1); return this.current(); }, isEmpty: function () { return 0 === this.count(); }, current: function () { if (this.isEmpty()) { return null; } return this.nodes[this.idx]; }, reset: function () { this.nodes = []; this.idx = 0; }, count: function () { return this.nodes.length; }, }; function showCurrent(state) { var currentNode = state.current(), currentRect, searchRect; if (currentNode) { reveal(currentNode); highlight(root, currentNode, state.nodes); if ('scrollIntoView' in currentNode) { currentNode.scrollIntoView(true); currentRect = currentNode.getBoundingClientRect(); searchRect = search.getBoundingClientRect(); if (currentRect.top < (searchRect.top + searchRect.height)) { window.scrollBy(0, -(searchRect.top + searchRect.height + 5)); } } } counter.textContent = (state.isEmpty() ? 0 : state.idx + 1) + ' of ' + state.count(); } var search = doc.createElement('div'); search.className = 'sf-dump-search-wrapper sf-dump-search-hidden'; search.innerHTML = ' <input type="text" class="sf-dump-search-input"> <span class="sf-dump-search-count">0 of 0<\/span> <button type="button" class="sf-dump-search-input-previous" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 1331l-166 165q-19 19-45 19t-45-19L896 965l-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> <button type="button" class="sf-dump-search-input-next" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 808l-742 741q-19 19-45 19t-45-19L109 808q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> '; root.insertBefore(search, root.firstChild); var state = new SearchState(); var searchInput = search.querySelector('.sf-dump-search-input'); var counter = search.querySelector('.sf-dump-search-count'); var searchInputTimer = 0; var previousSearchQuery = ''; addEventListener(searchInput, 'keyup', function (e) { var searchQuery = e.target.value; /* Don't perform anything if the pressed key didn't change the query */ if (searchQuery === previousSearchQuery) { return; } previousSearchQuery = searchQuery; clearTimeout(searchInputTimer); searchInputTimer = setTimeout(function () { state.reset(); collapseAll(root); resetHighlightedNodes(root); if ('' === searchQuery) { counter.textContent = '0 of 0'; return; } var classMatches = [ "sf-dump-str", "sf-dump-key", "sf-dump-public", "sf-dump-protected", "sf-dump-private", ].map(xpathHasClass).join(' or '); var xpathResult = doc.evaluate('.//span[' + classMatches + '][contains(translate(child::text(), ' + xpathString(searchQuery.toUpperCase()) + ', ' + xpathString(searchQuery.toLowerCase()) + '), ' + xpathString(searchQuery.toLowerCase()) + ')]', root, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null); while (node = xpathResult.iterateNext()) state.nodes.push(node); showCurrent(state); }, 400); }); Array.from(search.querySelectorAll('.sf-dump-search-input-next, .sf-dump-search-input-previous')).forEach(function (btn) { addEventListener(btn, 'click', function (e) { e.preventDefault(); -1 !== e.target.className.indexOf('next') ? state.next() : state.previous(); searchInput.focus(); collapseAll(root); showCurrent(state); }) }); addEventListener(root, 'keydown', function (e) { var isSearchActive = !/\bsf-dump-search-hidden\b/.test(search.className); if ((114 === e.keyCode && !isSearchActive) || (isCtrlKey(e) && 70 === e.keyCode)) { /* F3 or CMD/CTRL + F */ if (70 === e.keyCode && document.activeElement === searchInput) { /* * If CMD/CTRL + F is hit while having focus on search input, * the user probably meant to trigger browser search instead. * Let the browser execute its behavior: */ return; } e.preventDefault(); search.className = search.className.replace(/\bsf-dump-search-hidden\b/, ''); searchInput.focus(); } else if (isSearchActive) { if (27 === e.keyCode) { /* ESC key */ search.className += ' sf-dump-search-hidden'; e.preventDefault(); resetHighlightedNodes(root); searchInput.value = ''; } else if ( (isCtrlKey(e) && 71 === e.keyCode) /* CMD/CTRL + G */ || 13 === e.keyCode /* Enter */ || 114 === e.keyCode /* F3 */ ) { e.preventDefault(); e.shiftKey ? state.previous() : state.next(); collapseAll(root); showCurrent(state); } } }); } if (0 >= options.maxStringLength) { return; } try { elt = root.querySelectorAll('.sf-dump-str'); len = elt.length; i = 0; t = []; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; s = elt.innerText || elt.textContent; x = s.length - options.maxStringLength; if (0 < x) { h = elt.innerHTML; elt[elt.innerText ? 'innerText' : 'textContent'] = s.substring(0, options.maxStringLength); elt.className += ' sf-dump-str-collapse'; elt.innerHTML = '<span class=sf-dump-str-collapse>'+h+'<a class="sf-dump-ref sf-dump-str-toggle" title="Collapse"> ◀</a></span>'+ '<span class=sf-dump-str-expand>'+elt.innerHTML+'<a class="sf-dump-ref sf-dump-str-toggle" title="'+x+' remaining characters"> ▶</a></span>'; } } } catch (e) { } }; })(document); </script><style> .phpdebugbar pre.sf-dump { display: block; white-space: pre; padding: 5px; overflow: initial !important; } .phpdebugbar pre.sf-dump:after { content: ""; visibility: hidden; display: block; height: 0; clear: both; } .phpdebugbar pre.sf-dump span { display: inline; } .phpdebugbar pre.sf-dump a { text-decoration: none; cursor: pointer; border: 0; outline: none; color: inherit; } .phpdebugbar pre.sf-dump img { max-width: 50em; max-height: 50em; margin: .5em 0 0 0; padding: 0; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAHUlEQVQY02O8zAABilCaiQEN0EeA8QuUcX9g3QEAAjcC5piyhyEAAAAASUVORK5CYII=) #D3D3D3; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis { display: inline-block; overflow: visible; text-overflow: ellipsis; max-width: 5em; white-space: nowrap; overflow: hidden; vertical-align: top; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis+.sf-dump-ellipsis { max-width: none; } .phpdebugbar pre.sf-dump code { display:inline; padding:0; background:none; } .sf-dump-public.sf-dump-highlight, .sf-dump-protected.sf-dump-highlight, .sf-dump-private.sf-dump-highlight, .sf-dump-str.sf-dump-highlight, .sf-dump-key.sf-dump-highlight { background: rgba(111, 172, 204, 0.3); border: 1px solid #7DA0B1; border-radius: 3px; } .sf-dump-public.sf-dump-highlight-active, .sf-dump-protected.sf-dump-highlight-active, .sf-dump-private.sf-dump-highlight-active, .sf-dump-str.sf-dump-highlight-active, .sf-dump-key.sf-dump-highlight-active { background: rgba(253, 175, 0, 0.4); border: 1px solid #ffa500; border-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-hidden { display: none !important; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper { font-size: 0; white-space: nowrap; margin-bottom: 5px; display: flex; position: -webkit-sticky; position: sticky; top: 5px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > * { vertical-align: top; box-sizing: border-box; height: 21px; font-weight: normal; border-radius: 0; background: #FFF; color: #757575; border: 1px solid #BBB; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > input.sf-dump-search-input { padding: 3px; height: 21px; font-size: 12px; border-right: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px; color: #000; min-width: 15px; width: 100%; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous { background: #F2F2F2; outline: none; border-left: none; font-size: 0; line-height: 0; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next { border-top-right-radius: 3px; border-bottom-right-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next > svg, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous > svg { pointer-events: none; width: 12px; height: 12px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-count { display: inline-block; padding: 0 5px; margin: 0; border-left: none; line-height: 21px; font-size: 12px; }.phpdebugbar pre.sf-dump, .phpdebugbar pre.sf-dump .sf-dump-default{word-wrap: break-word; white-space: pre-wrap; word-break: normal}.phpdebugbar pre.sf-dump .sf-dump-num{font-weight:bold; color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-const{font-weight:bold}.phpdebugbar pre.sf-dump .sf-dump-str{font-weight:bold; color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-note{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ref{color:#7B7B7B}.phpdebugbar pre.sf-dump .sf-dump-public{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-protected{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-private{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-meta{color:#B729D9}.phpdebugbar pre.sf-dump .sf-dump-key{color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-index{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ellipsis{color:#A0A000}.phpdebugbar pre.sf-dump .sf-dump-ns{user-select:none;}.phpdebugbar pre.sf-dump .sf-dump-ellipsis-note{color:#1299DA}</style>
+</head>
+<body class="  site_enable_multi_lang ">
+<div id="app">
+    <div class="main-header d-flex">
+        <div class="header-logo flex-shrink-0">
+    <h3 class="logo-text"><a href="https://sandbox.bookingcore.co/admin">Booking Core <span class="app-version">3.4.0</span></a></h3>
+</div>
+<div class="header-widgets d-flex flex-grow-1">
+    <div class="widgets-left d-flex flex-grow-1 align-items-center">
+        <div class="header-widget">
+            <span class="btn-toggle-admin-menu btn btn-sm btn-link"><i class="icon ion-ios-menu"></i></span>
+        </div>
+        <div class="header-widget search-widget">
+            
+            <a href="https://sandbox.bookingcore.co" class="btn btn-link" target="_blank"><i class="fa fa-eye"></i> Home
+            </a>
+        </div>
+    </div>
+    <div class="widgets-right flex-shrink-0 d-flex">
+                <div class="dropdown header-widget widget-user widget-language flex-shrink-0">
+            <div data-toggle="dropdown" class="user-dropdown d-flex align-items-center" aria-haspopup="true" aria-expanded="false">
+                                                            <div class="user-info flex-grow-1 d-flex">
+                                                            <span class="flag-icon mr-2 flag-icon-gb"></span>
+                                                        English
+                        </div>
+                                                                                                                                                                <i class="fa fa-angle-down"></i>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        
+                    <a class="dropdown-item" href="https://sandbox.bookingcore.co/language/set-admin-lang/ja">
+                                                    <span class="flag-icon flag-icon-jp"></span>
+                                                Japanese
+                    </a>
+                                    
+                    <a class="dropdown-item" href="https://sandbox.bookingcore.co/language/set-admin-lang/egy">
+                                                    <span class="flag-icon flag-icon-eg"></span>
+                                                Egyptian
+                    </a>
+                                    
+                    <a class="dropdown-item" href="https://sandbox.bookingcore.co/language/set-admin-lang/agq">
+                                                    <span class="flag-icon flag-icon-ahah"></span>
+                                                ars
+                    </a>
+                            </div>
+        </div>
+                <div class="dropdown header-widget widget-user pt-2 dropdown-notifications flex-shrink-0" style="min-width: 0">
+            <div data-toggle="dropdown" class="user-dropdown d-flex align-items-center" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-lg fa-bell m-1 p-1"></i>
+                <span class="badge badge-danger notification-icon">21</span>
+            </div>
+            <div class="dropdown-menu overflow-auto notify-items dropdown-container dropdown-menu-right dropdown-large" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-toolbar">
+                    <div class="dropdown-toolbar-actions">
+                        <a href="#" class="markAllAsRead">Mark all as read</a>
+                    </div>
+                    <h3 class="dropdown-toolbar-title">Notifications (<span class="notif-count">21</span>)</h3>
+                </div>
+                <ul class="dropdown-list-items p-0 m-0">
+                                                                                                    <li class="notification active">
+                                <a class="markAsRead" data-id="d7f28103-3a3d-4598-b91d-d0f8c6807fcb" href="https://sandbox.bookingcore.co/admin/module/report/booking">
+                                    <div class="media">
+                                        <div class="media-left">
+                                              <div class="media-object">
+                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="sdfs sdfs">
+                                                                                                </div>
+                                            </div>
+                                        <div class="media-body">
+                                            sdfs sdfs has created new Booking
+                                              <div class="notification-meta">
+                                                    <small class="timestamp">7 minutes 5 seconds </small>
+                                                  </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                                                                                <li class="notification active">
+                                <a class="markAsRead" data-id="d1814a76-7026-4815-9629-2a03e5f6f12c" href="https://sandbox.bookingcore.co/admin/module/user?s=17">
+                                    <div class="media">
+                                        <div class="media-left">
+                                              <div class="media-object">
+                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="sdfs sdfs">
+                                                                                                </div>
+                                            </div>
+                                        <div class="media-body">
+                                            sdfs sdfs has been registered
+                                              <div class="notification-meta">
+                                                    <small class="timestamp">7 minutes 53 seconds </small>
+                                                  </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                                                                                <li class="notification active">
+                                <a class="markAsRead" data-id="10ef2271-c04b-41a4-9bb6-3ff4a175b6db" href="https://sandbox.bookingcore.co/admin/module/report/booking">
+                                    <div class="media">
+                                        <div class="media-left">
+                                              <div class="media-object">
+                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="System Admin">
+                                                                                                </div>
+                                            </div>
+                                        <div class="media-body">
+                                            System Admin has created new Booking
+                                              <div class="notification-meta">
+                                                    <small class="timestamp">3 hours 16 minutes 22 seconds </small>
+                                                  </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                                                                                <li class="notification active">
+                                <a class="markAsRead" data-id="d9c5ca2c-c8f8-4d38-bbb2-8f508eb4e26f" href="https://sandbox.bookingcore.co/admin/module/user?s=16">
+                                    <div class="media">
+                                        <div class="media-left">
+                                              <div class="media-object">
+                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="joni wakwaw">
+                                                                                                </div>
+                                            </div>
+                                        <div class="media-body">
+                                            joni wakwaw has been registered
+                                              <div class="notification-meta">
+                                                    <small class="timestamp">6 hours 35 minutes 59 seconds </small>
+                                                  </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                                                                                <li class="notification active">
+                                <a class="markAsRead" data-id="cacbe6f9-b82a-4283-b5e8-1fcb3a6df4ad" href="https://sandbox.bookingcore.co/admin/module/user?s=15">
+                                    <div class="media">
+                                        <div class="media-left">
+                                              <div class="media-object">
+                                                                                                      <img class="image-responsive" src="https://sandbox.bookingcore.co/images/avatar.png" alt="vikas kumar">
+                                                                                                </div>
+                                            </div>
+                                        <div class="media-body">
+                                            vikas kumar has been registered
+                                              <div class="notification-meta">
+                                                    <small class="timestamp">10 hours 48 minutes 57 seconds </small>
+                                                  </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                                                            </ul>
+                <div class="dropdown-footer text-center">
+                    <a href="https://sandbox.bookingcore.co/admin/module/core/notifications">View More</a>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown header-widget widget-user flex-shrink-0">
+            <div data-toggle="dropdown" class="user-dropdown d-flex align-items-center" aria-haspopup="true" aria-expanded="false">
+                <span class="user-avatar flex-shrink-0">
+                                             <div class="avatar avatar-cover" style="background-image: url('https://sandbox.bookingcore.co/images/avatar.png')"></div>
+                                    </span>
+                <div class="user-info flex-grow-1">
+                    <div class="user-name">System Admin</div>
+                    <div class="user-role">Administrator</div>
+                </div>
+                <i class="fa fa-angle-down"></i>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="https://sandbox.bookingcore.co/admin/module/user/edit/6">Edit Profile</a>
+                <a class="dropdown-item" href="https://sandbox.bookingcore.co/admin/module/user/password/6">Change Password</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Vendor Dashboard</h6>
+                <a href="https://sandbox.bookingcore.co/user/dashboard" class="dropdown-item">Dashboard</a>
+                <div class="dropdown-divider"></div>
+                <a href="https://sandbox.bookingcore.co" class="dropdown-item"><i class="fa fa-home"></i> Homepage</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Logout
+                </a>
+            </div>
+            <form id="logout-form" action="https://sandbox.bookingcore.co/logout" method="POST" style="display: none;">
+                <input type="hidden" name="_token" value="niF7UiJ6NpIZ4amVPiIALTkBxGGgcLJ8vhTaWijr">
+            </form>
+        </div>
+    </div>
+</div>
+    </div>
+    <div class="main-sidebar">
+        <ul class="main-menu pb-5">
+                    <li class=" https:__sandbox.bookingcore.co_admin"><a href="https://sandbox.bookingcore.co/admin">
+                                    <span class="icon text-center"><i class="icon ion-ios-desktop"></i></span>
+                                Dashboard
+            </a>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news">
+                                    <span class="icon text-center"><i class="ion-md-bookmarks"></i></span>
+                                News
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news">
+                                                                All News</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news/create">
+                                                                Add News</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news/category">
+                                                                Categories</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_news"><a href="https://sandbox.bookingcore.co/admin/module/news/tag">
+                                                                Tags</a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_page"><a href="https://sandbox.bookingcore.co/admin/module/page">
+                                    <span class="icon text-center"><i class="icon ion-ios-bookmarks"></i></span>
+                                Page
+            </a>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href="https://sandbox.bookingcore.co/admin/module/location">
+                                    <span class="icon text-center"><i class="icon ion-md-compass"></i></span>
+                                Location
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href="https://sandbox.bookingcore.co/admin/module/location">
+                                                                    <i class="icon ion-md-compass"></i>
+                                                                All Location</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_location"><a href="https://sandbox.bookingcore.co/admin/module/location/category">
+                                                                    <i class="icon ion-md-compass"></i>
+                                                                All Category</a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel">
+                                    <span class="icon text-center"><i class="fa fa-building-o"></i></span>
+                                Hotel
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel">
+                                                                All Hotels</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel/create">
+                                                                Add new Hotel</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel/attribute">
+                                                                Attributes</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel/room/attribute">
+                                                                Room Attributes</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_hotel"><a href="https://sandbox.bookingcore.co/admin/module/hotel/recovery">
+                                                                Recovery</a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour">
+                                    <span class="icon text-center"><i class="icon ion-md-umbrella"></i></span>
+                                Tour
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour">
+                                                                All Tours</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/create">
+                                                                Add Tour</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/category">
+                                                                Categories</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/attribute">
+                                                                Attributes</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/availability">
+                                                                Availability</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/booking">
+                                                                Booking Calendar</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_tour"><a href="https://sandbox.bookingcore.co/admin/module/tour/recovery">
+                                                                Recovery</a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space">
+                                    <span class="icon text-center"><i class="ion ion-md-home"></i></span>
+                                Space
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space">
+                                                                All Spaces</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space/create">
+                                                                Add new Space</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space/attribute">
+                                                                Attributes</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space/availability">
+                                                                Availability</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_space"><a href="https://sandbox.bookingcore.co/admin/module/space/recovery">
+                                                                Recovery</a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class="active has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight">
+                                    <span class="icon text-center"><i class="ion ion-md-airplane"></i></span>
+                                Flight
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class="active has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight">
+                                                                All Flights</a>
+                        </li>
+                                            <li class="active has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/create">
+                                                                Add new Flight</a>
+                        </li>
+                                            <li class="active has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/airline">
+                                                                Airline</a>
+                        </li>
+                                            <li class="active has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/airport">
+                                                                Airport</a>
+                        </li>
+                                            <li class="active has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/seat-type">
+                                                                Seat Type</a>
+                        </li>
+                                            <li class="active has-children https:__sandbox.bookingcore.co_admin_module_flight"><a href="https://sandbox.bookingcore.co/admin/module/flight/attribute">
+                                                                Attributes</a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car">
+                                    <span class="icon text-center"><i class="ion-logo-model-s"></i></span>
+                                Car
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car">
+                                                                All Cars</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car/create">
+                                                                Add new Car</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car/attribute">
+                                                                Attributes</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car/availability">
+                                                                Availability</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_car"><a href="https://sandbox.bookingcore.co/admin/module/car/recovery">
+                                                                Recovery</a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat">
+                                    <span class="icon text-center"><i class="ion-md-boat"></i></span>
+                                Boat
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat">
+                                                                All Boats</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat/create">
+                                                                Add new Boat</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat/attribute">
+                                                                Attributes</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat/availability">
+                                                                Availability</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_boat"><a href="https://sandbox.bookingcore.co/admin/module/boat/recovery">
+                                                                Recovery</a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event">
+                                    <span class="icon text-center"><i class="ion-ios-calendar"></i></span>
+                                Event
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event">
+                                                                All Events</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event/create">
+                                                                Add new Event</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event/attribute">
+                                                                Attributes</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event/availability">
+                                                                Availability</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_event"><a href="https://sandbox.bookingcore.co/admin/module/event/recovery">
+                                                                Recovery</a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="https://sandbox.bookingcore.co/admin/module/user/plan">
+                                    <span class="icon text-center"><i class="fa fa-list-alt"></i></span>
+                                User Plans 
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="https://sandbox.bookingcore.co/admin/module/user/plan">
+                                                                User Plans</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="https://sandbox.bookingcore.co/admin/module/user/plan-report">
+                                                                Plan Report</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user_plan"><a href="https://sandbox.bookingcore.co/admin/module/user/plan-request">
+                                                                Plan Request </a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_popup"><a href="https://sandbox.bookingcore.co/admin/module/popup">
+                                    <span class="icon text-center"><i class="ion ion-ios-cube"></i></span>
+                                Popup
+            </a>
+                    </li>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_coupon"><a href="https://sandbox.bookingcore.co/admin/module/coupon">
+                                    <span class="icon text-center"><i class="fa fa-ticket"></i></span>
+                                Coupon
+            </a>
+                    </li>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_review"><a href="https://sandbox.bookingcore.co/admin/module/review">
+                                    <span class="icon text-center"><i class="icon ion-ios-text"></i></span>
+                                Reviews
+            </a>
+                    </li>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_media"><a href="https://sandbox.bookingcore.co/admin/module/media">
+                                    <span class="icon text-center"><i class="fa fa-picture-o"></i></span>
+                                Media
+            </a>
+                    </li>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_core_menu"><a href="https://sandbox.bookingcore.co/admin/module/core/menu">
+                                    <span class="icon text-center"><i class="icon ion-ios-apps"></i></span>
+                                Menu
+            </a>
+                    </li>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_vendor_payout"><a href="https://sandbox.bookingcore.co/admin/module/vendor/payout">
+                                    <span class="icon text-center"><i class="icon ion-md-card"></i></span>
+                                Payouts 
+            </a>
+                    </li>
+                    <li class=" https:__sandbox.bookingcore.co_admin_module_theme"><a href="https://sandbox.bookingcore.co/admin/module/theme">
+                                    <span class="icon text-center"><i class="fa fa-paint-brush"></i></span>
+                                Themes
+            </a>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/general">
+                                    <span class="icon text-center"><i class="icon ion-ios-cog"></i></span>
+                                Setting
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/general">
+                                                                General Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/hotel">
+                                                                Hotel Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/space">
+                                                                Space Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/car">
+                                                                Car Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/event">
+                                                                Event Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/tour">
+                                                                Tour Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/flight">
+                                                                Flight Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/boat">
+                                                                Boat Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/news">
+                                                                News Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/booking">
+                                                                Booking Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/enquiry">
+                                                                Enquiry Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/user">
+                                                                User Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/vendor">
+                                                                Vendor Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/user_plans">
+                                                                User Plans Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/payment">
+                                                                Payment Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/style">
+                                                                Style Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/advance">
+                                                                Advanced Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/media">
+                                                                Media Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/email">
+                                                                Email Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/sms">
+                                                                Sms Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/api">
+                                                                Mobile App Settings</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_settings_index_general"><a href="https://sandbox.bookingcore.co/admin/module/core/settings/index/review">
+                                                                Review Advanced Settings</a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/module/core/tools">
+                                    <span class="icon text-center"><i class="icon ion-ios-hammer"></i></span>
+                                Tools
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/module/core/module">
+                                                                    <i class="icon ion-md-color-wand"></i>
+                                                                Modules</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/module/language">
+                                                                    <i class="icon ion-ios-globe"></i>
+                                                                Languages</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/module/language/translation">
+                                                                    <i class="icon ion-ios-globe"></i>
+                                                                Translation Manager</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_core_tools"><a href="https://sandbox.bookingcore.co/admin/logs">
+                                                                    <i class="icon ion-ios-nuclear"></i>
+                                                                System Logs</a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user">
+                                    <span class="icon text-center"><i class="icon ion-ios-contacts"></i></span>
+                                Users 
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user">
+                                                                    <i class="fa fa-user"></i>
+                                                                All Users</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user/role">
+                                                                    <i class="fa fa-lock"></i>
+                                                                Role Manager</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user/subscriber">
+                                                                Subscribers</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user/userUpgradeRequest">
+                                                                Upgrade Request </a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_user"><a href="https://sandbox.bookingcore.co/admin/module/user/verification">
+                                                                Verification Request </a>
+                        </li>
+                                    </ul>
+                    </li>
+                    <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/report/booking">
+                                    <span class="icon text-center"><i class="icon ion-ios-pie"></i></span>
+                                Reports 
+            </a>
+                            <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
+                <ul class="children">
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/report/enquiry">
+                                                                    <i class="icon ion-ios-pricetags"></i>
+                                                                Enquiry Reports</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/report/booking">
+                                                                    <i class="icon ion-ios-pricetags"></i>
+                                                                Booking Reports</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/report/statistic">
+                                                                    <i class="icon ion ion-md-podium"></i>
+                                                                Booking Statistic</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/contact">
+                                                                    <i class="icon ion ion-md-mail"></i>
+                                                                Contact Submissions</a>
+                        </li>
+                                            <li class=" has-children https:__sandbox.bookingcore.co_admin_module_report_booking"><a href="https://sandbox.bookingcore.co/admin/module/user/wallet/report">
+                                                                    <i class="fa fa-money"></i>
+                                                                Credit Purchase Report </a>
+                        </li>
+                                    </ul>
+                    </li>
+    </ul>
+    </div>
+    <div class="main-content">
+        <nav class="main-breadcrumb" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="https://sandbox.bookingcore.co/admin"><i class='fa fa-home'></i> Dashboard</a></li>
+
+                            <li class="breadcrumb-item ">
+                                            <a href="https://sandbox.bookingcore.co/admin/module/flight/airport">Airport</a>
+                                    </li>
+                            <li class="breadcrumb-item active">
+                                            All
+                                    </li>
+            
+    </ol>
+</nav>
+            <div class="container-fluid">
+        <div class="d-flex justify-content-between mb20">
+            <h1 class="title-bar">Airport: </h1>
+            <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/import-iata?signature=bab38dabdecd01e9fef29b991dc7f14ee58d0ded82ed34d0c08fdcb799b47314" class="btn btn-primary" onclick="return confirm('Do you want to import all list airports from IATA?')">Import from IATA</a>
+        </div>
+                <div class="row">
+            <div class="col-md-4 mb40">
+                <div class="panel">
+                    <div class="panel-title">Add Airport</div>
+                    <div class="panel-body">
+                        <form action="https://sandbox.bookingcore.co/admin/module/flight/airport/store/-1" method="post">
+                            <input type="hidden" name="_token" value="niF7UiJ6NpIZ4amVPiIALTkBxGGgcLJ8vhTaWijr">                            <div class="form-group">
+    <label>Name</label>
+    <input type="text" value="" placeholder="Name" name="name" required class="form-control">
+</div>
+<div class="form-group">
+    <label>Code</label>
+    <input type="text" value="" placeholder="IATA Code" name="code" required class="form-control">
+</div>
+<div class="form-group">
+    <label>Address</label>
+    <input type="text" value="" placeholder="Address" name="address" class="form-control">
+</div>
+<div class="form-group">
+    <label>Location</label>
+    <select name="location_id" class="form-control">
+        <option value="">-- Please Select --</option>
+        <option value='1' > Paris</option><option value='2' > New York, United States</option><option value='3' > California</option><option value='4' > United States</option><option value='5' > Los Angeles</option><option value='6' > New Jersey</option><option value='7' > San Francisco</option><option value='8' > Virginia</option><option value='9' > London</option><option value='10' > Germany</option>    </select>
+</div>
+<div class="form-group">
+    <label>Status</label>
+    <select class="form-control" name="status">
+        <option value="publish">Publish</option>
+        <option value="draft" >Draft</option>
+    </select>
+</div>
+                            <div class="">
+                                <button class="btn btn-primary" type="submit">Add new</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="filter-div d-flex justify-content-between ">
+                    <div class="col-left">
+                                                    <form method="post" action="https://sandbox.bookingcore.co/admin/module/flight/airport/bulkEdit" class="filter-form filter-form-left d-flex justify-content-start">
+                                <input type="hidden" name="_token" value="niF7UiJ6NpIZ4amVPiIALTkBxGGgcLJ8vhTaWijr">
+                                <select name="action" class="form-control">
+                                    <option value=""> Bulk Action </option>
+                                    <option value="publish"> Mark as Publish </option>
+                                    <option value="draft"> Mark as Draft </option>
+                                    <option value="delete"> Delete </option>
+                                </select>
+                                <button data-confirm="Do you want to delete?" class="btn-info btn btn-icon dungdt-apply-form-btn" type="button">Apply</button>
+                            </form>
+                                            </div>
+                    <div class="col-left">
+                        <form method="get" action="https://sandbox.bookingcore.co/admin/module/flight/airport " class="filter-form filter-form-right d-flex justify-content-end" role="search">
+                            <input type="text" name="s" value="" class="form-control" placeholder="Search by name">
+                            <button class="btn-info btn btn-icon btn_search" id="search-submit" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title">All</div>
+                    <div class="panel-body">
+                        <form class="bravo-form-item">
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th width="60px"><input type="checkbox" class="check-all"></th>
+                                    <th>Name</th>
+                                    <th>IATA Code</th>
+                                    <th>Address</th>
+                                    <th>Status</th>
+                                    <th class="date">Date</th>
+                                    <th class="date"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="60"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/60">Ignatiusmouth</a>
+                                            </td>
+                                            <td>946</td>
+                                            <td>505 Jacobson Street
+Port Elfriedaville, UT 99256-4063</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/60"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="59"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/59">Lake Penelope</a>
+                                            </td>
+                                            <td>488</td>
+                                            <td>540 Prosacco Ville
+Tyrelview, OH 62105</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/59"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="58"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/58">East Reedmouth</a>
+                                            </td>
+                                            <td>907</td>
+                                            <td>13106 Bartoletti Island Suite 554
+New Jayden, NE 70975-8524</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/58"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="57"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/57">Lake Cortney</a>
+                                            </td>
+                                            <td>48</td>
+                                            <td>9338 Strosin Port Suite 869
+Port Gudrun, PA 50574</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/57"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="56"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/56">Port Maureenfort</a>
+                                            </td>
+                                            <td>670</td>
+                                            <td>7744 Bartell Rapids Suite 970
+Lake Brookston, WV 47687-4207</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/56"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="55"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/55">Lake Guymouth</a>
+                                            </td>
+                                            <td>88</td>
+                                            <td>11839 Feest Lakes
+East Caylashire, NY 21378-9538</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/55"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="54"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/54">Wardbury</a>
+                                            </td>
+                                            <td>185</td>
+                                            <td>908 Kohler Causeway Apt. 955
+West Rubieview, OR 64445</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/54"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="53"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/53">Ashlynnchester</a>
+                                            </td>
+                                            <td>851</td>
+                                            <td>211 Stehr Lodge Suite 133
+Magdalenaside, WV 02184-6307</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/53"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="52"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/52">Huelmouth</a>
+                                            </td>
+                                            <td>570</td>
+                                            <td>691 Wilkinson Ports Apt. 585
+East Anabel, ND 52723-8610</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/52"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="51"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/51">East Jarret</a>
+                                            </td>
+                                            <td>506</td>
+                                            <td>85913 Turcotte Isle Apt. 307
+North Bonnie, FL 40157-9885</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/51"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="50"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/50">West Nayelibury</a>
+                                            </td>
+                                            <td>323</td>
+                                            <td>1770 Jacklyn Pike Apt. 250
+Hermannport, CA 59347-7377</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/50"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="49"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/49">Maximilianport</a>
+                                            </td>
+                                            <td>399</td>
+                                            <td>6424 Wilbert Crossroad
+North Shania, SC 03681</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/49"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="48"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/48">Pourosborough</a>
+                                            </td>
+                                            <td>172</td>
+                                            <td>48952 Vallie Stravenue Suite 090
+West Brandon, AZ 98597</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/48"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="47"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/47">Ernestinaton</a>
+                                            </td>
+                                            <td>629</td>
+                                            <td>460 Kihn Dam
+East Filomena, MD 60572-6724</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/47"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="46"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/46">South Adolphus</a>
+                                            </td>
+                                            <td>919</td>
+                                            <td>722 Moriah Cliffs
+Laishaland, SC 61356-2541</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/46"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="45"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/45">Lake Saigeburgh</a>
+                                            </td>
+                                            <td>377</td>
+                                            <td>751 Graham Mountain
+North Heavenshire, AR 31139-7115</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/45"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="44"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/44">Jerroldview</a>
+                                            </td>
+                                            <td>380</td>
+                                            <td>7100 Therese Green Suite 848
+Crooksbury, UT 03935</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/44"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="43"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/43">North Ben</a>
+                                            </td>
+                                            <td>551</td>
+                                            <td>928 Jovani Drive Apt. 189
+New Mekhiside, SC 46979-5641</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/43"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="42"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/42">Denisborough</a>
+                                            </td>
+                                            <td>554</td>
+                                            <td>59159 Schamberger Mountains Suite 251
+Sawaynport, VA 27819-8490</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/42"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="41"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/41">Jaydetown</a>
+                                            </td>
+                                            <td>371</td>
+                                            <td>433 Murray Burg
+New Christiana, NC 43401-0769</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/41"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="40"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/40">Champlinville</a>
+                                            </td>
+                                            <td>680</td>
+                                            <td>7106 Senger Crossroad
+West Anais, CA 66954-5494</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/40"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="39"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/39">New Greta</a>
+                                            </td>
+                                            <td>296</td>
+                                            <td>5195 Mozelle Wall Apt. 318
+New Joanny, ND 44078-1615</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/39"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="38"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/38">Jacobiland</a>
+                                            </td>
+                                            <td>704</td>
+                                            <td>7378 Osinski Curve
+Grahamborough, GA 75428-4743</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/38"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="37"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/37">New Bruce</a>
+                                            </td>
+                                            <td>36</td>
+                                            <td>85749 Tyler Cove Apt. 820
+West Manuelafurt, AL 83741</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/37"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="36"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/36">Friesentown</a>
+                                            </td>
+                                            <td>8</td>
+                                            <td>543 Kuhn Stream
+East Elainafort, ME 66694</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/36"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="35"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/35">Corkerymouth</a>
+                                            </td>
+                                            <td>943</td>
+                                            <td>6126 Fatima Mount
+Alberthatown, KY 03685</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/35"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="34"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/34">Hellenchester</a>
+                                            </td>
+                                            <td>865</td>
+                                            <td>790 Jennings Mountains Apt. 031
+Port Armand, WV 91175-7016</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/34"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="33"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/33">Port Eulalia</a>
+                                            </td>
+                                            <td>778</td>
+                                            <td>70109 Stroman Branch
+Hellershire, ID 21587-2976</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/33"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="32"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/32">New Milliechester</a>
+                                            </td>
+                                            <td>975</td>
+                                            <td>630 Parisian Brooks
+New Isabel, TX 63226</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/32"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="31"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/31">Deionville</a>
+                                            </td>
+                                            <td>589</td>
+                                            <td>484 Berry Brooks
+South Cordelialand, WY 45610-5499</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/31"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="30"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/30">West Jailyn</a>
+                                            </td>
+                                            <td>829</td>
+                                            <td>1481 Stephanie Ridges Suite 769
+East Branson, IA 57345-1113</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/30"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="29"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/29">Alanstad</a>
+                                            </td>
+                                            <td>502</td>
+                                            <td>7632 Christiana Fort
+West Janis, WA 36402-5534</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/29"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="28"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/28">South Korbinfort</a>
+                                            </td>
+                                            <td>740</td>
+                                            <td>1910 Coty Knoll Apt. 396
+Yvetteborough, OK 53193-3306</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/28"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="27"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/27">Bessieton</a>
+                                            </td>
+                                            <td>781</td>
+                                            <td>749 Eli Ford
+Wymanside, IN 02134</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/27"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="26"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/26">East Freeda</a>
+                                            </td>
+                                            <td>431</td>
+                                            <td>5888 Kaylin Highway
+Roobbury, LA 41180-3188</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/26"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="25"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/25">Stromanview</a>
+                                            </td>
+                                            <td>848</td>
+                                            <td>761 Gleason Street Suite 553
+New Skye, TN 18700</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/25"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="24"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/24">East Tre</a>
+                                            </td>
+                                            <td>869</td>
+                                            <td>35647 Alvera Spur
+Starkmouth, NV 30607-4694</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/24"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="23"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/23">New Candice</a>
+                                            </td>
+                                            <td>622</td>
+                                            <td>63906 Rachelle River Apt. 459
+Strosinville, OH 01565</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/23"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="22"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/22">New Catharinechester</a>
+                                            </td>
+                                            <td>892</td>
+                                            <td>6522 Hammes Center Apt. 039
+Erdmanville, MI 57259</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/22"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="21"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/21">Connchester</a>
+                                            </td>
+                                            <td>932</td>
+                                            <td>359 Concepcion Pine
+Craigburgh, MN 10262</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/21"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="20"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/20">Lefflerport</a>
+                                            </td>
+                                            <td>319</td>
+                                            <td>92496 Noah Glens
+Port Tamara, IL 25473</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/20"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="19"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/19">Murphyberg</a>
+                                            </td>
+                                            <td>945</td>
+                                            <td>29311 Joshuah Harbor Suite 433
+East Monique, RI 86359-9648</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/19"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="18"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/18">Franeckifurt</a>
+                                            </td>
+                                            <td>601</td>
+                                            <td>68469 Stoltenberg Meadow
+Marksbury, GA 30591-8138</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/18"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="17"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/17">Lake Cristina</a>
+                                            </td>
+                                            <td>770</td>
+                                            <td>9104 Crona Mountain
+North Samsonstad, OK 13529</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/17"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="16"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/16">Marleeberg</a>
+                                            </td>
+                                            <td>723</td>
+                                            <td>540 Irma Summit
+Eldonborough, TX 05229</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/16"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="15"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/15">Howellmouth</a>
+                                            </td>
+                                            <td>693</td>
+                                            <td>883 Kuhic Parkway
+Schneiderfort, NV 67085</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/15"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="14"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/14">Metzstad</a>
+                                            </td>
+                                            <td>820</td>
+                                            <td>56084 Gleichner Fields
+Winnifredfurt, UT 97282</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/14"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="13"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/13">Germanborough</a>
+                                            </td>
+                                            <td>294</td>
+                                            <td>12834 Treutel Point Apt. 173
+East Ciceroville, AR 26521-9277</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/13"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="12"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/12">North Bobbie</a>
+                                            </td>
+                                            <td>44</td>
+                                            <td>2572 Elva Street Suite 470
+Port Floburgh, GA 79284-7705</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/12"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                            <tr>
+                                            <td><input type="checkbox" class="check-item" name="ids[]" value="11"></td>
+                                            <td class="title">
+                                                <a href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/11">Olsonview</a>
+                                            </td>
+                                            <td>503</td>
+                                            <td>68374 Bashirian Village
+Ginoville, SC 19724</td>
+                                            <td><span class="badge badge-success">Publish</span></td>
+                                            <td>07/20/2023</td>
+                                            <td><a class="btn btn-primary btn-sm" href="https://sandbox.bookingcore.co/admin/module/flight/airport/edit/11"><i class="fa fa-edit"></i> Edit</a></td>
+                                        </tr>
+                                                                                                    </tbody>
+                            </table>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <nav class="mt-2">
+        <ul class="pagination">
+            
+                            <li class="disabled page-item" aria-disabled="true" aria-label="&laquo; Previous">
+                    <span aria-hidden="true" class="page-link">&lsaquo;</span>
+                </li>
+            
+            
+                            
+                
+                
+                                                                                        <li class="active page-item " aria-current="page"><span class="page-link">1</span></li>
+                                                                                                <li class="page-item"><a class="page-link" href="https://sandbox.bookingcore.co/admin/module/flight/airport?page=2">2</a></li>
+                                                                        
+            
+                            <li class="page-item">
+                    <a class="page-link" href="https://sandbox.bookingcore.co/admin/module/flight/airport?page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
+                </li>
+                    </ul>
+    </nav>
+
+                                Found 60 airport(s)
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="main-footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 copy-right" >
+                        2023 &copy; Booking Core by <a href="https://www.bookingcore.co" target="_blank">BookingCore Team</a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-md-right footer-links d-none d-sm-block">
+                            <a href="https://www.bookingcore.co" target="_blank">About Us</a>
+                            <a href="https://m.me/bookingcore" target="_blank">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="backdrop-sidebar-mobile"></div>
+</div>
+
+<div id="cdn-browser-modal" class="modal fade">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div id="cdn-browser" class="cdn-browser d-flex flex-column" v-cloak :class="{is_loading:isLoading}">
+                <div class="files-nav flex-shrink-0">
+                    <div class="d-flex justify-content-between">
+                        <div class="col-left d-flex align-items-center">
+                            <div class="filter-item">
+                                <input type="text" placeholder="Search file name...." class="form-control" v-model="filter.s" @keyup.enter="filter.page = 1;reloadLists()">
+                            </div>
+                            <div class="filter-item">
+                                <button class="btn btn-default" @click="reloadAll()">
+                                    <i class="fa fa-search"></i> Search</button>
+                            </div>
+                            <div class="filter-item">
+                                <small><i>Total: {{total}} files</i></small>
+                            </div>
+                        </div>
+                        <div class="div">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" @click="setViewType('grid')" class="btn" :class="viewType == 'grid' ? 'btn-secondary' : 'btn-outline-secondary'"><i class="fa fa-th"></i></button>
+                                <button type="button" @click="setViewType('list')" class="btn" :class="viewType != 'grid' ? 'btn-secondary' : 'btn-outline-secondary'"><i class="fa fa-bars"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-right">
+                            <i class="fa-spin fa fa-spinner icon-loading active" v-show="isLoading"></i>
+                            <button class="btn btn-primary mr-2" @click="addFolder">
+                                <span><i class="fa fa-folder"></i> Add Folder</span>
+                            </button>
+                            <button class="btn btn-success btn-pick-files">
+                                <span><i class="fa fa-upload"></i> Upload</span>
+                                <input multiple :accept="accept_type" type="file" name="files[]" ref="files">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="upload-new" v-show="showUploader" display="none">
+                    <input type="file" name="filepond[]" class="my-pond">
+                </div>
+                <div class="files-list">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a @click="toFolderRoot" href="#">Home</a></li>
+                            <li v-for="(item,index) in breadcrumbs"  class="breadcrumb-item active" aria-current="page"><a @click.prevent="showFolder(item,index)" href="#">{{ item.name }}</a></li>
+                        </ol>
+                    </nav>
+                    <div class="border-top border-left mb-3 px-3" v-if="viewType == 'list'">
+                        <div class="row font-weight-bold " style="font-size: 16px">
+                            <div class="col-sm-6 py-2 border-bottom border-right">Name</div>
+                            <div class="col-sm-2 py-2 border-bottom border-right">Type</div>
+                            <div class="col-sm-2 py-2 border-bottom border-right">Created At</div>
+                            <div class="col-sm-2 py-2 border-bottom border-right">Size</div>
+                        </div>
+                        <folder-item @deleted="deletedFolder" @toggle-edit="toggleEditFolder" @dblclick="showFolder(folder)" @update="updateFolder" :view-type="viewType" v-for="(folder,index) in folders" :index="index" :key="'folder-'+index" :folder="folder"></folder-item>
+                        <file-item v-for="(file,index) in files" :key="index" :view-type="viewType" :selected="selected" :file="file" v-on:select-file="selectFile"></file-item>
+                    </div>
+                    <div class="files-wraps " v-if="viewType == 'grid'" :class="'view-'+viewType">
+                        <folder-item @deleted="deletedFolder" @toggle-edit="toggleEditFolder" @dblclick="showFolder(folder)" @update="updateFolder" v-for="(folder,index) in folders" :index="index" :key="'folder-'+index" :folder="folder"></folder-item>
+                        <file-item v-for="(file,index) in files" :key="index" :view-type="viewType" :selected="selected" :file="file" v-on:select-file="selectFile"></file-item>
+                    </div>
+                    <p class="no-files-text text-center" v-show="!total && apiFinished" style="display: none">No file found</p>
+                    <div class="text-center" v-if="totalPage > 1">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item" :class="{disabled:filter.page <= 1}">
+                                    <a class="page-link" v-if="filter.page <=1">Previous</a>
+                                    <a class="page-link" href="#" v-if="filter.page > 1" v-on:click="changePage(filter.page-1,$event)">Previous</a>
+                                </li>
+                                <li class="page-item" v-if="p >= (filter.page-3) && p <= (filter.page+3)" :class="{active: p == filter.page}" v-for="p in totalPage" @click="changePage(p,$event)">
+                                    <a class="page-link" href="#">{{p}}</a></li>
+                                <li class="page-item" :class="{disabled:filter.page >= totalPage}">
+                                    <a v-if="filter.page >= totalPage" class="page-link">Next</a>
+                                    <a href="#" class="page-link" v-if="filter.page < totalPage" v-on:click="changePage(filter.page+1,$event)">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="browser-actions d-flex justify-content-between flex-shrink-0" v-if="selected.length">
+                    <div class="col-left" v-show="selected.length">
+                        <div class="control-remove" v-if="selected && selected.length">
+                            <button class="btn btn-danger" @click="removeFiles">Delete file</button>
+                        </div>
+                        <div class="control-info" v-if="selected && selected.length">
+                            <div class="count-selected">{{selected.length}} file selected</div>
+                            <div class="clear-selected" @click="selected=[]"><i>unselect</i></div>
+                        </div>
+                    </div>
+                    <div class="col-right" v-show="selected.length">
+                        <button class="btn btn-primary" :class="{disabled:!selected.length}" @click="sendFiles">Use file</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/x-template" id="file-item-template">
+    <div :class="viewType == 'grid'  ? 'file-item' : 'file-list-item'" >
+        <div class="row hover:bg-f5f5f5 cursor-pointer" v-if="viewType == 'list'" @click="selectFile(file)" :class="{'active':selected.indexOf(file.id) !== -1}">
+            <div class="col-sm-6 py-1 border-right border-bottom">
+                <span v-html="getFileThumb(file)" class="mr-2 item-preview"></span> {{ file.file_name }}</div>
+            <div class="col-sm-2 py-1  border-right border-bottom">{{file.file_extension}}</div>
+            <div class="col-sm-2 py-1  border-right border-bottom">{{file.created_at}}</div>
+            <div class="col-sm-1 py-1 border-bottom">{{humanFileSize(file.file_size)}}</div>
+            <div class="col-sm-1 py-1  border-right border-bottom d-flex justify-content-end">
+                <a :href="file.full_size" target="_blank" title="View file"><i class=" fa fa-eye"></i></a>
+            </div>
+        </div>
+        <div v-if="viewType == 'grid'" class="inner" :class="{active:selected.indexOf(file.id) !== -1 }" @click="selectFile(file)" :title="file.file_name">
+            <div class="file-thumb" v-if="viewType=='grid'" v-html="getFileThumb(file)">
+                </div>
+                <div class="file-name">{{file.file_name}}</div>
+                <span class="file-checked-status" v-show="selected.indexOf(file.id) !== -1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg>
+            </span>
+        </div>
+    </div>
+</script>
+<script type="text/x-template" id="folder-item-template">
+    <div :class="viewType == 'grid'  ? 'file-item folder-item' : 'folder-item'" @dblclick="$emit('dblclick',folder,index)">
+        <div class="row hover:bg-f5f5f5 cursor-pointer" v-if="viewType == 'list'">
+            <div class="col-sm-6 py-1 border-right border-bottom">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-grow-1 align-items-center">
+                        <div>
+                            <img src="/icon/folder.png" width="20px" height="auto" class="mr-2 flex-shrink-0" alt="">
+                        </div>
+                        <div class="text-center font-weight-medium" v-if="!folder.onEdit">{{folder.name}}</div>
+                        <div class="" v-if="folder.onEdit">
+                            <input ref="input" type="text" @blur="saveName" class="form-control" v-model="folder_name" >
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#" class="btn-edit btn-sm position-absolute" @click.prevent="openEdit"><i class="fa fa-edit"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 py-1 border-right border-bottom">Folder</div>
+            <div class="col-sm-2 py-1 border-right border-bottom">{{ folder.created_at }}</div>
+            <div class="col-sm-2 py-1 border-right border-bottom d-flex justify-content-end">
+                <a href="#" class="btn-sm text-danger" title="Delete this folder" @click.prevent="deleteFolder"><i class="fa fa-trash"></i></a>
+            </div>
+        </div>
+        <div v-if="viewType == 'grid'" class="inner d-flex flex-column  position-relative">
+            <div class="file-thumb flex-grow-1 d-flex align-items-center justify-content-center" style="background: #7b7d7e">
+                <i class="fa fa-folder-o" style="font-size: 90px;color:white"></i>
+            </div>
+            <div class="text-center font-weight-medium p-2" v-if="!folder.onEdit">{{folder.name}}</div>
+            <div class="" v-if="folder.onEdit">
+                <input ref="input" type="text" @blur="saveName" class="form-control" v-model="folder_name" >
+            </div>
+            <a href="#" class="btn-edit btn btn-sm btn-warning position-absolute top-0 right-0 m-2" @click.prevent="openEdit"><i class="fa fa-edit"></i></a>
+        </div>
+    </div>
+</script>
+
+<!-- Scripts -->
+
+<script src="https://sandbox.bookingcore.co/libs/pusher.min.js"></script>
+<script src="https://sandbox.bookingcore.co/dist/admin/js/manifest.js?_ver=3.4.0" ></script>
+<script src="https://sandbox.bookingcore.co/libs/jquery-3.6.3.min.js?_ver=3.4.0" ></script>
+<script src="https://sandbox.bookingcore.co/themes/admin/libs/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js?_ver=3.4.0" ></script>
+<script src="https://sandbox.bookingcore.co/dist/admin/js/vendor.js?_ver=3.4.0" ></script>
+<script src="https://sandbox.bookingcore.co/libs/filerobot-image-editor/filerobot-image-editor.min.js?_ver=3.4.0"></script>
+
+<script src="https://sandbox.bookingcore.co/dist/admin/js/app.js?_ver=3.4.0" ></script>
+<script src="https://sandbox.bookingcore.co/libs/vue/vue.js"></script>
+
+<script src="https://sandbox.bookingcore.co/libs/select2/js/select2.min.js" ></script>
+<script src="https://sandbox.bookingcore.co/libs/bootbox/bootbox.min.js"></script>
+
+<script src="https://sandbox.bookingcore.co/libs/daterange/moment.min.js"></script>
+<script src="https://sandbox.bookingcore.co/libs/daterange/daterangepicker.min.js?_ver=3.4.0"></script>
+
+
+
+    <script src='https://maps.googleapis.com/maps/api/js?key=&libraries=places'></script><script src='https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js'></script><script src='https://sandbox.bookingcore.co/libs/infobox.js'></script><script src='https://sandbox.bookingcore.co/module/core/js/map-engine.js?_ver=3.4.0'></script>
+    <script>
+        jQuery(function ($) {
+            "use strict"
+            new BravoMapEngine('map_content', {
+                disableScripts:true,
+                fitBounds: true,
+                center: [38.54263, -66.575159],
+                zoom:10,
+                ready: function (engineMap) {
+                                        engineMap.addMarker([38.54263, -66.575159], {
+                        icon_options: {}
+                    });
+                                        engineMap.on('click', function (dataLatLng) {
+                        engineMap.clearMarkers();
+                        engineMap.addMarker(dataLatLng, {
+                            icon_options: {}
+                        });
+                        $("input[name=map_lat]").attr("value", dataLatLng[0]);
+                        $("input[name=map_lng]").attr("value", dataLatLng[1]);
+                    });
+                    engineMap.on('zoom_changed', function (zoom) {
+                        $("input[name=map_zoom]").attr("value", zoom);
+                    })
+                }
+            });
+        })
+    </script>
+
+<script type="text/javascript">
+var phpdebugbar = new PhpDebugBar.DebugBar();
+phpdebugbar.addIndicator("php_version", new PhpDebugBar.DebugBar.Indicator({"icon":"code","tooltip":"PHP Version"}), "right");
+phpdebugbar.addTab("messages", new PhpDebugBar.DebugBar.Tab({"icon":"list-alt","title":"Messages", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.addIndicator("time", new PhpDebugBar.DebugBar.Indicator({"icon":"clock-o","tooltip":"Request Duration"}), "right");
+phpdebugbar.addTab("timeline", new PhpDebugBar.DebugBar.Tab({"icon":"tasks","title":"Timeline", "widget": new PhpDebugBar.Widgets.TimelineWidget()}));
+phpdebugbar.addIndicator("memory", new PhpDebugBar.DebugBar.Indicator({"icon":"cogs","tooltip":"Memory Usage"}), "right");
+phpdebugbar.addTab("exceptions", new PhpDebugBar.DebugBar.Tab({"icon":"bug","title":"Exceptions", "widget": new PhpDebugBar.Widgets.ExceptionsWidget()}));
+phpdebugbar.addTab("views", new PhpDebugBar.DebugBar.Tab({"icon":"leaf","title":"Views", "widget": new PhpDebugBar.Widgets.TemplatesWidget()}));
+phpdebugbar.addTab("route", new PhpDebugBar.DebugBar.Tab({"icon":"share","title":"Route", "widget": new PhpDebugBar.Widgets.HtmlVariableListWidget()}));
+phpdebugbar.addIndicator("currentroute", new PhpDebugBar.DebugBar.Indicator({"icon":"share","tooltip":"Route"}), "right");
+phpdebugbar.addTab("queries", new PhpDebugBar.DebugBar.Tab({"icon":"database","title":"Queries", "widget": new PhpDebugBar.Widgets.LaravelSQLQueriesWidget()}));
+phpdebugbar.addTab("models", new PhpDebugBar.DebugBar.Tab({"icon":"cubes","title":"Models", "widget": new PhpDebugBar.Widgets.HtmlVariableListWidget()}));
+phpdebugbar.addTab("auth", new PhpDebugBar.DebugBar.Tab({"icon":"lock","title":"Auth", "widget": new PhpDebugBar.Widgets.VariableListWidget()}));
+phpdebugbar.addIndicator("auth.name", new PhpDebugBar.DebugBar.Indicator({"icon":"user","tooltip":"Auth status"}), "right");
+phpdebugbar.addTab("gate", new PhpDebugBar.DebugBar.Tab({"icon":"list-alt","title":"Gate", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.addTab("session", new PhpDebugBar.DebugBar.Tab({"icon":"archive","title":"Session", "widget": new PhpDebugBar.Widgets.VariableListWidget()}));
+phpdebugbar.addTab("request", new PhpDebugBar.DebugBar.Tab({"icon":"tags","title":"Request", "widget": new PhpDebugBar.Widgets.HtmlVariableListWidget()}));
+phpdebugbar.setDataMap({
+"php_version": ["php.version", ],
+"messages": ["messages.messages", []],
+"messages:badge": ["messages.count", null],
+"time": ["time.duration_str", '0ms'],
+"timeline": ["time", {}],
+"memory": ["memory.peak_usage_str", '0B'],
+"exceptions": ["exceptions.exceptions", []],
+"exceptions:badge": ["exceptions.count", null],
+"views": ["views", []],
+"views:badge": ["views.nb_templates", 0],
+"route": ["route", {}],
+"currentroute": ["route.uri", ],
+"queries": ["queries", []],
+"queries:badge": ["queries.nb_statements", 0],
+"models": ["models.data", {}],
+"models:badge": ["models.count", 0],
+"auth": ["auth.guards", {}],
+"auth.name": ["auth.names", ],
+"gate": ["gate.messages", []],
+"gate:badge": ["gate.count", null],
+"session": ["session", {}],
+"request": ["request", {}]
+});
+phpdebugbar.restoreState();
+phpdebugbar.ajaxHandler = new PhpDebugBar.AjaxHandler(phpdebugbar, undefined, true);
+phpdebugbar.ajaxHandler.bindToFetch();
+phpdebugbar.ajaxHandler.bindToXHR();
+phpdebugbar.setOpenHandler(new PhpDebugBar.OpenHandler({"url":"https:\/\/sandbox.bookingcore.co\/_debugbar\/open"}));
+phpdebugbar.addDataSet({"__meta":{"id":"Xdea26c5bf6c8571f8c5576b92892f7e6","datetime":"2023-07-24 15:06:08","utime":1690211168.9882,"method":"GET","uri":"\/admin\/module\/flight\/airport","ip":"2402:3a80:191c:ad7:3c24:6fdf:646c:8527"},"php":{"version":"8.0.29","interface":"fpm-fcgi"},"messages":{"count":0,"messages":[]},"time":{"start":1690211168.764708,"end":1690211168.988227,"duration":0.22351884841918945,"duration_str":"224ms","measures":[{"label":"Booting","start":1690211168.764708,"relative_start":0,"end":1690211168.815404,"relative_end":1690211168.815404,"duration":0.05069589614868164,"duration_str":"50.7ms","params":[],"collector":null},{"label":"Application","start":1690211168.815478,"relative_start":0.05077004432678223,"end":1690211168.988229,"relative_end":2.1457672119140625e-6,"duration":0.17275094985961914,"duration_str":"173ms","params":[],"collector":null}]},"memory":{"peak_usage":14384416,"peak_usage_str":"14MB"},"exceptions":{"count":0,"exceptions":[]},"views":{"nb_templates":11,"templates":[{"name":"Flight::admin.airport.index (modules\/Flight\/Views\/admin\/airport\/index.blade.php)","param_count":6,"params":["rows","row","locations","flight_manage_others","breadcrumbs","page_title"],"type":"blade"},{"name":"admin.message (resources\/views\/admin\/message.blade.php)","param_count":9,"params":["__env","app","errors","rows","row","locations","flight_manage_others","breadcrumbs","page_title"],"type":"blade"},{"name":"Flight::admin.airport.form (modules\/Flight\/Views\/admin\/airport\/form.blade.php)","param_count":10,"params":["__env","app","errors","rows","row","locations","flight_manage_others","breadcrumbs","page_title","map_full"],"type":"blade"},{"name":"pagination::tailwind (resources\/views\/vendor\/pagination\/tailwind.blade.php)","param_count":2,"params":["paginator","elements"],"type":"blade"},{"name":"vendor.pagination.default (resources\/views\/vendor\/pagination\/default.blade.php)","param_count":5,"params":["__env","app","errors","paginator","elements"],"type":"blade"},{"name":"admin.layouts.app (resources\/views\/admin\/layouts\/app.blade.php)","param_count":11,"params":["__env","app","errors","rows","row","locations","flight_manage_others","breadcrumbs","page_title","__currentLoopData","loop"],"type":"blade"},{"name":"Layout::admin.app (modules\/Layout\/admin\/app.blade.php)","param_count":11,"params":["__env","app","errors","rows","row","locations","flight_manage_others","breadcrumbs","page_title","__currentLoopData","loop"],"type":"blade"},{"name":"Layout::admin.parts.header (modules\/Layout\/admin\/parts\/header.blade.php)","param_count":13,"params":["__env","app","errors","rows","row","locations","flight_manage_others","breadcrumbs","page_title","__currentLoopData","loop","favicon","file"],"type":"blade"},{"name":"Layout::admin.parts.sidebar (modules\/Layout\/admin\/parts\/sidebar.blade.php)","param_count":13,"params":["__env","app","errors","rows","row","locations","flight_manage_others","breadcrumbs","page_title","__currentLoopData","loop","favicon","file"],"type":"blade"},{"name":"Layout::admin.parts.bc (modules\/Layout\/admin\/parts\/bc.blade.php)","param_count":13,"params":["__env","app","errors","rows","row","locations","flight_manage_others","breadcrumbs","page_title","__currentLoopData","loop","favicon","file"],"type":"blade"},{"name":"Media::browser (modules\/Media\/Views\/browser.blade.php)","param_count":13,"params":["__env","app","errors","rows","row","locations","flight_manage_others","breadcrumbs","page_title","__currentLoopData","loop","favicon","file"],"type":"blade"}]},"route":{"uri":"GET admin\/module\/flight\/airport","middleware":"web, dashboard","controller":"Modules\\Flight\\Admin\\AirportController@index","namespace":"Modules\\Flight\\Admin","prefix":"admin\/module\/flight\/airport","where":[],"as":"flight.admin.airport.index","file":"<a href=\"phpstorm:\/\/open?file=\/home\/demo.bookingcore.org\/public_html\/modules\/Flight\/Admin\/AirportController.php&line=48\">modules\/Flight\/Admin\/AirportController.php:48-86<\/a>"},"queries":{"nb_statements":16,"nb_failed_statements":0,"accumulated_duration":0.03275,"accumulated_duration_str":"32.75ms","statements":[{"sql":"select * from `users` where `id` = 6 and `users`.`deleted_at` is null limit 1","type":"query","params":[],"bindings":["6"],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table","<code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Auth\/EloquentUserProvider.php","line":59},{"index":16,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Auth\/SessionGuard.php","line":159},{"index":17,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Auth\/AuthManager.php","line":340},{"index":19,"namespace":null,"name":"\/app\/Http\/Middleware\/HideDebugbar.php","line":25},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","line":180}],"duration":0.0016699999999999998,"duration_str":"1.67ms","stmt_id":"\/vendor\/laravel\/framework\/src\/Illuminate\/Auth\/EloquentUserProvider.php:59","connection":"demo_bookingcore"},{"sql":"select * from `core_roles` where `core_roles`.`id` = 1 limit 1","type":"query","params":[],"bindings":["1"],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table","<code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"],"show_copy":false,"backtrace":[{"index":20,"namespace":null,"name":"\/modules\/User\/Traits\/HasRoles.php","line":23},{"index":21,"namespace":null,"name":"\/app\/Http\/Middleware\/HideDebugbar.php","line":25},{"index":22,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","line":180},{"index":23,"namespace":null,"name":"\/app\/Http\/Middleware\/RedirectForMultiLanguage.php","line":58},{"index":24,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","line":180}],"duration":0.00035999999999999997,"duration_str":"360\u03bcs","stmt_id":"\/modules\/User\/Traits\/HasRoles.php:23","connection":"demo_bookingcore"},{"sql":"select count(*) as aggregate from `bravo_airport`","type":"query","params":[],"bindings":[],"hints":["The <code>SELECT<\/code> statement has no <code>WHERE<\/code> clause and could examine many more rows than intended"],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/modules\/Flight\/Admin\/AirportController.php","line":69},{"index":16,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php","line":54},{"index":17,"namespace":null,"name":"\/modules\/Flight\/Admin\/AirportController.php","line":45},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php","line":43},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php","line":260}],"duration":0.0249,"duration_str":"24.9ms","stmt_id":"\/modules\/Flight\/Admin\/AirportController.php:69","connection":"demo_bookingcore"},{"sql":"select * from `bravo_airport` order by `id` desc limit 50 offset 0","type":"query","params":[],"bindings":[],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table","The <code>SELECT<\/code> statement has no <code>WHERE<\/code> clause and could examine many more rows than intended"],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/modules\/Flight\/Admin\/AirportController.php","line":69},{"index":16,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php","line":54},{"index":17,"namespace":null,"name":"\/modules\/Flight\/Admin\/AirportController.php","line":45},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php","line":43},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php","line":260}],"duration":0.00117,"duration_str":"1.17ms","stmt_id":"\/modules\/Flight\/Admin\/AirportController.php:69","connection":"demo_bookingcore"},{"sql":"select * from `users` where 0 = 1 and `users`.`deleted_at` is null","type":"query","params":[],"bindings":[],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table"],"show_copy":false,"backtrace":[{"index":20,"namespace":null,"name":"\/modules\/Flight\/Admin\/AirportController.php","line":69},{"index":21,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php","line":54},{"index":22,"namespace":null,"name":"\/modules\/Flight\/Admin\/AirportController.php","line":45},{"index":23,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php","line":43},{"index":24,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php","line":260}],"duration":0.00035,"duration_str":"350\u03bcs","stmt_id":"\/modules\/Flight\/Admin\/AirportController.php:69","connection":"demo_bookingcore"},{"sql":"select * from `bravo_locations` where `bravo_locations`.`deleted_at` is null","type":"query","params":[],"bindings":[],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table"],"show_copy":false,"backtrace":[{"index":17,"namespace":null,"name":"\/modules\/Flight\/Admin\/AirportController.php","line":71},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Controller.php","line":54},{"index":19,"namespace":null,"name":"\/modules\/Flight\/Admin\/AirportController.php","line":45},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php","line":43},{"index":21,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php","line":260}],"duration":0.0004,"duration_str":"400\u03bcs","stmt_id":"\/modules\/Flight\/Admin\/AirportController.php:71","connection":"demo_bookingcore"},{"sql":"select * from `notifications` where (`for_admin` = 1 or `notifiable_id` = 6) order by `created_at` desc limit 5","type":"query","params":[],"bindings":["1","6"],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table"],"show_copy":false,"backtrace":[{"index":14,"namespace":null,"name":"\/app\/Helpers\/AppHelper.php","line":1199},{"index":17,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/CompilerEngine.php","line":70},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/View.php","line":152}],"duration":0.00074,"duration_str":"740\u03bcs","stmt_id":"\/app\/Helpers\/AppHelper.php:1199","connection":"demo_bookingcore"},{"sql":"select count(*) as aggregate from `notifications` where (`for_admin` = 1 or `notifiable_id` = 6) and `read_at` is null limit 5","type":"query","params":[],"bindings":["1","6"],"hints":["<code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/app\/Helpers\/AppHelper.php","line":1200},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/CompilerEngine.php","line":70},{"index":21,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/View.php","line":152}],"duration":0.00044,"duration_str":"440\u03bcs","stmt_id":"\/app\/Helpers\/AppHelper.php:1200","connection":"demo_bookingcore"},{"sql":"select * from `user_meta` where (`user_id` = 6 and `name` = 'social_meta_avatar') limit 1","type":"query","params":[],"bindings":["6","social_meta_avatar"],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table","<code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"],"show_copy":false,"backtrace":[{"index":13,"namespace":null,"name":"\/app\/User.php","line":97},{"index":14,"namespace":null,"name":"\/app\/User.php","line":195},{"index":15,"namespace":"view","name":"ae7c17385dae37e02659cfa76ac0245eecdf056c","line":126},{"index":17,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58}],"duration":0.00035,"duration_str":"350\u03bcs","stmt_id":"\/app\/User.php:97","connection":"demo_bookingcore"},{"sql":"select * from `user_meta` where (`user_id` = 6 and `name` = 'social_meta_avatar') limit 1","type":"query","params":[],"bindings":["6","social_meta_avatar"],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table","<code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"],"show_copy":false,"backtrace":[{"index":13,"namespace":null,"name":"\/app\/User.php","line":97},{"index":14,"namespace":null,"name":"\/app\/User.php","line":195},{"index":15,"namespace":"view","name":"ae7c17385dae37e02659cfa76ac0245eecdf056c","line":127},{"index":17,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58}],"duration":0.00029,"duration_str":"290\u03bcs","stmt_id":"\/app\/User.php:97","connection":"demo_bookingcore"},{"sql":"select count(`id`) as aggregate from `core_news` where `status` = 'pending' and `core_news`.`deleted_at` is null","type":"query","params":[],"bindings":["pending"],"hints":[],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/modules\/News\/ModuleProvider.php","line":31},{"index":16,"namespace":"view","name":"b0609f5f3e10c9844e04eb4292a90636fb4c6d3b","line":38},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/CompilerEngine.php","line":70}],"duration":0.00049,"duration_str":"490\u03bcs","stmt_id":"\/modules\/News\/ModuleProvider.php:31","connection":"demo_bookingcore"},{"sql":"select count(`id`) as aggregate from `users` where `verify_submit_status` in ('new', 'partial') and `users`.`deleted_at` is null","type":"query","params":[],"bindings":["new","partial"],"hints":[],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/app\/User.php","line":395},{"index":16,"namespace":null,"name":"\/modules\/User\/ModuleProvider.php","line":42},{"index":17,"namespace":"view","name":"b0609f5f3e10c9844e04eb4292a90636fb4c6d3b","line":38},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58}],"duration":0.00034,"duration_str":"340\u03bcs","stmt_id":"\/app\/User.php:395","connection":"demo_bookingcore"},{"sql":"select count(*) as aggregate from `user_upgrade_request` where `status` = 'pending' and exists (select * from `users` where `user_upgrade_request`.`user_id` = `users`.`id` and `users`.`deleted_at` is null) and `user_upgrade_request`.`deleted_at` is null","type":"query","params":[],"bindings":["pending"],"hints":[],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/modules\/User\/ModuleProvider.php","line":43},{"index":16,"namespace":"view","name":"b0609f5f3e10c9844e04eb4292a90636fb4c6d3b","line":38},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/CompilerEngine.php","line":70}],"duration":0.00037,"duration_str":"370\u03bcs","stmt_id":"\/modules\/User\/ModuleProvider.php:43","connection":"demo_bookingcore"},{"sql":"select count(*) as aggregate from `bravo_booking_payments` where `object_model` = 'plan' and `status` = 'processing'","type":"query","params":[],"bindings":["plan","processing"],"hints":[],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/modules\/User\/ModuleProvider.php","line":87},{"index":16,"namespace":"view","name":"b0609f5f3e10c9844e04eb4292a90636fb4c6d3b","line":38},{"index":18,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/CompilerEngine.php","line":70}],"duration":0.00031,"duration_str":"310\u03bcs","stmt_id":"\/modules\/User\/ModuleProvider.php:87","connection":"demo_bookingcore"},{"sql":"select count(`id`) as aggregate from `bravo_booking_payments` where `object_model` = 'wallet_deposit' and `status` = 'processing'","type":"query","params":[],"bindings":["wallet_deposit","processing"],"hints":[],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/modules\/User\/Models\/Wallet\/DepositPayment.php","line":15},{"index":16,"namespace":null,"name":"\/modules\/Report\/ModuleProvider.php","line":18},{"index":17,"namespace":"view","name":"b0609f5f3e10c9844e04eb4292a90636fb4c6d3b","line":38},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58}],"duration":0.0003,"duration_str":"300\u03bcs","stmt_id":"\/modules\/User\/Models\/Wallet\/DepositPayment.php:15","connection":"demo_bookingcore"},{"sql":"select count(`id`) as aggregate from `bravo_payouts` where `status` = 'initial'","type":"query","params":[],"bindings":["initial"],"hints":[],"show_copy":false,"backtrace":[{"index":15,"namespace":null,"name":"\/modules\/Vendor\/Models\/VendorPayout.php","line":63},{"index":16,"namespace":null,"name":"\/modules\/Vendor\/ModuleProvider.php","line":27},{"index":17,"namespace":"view","name":"b0609f5f3e10c9844e04eb4292a90636fb4c6d3b","line":38},{"index":19,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/Filesystem\/Filesystem.php","line":110},{"index":20,"namespace":null,"name":"\/vendor\/laravel\/framework\/src\/Illuminate\/View\/Engines\/PhpEngine.php","line":58}],"duration":0.00027,"duration_str":"270\u03bcs","stmt_id":"\/modules\/Vendor\/Models\/VendorPayout.php:63","connection":"demo_bookingcore"}]},"models":{"data":{"Modules\\Core\\Models\\NotificationPush":5,"Modules\\Location\\Models\\Location":10,"Modules\\Flight\\Models\\Airport":50,"Modules\\User\\Models\\Role":1,"App\\Models\\User":1},"count":67},"auth":{"guards":{"web":"array:2 [\n  \"name\" => \"admin@bookingcore.test\"\n  \"user\" => array:42 [\n    \"id\" => 6\n    \"name\" => \"System Admin\"\n    \"first_name\" => \"System\"\n    \"last_name\" => \"Admin\"\n    \"business_name\" => null\n    \"email\" => \"admin@bookingcore.test\"\n    \"email_verified_at\" => \"2023-07-20T09:34:20.000000Z\"\n    \"two_factor_secret\" => null\n    \"two_factor_recovery_codes\" => null\n    \"address\" => null\n    \"address2\" => null\n    \"phone\" => \"112 666 888\"\n    \"birthday\" => null\n    \"city\" => \"New York\"\n    \"state\" => null\n    \"country\" => \"US\"\n    \"zip_code\" => null\n    \"last_login_at\" => null\n    \"avatar_id\" => null\n    \"bio\" => \"We're designers who have fallen in love with creating spaces for others to reflect, reset, and create. We split our time between two deserts (the Mojave, and the Sonoran). We love the way the heat sinks into our bones, the vibrant sunsets, and the wildlife we get to call our neighbors.\"\n    \"status\" => \"publish\"\n    \"create_user\" => null\n    \"update_user\" => null\n    \"vendor_commission_amount\" => null\n    \"vendor_commission_type\" => null\n    \"need_update_pw\" => 0\n    \"role_id\" => 1\n    \"deleted_at\" => null\n    \"created_at\" => \"2023-07-20T09:34:20.000000Z\"\n    \"updated_at\" => \"2023-07-20T09:34:20.000000Z\"\n    \"payment_gateway\" => null\n    \"total_guests\" => null\n    \"locale\" => null\n    \"user_name\" => null\n    \"verify_submit_status\" => null\n    \"is_verified\" => null\n    \"active_status\" => 0\n    \"dark_mode\" => 0\n    \"messenger_color\" => \"#2180f3\"\n    \"stripe_customer_id\" => null\n    \"total_before_fees\" => null\n    \"role\" => array:10 [\n      \"id\" => 1\n      \"name\" => \"administrator\"\n      \"code\" => \"administrator\"\n      \"commission\" => null\n      \"commission_type\" => \"default\"\n      \"create_user\" => null\n      \"update_user\" => null\n      \"status\" => null\n      \"created_at\" => \"2023-07-20T09:34:11.000000Z\"\n      \"updated_at\" => \"2023-07-20T09:34:11.000000Z\"\n    ]\n  ]\n]","sanctum":"null"},"names":"web: admin@bookingcore.test"},"gate":{"count":0,"messages":[]},"session":{"_token":"niF7UiJ6NpIZ4amVPiIALTkBxGGgcLJ8vhTaWijr","_previous":"array:1 [\n  \"url\" => \"https:\/\/sandbox.bookingcore.co\/admin\/module\/flight\/airport\"\n]","_flash":"array:2 [\n  \"old\" => []\n  \"new\" => []\n]","login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d":"6","PHPDEBUGBAR_STACK_DATA":"[]"},"request":{"path_info":"\/admin\/module\/flight\/airport","status_code":"<pre class=sf-dump id=sf-dump-334288118 data-indent-pad=\"  \"><span class=sf-dump-num>200<\/span>\n<\/pre><script>Sfdump(\"sf-dump-334288118\", {\"maxDepth\":0})<\/script>\n","status_text":"OK","format":"html","content_type":"text\/html; charset=UTF-8","request_query":"<pre class=sf-dump id=sf-dump-1987230331 data-indent-pad=\"  \">[]\n<\/pre><script>Sfdump(\"sf-dump-1987230331\", {\"maxDepth\":0})<\/script>\n","request_request":"<pre class=sf-dump id=sf-dump-1883384064 data-indent-pad=\"  \">[]\n<\/pre><script>Sfdump(\"sf-dump-1883384064\", {\"maxDepth\":0})<\/script>\n","request_headers":"<pre class=sf-dump id=sf-dump-1196177362 data-indent-pad=\"  \"><span class=sf-dump-note>array:23<\/span> [<samp data-depth=1 class=sf-dump-expanded>\n  \"<span class=sf-dump-key>cf-ipcountry<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"2 characters\">IN<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cf-connecting-ip<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"38 characters\">2402:3a80:191c:ad7:3c24:6fdf:646c:8527<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cdn-loop<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"10 characters\">cloudflare<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cookie<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"1007 characters\">booking_cookie_agreement_enable=eyJpdiI6Imw5dmRMeVR3UmtaOVgrSW43cldzclE9PSIsInZhbHVlIjoiNXVkWFd6NHFwbGNFSmRoTVovQmFEdCtFdkpEOEU4UDZ1STBXbWFncmUwZHRPMklFbVRzSkJkOHhqMXh4QVZzbyIsIm1hYyI6IjUzYTU4ZTgxMGI1MzMyYjVlZjYyZWM3NzU3Nzc2MGI3MjkyNjQzYjY3MDk1NGMzMTI0ZjY0MGE4MWUzMzVkYjUiLCJ0YWciOiIifQ%3D%3D; XSRF-TOKEN=eyJpdiI6IlEyaDN2bFR6LzlxNGRSOUZFSjNRK1E9PSIsInZhbHVlIjoiRlRpc0Q5VWFQMkh4b2NNR1BuNjBDWUpMb2FZdUdxYXJMR201KzVON3NZeFFoRytWUzhGZDU1VEpYaFhnT2E0NUNGM0Q1ZEU4cm44WVJBZWZVVGo0TDU3dE5DQkdoWXc0dUtJQ0ptd014SEtpU2JZajczUFcrV2svVlpEM2RFNXoiLCJtYWMiOiI5ZmIxZWViZGU3ZDA5ODc4ZGJkOTIyZDAxNjhhMDIzNjQxODJiM2E0ZDViMTNlZDk0OGM1ZjIyZTRjOGJmNGNhIiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6IkVVMnNQV2ZCYkV3OGVndHIyMC9MK2c9PSIsInZhbHVlIjoicFNFSEl3RDdUK1lHbVVPYkt5MzNKVEpYY1dOaXNON2s5NlFuUTMrbHNhUXRnQTlaYUJTaDFnclRKWHZqaTNlbEpDZ3FGeEk1MzdzN1RTalhQWGNrUDJRcFlxWGladnYrK3dBRThLb1dBNVdGNFdyRVE2SlhYRzMycE5wMW13RysiLCJtYWMiOiJiOTU2MjQwODc3NTk3YmNkN2JmOTI4NWNmYmZmNGNmNDQxY2FkY2YyOTM5OWVkMjBiOGRkMzlkZmYwZTkzY2Y1IiwidGFnIjoiIn0%3D<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>accept-language<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"35 characters\">en-US,en;q=0.9,ta-IN;q=0.8,ta;q=0.7<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-fetch-dest<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"8 characters\">document<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-fetch-mode<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"8 characters\">navigate<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-fetch-site<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"10 characters\">cross-site<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>accept<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"135 characters\">text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>user-agent<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"111 characters\">Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/114.0.0.0 Safari\/537.36<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>upgrade-insecure-requests<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str>1<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-ch-ua-platform<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"9 characters\">&quot;Windows&quot;<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-ch-ua-mobile<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"2 characters\">?0<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>sec-ch-ua<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"64 characters\">&quot;Not.A\/Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;114&quot;, &quot;Google Chrome&quot;;v=&quot;114&quot;<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cf-visitor<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"18 characters\">{&quot;scheme&quot;:&quot;https&quot;}<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>x-forwarded-proto<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"5 characters\">https<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cf-ray<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"20 characters\">7ebd10bc9a383e55-SIN<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>x-forwarded-for<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"38 characters\">2402:3a80:191c:ad7:3c24:6fdf:646c:8527<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>accept-encoding<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"4 characters\">gzip<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>connection<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"10 characters\">Keep-Alive<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>host<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"22 characters\">sandbox.bookingcore.co<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>content-length<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"\"\n  <\/samp>]\n  \"<span class=sf-dump-key>content-type<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"\"\n  <\/samp>]\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-1196177362\", {\"maxDepth\":0})<\/script>\n","request_server":"<pre class=sf-dump id=sf-dump-2049581794 data-indent-pad=\"  \"><span class=sf-dump-note>array:48<\/span> [<samp data-depth=1 class=sf-dump-expanded>\n  \"<span class=sf-dump-key>USER<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">www-data<\/span>\"\n  \"<span class=sf-dump-key>HOME<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">\/var\/www<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CF_IPCOUNTRY<\/span>\" => \"<span class=sf-dump-str title=\"2 characters\">IN<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CF_CONNECTING_IP<\/span>\" => \"<span class=sf-dump-str title=\"38 characters\">2402:3a80:191c:ad7:3c24:6fdf:646c:8527<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CDN_LOOP<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">cloudflare<\/span>\"\n  \"<span class=sf-dump-key>HTTP_COOKIE<\/span>\" => \"<span class=sf-dump-str title=\"1007 characters\">booking_cookie_agreement_enable=eyJpdiI6Imw5dmRMeVR3UmtaOVgrSW43cldzclE9PSIsInZhbHVlIjoiNXVkWFd6NHFwbGNFSmRoTVovQmFEdCtFdkpEOEU4UDZ1STBXbWFncmUwZHRPMklFbVRzSkJkOHhqMXh4QVZzbyIsIm1hYyI6IjUzYTU4ZTgxMGI1MzMyYjVlZjYyZWM3NzU3Nzc2MGI3MjkyNjQzYjY3MDk1NGMzMTI0ZjY0MGE4MWUzMzVkYjUiLCJ0YWciOiIifQ%3D%3D; XSRF-TOKEN=eyJpdiI6IlEyaDN2bFR6LzlxNGRSOUZFSjNRK1E9PSIsInZhbHVlIjoiRlRpc0Q5VWFQMkh4b2NNR1BuNjBDWUpMb2FZdUdxYXJMR201KzVON3NZeFFoRytWUzhGZDU1VEpYaFhnT2E0NUNGM0Q1ZEU4cm44WVJBZWZVVGo0TDU3dE5DQkdoWXc0dUtJQ0ptd014SEtpU2JZajczUFcrV2svVlpEM2RFNXoiLCJtYWMiOiI5ZmIxZWViZGU3ZDA5ODc4ZGJkOTIyZDAxNjhhMDIzNjQxODJiM2E0ZDViMTNlZDk0OGM1ZjIyZTRjOGJmNGNhIiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6IkVVMnNQV2ZCYkV3OGVndHIyMC9MK2c9PSIsInZhbHVlIjoicFNFSEl3RDdUK1lHbVVPYkt5MzNKVEpYY1dOaXNON2s5NlFuUTMrbHNhUXRnQTlaYUJTaDFnclRKWHZqaTNlbEpDZ3FGeEk1MzdzN1RTalhQWGNrUDJRcFlxWGladnYrK3dBRThLb1dBNVdGNFdyRVE2SlhYRzMycE5wMW13RysiLCJtYWMiOiJiOTU2MjQwODc3NTk3YmNkN2JmOTI4NWNmYmZmNGNmNDQxY2FkY2YyOTM5OWVkMjBiOGRkMzlkZmYwZTkzY2Y1IiwidGFnIjoiIn0%3D<\/span>\"\n  \"<span class=sf-dump-key>HTTP_ACCEPT_LANGUAGE<\/span>\" => \"<span class=sf-dump-str title=\"35 characters\">en-US,en;q=0.9,ta-IN;q=0.8,ta;q=0.7<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_FETCH_DEST<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">document<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_FETCH_MODE<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">navigate<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_FETCH_SITE<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">cross-site<\/span>\"\n  \"<span class=sf-dump-key>HTTP_ACCEPT<\/span>\" => \"<span class=sf-dump-str title=\"135 characters\">text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7<\/span>\"\n  \"<span class=sf-dump-key>HTTP_USER_AGENT<\/span>\" => \"<span class=sf-dump-str title=\"111 characters\">Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/114.0.0.0 Safari\/537.36<\/span>\"\n  \"<span class=sf-dump-key>HTTP_UPGRADE_INSECURE_REQUESTS<\/span>\" => \"<span class=sf-dump-str>1<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_CH_UA_PLATFORM<\/span>\" => \"<span class=sf-dump-str title=\"9 characters\">&quot;Windows&quot;<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_CH_UA_MOBILE<\/span>\" => \"<span class=sf-dump-str title=\"2 characters\">?0<\/span>\"\n  \"<span class=sf-dump-key>HTTP_SEC_CH_UA<\/span>\" => \"<span class=sf-dump-str title=\"64 characters\">&quot;Not.A\/Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;114&quot;, &quot;Google Chrome&quot;;v=&quot;114&quot;<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CF_VISITOR<\/span>\" => \"<span class=sf-dump-str title=\"18 characters\">{&quot;scheme&quot;:&quot;https&quot;}<\/span>\"\n  \"<span class=sf-dump-key>HTTP_X_FORWARDED_PROTO<\/span>\" => \"<span class=sf-dump-str title=\"5 characters\">https<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CF_RAY<\/span>\" => \"<span class=sf-dump-str title=\"20 characters\">7ebd10bc9a383e55-SIN<\/span>\"\n  \"<span class=sf-dump-key>HTTP_X_FORWARDED_FOR<\/span>\" => \"<span class=sf-dump-str title=\"38 characters\">2402:3a80:191c:ad7:3c24:6fdf:646c:8527<\/span>\"\n  \"<span class=sf-dump-key>HTTP_ACCEPT_ENCODING<\/span>\" => \"<span class=sf-dump-str title=\"4 characters\">gzip<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CONNECTION<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">Keep-Alive<\/span>\"\n  \"<span class=sf-dump-key>HTTP_HOST<\/span>\" => \"<span class=sf-dump-str title=\"22 characters\">sandbox.bookingcore.co<\/span>\"\n  \"<span class=sf-dump-key>REDIRECT_STATUS<\/span>\" => \"<span class=sf-dump-str title=\"3 characters\">200<\/span>\"\n  \"<span class=sf-dump-key>SERVER_NAME<\/span>\" => \"<span class=sf-dump-str title=\"22 characters\">sandbox.bookingcore.co<\/span>\"\n  \"<span class=sf-dump-key>SERVER_PORT<\/span>\" => \"<span class=sf-dump-str title=\"3 characters\">443<\/span>\"\n  \"<span class=sf-dump-key>SERVER_ADDR<\/span>\" => \"<span class=sf-dump-str title=\"14 characters\">178.128.22.219<\/span>\"\n  \"<span class=sf-dump-key>REMOTE_PORT<\/span>\" => \"\"\n  \"<span class=sf-dump-key>REMOTE_ADDR<\/span>\" => \"<span class=sf-dump-str title=\"38 characters\">2402:3a80:191c:ad7:3c24:6fdf:646c:8527<\/span>\"\n  \"<span class=sf-dump-key>SERVER_SOFTWARE<\/span>\" => \"<span class=sf-dump-str title=\"12 characters\">nginx\/1.18.0<\/span>\"\n  \"<span class=sf-dump-key>GATEWAY_INTERFACE<\/span>\" => \"<span class=sf-dump-str title=\"7 characters\">CGI\/1.1<\/span>\"\n  \"<span class=sf-dump-key>HTTPS<\/span>\" => \"<span class=sf-dump-str title=\"2 characters\">on<\/span>\"\n  \"<span class=sf-dump-key>REQUEST_SCHEME<\/span>\" => \"<span class=sf-dump-str title=\"5 characters\">https<\/span>\"\n  \"<span class=sf-dump-key>SERVER_PROTOCOL<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">HTTP\/1.1<\/span>\"\n  \"<span class=sf-dump-key>DOCUMENT_ROOT<\/span>\" => \"<span class=sf-dump-str title=\"45 characters\">\/home\/demo.bookingcore.org\/public_html\/public<\/span>\"\n  \"<span class=sf-dump-key>DOCUMENT_URI<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">\/index.php<\/span>\"\n  \"<span class=sf-dump-key>REQUEST_URI<\/span>\" => \"<span class=sf-dump-str title=\"28 characters\">\/admin\/module\/flight\/airport<\/span>\"\n  \"<span class=sf-dump-key>SCRIPT_NAME<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">\/index.php<\/span>\"\n  \"<span class=sf-dump-key>CONTENT_LENGTH<\/span>\" => \"\"\n  \"<span class=sf-dump-key>CONTENT_TYPE<\/span>\" => \"\"\n  \"<span class=sf-dump-key>REQUEST_METHOD<\/span>\" => \"<span class=sf-dump-str title=\"3 characters\">GET<\/span>\"\n  \"<span class=sf-dump-key>QUERY_STRING<\/span>\" => \"\"\n  \"<span class=sf-dump-key>SCRIPT_FILENAME<\/span>\" => \"<span class=sf-dump-str title=\"55 characters\">\/home\/demo.bookingcore.org\/public_html\/public\/index.php<\/span>\"\n  \"<span class=sf-dump-key>PATH_INFO<\/span>\" => \"\"\n  \"<span class=sf-dump-key>FCGI_ROLE<\/span>\" => \"<span class=sf-dump-str title=\"9 characters\">RESPONDER<\/span>\"\n  \"<span class=sf-dump-key>PHP_SELF<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">\/index.php<\/span>\"\n  \"<span class=sf-dump-key>REQUEST_TIME_FLOAT<\/span>\" => <span class=sf-dump-num>1690211168.7647<\/span>\n  \"<span class=sf-dump-key>REQUEST_TIME<\/span>\" => <span class=sf-dump-num>1690211168<\/span>\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-2049581794\", {\"maxDepth\":0})<\/script>\n","request_cookies":"<pre class=sf-dump id=sf-dump-2018455646 data-indent-pad=\"  \"><span class=sf-dump-note>array:3<\/span> [<samp data-depth=1 class=sf-dump-expanded>\n  \"<span class=sf-dump-key>booking_cookie_agreement_enable<\/span>\" => \"<span class=sf-dump-str>1<\/span>\"\n  \"<span class=sf-dump-key>XSRF-TOKEN<\/span>\" => \"<span class=sf-dump-str title=\"40 characters\">niF7UiJ6NpIZ4amVPiIALTkBxGGgcLJ8vhTaWijr<\/span>\"\n  \"<span class=sf-dump-key>laravel_session<\/span>\" => \"<span class=sf-dump-str title=\"40 characters\">GfpDEMnHaqXxsnKaYTlG9ZZRrKy4bps2xJwNSUGp<\/span>\"\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-2018455646\", {\"maxDepth\":0})<\/script>\n","response_headers":"<pre class=sf-dump id=sf-dump-1616891483 data-indent-pad=\"  \"><span class=sf-dump-note>array:5<\/span> [<samp data-depth=1 class=sf-dump-expanded>\n  \"<span class=sf-dump-key>content-type<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"24 characters\">text\/html; charset=UTF-8<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cache-control<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"17 characters\">no-cache, private<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>date<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"29 characters\">Mon, 24 Jul 2023 15:06:08 GMT<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>set-cookie<\/span>\" => <span class=sf-dump-note>array:2<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"428 characters\">XSRF-TOKEN=eyJpdiI6IlYvOE42QTVsRDA0bkFtVEJSMGNLTUE9PSIsInZhbHVlIjoidmwyR2p4QVBZVitPT2Rva0hlbXZjQlBDUFp3YTVmREo1dFpRL3BtQ2RMZ0JISEhhendwV0svcm10YWYvVGV2WTJNb0Y1bWFSMVZadFRBTHc1cHlMUmZNL2RjeWhkeDFQVEtFalV3dkdZNm4wUE1TTmgzc21Sb3NIQkw2Q0UrNVEiLCJtYWMiOiIxYWM2YWJmN2ZjOWE4MjExNmZkNjA0YTVhMTI0NGYyNjVjYjhlODg3NTg5NGE0NjY3OTFiZWRmYTlmMGM2OGM4IiwidGFnIjoiIn0%3D; expires=Mon, 24-Jul-2023 17:06:08 GMT; Max-Age=7200; path=\/; samesite=lax<\/span>\"\n    <span class=sf-dump-index>1<\/span> => \"<span class=sf-dump-str title=\"443 characters\">laravel_session=eyJpdiI6IjlmelIwMGdSNDlHWDJSOXdtblpWU2c9PSIsInZhbHVlIjoiNXRuZXFZMGZrR2xmSTBQamhrZFlhc1M5cXZnYUwwb252bm1NalNjQThtQUVTZDhPSE1ubVh6VkFqT05DaGpYSTFmcnYwRTBiK29LQ0xleUdpY2ZzcnhFcXpWanIvaG9NUkwrWTJVZHdLZHBPSS9RZ2pjVUpGWW8zNW9LWWdjU3UiLCJtYWMiOiI2ZTRhMDBiMDU4NTFmNzQ4MGQ5YjM3MWQxZWJhYmY5YTUxN2JkYzJjZjVkODA2ZjI1MDA2ZmQ5NWYwZWUwMGZmIiwidGFnIjoiIn0%3D; expires=Mon, 24-Jul-2023 17:06:08 GMT; Max-Age=7200; path=\/; httponly; samesite=lax<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>Set-Cookie<\/span>\" => <span class=sf-dump-note>array:2<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"400 characters\">XSRF-TOKEN=eyJpdiI6IlYvOE42QTVsRDA0bkFtVEJSMGNLTUE9PSIsInZhbHVlIjoidmwyR2p4QVBZVitPT2Rva0hlbXZjQlBDUFp3YTVmREo1dFpRL3BtQ2RMZ0JISEhhendwV0svcm10YWYvVGV2WTJNb0Y1bWFSMVZadFRBTHc1cHlMUmZNL2RjeWhkeDFQVEtFalV3dkdZNm4wUE1TTmgzc21Sb3NIQkw2Q0UrNVEiLCJtYWMiOiIxYWM2YWJmN2ZjOWE4MjExNmZkNjA0YTVhMTI0NGYyNjVjYjhlODg3NTg5NGE0NjY3OTFiZWRmYTlmMGM2OGM4IiwidGFnIjoiIn0%3D; expires=Mon, 24-Jul-2023 17:06:08 GMT; path=\/<\/span>\"\n    <span class=sf-dump-index>1<\/span> => \"<span class=sf-dump-str title=\"415 characters\">laravel_session=eyJpdiI6IjlmelIwMGdSNDlHWDJSOXdtblpWU2c9PSIsInZhbHVlIjoiNXRuZXFZMGZrR2xmSTBQamhrZFlhc1M5cXZnYUwwb252bm1NalNjQThtQUVTZDhPSE1ubVh6VkFqT05DaGpYSTFmcnYwRTBiK29LQ0xleUdpY2ZzcnhFcXpWanIvaG9NUkwrWTJVZHdLZHBPSS9RZ2pjVUpGWW8zNW9LWWdjU3UiLCJtYWMiOiI2ZTRhMDBiMDU4NTFmNzQ4MGQ5YjM3MWQxZWJhYmY5YTUxN2JkYzJjZjVkODA2ZjI1MDA2ZmQ5NWYwZWUwMGZmIiwidGFnIjoiIn0%3D; expires=Mon, 24-Jul-2023 17:06:08 GMT; path=\/; httponly<\/span>\"\n  <\/samp>]\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-1616891483\", {\"maxDepth\":0})<\/script>\n","session_attributes":"<pre class=sf-dump id=sf-dump-743052295 data-indent-pad=\"  \"><span class=sf-dump-note>array:5<\/span> [<samp data-depth=1 class=sf-dump-expanded>\n  \"<span class=sf-dump-key>_token<\/span>\" => \"<span class=sf-dump-str title=\"40 characters\">niF7UiJ6NpIZ4amVPiIALTkBxGGgcLJ8vhTaWijr<\/span>\"\n  \"<span class=sf-dump-key>_previous<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    \"<span class=sf-dump-key>url<\/span>\" => \"<span class=sf-dump-str title=\"58 characters\">https:\/\/sandbox.bookingcore.co\/admin\/module\/flight\/airport<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>_flash<\/span>\" => <span class=sf-dump-note>array:2<\/span> [<samp data-depth=2 class=sf-dump-compact>\n    \"<span class=sf-dump-key>old<\/span>\" => []\n    \"<span class=sf-dump-key>new<\/span>\" => []\n  <\/samp>]\n  \"<span class=sf-dump-key>login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d<\/span>\" => <span class=sf-dump-num>6<\/span>\n  \"<span class=sf-dump-key>PHPDEBUGBAR_STACK_DATA<\/span>\" => []\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-743052295\", {\"maxDepth\":0})<\/script>\n"}}, "Xdea26c5bf6c8571f8c5576b92892f7e6");
+
+</script>
+</body>
+</html>
