@@ -265,6 +265,8 @@
          opacity: 0;
       }
       .toggle-label {
+		border: 2px solid red;
+   		 background: transparent !important;
          position: relative;
          display: block;
          height: inherit;
@@ -296,7 +298,9 @@
          opacity: 0;
       }
       .toggle-input:checked~.toggle-label {
-         background: green;
+		background: green;
+    border: 2px solid green;
+         background: green ;
       }
       .toggle-input:checked~.toggle-label:before {
          opacity: 0;
@@ -305,9 +309,11 @@
          opacity: 1;
       }
       .toggle-handle {
+	
+    background: red !important;
          position: absolute;
-         top: 5px;
-         left: 4px;
+         top: 5.5px;
+         left: 5px;
          right:5px;
          width: 20px;
          height: 20px;
@@ -323,7 +329,9 @@
          height: 12px;
       }
       .toggle-input:checked~.toggle-handle {
-         left: 34px;
+	
+    	background: green !important;
+         left: 28px;
          box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
       }
 
